@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: nanoblogger | My Geekdom]]></title>
+  <link href="http://www.neilsmithline.com/blog/categories/nanoblogger/atom.xml" rel="self"/>
+  <link href="http://www.neilsmithline.com/"/>
+  <updated>2012-07-22T21:35:35-04:00</updated>
+  <id>http://www.neilsmithline.com/</id>
+  <author>
+    <name><![CDATA[Neil Smithline]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[YANBT: Yet Another New Blogging Technology]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/05/14/new-blog-tech/"/>
+    <updated>2012-05-14T12:36:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/05/14/new-blog-tech</id>
+    <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">NanoBlogger Was Killing Me</h2>
+<div class="outline-text-2" id="text-1">
+
+<p><a href="http://bit.ly/wq2Ien">NanoBlogger</a> really looked cool to me 
+(<a href="/blog/categories/blogging-tech">my postings about why I liked it</a>):
+</p><ul>
+<li>Small
+</li>
+<li>Most functionality provided via plugins
+</li>
+<li><a href="http://bit.ly/xOIkfJ">CLI</a> only
+</li>
+<li>It is <a href="http://bit.ly/Mlkg9X">FOSS</a>.
+</li>
+<li>Produced a static site (ie: only serves static pages)
+</li>
+<li>It was built on <a href="http://bit.ly/JbQmzE">Bash</a> &ndash; I thought this was the coolest
+</li>
+</ul>
+
+
+<p>
+I liked it so much that I wrote a CLI for it that was better suited to my personal workflow. I also spent some time integrating it with Emacs. But it had endless problems.
+</p>
+<p>
+It was slow, it did not do anything automatically, frequently required rebuilding of the entire blog, was hard to view on my local machine, isn't really being maintained, doesn't have a real templating system, breaks the RSS feed on special characters such as etc&hellip;
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Where Next</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Over the past few weeks I've been looking around for a new blogging system. The only real contender seemed to be <a href="http://bit.ly/Jm1bmc">Jekyll</a>. It is written in <a href="http://bit.ly/KAfYv0">Ruby</a> and used by Github to power Github Pages. It has so many contributors to it that its <a href="http://bit.ly/JetyoE">Github repository</a> has, at the moment, 50+ pull requests.
+</p>
+<p>
+I had nearly chosen Jekyll when I moved to NanoBlogger. I found that the discussion about moving to Jekyll on the <a href="http://bit.ly/JH7cIy">0xdecafbad.com</a> blog really aligned with my thoughts.
+</p>
+<p>
+But, after playing with it a bit, I found that Jekyll was difficult to configure. And I just so liked the Bash thing that NanoBlogger had that I decided to go with NanoBlogger. But now I'm wasting too much of my time fighting with Nanoblogger and I should reconsider Jekyll.
+<!-- more -->
+
+This time, when I was researching Jekyll, I found <a href="http://bit.ly/KT1aFT">Octopress</a>. Octopress is Jekyll on steroids. It provides an automated configuration and maintenance system that takes the pain out of using Jekyll.
+</p>
+<p>
+So now I'm giving Octopress/Jekyll a try. I'll see how it goes. Configuring a site with a <i>hello world</i> blog entry only took a couple of hours. Most of that was just downloading Octopress and reading the docs to figure out what to do. It turned out that configuration was running three <a href="http://bit.ly/KT2jxn">rake</a> commands. 
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Converting From Nanoblogger To Jekyll</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>Because NanoBlogger blog entries are plain text with markup, converting my entire old blog to Octopress was fairly easy as Octopress also uses plain text with markup for blog entries. I ran into two snags. The first one was in Emacs' <a href="http://bit.ly/zhYdcB">Org Mode</a>, my authoring tool. It broke when you had a "+" in the path name of your input files (in my case, in the path of my blog). It took me several hours to find the bug. Once I found it, it was easy to patch and I sent my fix to be included in subsequent Org Mode releases.
+</p>
+<p>
+The second problem was a bit trickier. Octopress was breaking on some of my blog's generated HTML files. The error message gave me the line number and the character number in that line that was causing the error but it omitted to give me the file name. I believe the technical term for that is "Oops!".
+</p>
+<p>
+To find the file that was casing the problem I started to remove blog files using a <a href="http://bit.ly/KT3gpo">binary search</a>-ish style to track the problem file down. This proved more difficult than I thought it should. After much frustration, it occurred to me that the problem was in many blog entries so the binary search wasn't so helpful. So I wiped my blog and started adding one posting at a time. 
+</p>
+<p>
+Even after I found the first posting that caused Octopress, actually Jekyll, to crash, I couldn't figure out what was wrong with the file. The error message said something about non-ASCII characters but I only had ASCII, or so I thought. It turned out that I had copied and pasted some text from my browser and it had inserted a hyphen (-) that was not the ASCII hyphen. To me, they looked identical. 
+</p>
+<p>
+Despite knowing what the problem was, I couldn't automate Emacs or grep to find the offensive hyphens. In Emacs, the search treated ASCII and non-ASCII hyphens the same. I forget the problems I had with grep but I couldn't get it to work either. This meant I was going to have to add one entry at a time to my blog to track down the other problems. Thank you &ndash; NOT!
+</p>
+<p>
+But Jekyll is written in Ruby and Ruby is a scripting language so I have the source code for Jekyll. Being that the error message included a full stack trace, I figured I could update the error message. In the end I just ended up making Jekyll a bit more verbose: it announces which file it is about to process with the message:
+:Processing file <i>myfile</i>.
+</p>
+<p>
+Then I added all my blog entries, ran Jekyll, got the same error message with only the line and character position, but now had the name of the file it was processing when it had a problem.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Plain Text Blogs Rock!</h2>
+<div class="outline-text-2" id="text-4">
+
+<p> After correcting a couple of entries I noticed that the problem only occurred on hyphens (-) and single quotes ('). Being that both NanoBlogger and Octopress/Jekyll use plain text files for their input, I had a whole bunch of tools to help me fix the problem. 
+</p>
+<p>
+ In the end I ended up turning Emacs failure to distinguish between the ASCII and non-ASCII versions of these characters to my advantage. I did a search-and-replace on all my blog entries replacing hyphens with hyphens and single quotes with single quotes. While Emacs' search found both ASCII and non-ASCII characters, it always replaced them with what I typed as the replacement, ASCII.
+</p>
+<p>
+Then, <i>voila</i>, there was my blog. And my blog looked way better in Octopress than NanoBlogger. Check out a NanoBlogger <a href="http://bit.ly/wq2Ien">sample blog</a> and an Octopress <a href="http://bit.ly/KT1aFT">sample blog</a>. Huge difference. Also, excluding the weak error message from Jekyll (I'll file a bug report on that and I suspect someone will fixed it as Jekyll is so heavily used), I didn't need to do a thing to build and publish the blog. Octopress even pushes the blog to Github automatically. I had written a script to do this automatically for NanoBlogger, but I'd much rather use someone else's perfectly good solution rather than writing my own.
+</p>
+<p>
+I think I'm going to be very happy with Octopress.
+</p>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Blog In A Box (actually, a repo)]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/02/15/nogit-blog-in-a-box/"/>
+    <updated>2012-02-15T22:54:25-05:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/02/15/nogit-blog-in-a-box</id>
+    <content type="html"><![CDATA[<p>
+As I have been developing my blog's technology, I have been surprised at the lack of a pre-packaged <a href="http://en.wikipedia.org/wiki/Blog">blogging</a> solution for <a href="http://www.gnu.org/software/emacs/">Emacs</a>' <a href="http://orgmode.org/">Org Mode</a>. Org Mode is simply a wonderful tool for organizing thoughts, ideas, text, links, etc&hellip; While Org Mode has a rather difficult learning curve, its motto, <i>Your life in plain text.</i>, seems to be accurate.
+</p>
+
+
+<p>
+Spurred by ideas from <a href="http://decafbad.com">0xDECAFBAD.com</a> and code from <a href="http://nanoblogger.sourceforge.net/">NanoBlogger</a> (NB), I've gone about creating an Org Mode-based blogging system. And, if you are reading this, it is actually working. While NB and Org Mode do all the heavy lifting, I've simply added some glue to hook them together. What I have is far from a perfect solution, but it seems to work pretty well. 
+<!-- more -->
+
+There is a bit of a UI problem in that the Org Mode editing has a general look-and-feel like that seems like a typical Org Mode editor with a NanoBlogger posting jammed in. That's not surprising as, to save development time, I've basically just jammed a NanoBlogger posting into an Org Mode buffer.
+</p>
+
+
+<p>
+The other problem that I have with the system is that there is no way to automatically detect the difference between postings that have been published and those that have not published (ie: drafts). Unless you take extra care when publishing your blog, all postings, whether or not they are drafts, will be posted.
+</p>
+
+
+<p>
+Once I've fixed these two problems I will have a simple but reasonably functional blog system. By "simple" I mean that it is based off of NanoBlogger, a minimal blogging platform. That being said, the <a href="http://nanoblogger.sourceforge.net/">goals</a> of NB are simple goals compared to most blogging systems. If you want a richer blogging system then NB isn't for you.
+</p>
+
+
+<p>
+The <i>glue</i> that I've written to connect NB with Org Mode is a shell script and some <a href="http://en.wikipedia.org/wiki/Elisp">elisp</a> code. Combined they are only a few hundred lines of extensively-commented code. The entire NanoBlogger installation, living up to its name, is only 844K. 
+</p>
+
+
+<p>
+Being that NB is so very compact, my shell scripts and elisp code are small, everything is in plain text files, and that <a href="http://github.com">Github</a> provides simple and free hosting of both the blogging system and the blog, I'm going to merge my entire blogging system, minus Emacs, with my blog and put it into a single Github repository. 
+</p>
+
+
+<p>
+Once that is done, anyone who wants to try my blogging technology should only have to do a few simple steps:
+  # Fork my blog to their own Github repository.
+  # Clone their copy of my blog to their computer.
+  # Delete my blog postings (I'm assuming people will want to create their own postings and not republish mine).
+  # Run emacs and load the single elisp glue file I've created.
+  # Start blogging.
+</p>
+
+
+<p>
+I believe that it will take less than 10 minutes to get a blog up-and-running. That is longer than it takes to get a hosted blog on <a href="http://www.blogger.com">Blogger</a> but much, much faster than most self-hosted mechanisms such as <a href="http://www.movabletype.com/">MovableType</a>. The only prerequisites for this blogging system are
+</p>
+
+
+<ul>
+<li>Bash and the other common shell script utilities that are required by NanoBlogger such as sed and awk.
+</li>
+<li>A reasonably modern GNU Emacs. It comes with Org Mode pre-installed.
+</li>
+<li>The <i>git</i> command-line program.
+</li>
+</ul>
+
+
+
+
+<p>
+Being that this blogging system is only aimed at Emacs users, it is certain that they'll have Emacs already installed on their machine. It is also very likely that they'll have bash and the shell script utilities. Maybe they'll have git or maybe they'll need to install it. It is a simple installation.
+</p>
+
+
+<p>
+There is no need to install a local web server for staging. Provided you have versions from this decade, there is no need to ensure you have the right version of any of this software. Managing versions of installed software can be a major pain for many systems (eg: Python based-apps). You also have full access to your blog's data without having to export anything (everything is already in plain text files) or provide a credit card (Github is free).
+</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[New NanoBlogger Command-Line]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/02/14/nbc/"/>
+    <updated>2012-02-14T13:13:34-05:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/02/14/nbc</id>
+    <content type="html"><![CDATA[<p>
+As I've discussed in previous <a href="http://www.neilsmithline.com/archives/blog">postings about this blog's technology</a>, this is a static blog written with NanoBlogger. NanoBlogger is a <a href="http://en.wikipedia.org/wiki/Command-line_interface">CLI</a> driven blogging system. Alas, I have found the <a href="http://nanoblogger.sourceforge.net/docs/nanoblogger.html">NanoBlogger manual</a> to be difficult to follow and the syntax of the CLI to be non-intuitive. (See the footnote <a href="https://github.com/Neil-Smithline/nbc">here</a> regarding the existing CLI.) On the upside, NanoBlogger is a CLI system which makes it easy to modify. 
+</p>
+
+
+<p>
+I started out with a few small helper scripts, eventually merging them into a single helper script. As I was using that script and learning more about NanoBlogger, I found myself writing smaller helper scripts for my big helper script. Eventually, I was never calling my original, large helper script directly.
+<!-- more -->
+
+At this point it became clear that some refactoring was needed. So I refactored. I came up with a single shell script call <i>nbc.sh</i> that does all the work and a series of shell scripts that simply call nbc.sh.
+</p>
+
+
+<p>
+The key idea behind nbc.sh, or simply <i>nbc</i>, is that the scripts that call it are trivial. By "trivial" I mean that each script is only a few lines long, all the side scripts have identical content, and, if not for the semantics of <a href="http://en.wikipedia.org/wiki/Git_(software)">Git</a>, would simply be multiple symbolic links to the same program.
+</p>
+
+
+<p>
+As you can see below, the code for the side scripts simply stores the command name, <i>$0</i>, of the side script that was called and then calls the <i>nbc.sh</i> script that is in the same directory as the side script. 
+</p>
+
+
+
+
+<pre class="example">#!/bin/sh
+
+# Code to load include file.
+ORIG_ARG_0="$0"
+NBDIR=${0%/*}
+. ${NBDIR}/nbc.sh
+</pre>
+
+
+
+
+<p>
+This means that as I continue to add functionality to nbc, all I need to do is copy one of the side scripts to the filename of the new command I added. 
+</p>
+
+
+<p>
+While I won't discuss the exact naming scheme used for these side scripts in detail in this posting, I will say that I have tried to systematic in how the scripts are named. Once you learn a few abbreviations (eg: "e" for "Entry" or "Entries", "u" for "Update") and the rules for combining those abbreviations (standard <a href="http://en.wikipedia.org/wiki/Reverse_Polish_Notation">RPN</a>), you will know the names of all the commands, what each command does, and the type and order of arguments each command takes.
+</p>
+
+
+<p>
+I still need to write richer documentation for nbc and its side scripts, but I can finish this posting off with some concrete examples.
+</p>
+
+
+<p>
+NB supports an "update" command that essentially tells NB to rebuild the blog from scratch. The syntax of this command is:
+</p>
+
+
+
+
+<pre class="example">nb update
+</pre>
+
+
+
+
+<p>
+My nbc version of this command is:
+</p>
+
+
+
+
+<pre class="example">nbu
+</pre>
+
+
+
+
+<p>
+All of the commands for nbc start with the letters "nb". The letter "U" is the abbreviation for "Update". So "nbu" tells nb to run the update command. As I said, the code for nbu and the other side scripts are trivial and given above. As far as examples go, nbu is not very exciting. But the nbc's CLI for creating tags is a bit more exciting.
+</p>
+
+
+<p>
+NB's syntax for creating tags, as documented in its manual, is:
+</p>
+
+
+
+
+<pre class="example">nb --title &lt;tag-name&gt; add tag
+</pre>
+
+
+
+
+<p>
+Gosh! That's both tough to remember and tough to type. In nbc, the command for adding a tag is <i>nbga</i>. All commands start with "nb". After that, the "g" means that we are talking about "taGs". The "a" stands for "Add". The syntax for the command is 
+</p>
+
+
+
+
+<pre class="example">nbga &lt;tag list&gt;
+</pre>
+
+
+
+
+<p>
+Besides being much easier to type and remember, it allows a tag list as compared to a single tag name. That is, you can create multiple tags in a single command rather than needing to call nb once for each new tag.
+</p>
+
+
+<p>
+In NBC, a tag list is a comma-separated list of one or more tag names. So "tag1" is a tag list and "tag1,tag2,tag3" is also a tag list. If you prefer you can space-separate the tag list but you need to ensure that you pass the entire tag list as the first argument to nbga. 
+</p>
+
+
+<p>
+As the operations become more complex, NBC's simplifications become greater and more obvious. My next posting about NBC will discuss some of these simplifications.
+</p>
+
+
+<p>
+If you wish to use NBC, look at the source code, or tell me why NBC sucks, you can get the scripts at <a href="https://github.com/Neil-Smithline/nbc">https://github.com/Neil-Smithline/nbc</a>.
+</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Got Tags Working Manually]]></title>
+    <link href="http://www.neilsmithline.com/blog/2011/12/10/got-tags-working-manually/"/>
+    <updated>2011-12-10T20:09:57-05:00</updated>
+    <id>http://www.neilsmithline.com/blog/2011/12/10/got-tags-working-manually</id>
+    <content type="html"><![CDATA[<p> 
+<a href="http://nanoblogger.sourceforge.net">NanoBlogger</a> supports <a href="http://en.wikipedia.org/wiki/Tag_(metadata)">tags</a>. While they came working out of the box,
+their UI is a bit awkward. I now have it so that I can easily tag
+entries with just a single command line. For example, I'll tag this
+posting by typing: 
+nbeta about-this-blogs-tech 1
+<code>nbeta</code> is my shell script to add tags to an entry. It seems a bit
+hard to remember but:
+</p>
+
+
+<table style='border: 2px solid black !important; border-collapse: separate;' cellspacing="0" cellpadding="6" rules="all" frame="2">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">Letters</th><th scope="col" class="left">Word</th><th scope="col" class="left">Meaning</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">nb</td><td class="left">NanoBlogger</td><td class="left">This is a NanoBlogger command</td></tr>
+<tr><td class="left">e</td><td class="left">Entry</td><td class="left">This command will affect one or more entries</td></tr>
+<tr><td class="left">t</td><td class="left">Tags</td><td class="left">Affects the tags, in this case, of entries</td></tr>
+<tr><td class="left">a</td><td class="left">Add</td><td class="left">We'll be adding tags</td></tr>
+</tbody>
+</table>
+
+
+
+
+<p>
+<code>about-this-blogs-tech</code> is the tag name. <code>1</code> is the entry ID number.
+I'd like it to be the entry name but that isn't done yet and seems of
+lower priority as the newest entry is always entry #1.
+</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Seems It Really Works]]></title>
+    <link href="http://www.neilsmithline.com/blog/2011/12/10/new-tech-really/"/>
+    <updated>2011-12-10T01:27:23-05:00</updated>
+    <id>http://www.neilsmithline.com/blog/2011/12/10/new-tech-really</id>
+    <content type="html"><![CDATA[<p> 
+Well, it appears this actually does work. I seem to be having a few
+issues integrating with <a href="http://nanoblogger.sourceforge.net">NanoBlogger</a> but I'm sure I'll work those out.
+The problems that I've seen are:
+</p>
+
+
+<ol>
+<li>It seems that adding or even updating a new entry is as costly
+       as rebuilding the entire blog from scratch. Right now, that's
+       OK. But what am I going to do when I have 10, or 100 postings?
+       I hope NanoBlogger can handle this.
+</li>
+<li>NB seems to assume that its input files are hand-written in
+       some legacy text editor called <a href="http://www.vim.org">Vim</a> or something :-). While my
+       strategy of using <a href="http://www.gnu.org/s/emacs/">GNU Emacs</a>' <a href="http://orgmode.org">Org Mode</a> keeps the flavor of NB in
+       that it is written in a simple markup language, it doesn't seem
+       to fit the NB model perfectly. There is nothing wrong with NB's
+       markup, it is just that Org Mode's markup can easily be
+       exported to virtually every other markup on the planet. So I
+       just need to learn Org Mode markup, write my content in Org
+       Mode, and then publish that data into whatever format I choose.
+       Seems a better solution but NB isn't quite prepared for it.
+</li>
+<li>I would still like better integration with Org Mode and NB. The
+       steps I've used to produce this entry are:
+<ul>
+<li>Ran a little shell script I wrote to create a new NB
+             entry. All I do is give the shell script the title of the
+             Org Mode file I want to store the new entry in and it
+             does its magic, leaving me with an Org Mode skeleton for
+             NB.
+</li>
+<li>Edit the Org Mode file just created.
+</li>
+<li>Use Org Mode to publish the entry. This just stores it in
+            my local NB folder.
+</li>
+<li>Run <code>nb update</code> to have my changes put into the local
+            copy of the blog.
+</li>
+<li>Run <code>nb preview</code> to view the changes before publishing.
+</li>
+<li>Run <code>nb publish</code> to update my blog.
+</li>
+</ul>
+
+</li>
+</ol>
+
+
+
+
+<p>
+So, while they're are still some problems,  I have to say I love it.
+The advantages of using Org Mode and the simple NB blogging engine on
+both my local and production server is way cool.
+</p>
+
+
+<p>
+<a href="http://orgmode.org">Org Mode</a> is actually way cool. I've only started using it in the past
+year and will likely spend years learning it as it supports so many
+features. But, like all well-designed pieces of software, you don't
+need to learn it all at once. I'll yabber about Org Mode another day.
+In any case, I'm real happy with my blog and the ease with which I can
+add postings to it.
+</p>
+
+]]></content>
+  </entry>
+  
+</feed>

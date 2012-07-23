@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: litigious-trio | My Geekdom]]></title>
+  <link href="http://www.neilsmithline.com/blog/categories/litigious-trio/atom.xml" rel="self"/>
+  <link href="http://www.neilsmithline.com/"/>
+  <updated>2012-07-22T21:35:35-04:00</updated>
+  <id>http://www.neilsmithline.com/</id>
+  <author>
+    <name><![CDATA[Neil Smithline]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Yahoo! Forgets To Proofread Emails?]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/07/01/yahoo-cancellation-notice/"/>
+    <updated>2012-07-01T21:33:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/07/01/yahoo-cancellation-notice</id>
+    <content type="html"><![CDATA[<p>
+<b>Update: <span class="timestamp-wrapper"> <span class="timestamp">2012-07-04 Wed</span></span></b> Today <a href="http://en.wikipedia.org/wiki/Igoogle">iGoogle</a> had a notice at the top saying tat Google was discontinuing the service in <b>November 2013</b>! The cancellation notice had this <a href="http://bit.ly/O5prY1">Learn more</a> link. Yahoo!'s cancellation notice looks even worse when in the shadow of Google's.
+</p>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Yahoo! Notification</h2>
+<div class="outline-text-2" id="text-1">
+
+<p><a href="http://yhoo.it/Lr5viI">Yahoo! Groups</a> is <a href="http://yhoo.it/Lr5mfc">Yahoo!</a>'s version of public groups or forums. I used to think that it was one of the better group sites so I tended to use it. Over time I thought that it fell behind the pack and I stopped using it. I never deleted any of my groups. They had no confidential data and they were ocassionally handy to have around for historical purposes.
+</p>
+<p>
+On June 29 I received an email from <a href="http://yhoo.it/Lr5mfc">Yahoo!</a> informing me that they are shutting down some of their group features. 
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Is There A Proofreader In The House?</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>I frequently notice errors in emails I get but I know that I frequently send emails with errors in them. Most emails are just not worth the trouble of iterating on until it is perfect. But I typically expect large companies to send professional looking emails. The email Yahoo! sent me was anything but professional.
+</p>
+<p>
+Rather than list the problems, I think looking at my annotations of their email is simpler:
+</p>
+<p>
+<img src="http://www.neilsmithline.com/assets/images/YahooGroupsClosing.png"  alt="http://www.neilsmithline.com/assets/images/YahooGroupsClosing.png" />
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">5 Days &ndash; You Gotta' Be Kidding</h2>
+<div class="outline-text-2" id="text-3">
+
+
+<!-- more -->
+<p>
+Ignoring the formatting mistakes, Yahoo! gave me only five days to backup my data before the service was to be shutdown and all data erased. Five days? If you don't count the weekend and the July 4 US holiday, then they gave me two days to get my data.
+</p>
+<p>
+Furthermore, while they state that I should backup my data, they don't provide any directions or pointers telling me how to do such. 
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Conclusion</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>This was one email regarding one of the ?hundreds? of services Yahoo! offers. As such, I don't want to make broad generalizations about Yahoo! based on this email. That said, for several years I have been concerned with relying too much on Yahoo! services because I feel the company is not doing well. In particular, I have avoided any serious use of <a href="http://bit.ly/Lr7of6">Yahoo! Pipes</a>, a tool that allows you to quickly create implement and deploy data processing services.
+</p>
+<p>
+Being that Yahoo! seems to feel that five days is enough warning to shut down a service, I'll now be extra certain not to use Yahoo! for anything that I care about losing. This just reinforces my decision to only use <i>Yahoo! Pipes</i> for quick prototyping. It is a shame because <i>Yahoo! Pipes</i> are a wonderful tool.b
+</p></div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Blackberry's Manufacturer RIM Nearly RIP]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/03/31/rim-rip/"/>
+    <updated>2012-03-31T20:35:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/03/31/rim-rip</id>
+    <content type="html"><![CDATA[<p>
+<b>RIM No Longer A Viable Company</b>
+</p>
+
+
+<p>
+<a href="http://bit.ly/HAtKtt">RIM</a>, arguably the manufacturer of the first successful smartphone, the <a href="http://bit.ly/HAub73">Blackberry</a>, has not only lost its market lead, but is facing a rather unpredictable future. RIM's new CEO, <a href="http://bit.ly/HAuOO6">Thorsten Heins</a>, <a href="http://www.washingtonpost.com/business/rim-charts-risky-survival-plan-while-opening-door-to-sale/2012/03/31/gIQAJYZRnS_story.html?tid=pm_business_pop">has stated</a> that RIM is open to acquisition. At least for the short-term, his statements have led to a one-day, 5% bounce back of the stock price which was down 70% in the 12 months.
+</p>
+
+
+<p>
+<b>RIM's History</b>
+</p>
+
+
+<p>
+For those of you that are unaware of RIM's history, it got its start in <a href="http://en.wikipedia.org/wiki/Canada">Canada</a> as a <a href="http://bit.ly/H9vfx5">2-way pager</a> provider. In 1999, RIM moved into the smartphone market with its first Blackberry and immediately achieved market dominance. 
+</p>
+
+
+
+
+<!-- more -->
+
+
+
+
+<p>
+Factors that led to their dominance included:
+</p>
+
+
+<ul>
+<li>Intelligent Marketing: One example was a giving away pre-1.0 Blackberries to attendees of the 1999 <a href="http://en.wikipedia.org/wiki/JavaOne">JavaOne</a> conference. I imagine that there wasn't a better set of <a href="http://en.wikipedia.org/wiki/Software_release_life_cycle#Beta">beta testers</a> than the gadget geeks that attended JavaOne (myself include). 
+</li>
+<li>Sales Channels: RIM was selling its 2-way pagers to professionals who had a need to be in constant communication such as doctors, attorneys, business executives, and law enforcement. With the introduction of the Blackberry, RIM just added a better product to offer those same professionals. Sure it was more expensive, but 2-way pagers were already fairly costly. They were the perfect audience to market smartphones to.
+</li>
+<li>First To Market: In 1999, most mobile providers were focused on upgrading their networks from analog to digital. Once the digital networks were in place, new functionality such as internet access would be easy to providing. But upgrading networks takes time. It involves men climbing towers, FCC regulations, local zoning laws, etc. But RIM didn't have to do this.
+</li>
+</ul>
+
+
+
+
+<p>
+<b>RIM's Brilliance</b>
+</p>
+
+
+<p>
+In what I consider a spectacular marketing and technological move, RIM started providing internet service over their existing 2-way pager network. While only a short-term solution as the 2-way pager network was designed for low-bandwidth usage, it was instantaneous. The first Blackberry was basically a 2-way pager with a good sized screen and full QWERTY keyboard. 
+</p>
+
+
+<p>
+<b>What Went Wrong</b>
+</p>
+
+
+<p>
+RIM's mistake was that they didn't learn from prior boom-to-bust technology companies. RIM seems to have perfectly followed the (mis)steps of Digital Electronics. While IBM has survived, it lost its market dominance in a sector, twice. The first time as a manufacture of mainframes in the 1970's and then again as a PC manufacturer in the 1980's. Apollo Computers, SGI, Xerox, all leaders at one time, are either gone or no longer of interest. 
+</p>
+
+
+<p>
+All of these companies suffered from a similar set of mistakes including:
+</p>
+
+
+<ul>
+<li>Overconfidence: Each company thought that they were invulnerable. IBM is perhaps the best example. In the 1970's, when an IT manager had to make a decision about what gigantic computer to buy, they often said "Nobody ever got fired for choosing IBM.". 
+</li>
+<li>Lack of Foresight: Technology and markets change and so too must your company. Clearly RIM, along with its arch-rival Palm, both missed the boat. Phones went from being personal communication devices to be tiny, fit-in-your-pocket, computers. 
+</li>
+<li>Unwillingness to Self-Cannibalize: In order to stay ahead of the technology market, you must be willing to come out with products that are better and cheaper than your existing products. HP and Goodyear are two companies that get this. Within a product line, HP routinely comes out with a better and cheaper printer than the one they currently have on the market. They know that it is going to kill sales of their existing printer. But HP also knows that when their customers need a new printer, it will be an HP printer. I know that Goodyear isn't considered a technology company, but their product, tires, involve high-tech materials and manufacturing processes. The CEO of Goodyear once asked how do you keep a company in business when you know that your next product is going to be cheaper, better, and last longer than your current product? While I think that HP and Goodyear would both prefer to keep selling their old products, they know better. It seems RIM didn't.
+</li>
+</ul>
+
+
+
+
+<p>
+<b>The Final Outcome</b>
+</p>
+
+
+<p>
+In the end, RIM, the makers of the Blackberry that was a status symbol for business executives in the 1990's, has all but been put out of business by Apple, a waning computer company in 1990, and Google, a non-existent company in 1990. 
+</p>
+
+
+<p>
+The trick to surviving in the high-tech marketplace is simple. All you need to do is realize that your market share is never safe, that there is always another company working on something that is better than what you have, and that you must act if you are fighting for your life, all-day, everyday. 
+</p>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Litigious Trio]]></title>
+    <link href="http://www.neilsmithline.com/blog/2011/12/28/the-litigious-trio/"/>
+    <updated>2011-12-28T12:04:20-05:00</updated>
+    <id>http://www.neilsmithline.com/blog/2011/12/28/the-litigious-trio</id>
+    <content type="html"><![CDATA[<p>          
+This posting is best viewed as part of the series of postings about <a href="http://neilsmithline.com/archives/litigious-trio/index.html">The Litigious Trio</a> and, in a larger context, <a href="http://neilsmithline.com/archives/online-freedom/index.html">Online Freedom</a>.
+</p>
+
+
+<p>
+To be clear, <i>The Litigious Trio</i> are, in alphabetical order, <a href="http://apple.com">Apple</a>, <a href="http://google.com">Google</a> and <a href="http://microsoft.com">Microsoft</a>. While they are three wonderful technology companies, over time, each has turned to an increasingly large amount of litigation to enforce their current market status.
+</p>
+
+
+<p>
+While I do not believe that the three companies actively collaborate with each other to hinder the success of smaller companies, I believe that selfish<sup><a class="footref" name="fnr.1" href="#fn.1">1</a></sup> business practices by the trio have had the affect of having created a three company monopoly<sup><a class="footref" name="fnr.2" href="#fn.2">2</a></sup>. While the three companies are locked in a near-endless stream of litigation against each other, this is rather typical amongst large corporate competitors. I can't say that I'm in favor of such litigation but I the three companies can spend their money that way if they want to. They have more than enough of it.
+</p>
+
+
+<p>
+But when <i>The Litigious Trio</i>, behaving in a pseudo-monopolistic manner, use litigation to block competition from smaller companies, they end up stifling innovation. 
+<!-- more -->
+
+Furthermore, <i>The Litigious Trio</i> are not necessarily the most user-friendly companies. They, along with <a href="http://en.wikipedia.org/wiki/Facebook">Facebook</a>, are some of the leaders in gathering information about its users. Consider the following:
+</p>
+
+
+<ul>
+<li>Nearly all of Google's revenue comes from advertising. Their advertising is so valuable, and profitable, because they are able to sell well targeted ads. That is, they know so much about each user that they can sell ad space for that specific user for more than other advertising vendors. The article, <a href="http://www.globalreports.com/?article=12">We Are Google's Products</a>, provides a good summary of this concept. 
+</li>
+<li>Google has a near-monopoly on internet advertising. The US Senate <a href="http://tech.slashdot.org/story/11/12/21/1356246/senators-recommend-ftc-perform-antitrust-investigation-of-google">has recently requested</a> the <a href="http://en.wikipedia.org/wiki/Federal_Trade_Commission">FTC</a> to investigate this.
+</li>
+<li>Microsoft's <a href="https://www.google.com/search?q=microsoft+antitrust&amp;ie=utf-8&amp;oe=utf-8&amp;aq=t&amp;rls=org.mozilla:en-US:unofficial&amp;client=firefox-a">monopolistic practices</a> have been discussed and challenged by courts around the world for years.
+</li>
+<li>Apple is currently under investigation for <a href="http://www.huffingtonpost.com/2011/12/07/us-justice-department-apple-ebooks_n_1134983.html">price fixing on its eBooks</a>, has just been fined for <a href="http://www.pluggedin.co.uk/article/apple-fined-over-misleading-customers-italy">charging customers in Italy</a> for providing federally mandated, free support, and has tried to <a href="http://apple.slashdot.org/story/11/08/09/1832254/sale-of-samsung-galaxy-tab-blocked-in-the-eu">destroy Samsung's mobile market</a> by presenting <a href="http://yro.slashdot.org/story/11/08/15/1758224/flawed-evidence-in-eu-apple-vs-samsung-case">falsified evidence</a> to courts around the world. While this last claim seems hard to believe, an <a href="http://www.pcworld.com/article/238047/apple_offers_flawed_evidence_in_lawsuit_against_samsung.html">easily accessible description and images</a> demonstrate that Apple is either incompetent or dishonest.
+</li>
+</ul>
+
+
+
+
+<p>
+The only question seems to be whether the public is motivated to address this problem and what the public can do to address it. The reason monopolies are illegal is because fighting them is difficult.
+</p>
+
+
+
+
+<div id="outline-container-1" class="outline-3">
+<h3 id="sec-1">Footnotes</h3>
+<div class="outline-text-3" id="text-1">
+
+
+<div id='footnotes'>
+<h4 class='footnotes'>Footnotes: </h4>
+<div id='text-footnotes'>
+<p class="footnote"><sup><a class="footnum" name="fn.1" href="#fnr.1">1</a></sup> I use <i>selfish</i> as defined in the book <a href="http://www.amazon.com/gp/product/0199291152/ref=as_li_ss_tl?ie=UTF8&amp;tag=mygee-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0199291152">The Selfish Gene</a>. If you've not have the pleasure, I strongly recommend the book. You can also see a brief <a href="http://en.wikipedia.org/wiki/The_Selfish_Gene#.22Selfish.22_genes">definition</a> from the <a href="http://en.wikipedia.org/wiki/">Wikipedia</a>.
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn.2" href="#fnr.2">2</a></sup> I'm not an expert in <a href="http://en.wikipedia.org/wiki/History_of_competition_law">competitive law</a> (eg: I just learned that term) and I have used the term <i>monopoly</i> or <i>pseudo-monopoly</i> rather loosely. I believe that what <i>The Litigious Trio</i> are partaking in is more similar to <a href="http://en.wikipedia.org/wiki/Tacit_collusion">tacit collusion</a>, <a href="http://en.wikipedia.org/wiki/Conscious_parallelism">conscious parallelism</a>, and <a href="http://en.wikipedia.org/wiki/Patent_misuse">patent misuse</a>. It is perhaps best described as an <a href="http://en.wikipedia.org/wiki/Oligopoly">oligopoly</a> or a <a href="http://en.wikipedia.org/wiki/Natural_monopoly">natural monopoly</a> that involves three companies rather than one.
+</p></div>
+</div>
+
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

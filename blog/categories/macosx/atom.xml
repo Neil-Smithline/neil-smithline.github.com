@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: macosx | My Geekdom]]></title>
+  <link href="http://www.neilsmithline.com/blog/categories/macosx/atom.xml" rel="self"/>
+  <link href="http://www.neilsmithline.com/"/>
+  <updated>2012-07-22T21:35:35-04:00</updated>
+  <id>http://www.neilsmithline.com/</id>
+  <author>
+    <name><![CDATA[Neil Smithline]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[My First Ruby Project]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/06/01/first-ruby-project/"/>
+    <updated>2012-06-01T19:18:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/06/01/first-ruby-project</id>
+    <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">The Project</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>Typically, even my pet projects have a specific goal in mind. I don't write a spec for my personal projects, there's just a, maybe slightly fuzzy, goal. Generally I want something that will be useful. I'll work on a project until:
+</p><ul>
+<li>The project does everything I hoped for. Maybe even more!
+</li>
+<li>I run out of spare time to work on it. This doesn't happen as often as you may imagine. I really enjoy coding. So, after a tiring day of coding at the office, I come home to relax and work on one of my pet projects. If it was any different, then I have no right to call my blog <a href="http://bit.ly/yGGszW">My Geekdom</a>. 
+</li>
+<li>I decide that I did a poor job picking a pet project as they're supposed to be fun and this projects isn't. So long!
+</li>
+<li>I get stuck such that proceeding will require more effort than I feel it's worth. That said, hopefully I learned something working on the project.
+</li>
+</ul>
+
+
+<p>
+But, unlike my typical pet projects, my goal with my new project is rather amorphous. I want to analyze some data. At time of writing this, I have just shy of 5K records totally 181MB of data. 
+</p>
+<p>
+Leaving the details for a later posting, each record is a snapshot of the state of my <a href="http://bit.ly/Kfv0n2">Mac OS X</a> computer. I've been collecting, and am continuing to collect, samples every five minutes since the beginning of March. At least every five minutes that my computer isn't <a href="http://bit.ly/LUSEY8">sleeping</a> or hanging.
+</p>
+<p>
+I decided to collect the samples because I was getting downright frustrated with the performance of <a href="http://bit.ly/LUT7tx">Mozilla</a>'s <a href="http://bit.ly/HzqbTy">Firefox</a> browser. For reasons that are off-topic for this posting, I feel a strong interest in making sure that Firefox continues to be successful. 
+</p>
+<p>
+For years I thought Firefox was the bomb. Starting about 9-12 months ago I started to notice that Firefox was routinely using all the resources on my computer. This concerned me because <a href="http://bit.ly/LUUGHN">Google</a>'s <a href="http://bit.ly/LUUHLP">Chrome</a> browser was starting to have enough functionality to be a primary browser.
+</p>
+<p>
+Being that I wanted Firefox to stay competitive, I decided to try to stay with it. As Mozilla changed their release model, I started to use <a href="http://bit.ly/LUV1u1">Aurora</a> and <a href="http://bit.ly/LUV4Ga">Firefox Beta</a> and provide lots of feedback. The newer versions also seemed to consume a more reasonable amount of my computer's resources. Being that the Firefox team was working hard at fixing performance problems, especially memory leaks, I stayed with Firefox. (See <a href="#sec-5">Reference: Articles About Firefox's Memory Leaks And Repair Efforts</a> for information about FF's memory leaks.)
+<!-- more -->
+
+Around the beginning of this calendar year I started to think that Firefox wasn't getting faster and may have been getting slower. That said, I can be a pretty heavy user of my computer. Running FF with a couple of dozen add-ons is typical. Also, my experience with performance tuning has taught me that I don't know enough to make accurate guesses. Guessing can be used to lead your performance tuning investigations, but you always need hard data.
+</p>
+<p>
+After a bit of thought, I decided to collect some data and see if I can convince myself that Firefox is or is not the problem. There are, of course, simpler solutions to tracking a performance problem than sampling your entire process every five minutes for months. But this is a pet project. It wouldn't be any fun if I just switched from Firefox to Chrome to see if I notice a difference.
+</p>
+<p>
+Now that I have accumulated a few months of the data, I need to try to analyze the data and see what, if any, conclusions I can make from it. I have some ideas about where to start my data analysis and will just need to follow the path they outline. In short, I'm prepared to <a href="http://en.wikipedia.org/wiki/MacGyverism#MacGyverisms">MacGyver</a> the analysis as I go along.
+</p>
+<p>
+My new pet project is the exploration of these data samples.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">The Programming Language</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Forensic performance analysis is never simple. For this project I anticipate that the difficulties will be in determining what types of data analyses are required. I'm hoping the actual coding will be relatively simple as there is no need for network interaction, provide real time responses, or even have a <a href="http://bit.ly/n1i2v2">GUI</a>. As long as I don't need to do very complex statistical analyses, the choice programming language won't likely matter to much.
+</p>
+<p>
+So I have chosen to implement this project in <a href="http://bit.ly/LUK5N0">Ruby</a>. I'm certain I could implement it faster in any of a few dozen other programming languages but I chose Ruby for two reasons:
+</p><ol>
+<li>This is a personal project. One of my main goals is to have fun. Being that I don't know Ruby, learning it will be more fun. Especially being that I haven't learned a new language in a year or so.
+</li>
+<li>Ruby is a new-ish language, growing in popularity, likely to be around for awhile, so it seems like something I should learn or at least be familiar with.
+</li>
+</ol>
+
+
+<p>
+Ruby isn't wholly unfamiliar to me. I've made a few small (very small) changes to the <a href="http://bit.ly/JBwXrU">org-ruby</a> <a href="http://bit.ly/M5PRvb">gem</a>. Based on that experience, I think that the syntax of Ruby is kind of strange but the functionality it provides seems comparable to other languages such as C and Java. I just have to learn the new syntax. Unlike C and Java, Ruby has <a href="http://bit.ly/M5T4ei">dynamic typing</a>. But languages that I'm fluent in, such as Lisp, Python, Bash, and AWK have dynamic typing. Doesn't seem a problem.
+</p>
+<p>
+But the structure of a Ruby application, at least the structure of the org-ruby gem, feels different to me than the structure of programs I've seen in other languages. Sure Ruby has classes and modules and functions and inheritance as many other languages do. But the design of the org-ruby gem feels a bit unusual to me. 
+</p>
+<p>
+I think that part of the atypicality of the design of the org-ruby gem is that it is a parser that is written in a manner that is not familiar to me. I have a strong background in designing and implementing programming languages, their associated runtimes, IDE's, and such. In my world, there are only a few ways to implement a <a href="http://bit.ly/JBxKsI">parser</a> and org-ruby doesn't use any of them. 
+</p>
+<p>
+That said, I don't think the feeling of unfamiliarity stems from org-ruby's parser not being a <a href="http://bit.ly/JBxTfU">recursive descent parser</a> or implemented with a <a href="http://bit.ly/JBxXMI">parser generator</a> from a <a href="http://bit.ly/JBxYAi">formal grammar</a>. I've seem plenty of really terrible parser implementations that left queasy but didn't feel unfamiliar.
+</p>
+<p>
+Not only do I not think that org-ruby gem is terrible, I think it has a certain elegance to its design. 
+</p>
+<p>
+Having eliminated other possibilities, I'm left to think that the feeling of unfamiliarity must stem from Ruby itself.
+</p>
+<p>
+For example, C and Pascal have a similar feel when you use them. So too do <a href="http://bit.ly/JByk9Q">object oriented</a> languages such as Java and C++. While not OO, C and Pascal are somewhat similar to Java and C++. But a Scheme application doesn't feel anything like a C application (at least not if you understand how to program in Scheme). While I don't have a word for it, I think that Ruby leads to a different way of writing applications than languages that I'm familiar with.. 
+</p>
+<p>
+While I'm not sure what that difference is, I hope to figure it out as I move through this project. In the end, I don't want to have a great "Java program" that happens to have been written using Ruby syntax. I want to have a great Ruby program &ndash; period.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">The Project's Current Progress</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>"Not much" seems to sum up my current project. While I've been collecting data for months and easing myself into Ruby by working on the org-ruby gem, I just started coding for this project a few hours ago. All I've done so far is write a tiny class to hold a line of data output by the <a href="http://bit.ly/M5V9H3">ps(1)</a> program:
+</p>
+
+
+<pre class="src src-ruby-mode"><span class="linenr"> 1:  </span>class PSDataLine
+<span class="linenr"> 2:  </span>  attr_accessor :pid
+<span class="linenr"> 3:  </span>  attr_accessor :stat
+<span class="linenr"> 4:  </span>  attr_accessor :time
+<span class="linenr"> 5:  </span>  attr_accessor :elapsed_time
+<span class="linenr"> 6:  </span>  attr_accessor :virtual_size
+<span class="linenr"> 7:  </span>  attr_accessor :rss
+<span class="linenr"> 8:  </span>  attr_accessor :percent_cpu
+<span class="linenr"> 9:  </span>  attr_accessor :percent_mem
+<span class="linenr">10:  </span>  attr_accessor :command
+<span class="linenr">11:  </span>
+<span class="linenr">12:  </span>  # Create the object
+<span class="linenr">13:  </span>  def initialize(line_string)
+<span class="linenr">14:  </span>    line = line_string.split(' ')
+<span class="linenr">15:  </span>    @pid = line[0]
+<span class="linenr">16:  </span>    @stat = line[1]
+<span class="linenr">17:  </span>    @time = line[2]
+<span class="linenr">18:  </span>    @elapsed_time = line[3]
+<span class="linenr">19:  </span>    @virtual_size = line[4]
+<span class="linenr">20:  </span>    @rss = line[5]
+<span class="linenr">21:  </span>    @percent_cpu = line[6]
+<span class="linenr">22:  </span>    @percent_mem = line[7]
+<span class="linenr">23:  </span>    @command = line[8]
+<span class="linenr">24:  </span>  end
+<span class="linenr">25:  </span>end
+</pre>
+
+
+<p>
+I know it isn't much but I still learned writing it. For example, when I was tinkering with the org-ruby gem, I just copied and pasted code, looked up some details in the Ruby library, etc&hellip; Being that I was modifying existing code, I never learned even the basic syntax. 
+</p>
+<p>
+For example, in order to write my <code>PSDataLine</code> class, I needed to learn how Ruby uses syntax to determine if an identifier is a local variable, an instance variable, a global variable, or a constant. (My thanks to the <a href="http://bit.ly/JBzTER">Rubyist</a> for the good reference.)
+</p>
+<p>
+I'm pretty busy this week so I don't think I'll make much progress on it. I was only able to get this work done by staying up till midnight on a Friday night and squeezing in time for a proofreading today.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Process Data</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>While I've only begun writing my program and haven't reached any conclusions about anything yet, I do have lots of data. If you have an interest in seeing what my computer's been up to you can view the process data, read about my sampling mechanism, and copy the data from my <a href="http://bit.ly/M1nUBf">process-data</a> Github repository.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Reference: Articles About Firefox's Memory Leaks And Repair Efforts</h2>
+<div class="outline-text-2" id="text-5">
+
+
+<ul>
+<li>A <a href="http://bit.ly/LsNgcq">blog posting</a> posting by Mozillian Nicholas Nethercote. A <a href="http://bit.ly/LsNhNi">second posting</a> of Nicholas about weeks 49 &amp; 50 of the Mozilla effort to reduce the memory footprint.
+</li>
+<li>A different engineer's <a href="http://bit.ly/LsNgZS">blog posting</a> discussing the hunt for memory leaks in Firefox.
+</li>
+<li>Another posting from Nicholas regarding the great [[http://bit.ly/LsNjF0][performance improvements in Firefox V7. - A September 26, 2011 <a href="http://bit.ly/LsNkJ8">article</a> in <a href="http://bit.ly/LsPLeE">CRN</a> discussing the lack of progress Mozilla has been making. Even if you ignore any opinions in the article, it has a lot of facts and links.
+</li>
+<li>A <a href="http://bit.ly/LsNkZB">Firefox Forum posting</a> expressing user frustration.
+</li>
+</ul>
+
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

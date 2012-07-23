@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: tech | My Geekdom]]></title>
+  <link href="http://www.neilsmithline.com/blog/categories/tech/atom.xml" rel="self"/>
+  <link href="http://www.neilsmithline.com/"/>
+  <updated>2012-07-22T21:35:35-04:00</updated>
+  <id>http://www.neilsmithline.com/</id>
+  <author>
+    <name><![CDATA[Neil Smithline]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Desktop Time Tracking]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/07/21/desktop-time-tracking/"/>
+    <updated>2012-07-21T20:17:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/07/21/desktop-time-tracking</id>
+    <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Motivation</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>Recently I've been trying to improve my time management skills. This is further discussed in this <a href="https://github.com/Neil-Smithline/time-tracking-experiments">Github README</a> file. I have also been keeping a <a href="http://www.neilsmithline.com/time-tracking-experiments/journal.html">journal</a> my activities and thoughts as I work on this project. You may also wish to read up on the <a href="http://en.wikipedia.org/wiki/Quantified_Self">Quantified Self</a>.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Basic Activity Tracking</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>While I I had not initially planned to focus on Mac OS X time tracking, it turned out to be easy. For a couple of weeks I've been playing around with two Mac OS X applications that track your computer activities: <a href="http://timingapp.com/">Timing</a> (actually <i>Timing Lite</i>) and <a href="http://manytricks.com/timesink/">Time Sink</a>.
+</p>
+<p>
+Time Sink integrates with Mac OS X to track the <i>active</i> or <i>foreground</i> application and provides a variety of reports to display that information. In addition to tracking the current app, Time Sink tries to track what you were doing in that app. It achieves this by using a relatively low-tech process of collecting the active window's name.
+</p>
+<p>
+While a window name does not seem like a lot of information, it turns out to be surprisingly useful. From the window name Time Sink distinguishes, for example, the amount of time you spent browsing Facebook from the amount of time you spent browsing Github.
+</p>
+<p>
+Time Sink can harvest this data from any app that includes information about the current activity. This includes editors that put the file being edited in the window name, media plays that put the title of what is currently being played, etc&hellip;
+</p>
+<p>
+Your activities get displayed in a nice graphical format:
+<img src="http://www.neilsmithline.com/assets/screen-snapshots/Time-Sink-Activities.png"  alt="http://www.neilsmithline.com/assets/screen-snapshots/Time-Sink-Activities.png" />
+</p>
+<p>
+Due to browser page size I've excluded information such as how long I did these activities were as well as when I was doing them.
+</p>
+<p>
+In addition to the activity tracking performed by Time Sink, Timing has some <a href="http://timingapp.com/faq.php#compatibility">application-specific</a> functionality that allows it to better track what you are doing inside an app.
+</p>
+
+
+<!-- more -->
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">From Activity Tracking To Category Tracking</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>The real power of these apps is that they allow you to categorize your activities. For example, you can specify that time spent browsing Facebook is socializing while time spent on Github is developing and exploring open-source.
+</p>
+<p>
+My open source development category includes:
+</p><ul>
+<li>Time spent browsing Github.
+</li>
+<li>Time spent editing files in <code>$HOME/coding</code>, the root of all of my open-source Github projects.
+</li>
+<li>Time spent in a shell while the current directory is in <code>$HOME/coding</code> directory or one of its subdirectories.
+</li>
+<li>Other stuff not worth describing here.
+</li>
+</ul>
+
+
+<p>
+Due to its fine-granularity and inability to associate activities across apps, the activity tracking data is not that useful. But, once it is categorized, called <i>Pooling</i> by Time Sink, it starts to provide much more useful information. Consider this screen snapshot:
+<img src="http://www.neilsmithline.com/assets/screen-snapshots/Time-Sink-Activities.png"  alt="http://www.neilsmithline.com/assets/screen-snapshots/Time-Sink-Activities.png" />
+</p>
+<p>
+In it you can see that I was spending time on time management. This included time spent in three different apps.
+</p>
+<p>
+Both Time Sink and Timing have a convenient, drag-and-drop mechanism for adding activities to categories.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Choosing Between Timing And Time Sink</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>Today, the end of my 2-week trial period, I decided to purchase Time Sink because of its ability to automatically export data into a CSV file. Besides the automatic scheduling, Time Sink allows you to specify what data is exported as well as whether you want the export to include all data that Time Sink has stored or only data since the last automated export. Being that I want to use <a href="http://orgmode.org">Org Mode</a> as my data repository, this data exporting feature sealed the deal for me.
+</p>
+<p>
+That said, I feel that Timing and Time Sink are on par with each other. Each app costs &lt; $10US so cost is not a factor. Each app has its own pros and cons. Time Sink just fit my specific needs.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Analyzing The Data</h2>
+<div class="outline-text-2" id="text-5">
+
+<p>To state the obvious, collecting time usage data is only useful if you can analyze it such that it improves your time management skills. This is where Org Mode comes into play. With a bit of tweaking, the CSV importer from <a href="https://github.com/novoid/Memacs">Memacs</a> will be able to import this data into Org Mode.
+</p>
+<p>
+Org Mode provides a rich set of features regarding scheduling and time management:
+</p><ul>
+<li>Standard task/to-do list management features.
+</li>
+<li>Comparing actual time spent v. estimated time.
+</li>
+<li>Identifying if you are falling behind on a long-term task.
+</li>
+<li>Summarizing your time usage.
+</li>
+<li>Sophisticated tracking of repeating tasks.
+</li>
+<li>An integrated archive management framework that allows you to focus on the most pertinent information while maintaining all historical data.
+</li>
+<li>Tons more.
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6">Early Payoffs</h2>
+<div class="outline-text-2" id="text-6">
+
+<p>Being as I'm planning on using Org Mode to perform data analysis and I am not yet able to import Time Sink data into Org Mode, one would think that there would be no immediate benefit of having this system working. I thought that would be the case. But I was wrong.
+</p>
+<p>
+For some time I've used a timer that pops up every 15 minutes just to remind me that time is passing. I call it my <i>Focus Alert</i> timer as it reminds me to make sure I'm doing what I should be doing. When I'm notified I can stand up and stretch, check the clock to make sure I'm not late for something, make sure I'm working on my highest priority task, etc&hellip;
+</p>
+<p>
+Today I modified my Focus Alert (a small shell script) so that it helps me track my time with Time Sink. Before today's modification, my Focus Alert simply popped up a notification box that I had to click to close. As you may imagine, clicking quickly became second-nature.
+</p>
+<p>
+Starting today, my Focus Alert interrupts my work and displays the Time Sink application. While I can immediately switch back to whatever I was doing before the notification, it is rather difficult not to notice Time Sink's data. For example, about two sentences ago my Focus alert went off. As you can see in this screenshot of the relevant part of the Time Sink window:
+<img src="http://www.neilsmithline.com/assets/screen-snapshots/Time-Sink-Blog-Posting.png"  alt="http://www.neilsmithline.com/assets/screen-snapshots/Time-Sink-Blog-Posting.png" />
+</p>
+<p>
+I've spent about an hour on this blog posting. As Time Sink is kind enough to distinguish wall-clock time from actual activity time, that hour is a very reliable statement about my activity.
+</p>
+<p>
+Being that I don't think this blog posting is worth more than an hour of my, I would have allocated 30-45 minutes top, I'm ending the posting here.<sup><a class="footref" name="fnr.1" href="#fn.1">1</a></sup>
+</p>
+<p>
+I hope to follow-up this posting with more blog postings as well as <a href="http://www.neilsmithline.com/time-tracking-experiments/journal.html">journal</a> entries as I try to understand what I'm doing and then make myself more efficient.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7">UPDATE <span class="timestamp-wrapper"> <span class="timestamp">2012-07-22 Sun 15:50</span></span></h2>
+<div class="outline-text-2" id="text-7">
+
+<p>Sacha Chua (<a href="http://sachachua.com/blog/">blog</a>, <a href="https://twitter.com/sachac">twitter</a>) responded to one of my <a href="https://twitter.com/neil_smithline/status/225408627643650048">tweets</a> about integrating Org Mode and Quantified Self. She pointed me towards this <a href="http://sachachua.com/blog/2012/05/quantified-awesome-blogging-wpm-and-the-speed-of-reflection/">blog posting</a>. In it she discusses how she uses Org Mode to track her blog writing time. Not only does she use Org Mode to track her activities, she uses it to track her <a href="http://en.wikipedia.org/wiki/Wpm">WPM</a> while writing blog posts. She averages 16 WPM while blogging.
+</p>
+
+<div id='footnotes'>
+<h4 class='footnotes'>Footnotes: </h4>
+<div id='text-footnotes'>
+<p class="footnote"><sup><a class="footnum" name="fn.1" href="#fnr.1">1</a></sup> After reading Sacha's post, I decided to calculate my WPM for this blog post. It turns out that I typed 15 WPM (actually 14.79729729&hellip;). I'll have to readjust my estimates for blogging as I don't think I can hope to outperform the industrious Sacha Chua. Especially being that she types 110 WPM at full speed!
+</p>
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Bookifying News]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/07/15/bookifying-news/"/>
+    <updated>2012-07-15T10:09:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/07/15/bookifying-news</id>
+    <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Bookifying News</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>I frequently find it convenient to take a <i>website on the road</i>. That is, I want a website or part of a website in a convenient, portable, easily accessible format on my <a href="http://en.wikipedia.org/wiki/Asus_Eee_Pad_Transformer">Asus Transformer</a> tablet. The Transformer has <a href="http://en.wikipedia.org/wiki/802.11n">WiFi</a> but no <a href="http://en.wikipedia.org/wiki/GSM_services#Data_transmission">mobile data</a>. Without a portable means of accessing a website, the lack of data plan would dramatically limit the usability of my tablet.
+</p>
+<p>
+I have taken to <i>bookifying</i> websites that I have an interest in staying up to date with (eg: <a href="http://xkcd.com">XKCD</a>). For most sites, I only care about the newest postings. I convert the newest posting into an <a href="http://en.wikipedia.org/wiki/EPUB">epub</a> book, load it onto my tablet, and then read it using one an <a href="http://en.wikipedia.org/wiki/Ebook_reader">ebook reader</a>.
+</p>
+<p>
+Besides bookifying the newest articles on <a href="http://lifehacker.com">LifeHacker</a>, I have also bookified entire websites.
+</p>
+<p>
+The cool part is, this process requires a one-time configuration and then works automatically. That is, the entire web sites sit on my tablet and old website articles are automatically replaced by the new ones. 
+<!-- more -->
+
+</p></div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">The Process</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>The bookification process utilizes the following tools:
+</p><ul>
+<li>The <a href="http://www.wikipedia.com/Foss">FOSS</a> epub creation and library management tool <a href="http://en.wikipedia.org/wiki/Calibre_(software)">Calibre</a>.
+</li>
+<li>The <a href="http://www.jrtstudio.com/CheetahSync">Cheetah Sync</a> <a href="http://en.wikipedia.org/wiki/File_synchronization">file-synchronization</a> application for <a href="http://en.wikipedia.org/wiki/Android_(operating_system)">Android</a>.
+</li>
+<li>The <a href="https://play.google.com/store/apps/details?id=com.flyersoft.moonreaderp&amp;feature=related_apps#?t=W251bGwsMSwxLDEwOSwiY29tLmZseWVyc29mdC5tb29ucmVhZGVycCJd">Moon+</a> Android book reader.
+</li>
+</ul>
+
+
+<p>
+Calibre comes packed with features for downloading new postings on a website, converting them to an epub book, and then managing the library it creates. It has nice extras such as updating sites on a customizable schedule and allowing you to specify how many ebooks of a site you wish to keep (eg: just today's publication or an entire week's worth).
+</p>
+<p>
+Cheetah Sync provides WiFi folder synchronization between your desktop (Mac OS X or Windows) and your Android tablet. This synchronization can happen on a schedule or manually to reduce battery usage.
+</p>
+<p>
+Moon+ is one of a large number of Android book readers. It seems to facilitate being used on a rotating library such as Calibre's by monitoring a directory on the file system and responding appropriately to changes.
+</p>
+<p>
+The end product of this is the LifeHacker website on my Transformer:
+</p>
+<div style="text-align: center">
+<p><img src="http://farm9.staticflickr.com/8284/7576840720_3b50e3b359_z.jpg"  alt="http://farm9.staticflickr.com/8284/7576840720_3b50e3b359_z.jpg" />
+</p>
+</div>
+
+<p>
+As a bonus, Calibre comes with a built-in epub book reader that you can run on your desktop:
+</p>
+
+<div style="text-align: center">
+<p><img src="http://farm9.staticflickr.com/8015/7576921304_54fbbc35b6.jpg"  alt="http://farm9.staticflickr.com/8015/7576921304_54fbbc35b6.jpg" />
+</p>
+</div>
+
+<p>
+The output is less-cluttered that the site; seeming like a <a href="http://readability.com">Readibility</a> or <a href="http://instapaper.com">InstaPaper</a>
+version of the all new content on the site.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Books And Websites</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>Besides using Calibre to create epub books, it also does a good job of managing existing ones. For example, <a href="http://www.sapphiresteel.com">SapphireSteel Software</a> (whose name is an esoteric reference to a late 1970's British <a href="http://en.wikipedia.org/wiki/Sapphire_&amp;_Steel">TV show</a>) have published an epub book called <a href="http://www.sapphiresteel.com/The-Little-Book-Of-Ruby">The Little Book Of Ruby</a>. I'm learning Ruby and sometimes it is nice to be able to look up something when I'm not near a WiFi connection and don't want to use my mobile WiFi hotspot as that tends to get costly quickly.
+</p>
+<p>
+Calibre also provides a means for bookifying entire websites or a specified portion of them. This works by creating a temporary copy of the website on your computer and then converting it to epub format with Calibre.
+</p>
+<p>
+Calibre provides its own <a href="http://manual.calibre-ebook.com/cli/web2disk.html">web2disk</a> utility that can download a website to your local disk. Sites such as <a href="http://www.teleread.com/drm/the-abcs-of-format-conversion-for-the-kindle-sony-and-nook-plus-some-calibre-tips/">this one</a> cover the details of this conversion. 
+</p>
+<p>
+I happen to be familiar with the more fleible but more complex Linux program <a href="http://curl.haxx.se/docs/manpage.html">curl(1)</a> and tend to use that to download an entire website. This <a href="https://www.google.com/webhp?ie=UTF-8&amp;ion=1#hl=en&amp;newwindow=1&amp;q=download+website+using+curl&amp;qscrl=1&amp;oq=download+website+using+curl&amp;fp=1">Google search</a> has numerous references on using curl to download a website.
+</p>
+<p>
+While Moon+ is my preference for ebook news due to its responsiveness in dealing with an externally managed library, I prefer uploading my books to <a href="http://amazon.com">Amazon</a>'s Kindle library. For me, the Kindle's synchronization of bookmarks, notes, and current reading location are of much greater importance when I'm reading a book than when I'm reading a website. I use the <a href="http://www.amazon.com/gp/feature.html/ref=kcp_and_ln_ar?docId=165849822">Kindle for Android</a> app on my tablet and smartphone and the <a href="http://www.amazon.com/gp/feature.html/ref=sv_kstore_1?ie=UTF8&amp;docId=1000493771">Kindle for desktop or browser</a> from my computer.
+</p>
+<p>
+While Kindle doesn't directly support the epub format, there are <a href="http://techsupport.foreverwarm.com/how-to-read-epub-books-on-your-kindle">simple directions</a> for converting epub ebooks to Kindle format using Calibre. This is a page from the <a href="http://www.orgmode.org">Org Mode</a> website ebook on my Transformer Kindle:
+</p>
+
+<div style="text-align: center">
+<p><img src="http://farm9.staticflickr.com/8167/7577094056_656f76bc81.jpg"  alt="http://farm9.staticflickr.com/8167/7577094056_656f76bc81.jpg" />
+</p>
+</div>
+
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SparkleShare Doesn't Sparkle]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/05/09/sparkleshare-bomb/"/>
+    <updated>2012-05-09T23:12:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/05/09/sparkleshare-bomb</id>
+    <content type="html"><![CDATA[<p>
+Based on a LifeHacker posting, I previously blogged about giving SparkleShare a try.. It was cool. A free Dropbox with private hosting. So I installed, configured, and started using SparkleShare. While I was quite excited when I embarked upon my journey using SparkleShare, things didn't work out as well as I had hoped.
+</p>
+
+
+<p>
+I quickly found out that SparkleShare doesn't handle symbolic links. Not at all. There's no workaround. The problem is that SparkleShare relies on Git for synchronization and Git doesn't support symbolic links. At least for me, this rendered SparkleShare useless. 
+</p>
+
+
+<p>
+When I moved to Dropbox directory, what I had been using for synchronization before SparkleShare, had no files in it, just a bunch of symbolic links. But with SparkleShare, you have to move all your directories into your SparkleShare directory and then scatter symbolic links around your system where the you want the directories to be. This caused a variety of minor but really annoying problems.
+</p>
+
+
+<p>
+But SparkleShare totally fails if you want to synchronize a directory that has symbolic links in it. SparkleShare's forum was covered with complaints about the symbolic link problem.
+</p>
+
+
+<p>
+I am currently using the following scheme for file distribution/backups:
+</p>
+
+
+<ul>
+<li>I'm using rsync to keep my media, bin directory, dot-files, and the like in sync on all my computers.
+</li>
+<li>For actual backups, I've been using Crashplan for years and couldn't be happier.
+</li>
+<li>And, in the past week or two, I've put Dropbox synchronization back into the mix to manage synchronization between Org Mode files on my computers and MobileOrg files on my Android. Despite the strong cult following that Dropbox has, synching with my mobile seems to be the only effective use I can find for it. 
+</li>
+</ul>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Blackberry's Manufacturer RIM Nearly RIP]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/03/31/rim-rip/"/>
+    <updated>2012-03-31T20:35:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/03/31/rim-rip</id>
+    <content type="html"><![CDATA[<p>
+<b>RIM No Longer A Viable Company</b>
+</p>
+
+
+<p>
+<a href="http://bit.ly/HAtKtt">RIM</a>, arguably the manufacturer of the first successful smartphone, the <a href="http://bit.ly/HAub73">Blackberry</a>, has not only lost its market lead, but is facing a rather unpredictable future. RIM's new CEO, <a href="http://bit.ly/HAuOO6">Thorsten Heins</a>, <a href="http://www.washingtonpost.com/business/rim-charts-risky-survival-plan-while-opening-door-to-sale/2012/03/31/gIQAJYZRnS_story.html?tid=pm_business_pop">has stated</a> that RIM is open to acquisition. At least for the short-term, his statements have led to a one-day, 5% bounce back of the stock price which was down 70% in the 12 months.
+</p>
+
+
+<p>
+<b>RIM's History</b>
+</p>
+
+
+<p>
+For those of you that are unaware of RIM's history, it got its start in <a href="http://en.wikipedia.org/wiki/Canada">Canada</a> as a <a href="http://bit.ly/H9vfx5">2-way pager</a> provider. In 1999, RIM moved into the smartphone market with its first Blackberry and immediately achieved market dominance. 
+</p>
+
+
+
+
+<!-- more -->
+
+
+
+
+<p>
+Factors that led to their dominance included:
+</p>
+
+
+<ul>
+<li>Intelligent Marketing: One example was a giving away pre-1.0 Blackberries to attendees of the 1999 <a href="http://en.wikipedia.org/wiki/JavaOne">JavaOne</a> conference. I imagine that there wasn't a better set of <a href="http://en.wikipedia.org/wiki/Software_release_life_cycle#Beta">beta testers</a> than the gadget geeks that attended JavaOne (myself include). 
+</li>
+<li>Sales Channels: RIM was selling its 2-way pagers to professionals who had a need to be in constant communication such as doctors, attorneys, business executives, and law enforcement. With the introduction of the Blackberry, RIM just added a better product to offer those same professionals. Sure it was more expensive, but 2-way pagers were already fairly costly. They were the perfect audience to market smartphones to.
+</li>
+<li>First To Market: In 1999, most mobile providers were focused on upgrading their networks from analog to digital. Once the digital networks were in place, new functionality such as internet access would be easy to providing. But upgrading networks takes time. It involves men climbing towers, FCC regulations, local zoning laws, etc. But RIM didn't have to do this.
+</li>
+</ul>
+
+
+
+
+<p>
+<b>RIM's Brilliance</b>
+</p>
+
+
+<p>
+In what I consider a spectacular marketing and technological move, RIM started providing internet service over their existing 2-way pager network. While only a short-term solution as the 2-way pager network was designed for low-bandwidth usage, it was instantaneous. The first Blackberry was basically a 2-way pager with a good sized screen and full QWERTY keyboard. 
+</p>
+
+
+<p>
+<b>What Went Wrong</b>
+</p>
+
+
+<p>
+RIM's mistake was that they didn't learn from prior boom-to-bust technology companies. RIM seems to have perfectly followed the (mis)steps of Digital Electronics. While IBM has survived, it lost its market dominance in a sector, twice. The first time as a manufacture of mainframes in the 1970's and then again as a PC manufacturer in the 1980's. Apollo Computers, SGI, Xerox, all leaders at one time, are either gone or no longer of interest. 
+</p>
+
+
+<p>
+All of these companies suffered from a similar set of mistakes including:
+</p>
+
+
+<ul>
+<li>Overconfidence: Each company thought that they were invulnerable. IBM is perhaps the best example. In the 1970's, when an IT manager had to make a decision about what gigantic computer to buy, they often said "Nobody ever got fired for choosing IBM.". 
+</li>
+<li>Lack of Foresight: Technology and markets change and so too must your company. Clearly RIM, along with its arch-rival Palm, both missed the boat. Phones went from being personal communication devices to be tiny, fit-in-your-pocket, computers. 
+</li>
+<li>Unwillingness to Self-Cannibalize: In order to stay ahead of the technology market, you must be willing to come out with products that are better and cheaper than your existing products. HP and Goodyear are two companies that get this. Within a product line, HP routinely comes out with a better and cheaper printer than the one they currently have on the market. They know that it is going to kill sales of their existing printer. But HP also knows that when their customers need a new printer, it will be an HP printer. I know that Goodyear isn't considered a technology company, but their product, tires, involve high-tech materials and manufacturing processes. The CEO of Goodyear once asked how do you keep a company in business when you know that your next product is going to be cheaper, better, and last longer than your current product? While I think that HP and Goodyear would both prefer to keep selling their old products, they know better. It seems RIM didn't.
+</li>
+</ul>
+
+
+
+
+<p>
+<b>The Final Outcome</b>
+</p>
+
+
+<p>
+In the end, RIM, the makers of the Blackberry that was a status symbol for business executives in the 1990's, has all but been put out of business by Apple, a waning computer company in 1990, and Google, a non-existent company in 1990. 
+</p>
+
+
+<p>
+The trick to surviving in the high-tech marketplace is simple. All you need to do is realize that your market share is never safe, that there is always another company working on something that is better than what you have, and that you must act if you are fighting for your life, all-day, everyday. 
+</p>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cloud Computing: How Expensive Is A Rainy Day?]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/02/29/azure-sunny-day/"/>
+    <updated>2012-02-29T11:42:35-05:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/02/29/azure-sunny-day</id>
+    <content type="html"><![CDATA[<p>
+According to <a href="http://bit.ly/zc1OOr">The Register</a> (via <a href="http://bit.ly/wzufGC">Slashdot</a>), Microsoft's cloud computing platform, Azure, has been down, and I mean <a href="http://dictionary.reference.com/browse/kaput">kaput</a>, for 8+ hours. Worse yet, Azure's status page that tells its customers about outages and expected repair times, to which I won't provide a link, has now been <a href="http://en.wikipedia.org/wiki/Slashdotted">Slashdotted</a> and is down.
+</p>
+
+
+<p>
+Less than a year ago, <a href="http://bit.ly/Ay7loE">AWS</a> suffered a significant, though less serious, <a href="http://bit.ly/yNzqJy">outage</a>.
+</p>
+
+
+<p>
+While highly-distributed, cloud-based computing is clearly the future of IT, how can an organization understand the costs and prepare for the unavoidable outages? With the relative newness of 3^rd party cloud services, what statistics are useful.
+<!-- more -->
+
+For example, let's consider a fictitious service cloud service Neil's Cloud Computing or NCC. NCC is a more established cloud computing service. Its detailed records shows that it has been open for 1,701 days (approximately 4.7 years). In that time it has steadily grown to here it now runs tens of millions of instances of virtual computers, services tens of billions requests each day, and has never had a serious outage. 
+</p>
+
+
+<p>
+To be generous, let's define a <i>serious outage</i> as any outage that renders key parts of the site unusable to a significant portion of the site's users and lasts a minimum of five minutes. We'll consider any outage less than that a <i>tolerable outage</i>. 
+</p>
+
+
+<p>
+Even with all of this information, how can you calculate the cost of moving your enterprise to a cloud computing platform in general or NCC's in specific (let's assume that NCC is the best service you can find - after all, it is named after me). Even if your is willing to ignore all costs associated with the generously named <i>tolerable outages</i>, how can you know NCC's 1,701 days of uptime mean that it will have another 4.7 years of uptime? How can you know it will be up tomorrow?
+</p>
+
+
+<p>
+The answer is simple: You can't! Just as it says on the bottom of financial documents, past performance is no guarantee of future results.
+</p>
+
+
+<p>
+But, when it comes to managing an enterprise, "can't" means things like "can't go faster than the speed of light". Everything else is just "How much?". How much does our current IT solution cost? How much would a cloud computing solution cost? How much do our current outages cost us? What are the odds of having a <i>serious outage</i> if we moved to the cloud and how much would that cost us? Etc&hellip;
+</p>
+
+]]></content>
+  </entry>
+  
+</feed>

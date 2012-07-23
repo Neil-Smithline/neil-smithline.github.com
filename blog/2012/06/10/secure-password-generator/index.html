@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>SPG: The Secure Password Generator - My Geekdom</title>
+  <meta name="author" content="Neil Smithline">
+
+  
+  <meta name="description" content="As Users, We Must Expect Our Passwords To Be Compromised It is an unfortunate fact that, if you create accounts on websites, some of your passwords &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.neilsmithline.com/blog/2012/06/10/secure-password-generator/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="http://feeds.feedburner.com/MyGeekdom" rel="alternate" title="My Geekdom" type="application/atom+xml">
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25833963-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+
+  <h1><a href="/">My Geekdom</a></h1>
+
+  <div  style="float: right; position: relative; top: 75px;" id="header-image-container">
+    <a href="" accesskey="1">
+      <img title="Neil Smithline" src="/assets/images/NS-Keycaps.png"></img>
+    </a>
+  </div>
+
+  
+    <h2>Ramblings about my nerdy pursuits.</h2>
+  
+
+  
+    <a href="https://github.com/neil-smithline">
+      <img
+          style="position: absolute;
+            top: 0;
+            right: 0;
+            border: 0;"
+         src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></img></a>
+
+  
+  
+
+
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/MyGeekdom" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.neilsmithline.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <!-- <li><a href="/">Home</a></li> -->
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/contact">Contact</a></li>
+  <li><a href="/about/elsewhere">About</a></li>
+  <li><a href="/neilsmithline">Resume (Seeking employment)</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">SPG: The Secure Password Generator</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-10T16:48:00-04:00" pubdate data-updated="true">Jun 10<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">As Users, We Must Expect Our Passwords To Be Compromised</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>It is an unfortunate fact that, if you create accounts on websites, some of your passwords will be stolen. For example:
+</p><ul>
+<li>There has been a lot of recent press about <a href="http://linkd.in/Mz4gjU">LinkedIn</a>&#8217;s recent 6.5M <a href="http://yhoo.it/Mz4o2T">stolen passwords</a>. 
+</li>
+<li>In the week since LinkedIn&#8217;s attack became public, <a href="http://bit.ly/Mz4yHu">eHarmony</a> lost 1.5M passwords in an <a href="http://lat.ms/Mz4I1y">unrelated attack</a>. 
+</li>
+<li>Earlier in the year, an undisclosed number of <a href="http://bit.ly/LLAaXu">Zappos</a> 24M users had their <a href="http://bit.ly/LLAfdJ">passwords compromised</a>. 
+</li>
+<li>The <a href="http://bit.ly/LLB5Hl">attack</a> on Gawker Media&#8217;s collection of popular sites (<a href="http://gaw.kr/LLBedR">Gawker</a>, <a href="http://bit.ly/LLBf1y">Lifehacker</a>, <a href="http://bit.ly/LLBfhZ">Gizmodo</a>, <a href="http://bit.ly/LLBh9N">io9</a>,<a href="http://bit.ly/LLBhqe"> Jalopnik</a>, <a href="http://bit.ly/LLBfyC">Kotaku</a>, <a href="http://deadsp.in/LLBfyD">Deadspin</a>, and <a href="http://bit.ly/LLBhqh">Fleshbot</a>) in late 2010 that compromised 1.3M accounts shows that this is not a new phenomenon. 
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Cascading Damages</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Having your password stolen from a website is a problem. But if you use the same password for many sites, the problem becomes a nightmare. I know that everyone tells you to use <a href="http://bit.ly/KWPdld">strong passwords</a> and to use a different password for each website &ndash; but few people do. A quick look at these <a href="http://bit.ly/KWPowF">Google search results</a> should be convince you that people just don&#8217;t follow that advice.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">The Reason Behind The Mega-Password Thefts</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>Despite every assurance made by websites (eg: <a href="http://bit.ly/LLEqX3">LinkedIn</a>&#8217;s recent message), the only way a website can lose millions of passwords is if they just didn&#8217;t bother to follow standard security procedures for storing your password. So LinkedIn, Gawker, Zappos, etc.., didn&#8217;t care about your password&#8217;s security until a breach made it into the headlines.
+<!-- more -->
+
+As revolting as that fact is, it is accurate.
+</p>
+<p>
+The trick to securely storing a user&#8217;s password is rather simple: don&#8217;t store the user&#8217;s password as it can&#8217;t be stolen if it is never stored. 
+</p><blockquote>
+
+<p>Huh?
+</p>
+</blockquote>
+
+
+<p>
+You heard me correctly. Websites should store a &lt;geek vernacular warning&gt; <i>salted hash</i> of your password rather than your password. Understanding the math and computer science behind salted hashes is unimportant. All you need to know is that the technology exists. If you are curious, you can read this <a href="http://bit.ly/LLGvlN">OWASP article</a> about salted hashes.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">An Ounce Of Prevention</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>The only way to protect yourself against these thefts is to, as everyone will tell you, use a unique, strong password for every site. Don&#8217;t worry, I won&#8217;t preach to you. You know that this is what should be done and I know that you know that this should be done.
+</p>
+<p>
+There are two problems with this:
+</p><ol>
+<li>It is difficult to keep track of so many passwords.
+</li>
+<li>People are astoundingly bad at creating secure passwords.
+</li>
+</ol>
+
+
+<p>
+<a href="http://bit.ly/KWS3GH">Other than that, how was the play, Mrs. Lincoln?</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Tools And Reprogramming Are The Answer</h2>
+<div class="outline-text-2" id="text-5">
+
+<p>It turns out that the best solution to managing your passwords involves the use of tools and reprogramming. The tools are used to help you create unique passwords as well as remember them. The tools can be simple. For example, a handful of <a href="http://bit.ly/KWRhcK">dice</a> can be used to generate unique and secure passwords.
+</p>
+<p>
+The reprogramming part is the more difficult. It involves you reprogramming your brain so that you protect yourself. Think of it as <i>safe surfing</i>.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6">The Answer Is&hellip;</h2>
+<div class="outline-text-2" id="text-6">
+
+<p>The answer is going to be in my next blog posting. I&#8217;ll present several tools and strategies, including one that I&#8217;m currently developing, that work better than carrying around a handful of <a href="http://bit.ly/KWRc90">zocchihedrons</a> :-)
+</p></div>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Neil Smithline</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-10T16:48:00-04:00" pubdate data-updated="true">Jun 10<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/password-generator/'>password-generator</a>, <a class='category' href='/blog/categories/passwords/'>passwords</a>, <a class='category' href='/blog/categories/projects/'>projects</a>, <a class='category' href='/blog/categories/security/'>security</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.neilsmithline.com/blog/2012/06/10/secure-password-generator/" data-via="neil_smithline" data-counturl="http://www.neilsmithline.com/blog/2012/06/10/secure-password-generator/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/06/01/first-ruby-project/" title="Previous Post: My First Ruby Project">&laquo; My First Ruby Project</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/06/14/the-new-privacy-invading-facebook-like-button/" title="Next Post: The New, Privacy Invading, Facebook Like Button">The New, Privacy Invading, Facebook Like Button &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/07/22/goodbye-fink-and-macport-hello-homebrew/">Goodbye Fink And Macport Hello Homebrew</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/21/desktop-time-tracking/">Desktop Time Tracking</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/15/bookifying-news/">Bookifying News</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/01/yahoo-cancellation-notice/">Yahoo! Forgets To Proofread Emails?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/14/the-new-privacy-invading-facebook-like-button/">The New, Privacy Invading, Facebook Like Button</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/neil-smithline">@neil-smithline</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'neil-smithline',
+            count: 8,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>My Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("neil_smithline", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <p>Follow <a href="http://twitter.com/neil_smithline">@neil_smithline</a></p>
+  
+</section>
+
+
+
+<section class="socialmention">
+  <h1>Elsewhere On The Web</h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="https://twitter.com/#!/neil_smithline"><img src="/assets/service-logos/twitter/twitter-32.png" alt="My Tweets"/>Twitter</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://www.linkedin.com/profile/view?2519386"><img src="/assets/service-logos/linkedin/linkedin-32.png" alt="My LinkedIn Account" />LinkedIn</a>
+  </h1>
+</section>
+
+
+<section class="sociallink googleplus">
+  <h1>
+    <a href="https://plus.google.com/104257546204106753046?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32"></img>
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="https://github.com/neil-smithline"><img src="/assets/service-logos/github/github-32.png" alt="Checkout My Code" />Github</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://coderwall.com/neilsmithline"><img src="/assets/service-logos/coderwall/coderwall-32.png" alt="My Coderwall Badges" />Coderwall</a>
+  </h1>
+</section>
+
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://www.diigo.com/user/neilsmithline"><img src="/assets/service-logos/diigo/diigo-32.png" alt="My Diigo Bookmarks"/>Bookmarks</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://klout.com/#/neil_smithline"><img src="/assets/service-logos/klout/klout-32.png" alt="My Klout Score"/>Klout</a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Neil Smithline -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> -
+  <span class="credit">Authored with <a href="http://www.gnu.org/s/emacs"">Emacs</a> and
+  <a href="http://orgmode.org">Org Mode</a></span> -
+  <span class="credit">Hosted by <a href="http://github.com">Github</a></span>
+  <script>
+    var options={ "publisher": "4eafa479-c64d-49ab-9e91-90cb169b33c2", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "linkedin", "sharethis", "email"]}};
+    var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+  </script>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'mygeekdom';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.neilsmithline.com/blog/2012/06/10/secure-password-generator/';
+        var disqus_url = 'http://www.neilsmithline.com/blog/2012/06/10/secure-password-generator/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: coding | My Geekdom]]></title>
+  <link href="http://www.neilsmithline.com/blog/categories/coding/atom.xml" rel="self"/>
+  <link href="http://www.neilsmithline.com/"/>
+  <updated>2012-07-22T21:35:35-04:00</updated>
+  <id>http://www.neilsmithline.com/</id>
+  <author>
+    <name><![CDATA[Neil Smithline]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Nastiest Hack I've Seen In Awhile]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/02/01/nasty-su-hack/"/>
+    <updated>2012-02-01T20:40:51-05:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/02/01/nasty-su-hack</id>
+    <content type="html"><![CDATA[<p>
+I was reading about <a href="http://code.google.com/p/android-scripting">SL4A</a>, also known as <a href="http://android.com">Android</a> <a href="http://en.wikipedia.org/wiki/Scripting_language">Scripting Languages</a>. They are a set of <a href="http://en.wikipedia.org/wiki/Quick_and_dirty">quick-and-dirty</a> ports of programming languages to the Android that interact with the Android <a href="http://en.wikipedia.org/wiki/Operating_system">OS</a>. I just stumbled upon this "<a href="http://code.google.com/p/android-scripting/issues/detail?id=184">issue page</a>" (it's more like a <a href="http://en.wikipedia.org/wiki/Internet_forum">forum</a> than a bug report). 
+</p>
+
+
+<p>
+The developer is trying to run something on his Android, which is basically <a href="http://en.wikipedia.org/wiki/Linux">Linux</a>, that requires <a href="http://en.wikipedia.org/wiki/Superuser">superuser</a> permissions. As the responses started to build upon each other, one user suggested starting his shell script with the following lines (the actual posting was in Android's flavor of <a href="http://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> but I've converted it to <a href="http://linux.die.net/man/1/su">bash(1)</a> to make it more accessible):
+</p>
+
+
+
+
+<pre class="src src--n">#!/bin/sh
+if [ <span style="background-color: #228800;">"$USER"</span> != <span style="background-color: #228800;">"root"</span> ]; then
+    exec sudo $SHELL -c <span style="background-color: #228800;">"`cat /proc/$$/cmdline | tr '\000' ' '`"</span> root
+fi
+</pre>
+
+
+
+
+<p>
+I simply couldn't help being entertained at how revolting but equally brilliant that code is. But, I started thinking (always something dangerous) about how much I hate having to deal with stupid commands. For example, this is the output of running <a href="http://linux.die.net/man/8/apt-get">apt-get(8)</a> without proper permission:
+</p>
+
+
+
+
+<pre class="example">$ apt-get install foobar
+E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)
+E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
+</pre>
+
+
+
+
+<p>
+Being as I often write shell scripts with calls to <a href="http://linux.die.net/man/8/sudo">sudo(8)</a> in the script, I decided that imitation is the best response to being revolted (I know my mom said something like that :-).
+</p>
+
+
+<p>
+So I expanded upon the existing code, making it a full shell script utility. You can look the code or grab a copy at my <a href="https://github.com">GitHub</a> <a href="https://github.com/Neil-Smithline">page</a> in the <a href="https://github.com/Neil-Smithline/rerunasroot">rerunasroot</a> repository. I'll be using it in the future.
+</p>
+
+]]></content>
+  </entry>
+  
+</feed>

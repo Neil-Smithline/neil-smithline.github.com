@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: quantified-self | My Geekdom]]></title>
+  <link href="http://www.neilsmithline.com/blog/categories/quantified-self/atom.xml" rel="self"/>
+  <link href="http://www.neilsmithline.com/"/>
+  <updated>2012-07-22T21:35:35-04:00</updated>
+  <id>http://www.neilsmithline.com/</id>
+  <author>
+    <name><![CDATA[Neil Smithline]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Desktop Time Tracking]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/07/21/desktop-time-tracking/"/>
+    <updated>2012-07-21T20:17:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/07/21/desktop-time-tracking</id>
+    <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Motivation</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>Recently I've been trying to improve my time management skills. This is further discussed in this <a href="https://github.com/Neil-Smithline/time-tracking-experiments">Github README</a> file. I have also been keeping a <a href="http://www.neilsmithline.com/time-tracking-experiments/journal.html">journal</a> my activities and thoughts as I work on this project. You may also wish to read up on the <a href="http://en.wikipedia.org/wiki/Quantified_Self">Quantified Self</a>.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Basic Activity Tracking</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>While I I had not initially planned to focus on Mac OS X time tracking, it turned out to be easy. For a couple of weeks I've been playing around with two Mac OS X applications that track your computer activities: <a href="http://timingapp.com/">Timing</a> (actually <i>Timing Lite</i>) and <a href="http://manytricks.com/timesink/">Time Sink</a>.
+</p>
+<p>
+Time Sink integrates with Mac OS X to track the <i>active</i> or <i>foreground</i> application and provides a variety of reports to display that information. In addition to tracking the current app, Time Sink tries to track what you were doing in that app. It achieves this by using a relatively low-tech process of collecting the active window's name.
+</p>
+<p>
+While a window name does not seem like a lot of information, it turns out to be surprisingly useful. From the window name Time Sink distinguishes, for example, the amount of time you spent browsing Facebook from the amount of time you spent browsing Github.
+</p>
+<p>
+Time Sink can harvest this data from any app that includes information about the current activity. This includes editors that put the file being edited in the window name, media plays that put the title of what is currently being played, etc&hellip;
+</p>
+<p>
+Your activities get displayed in a nice graphical format:
+<img src="http://www.neilsmithline.com/assets/screen-snapshots/Time-Sink-Activities.png"  alt="http://www.neilsmithline.com/assets/screen-snapshots/Time-Sink-Activities.png" />
+</p>
+<p>
+Due to browser page size I've excluded information such as how long I did these activities were as well as when I was doing them.
+</p>
+<p>
+In addition to the activity tracking performed by Time Sink, Timing has some <a href="http://timingapp.com/faq.php#compatibility">application-specific</a> functionality that allows it to better track what you are doing inside an app.
+</p>
+
+
+<!-- more -->
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">From Activity Tracking To Category Tracking</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>The real power of these apps is that they allow you to categorize your activities. For example, you can specify that time spent browsing Facebook is socializing while time spent on Github is developing and exploring open-source.
+</p>
+<p>
+My open source development category includes:
+</p><ul>
+<li>Time spent browsing Github.
+</li>
+<li>Time spent editing files in <code>$HOME/coding</code>, the root of all of my open-source Github projects.
+</li>
+<li>Time spent in a shell while the current directory is in <code>$HOME/coding</code> directory or one of its subdirectories.
+</li>
+<li>Other stuff not worth describing here.
+</li>
+</ul>
+
+
+<p>
+Due to its fine-granularity and inability to associate activities across apps, the activity tracking data is not that useful. But, once it is categorized, called <i>Pooling</i> by Time Sink, it starts to provide much more useful information. Consider this screen snapshot:
+<img src="http://www.neilsmithline.com/assets/screen-snapshots/Time-Sink-Activities.png"  alt="http://www.neilsmithline.com/assets/screen-snapshots/Time-Sink-Activities.png" />
+</p>
+<p>
+In it you can see that I was spending time on time management. This included time spent in three different apps.
+</p>
+<p>
+Both Time Sink and Timing have a convenient, drag-and-drop mechanism for adding activities to categories.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Choosing Between Timing And Time Sink</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>Today, the end of my 2-week trial period, I decided to purchase Time Sink because of its ability to automatically export data into a CSV file. Besides the automatic scheduling, Time Sink allows you to specify what data is exported as well as whether you want the export to include all data that Time Sink has stored or only data since the last automated export. Being that I want to use <a href="http://orgmode.org">Org Mode</a> as my data repository, this data exporting feature sealed the deal for me.
+</p>
+<p>
+That said, I feel that Timing and Time Sink are on par with each other. Each app costs &lt; $10US so cost is not a factor. Each app has its own pros and cons. Time Sink just fit my specific needs.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Analyzing The Data</h2>
+<div class="outline-text-2" id="text-5">
+
+<p>To state the obvious, collecting time usage data is only useful if you can analyze it such that it improves your time management skills. This is where Org Mode comes into play. With a bit of tweaking, the CSV importer from <a href="https://github.com/novoid/Memacs">Memacs</a> will be able to import this data into Org Mode.
+</p>
+<p>
+Org Mode provides a rich set of features regarding scheduling and time management:
+</p><ul>
+<li>Standard task/to-do list management features.
+</li>
+<li>Comparing actual time spent v. estimated time.
+</li>
+<li>Identifying if you are falling behind on a long-term task.
+</li>
+<li>Summarizing your time usage.
+</li>
+<li>Sophisticated tracking of repeating tasks.
+</li>
+<li>An integrated archive management framework that allows you to focus on the most pertinent information while maintaining all historical data.
+</li>
+<li>Tons more.
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6">Early Payoffs</h2>
+<div class="outline-text-2" id="text-6">
+
+<p>Being as I'm planning on using Org Mode to perform data analysis and I am not yet able to import Time Sink data into Org Mode, one would think that there would be no immediate benefit of having this system working. I thought that would be the case. But I was wrong.
+</p>
+<p>
+For some time I've used a timer that pops up every 15 minutes just to remind me that time is passing. I call it my <i>Focus Alert</i> timer as it reminds me to make sure I'm doing what I should be doing. When I'm notified I can stand up and stretch, check the clock to make sure I'm not late for something, make sure I'm working on my highest priority task, etc&hellip;
+</p>
+<p>
+Today I modified my Focus Alert (a small shell script) so that it helps me track my time with Time Sink. Before today's modification, my Focus Alert simply popped up a notification box that I had to click to close. As you may imagine, clicking quickly became second-nature.
+</p>
+<p>
+Starting today, my Focus Alert interrupts my work and displays the Time Sink application. While I can immediately switch back to whatever I was doing before the notification, it is rather difficult not to notice Time Sink's data. For example, about two sentences ago my Focus alert went off. As you can see in this screenshot of the relevant part of the Time Sink window:
+<img src="http://www.neilsmithline.com/assets/screen-snapshots/Time-Sink-Blog-Posting.png"  alt="http://www.neilsmithline.com/assets/screen-snapshots/Time-Sink-Blog-Posting.png" />
+</p>
+<p>
+I've spent about an hour on this blog posting. As Time Sink is kind enough to distinguish wall-clock time from actual activity time, that hour is a very reliable statement about my activity.
+</p>
+<p>
+Being that I don't think this blog posting is worth more than an hour of my, I would have allocated 30-45 minutes top, I'm ending the posting here.<sup><a class="footref" name="fnr.1" href="#fn.1">1</a></sup>
+</p>
+<p>
+I hope to follow-up this posting with more blog postings as well as <a href="http://www.neilsmithline.com/time-tracking-experiments/journal.html">journal</a> entries as I try to understand what I'm doing and then make myself more efficient.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7">UPDATE <span class="timestamp-wrapper"> <span class="timestamp">2012-07-22 Sun 15:50</span></span></h2>
+<div class="outline-text-2" id="text-7">
+
+<p>Sacha Chua (<a href="http://sachachua.com/blog/">blog</a>, <a href="https://twitter.com/sachac">twitter</a>) responded to one of my <a href="https://twitter.com/neil_smithline/status/225408627643650048">tweets</a> about integrating Org Mode and Quantified Self. She pointed me towards this <a href="http://sachachua.com/blog/2012/05/quantified-awesome-blogging-wpm-and-the-speed-of-reflection/">blog posting</a>. In it she discusses how she uses Org Mode to track her blog writing time. Not only does she use Org Mode to track her activities, she uses it to track her <a href="http://en.wikipedia.org/wiki/Wpm">WPM</a> while writing blog posts. She averages 16 WPM while blogging.
+</p>
+
+<div id='footnotes'>
+<h4 class='footnotes'>Footnotes: </h4>
+<div id='text-footnotes'>
+<p class="footnote"><sup><a class="footnum" name="fn.1" href="#fnr.1">1</a></sup> After reading Sacha's post, I decided to calculate my WPM for this blog post. It turns out that I typed 15 WPM (actually 14.79729729&hellip;). I'll have to readjust my estimates for blogging as I don't think I can hope to outperform the industrious Sacha Chua. Especially being that she types 110 WPM at full speed!
+</p>
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>
