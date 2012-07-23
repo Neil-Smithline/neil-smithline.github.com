@@ -1,0 +1,544 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>fix me - My Geekdom</title>
+  <meta name="author" content="Neil Smithline">
+
+  
+  <meta name="description" content="De&#8217;fink&#8217;ing and Un&#8217;port&#8217;ing Mac OS X There are too many accursed package managers on Mac OS X. The big problem with this is &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://Neil-Smithline.github.com/blog/2012/07/10/goodbye-fink-and-macport-hello-homebrew/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="http://feeds.feedburner.com/MyGeekdom" rel="alternate" title="My Geekdom" type="application/atom+xml">
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25833963-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+
+  <h1><a href="/">My Geekdom</a></h1>
+
+  <div  style="float: right; position: relative; top: 75px;" id="header-image-container">
+    <a href="" accesskey="1">
+      <img title="Neil Smithline" src="/assets/images/NS-Keycaps.png"></img>
+    </a>
+  </div>
+
+  
+    <h2>Ramblings about my nerdy pursuits.</h2>
+  
+
+  
+    <a href="https://github.com/neil-smithline">
+      <img
+          style="position: absolute;
+            top: 0;
+            right: 0;
+            border: 0;"
+         src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></img></a>
+
+  
+  
+
+
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/MyGeekdom" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:Neil-Smithline.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <!-- <li><a href="/">Home</a></li> -->
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/contact">Contact</a></li>
+  <li><a href="/about/elsewhere">About</a></li>
+  <li><a href="/neilsmithline">Resume (Seeking employment)</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Fix Me</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-10T18:09:00-04:00" pubdate data-updated="true">Jul 10<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div id="outline-container-1" class="outline-5">
+<h5 id="sec-1">De&#8217;fink&#8217;ing and Un&#8217;port&#8217;ing Mac OS X</h5>
+<div class="outline-text-5" id="text-1">
+
+<p>There are too many accursed package managers on Mac OS X. The big problem with this is that the best one is the newest so I&#8217;ve installed quite a bit with the older package managers: <a href="http://www.macports.org/">MacPort</a> and <a href="http://www.finkproject.org/">Fink</a>. The best I can say about those package manners is that they frequently worked just fine. 
+</p>
+
+<p>
+Then, out of the large pool of talented open-source Ruby engineers, <a href="https://github.com/mxcl/homebrew/wiki/installation">homebrew</a> emerged.
+</p>
+<p>
+Initially it was a bit short of packages but now it has a rich collection of packages. Adding new packages consists of just creating a mini Ruby script and putting it into the a Github repository (did I mention talented Ruby engineers?). 
+</p>
+<p>
+Homebrew <a href="http://en.wikipedia.org/wiki/Sandbox_(software_development)">sandboxes</a> each package into a private directory. It then links the appropriate parts of the installed packages into the appropriate directories.
+</p>
+<p>
+Unfortunately, MacPort and Fink are a bit hard on your computer. They install things all over your computer and don&#8217;t clean up after themselves. Homebrew recommends that you uninstall MacPort, Fink, and all of their packages to ensure a stable system.
+</p>
+<p>
+Despite having stopped using MacPort and Fink months ago, I&#8217;ve left them installed. At least until yesterday.
+</p>
+<p>
+Yesterday, my Octopress/Jekyll blog broke stopped adding new posts. On average, eexperience has shown that it is best to assume I broke the problem and try to figure out how I broke it. After an hour or two of investigation I noticed that one of my <a href="http://rubygems.org">gems</a> was broken. I couldn&#8217;t figure out what was done to break it but I could try to fix the problem.
+</p>
+<p>
+When I attacked the problem I found there was a dependency that had problems of its own. Progress was slow and painful. I was ecstatic when I got the gem working. But, alas, I immediately had a different gem giving me problems.
+</p>
+<p>
+After a couple of times around the merry-go-round I decided that three were only a few options:
+</p><ul>
+<li>Remove MacPort and Fink and all of their packages as my build problems seemed associated with Homebrew&#8217;s interaction with them. Removing the packages is a bit awkward as they seem to install things in many places. Fortunately, when Homebrew tells you that it found a MacPort or Fink installation, it tells you the first thing that it found and what you can do to remedy the problem. After enough iterations of this, Homebrew finally stopped finding MacPort and Fink. I think it is a bit ironic that the cleanest way to remove MacPort or Fink is to use Homebrew as a guide.
+</li>
+<li>Reinstall Mac OS X and start with a fresh slate. Almost certainly a winning strategy but just as certainly a time-consuming procedure. The only reason I would even consider this option is because the last time I broke my OS by double-booting it with Ubuntu I created multiple disk partitions for Mac OS X to use. It uses one for my home directory, one for installed applications (ie: <code>/Applications</code>), and one for the OS. It is only the OS partition that I would need to erase. Still, it seems time-consuming.
+</li>
+<li>Throw my laptop out the window. This would clearly best meet my needs for instant gratification. As I&#8217;m typing this I&#8217;m visualizing whether the MacBook would smoothly glide through the air like a frisbee, tumble end-over-end, or just drop like a rock. Personally, the frisbee visualization is the one I find most attractive. That said, I have an incidental warranty from Best Buy and my computer is already in need of a repair (the class in front of my LCD is held on with packing tape). You could say this would kill two birds with one frisbee :-)
+</li>
+</ul>
+
+
+<p>
+At least for now, I&#8217;ve decided to remove MacPort, Fink, and all of their assorted packages and then reinstall everything with Homebrew. I believe that I have excised my machine of MacPort and Fink and am now using Homebrew to reinstall all of the packages that got deleted when I 86&#8217;ed MacPort and Fink.
+</p>
+<p>
+Wish me luck&hellip;
+</p>
+
+
+<pre class="example">
+/usr/local/Cellar/python/2.7.3: 4810 files, 82M, built in 5.1 minutes
+==&gt; Upgrading python3
+==&gt; Downloading http://python.org/ftp/python/3.2.3/Python-3.2.3.tar.bz2
+#################################################################################################### 100.0%
+==&gt; ./configure --prefix=/usr/local/Cellar/python3/3.2.3 --enable-shared
+==&gt; make
+==&gt; make install
+==&gt; Downloading http://pypi.python.org/packages/source/d/distribute/distribute-0.6.27.tar.gz
+Already downloaded: /Volumes/HOME/neil/Library/Caches/Homebrew/distribute-0.6.27.tar.gz
+==&gt; /usr/local/Cellar/python3/3.2.3/bin/python3.2 setup.py install
+==&gt; Caveats
+A "distutils.cfg" has been written, specifing the install-scripts folder as:
+  /usr/local/share/python3
+
+If you install Python packages via "python3 setup.py install", easy_install3,
+pip-3.2, any provided scripts will go into the install-scripts folder above, so
+you may want to add it to your PATH.
+
+Distribute has been installed, so easy_install is available.
+To update distribute itself outside of Homebrew:
+  /usr/local/share/python3/easy_install3 pip
+  /usr/local/share/python3/pip-3.2 install --upgrade distribute
+
+See: https://github.com/mxcl/homebrew/wiki/Homebrew-and-Python
+Apple's Tcl/Tk is not recommended for use with Python on Mac OS X 10.6.
+For more information see: http://www.python.org/download/mac/tcltk/
+
+Error: The linking step did not complete successfully
+The formula built, but is not symlinked into /usr/local
+You can try again using `brew link python3'
+==&gt; Summary
+/usr/local/Cellar/python3/3.2.3: 4216 files, 79M, built in 4.8 minutes
+==&gt; Upgrading transmission
+==&gt; Downloading http://download.transmissionbt.com/files/transmission-2.60.tar.bz2
+#################################################################################################### 100.0%
+==&gt; ./configure --prefix=/usr/local/Cellar/transmission/2.60 --disable-mac --without-gtk
+==&gt; make
+==&gt; make install
+==&gt; Caveats
+This formula only installs the command line utilities.
+Transmission.app can be downloaded from Transmission's website:
+  http://www.transmissionbt.com
+==&gt; Summary
+/usr/local/Cellar/transmission/2.60: 77 files, 4.7M, built in 73 seconds
+You have new mail in /var/mail/neil
+MAC (1510) 18:04:21 local $ brew link -f ypthon
+Error: No such keg: /usr/local/Cellar/ypthon
+MAC (1614) 18:05:14 local $ brew link -f python
+Linking /usr/local/Cellar/python/2.7.3... 2041 symlinks created
+You have new mail in /var/mail/neil
+MAC (1719) 18:05:47 local $ brew link -f python3
+Linking /usr/local/Cellar/python3/3.2.3... 4253 symlinks created
+MAC (1825) 18:06:40 local $ 
+
+
+</pre>
+
+
+<p>
+<a href="http://thoughtsthatleakedout.blogspot.com/2011/10/problem-with-gmkdir-when-updating-gems.html">http://thoughtsthatleakedout.blogspot.com/2011/10/problem-with-gmkdir-when-updating-gems.html</a>
+</p>
+
+
+
+
+<pre class="example">You have new mail in /var/mail/neil
+MAC (3182) 18:20:59 tech $ brew link -f gdk-pixbuf gnutls mu
+Linking /usr/local/Cellar/gdk-pixbuf/2.26.1... 151 symlinks created
+Linking /usr/local/Cellar/gnutls/2.12.20... 673 symlinks created
+Linking /usr/local/Cellar/mu/0.9.8.4... 14 symlinks created
+You have new mail in /var/mail/neil
+MAC (3190) 18:26:19 tech $ brew upgrade
+Error: You must `brew link atk' before gtk+ can be installed
+MAC (3199) 18:26:23 tech $ brew link atk
+Linking /usr/local/Cellar/atk/2.4.0... 
+Error: Could not symlink file: /usr/local/Cellar/atk/2.4.0/lib/libatk-1.0.dylib
+Target /usr/local/lib/libatk-1.0.dylib already exists. You may need to delete it.
+To force the link and delete this file, do:
+  brew link -f formula_name
+
+To list all files that would be deleted:
+  brew link -n formula_name
+MAC (3209) 18:26:32 tech $ brew link -f atk
+Linking /usr/local/Cellar/atk/2.4.0... 86 symlinks created
+MAC (3220) 18:26:38 tech $ brew upgrade
+==&gt; Upgrading gtk+
+</pre>
+
+</div>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Neil Smithline</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-10T18:09:00-04:00" pubdate data-updated="true">Jul 10<span>th</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://Neil-Smithline.github.com/blog/2012/07/10/goodbye-fink-and-macport-hello-homebrew/" data-via="neil_smithline" data-counturl="http://Neil-Smithline.github.com/blog/2012/07/10/goodbye-fink-and-macport-hello-homebrew/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/07/10/confusing-google-stats/" title="Previous Post: Confusing Google Stats">&laquo; Confusing Google Stats</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/07/15/bookifying-news/" title="Next Post: Bookifying News">Bookifying News &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/07/21/desktop-time-tracking/">Desktop Time Tracking</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/15/bookifying-news/">Bookifying News</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/10/goodbye-fink-and-macport-hello-homebrew/">fix me</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/10/confusing-google-stats/">Confusing Google Stats</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/10/browser-market-share---bs-for-short/">Browser Market Share - BS For Short</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/neil-smithline">@neil-smithline</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'neil-smithline',
+            count: 8,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>My Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("neil_smithline", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <p>Follow <a href="http://twitter.com/neil_smithline">@neil_smithline</a></p>
+  
+</section>
+
+
+
+<section class="socialmention">
+  <h1>Elsewhere On The Web</h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="https://twitter.com/#!/neil_smithline"><img src="/assets/service-logos/twitter/twitter-32.png" alt="My Tweets"/>Twitter</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://www.linkedin.com/profile/view?2519386"><img src="/assets/service-logos/linkedin/linkedin-32.png" alt="My LinkedIn Account" />LinkedIn</a>
+  </h1>
+</section>
+
+
+<section class="sociallink googleplus">
+  <h1>
+    <a href="https://plus.google.com/104257546204106753046?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32"></img>
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="https://github.com/neil-smithline"><img src="/assets/service-logos/github/github-32.png" alt="Checkout My Code" />Github</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://coderwall.com/neilsmithline"><img src="/assets/service-logos/coderwall/coderwall-32.png" alt="My Coderwall Badges" />Coderwall</a>
+  </h1>
+</section>
+
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://www.diigo.com/user/neilsmithline"><img src="/assets/service-logos/diigo/diigo-32.png" alt="My Diigo Bookmarks"/>Bookmarks</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://klout.com/#/neil_smithline"><img src="/assets/service-logos/klout/klout-32.png" alt="My Klout Score"/>Klout</a>
+  </h1>
+</section>
+
+
+<section class="socialmention">
+  <h1> Buzz</h1>
+    <script type="text/javascript">
+      // search phrase (replace this)
+      var smSearchPhrase = '';
+      // title (optional)
+      var smTitle = ' News Around The Web';
+      // items per page
+      var smItemsPerPage = 3;
+      // show or hide user profile images
+      var smShowUserImages = true;
+      // widget font size in pixels
+      var smFontSize = 11;
+      // height of the widget
+      var smWidgetHeight = 600;
+      // sources (optional, comment out for "all")
+      //var smSources = ['twitter', 'facebook', 'googleblog', 'identica'];
+    </script>
+    <script type="text/javascript" language="javascript" src="http://socialmention.s3.amazonaws.com/buzz_widget/buzz.js"></script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Neil Smithline -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> -
+  <span class="credit">Authored with <a href="http://www.gnu.org/s/emacs"">Emacs</a> and
+  <a href="http://orgmode.org">Org Mode</a></span> -
+  <span class="credit">Hosted by <a href="http://github.com">Github</a></span>
+  <script>
+    var options={ "publisher": "4eafa479-c64d-49ab-9e91-90cb169b33c2", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "linkedin", "sharethis", "email"]}};
+    var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+  </script>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'mygeekdom';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://Neil-Smithline.github.com/blog/2012/07/10/goodbye-fink-and-macport-hello-homebrew/';
+        var disqus_url = 'http://Neil-Smithline.github.com/blog/2012/07/10/goodbye-fink-and-macport-hello-homebrew/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

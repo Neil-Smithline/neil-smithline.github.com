@@ -100,7 +100,7 @@
         <loc>
             http://Neil-Smithline.github.com/blog/2012/05/27/org-mode-plus-t-makes-tweeting-easy/
         </loc>
-        <lastmod>2012-07-22T21:33:09-04:00</lastmod>
+        <lastmod>2012-07-22T23:21:04-04:00</lastmod>
     </url>
     <url>
         <loc>http://Neil-Smithline.github.com/blog/2012/06/01/first-ruby-project/</loc>
@@ -121,6 +121,26 @@
         <lastmod>2012-07-22T21:33:05-04:00</lastmod>
     </url>
     <url>
+        <loc>http://Neil-Smithline.github.com/blog/2012/07/06/facebook-is-a-virus/</loc>
+        <lastmod>2012-07-22T21:32:56-04:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://Neil-Smithline.github.com/blog/2012/07/10/browser-market-share---bs-for-short/
+        </loc>
+        <lastmod>2012-07-22T21:33:04-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://Neil-Smithline.github.com/blog/2012/07/10/confusing-google-stats/</loc>
+        <lastmod>2012-07-22T21:32:52-04:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://Neil-Smithline.github.com/blog/2012/07/10/goodbye-fink-and-macport-hello-homebrew/
+        </loc>
+        <lastmod>2012-07-22T21:45:46-04:00</lastmod>
+    </url>
+    <url>
         <loc>http://Neil-Smithline.github.com/blog/2012/07/15/bookifying-news/</loc>
         <lastmod>2012-07-22T21:32:55-04:00</lastmod>
     </url>
@@ -130,23 +150,23 @@
     </url>
     <url>
         <loc>http://Neil-Smithline.github.com/about/contact/</loc>
-        <lastmod>2012-07-22T21:33:25-04:00</lastmod>
+        <lastmod>2012-07-22T23:21:04-04:00</lastmod>
     </url>
     <url>
         <loc>http://Neil-Smithline.github.com/about/diigo-tag-cloud/</loc>
-        <lastmod>2012-07-22T21:33:23-04:00</lastmod>
+        <lastmod>2012-07-22T23:21:04-04:00</lastmod>
     </url>
     <url>
         <loc>http://Neil-Smithline.github.com/about/elsewhere/</loc>
-        <lastmod>2012-07-22T21:33:22-04:00</lastmod>
+        <lastmod>2012-07-22T23:21:04-04:00</lastmod>
     </url>
     <url>
         <loc>http://Neil-Smithline.github.com/about/privacy/</loc>
-        <lastmod>2012-07-22T21:33:22-04:00</lastmod>
+        <lastmod>2012-07-22T23:21:04-04:00</lastmod>
     </url>
     <url>
         <loc>http://Neil-Smithline.github.com/blog/archives/</loc>
-        <lastmod>2012-07-22T21:33:18-04:00</lastmod>
+        <lastmod>2012-07-22T23:21:04-04:00</lastmod>
     </url>
     <url>
         <loc>http://Neil-Smithline.github.com/coding/spg/spg-master-password/hold.html</loc>
@@ -154,15 +174,15 @@
     </url>
     <url>
         <loc>http://Neil-Smithline.github.com/coding/spg/spg-master-password/</loc>
-        <lastmod>2012-07-22T21:33:20-04:00</lastmod>
+        <lastmod>2012-07-22T23:21:04-04:00</lastmod>
     </url>
     <url>
         <loc>http://Neil-Smithline.github.com/</loc>
-        <lastmod>2012-07-22T21:33:18-04:00</lastmod>
+        <lastmod>2012-07-22T23:21:04-04:00</lastmod>
     </url>
     <url>
         <loc>http://Neil-Smithline.github.com/portfolio/firefox-add-on/</loc>
-        <lastmod>2012-07-22T21:33:19-04:00</lastmod>
+        <lastmod>2012-07-22T23:21:04-04:00</lastmod>
     </url>
     <url>
         <loc>http://Neil-Smithline.github.com/projects/github-organization/index-hold.html</loc>
@@ -170,6 +190,6 @@
     </url>
     <url>
         <loc>http://Neil-Smithline.github.com/projects/github-organization/</loc>
-        <lastmod>2012-07-22T21:33:18-04:00</lastmod>
+        <lastmod>2012-07-22T23:21:04-04:00</lastmod>
     </url>
 </urlset>

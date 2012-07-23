@@ -9,7 +9,7 @@
   <meta name="author" content="Neil Smithline">
 
   
-  <meta name="description" content="Measuring Freedom While I&#8217;ll leave it to historians and politicians to debate the validity of this statement, IMO, a country&#8217;s freedom &hellip;">
+  <meta name="description" content="I was reading about SL4A, also known as Android Scripting Languages. They are a set of quick-and-dirty ports of programming languages to the Android &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -111,7 +111,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/12/27/pravda/">Corporate Censorship in the Digital Age</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/02/01/nasty-su-hack/">Nastiest Hack I&#8217;ve Seen in Awhile</a></h1>
     
     
       <p class="meta">
@@ -127,64 +127,7 @@
   
 
 
-<time datetime="2011-12-27T08:58:30-05:00" pubdate data-updated="true">Dec 27<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div id="outline-container-1" class="outline-3">
-<h3 id="sec-1">Measuring Freedom</h3>
-<div class="outline-text-3" id="text-1">
-
-<p>While I&#8217;ll leave it to historians and politicians to debate the validity of this statement, IMO, a country&#8217;s freedom can be understood by <a href="http://en.wikipedia.org/wiki/Guesstimation">guestimating</a> the answers two simple questions:
-</p><ol>
-<li>How freely the citizens are allowed to travel &ndash; both within their country as well as in-and-out of their country.
-</li>
-<li>How freely the government allows information to be dispersed.
-</li>
-</ol>
-
-
-<p>
-While this posting only focuses on freedom of information, I mention the above because I feel that it is important to keep in mind how critical freedom of information is. 
-</p>
-<p>
-When free information flow is impacted, it does not matter whether it is censored by a totalitarian government to control the thoughts of its people or a search provider to stay out of trouble legal troubles (see <a href="http://en.wikipedia.org/">Wikipedia</a>&#8217;s article on <a href="http://en.wikipedia.org/wiki/Criticism_of_Google#Censorship">Google Censorship</a> and <a href="http://technorati.com/technology/article/google-censorship-rising-faster-than-ever/">recent statistics</a> about Google&#8217;s censoring)<sup><a class="footref" name="fnr.1" href="#fn.1">1</a></sup>.
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/12/27/pravda/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/12/23/blackball-godaddy/">Vote With Your Money: Blackball GoDaddy for Propagandizing SOPA</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-12-23T07:58:22-05:00" pubdate data-updated="true">Dec 23<span>rd</span>, 2011</time>
+<time datetime="2012-02-01T20:40:51-05:00" pubdate data-updated="true">Feb 1<span>st</span>, 2012</time>
         
       </p>
     
@@ -192,13 +135,40 @@ When free information flow is impacted, it does not matter whether it is censore
 
 
   <div class="entry-content"><p>
-<a href="http://godaddy.com">GoDaddy</a> has just released its <a href="http://support.godaddy.com/godaddy/go-daddys-position-on-sopa/?isc=smtwsup">official statement</a> (via <a href="http://yro.slashdot.org/story/11/12/23/0253207/godaddy-backs-sopa">Slashdot</a> via <a href="http://www.ibtimes.com/articles/271730/20111222/sopa-bill-2012-godaddy-reveals-support.htm">ibtimes.com</a>) on SOPA. You can read my opinions on SOPA in my recent blog posting <a href="#id-06BB29E4-D6B3-430E-B5A3-FDC6716A0ED3">SOPA: The End Of Free Speech</a>. While I can&#8217;t imagine the business logic that motivated GoDaddy, I respect the free publication of opinions contrary to my own. In fact, my objections to <a href="https://wfc2.wiredforchange.com/o/9042/p/dia/action/public/?action_KEY=8173">SOPA</a> are that it allows corporations to prohibit contrary opinions. Should SOPA pass, GoDaddy, if they chose to worry about lil&#8217; ol&#8217; me, could, with the effort of a single letter, have my blog shut down for posting about this article.
-</div>
+I was reading about <a href="http://code.google.com/p/android-scripting">SL4A</a>, also known as <a href="http://android.com">Android</a> <a href="http://en.wikipedia.org/wiki/Scripting_language">Scripting Languages</a>. They are a set of <a href="http://en.wikipedia.org/wiki/Quick_and_dirty">quick-and-dirty</a> ports of programming languages to the Android that interact with the Android <a href="http://en.wikipedia.org/wiki/Operating_system">OS</a>. I just stumbled upon this &#8221;<a href="http://code.google.com/p/android-scripting/issues/detail?id=184">issue page</a>&#8221; (it&#8217;s more like a <a href="http://en.wikipedia.org/wiki/Internet_forum">forum</a> than a bug report). 
+</p>
+<p>
+The developer is trying to run something on his Android, which is basically <a href="http://en.wikipedia.org/wiki/Linux">Linux</a>, that requires <a href="http://en.wikipedia.org/wiki/Superuser">superuser</a> permissions. As the responses started to build upon each other, one user suggested starting his shell script with the following lines (the actual posting was in Android&#8217;s flavor of <a href="http://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> but I&#8217;ve converted it to <a href="http://linux.die.net/man/1/su">bash(1)</a> to make it more accessible):
+</p>
+
+
+
+<pre class="src src--n">#!/bin/sh
+if [ <span style="background-color: #228800;">"$USER"</span> != <span style="background-color: #228800;">"root"</span> ]; then
+    exec sudo $SHELL -c <span style="background-color: #228800;">"`cat /proc/$$/cmdline | tr '\000' ' '`"</span> root
+fi
+</pre>
+
+
+<p>
+I simply couldn&#8217;t help being entertained at how revolting but equally brilliant that code is. But, I started thinking (always something dangerous) about how much I hate having to deal with stupid commands. For example, this is the output of running <a href="http://linux.die.net/man/8/apt-get">apt-get(8)</a> without proper permission:
+</p>
+
+
+
+<pre class="example">$ apt-get install foobar
+E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)
+E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
+</pre>
+
+
+<p>
+Being as I often write shell scripts with calls to <a href="http://linux.die.net/man/8/sudo">sudo(8)</a> in the script, I decided that imitation is the best response to being revolted (I know my mom said something like that :-).
+</p>
+<p>
+So I expanded upon the existing code, making it a full shell script utility. You can look the code or grab a copy at my <a href="https://github.com">GitHub</a> <a href="https://github.com/Neil-Smithline">page</a> in the <a href="https://github.com/Neil-Smithline/rerunasroot">rerunasroot</a> repository. I&#8217;ll be using it in the future.
+</p></div>
   
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/12/23/blackball-godaddy/">Read on &rarr;</a>
-    </footer>
   
 
 
@@ -209,7 +179,7 @@ When free information flow is impacted, it does not matter whether it is censore
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/12/15/sparkleshare/">Sparkleshare: Maybe an Open, Privately Hosted, Dropbox Alternative</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/01/14/SOPA-DOA/">SOPA DOA? Not Quite but Getting There</a></h1>
     
     
       <p class="meta">
@@ -225,28 +195,77 @@ When free information flow is impacted, it does not matter whether it is censore
   
 
 
-<time datetime="2011-12-15T10:04:43-05:00" pubdate data-updated="true">Dec 15<span>th</span>, 2011</time>
+<time datetime="2012-01-14T00:18:39-05:00" pubdate data-updated="true">Jan 14<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p> 
-<a href="http://dropbox.com">Dropbox</a> took the internet by storm with its free storage and ease of
-access. But Dropbox comes with a limited amount of data, a level of
-secureness that is hard-to-understand, and rather proprietary.
+  <div class="entry-content"><p>
+While not dead, SOPA is losing its teeth. Despite having had its major backer remove one of the more totalitarian portions from the bill (the ability to block non-US DNS addresses), SOPA appears unable to make progress in Congress. 
 </p>
 <p>
-<a href="http://sparkleshare.org">Sparkleshare</a> is an <a href="http://en.wikipedia.org/wiki/Free_and_Open_Source_Software">open source</a> alternative to Dropbox that hit my
-radar screen about 6 months ago. I played with it a bit back then but
-it didn&#8217;t seem to be quite there. I think I was using an early-alpha,
-pre-release version so I this was to be expected.
+In a <a href="http://cnet.co/ArcHPH">CNET</a> article (via <a href="http://bit.ly/zMTg3h">Slashdot</a>), the <a href="#wiki-RIAA">RIAA</a> whines:
+</p><blockquote>
+
+<p>Instead of helping to come up with mechanisms to deny access to
+the U.S. market by foreign criminals,&#8221; the RIAA wrote, &#8220;the
+opposition just keeps saying no. It is incumbent upon them to help
+develop language that will ensure that criminals can&#8217;t access our
+market, while at the same time protecting our need for national
+cybersecurity.
+</p>
+</blockquote>
+
+
+<p>
+As <a href="#SOPA-the-end-of-free-speech.org">discussed previously</a>, SOPA claims to support American businesses while it really supports the very large media companies and stifles smaller companies and individuals rights to publish.
+</p>
+<p>
+As I&#8217;ve stated in my previous <a href="#SOPA-the-end-of-free-speech.org">posting about SOPA</a>, I am strongly opposed to <a href="#wiki-Piracy-of-software">piracy</a> as I am a software engineer (ie: software pays my rent). But I also believe that piracy can be dealt with without destroying <a href="#wiki-Freedom_of_speech">free speech</a>. My viewpoints are similar to those of the <a href="#wiki-Electronic_Frontier_Foundation">EFF</a> and differ from the <a href="#wiki-Free_Software_Foundation">FSF</a>&#8217;s viewpoint which opposes proprietary software altogether.
+</p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/12/30/florida-beats-sopa/">Florida Appeals Court More Liberal Than SOPA!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-30T12:26:33-05:00" pubdate data-updated="true">Dec 30<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+Earlier this week, the Florida appeals court made a ruling that even the poster of a defamatory posting on a public website could not force a website to remove the posting. While most sites allow you to remove your own postings, <a href="http://www.ripoffreport.com/">RipoffReport.com</a>, the site involved in this ruling, states that as an advocate of free speech, it never removes reports. This is clearly stated at the top of their home page and documented extensively on their <a href="http://en.wikipedia.org/wiki/Ripoff_Report#Non-removal_Policy">Wikipedia page</a>. 
 </div>
   
   
     <footer>
-      <a rel="full-article" href="/blog/2011/12/15/sparkleshare/">Read on &rarr;</a>
+      <a rel="full-article" href="/blog/2011/12/30/florida-beats-sopa/">Read on &rarr;</a>
     </footer>
   
 
@@ -278,15 +297,15 @@ pre-release version so I this was to be expected.
       </li>
     
       <li class="post">
-        <a href="/blog/2012/07/01/yahoo-cancellation-notice/">Yahoo! Forgets To Proofread Emails?</a>
+        <a href="/blog/2012/07/10/goodbye-fink-and-macport-hello-homebrew/">fix me</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2012/06/14/the-new-privacy-invading-facebook-like-button/">The New, Privacy Invading, Facebook Like Button</a>
+        <a href="/blog/2012/07/10/confusing-google-stats/">Confusing Google Stats</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2012/06/10/secure-password-generator/">SPG: The Secure Password Generator</a>
+        <a href="/blog/2012/07/10/browser-market-share---bs-for-short/">Browser Market Share - BS For Short</a>
       </li>
     
   </ul>

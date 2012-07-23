@@ -9,7 +9,9 @@
   <meta name="author" content="Neil Smithline">
 
   
-  <meta name="description" content="My hope is that I can write this entry in GNU Emacs&#8217; Org Mode and have it auto-published into this blog. If you are reading this, then I have &hellip;">
+  <meta name="description" content="Dropbox took the internet by storm with its free storage and ease of
+access. But Dropbox comes with a limited amount of data, a level of
+secureness &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -111,7 +113,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/12/07/new-blog-tech/">My New Blogging Technology</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/12/15/sparkleshare/">Sparkleshare: Maybe an Open, Privately Hosted, Dropbox Alternative</a></h1>
     
     
       <p class="meta">
@@ -127,7 +129,7 @@
   
 
 
-<time datetime="2011-12-07T00:00:00-05:00" pubdate data-updated="true">Dec 7<span>th</span>, 2011</time>
+<time datetime="2011-12-15T10:04:43-05:00" pubdate data-updated="true">Dec 15<span>th</span>, 2011</time>
         
       </p>
     
@@ -135,37 +137,21 @@
 
 
   <div class="entry-content"><p> 
-My hope is that I can write this entry in <a href="http://www.gnu.org/s/emacs/">GNU Emacs</a>&#8217; <a href="http://orgmode.org">Org Mode</a> and have it auto-published into this <a href="http://www.neilsmithline.com">blog</a>. If you are reading this, then I have succeeded.
+<a href="http://dropbox.com">Dropbox</a> took the internet by storm with its free storage and ease of
+access. But Dropbox comes with a limited amount of data, a level of
+secureness that is hard-to-understand, and rather proprietary.
 </p>
 <p>
-This is a <a href="http://en.wikipedia.org/wiki/Website#Static_website">static blog</a>. That is, the server side is all <a href="http://en.wikipedia.org/wiki/HTML">HTML</a>. It can be served by virtually any web server. This makes it incredibly convenient for testing and deploying. When I am writing blog entries, I&#8217;m just typing in Emacs. I then save the entries and use Org Mode plus some personalized tweaks to <a href="http://orgmode.org/org.html#Publishing">publish</a> them to a local directory as something close to HTML.
-</p>
-<p>
-These HTMLish files are then fed into <a href="http://nanoblogger.sourceforge.net">NanoBlogger</a>. NanoBlogger is the magic tool that turns a few HTMLish files into a fully functional website. NanoBlogger accepts HTML for the text af entries but wants some simply formatted <a href="http://en.wikipedia.org/wiki/Metadata">metadata</a> added to the file.
-</p>
-<p>
-The Metadata is needed to help NanoBlogger out because, as its name implies, is a teeny-tiny blog engine. As a comparison, my installation of NanoBlogger is 768K (yes, that&#8217;s &#8220;K&#8221;). I also have installations of Drupal at (14M) and Joomla (107M). 
-</p>
-<p>
-The <a href="http://en.wikipedia.org/wiki/.txt">.txt</a> source for each NanoBlogger posting is a file with the body of the entry in HTML embedded but all the cruft that tends to come before and after the body of a web page is simply not there. The easiest way to get an understanding of it is to view the <a href="http://nanoblogger.sourceforge.net/articles/example.txt">metadata source</a> for this <a href="http://nanoblogger.sourceforge.net/articles/example/">sample posting</a>.
-</p>
-<p>
-So you&#8217;re saying &#8220;Big deal.&#8221; or &#8220;Who needs yet another file format?&#8221; But it is a big deal. What most <a href="http://en.wikipedia.org/wiki/Younglings#Ranks_of_Jedi">younglings</a> have never learned is that <a href="http://en.wikipedia.org/wiki/WYSIWYG">WYSIWYG</a> is a distraction from actual content production. Content production is not the same as formatting and editing and, at least in my experience, uses very different parts of the brain. So the less formatting you do while producing content, the better your content will be (at least if you have my brain :-).
-</p>
-<p>
-While it has largely been lost with the popularization of the <a href="http://wikipedia.org">Wikipedia</a>, initially, <a href="http://en.wikipedia.org/wiki/Wikipedia:Cheatsheet">Wiki markup</a> was intended to simplify editing but also served to separate the content production from formatting. While NanoBlogger expects these HTMLish files as input, it is designed to generate them from any number of simpler input formats.
-</p>
-<p>
-These simpler input formats are quite unlike HTML as they are, well they&#8217;re simpler. The default input format is the rather famous <a href="http://daringfireball.net/projects/markdown/">Markdown</a> though many other formats are supported by NanoBlogger or the community. This <a href="http://www.lifehack.org/articles/productivity/use-markdown-for-easy-web-writing.html">article</a> seems to do a good job explaining the benefits of simple languages such as Markdown.
-</p>
-<p>
-It took me but a few hours to create a converter for <a href="http://www.gnu.org/s/emacs/">GNU Emacs</a>&#8217; <a href="http://orgmode.org">Org Mode</a> to NanoBlogger.
-</p>
-<p>
-While not nearly as <a href="http://en.wikipedia.org/wiki/Cool_(aesthetic)">cool</a> as what I&#8217;ve discussed above NanoBlogger has yet another advantage: it produces a static site. On my local machine (<a href="http://support.apple.com/kb/SP546">17&#8221; MacBook Pro</a>), I can view the entire site without running a <a href="http://en.wikipedia.org/wiki/Web_server">web server</a>. I simply go to <a href="http://en.wikipedia.org/wiki/Web_server">Firefox</a> (actually <a href="http://www.mozilla.org/en-US/firefox/aurora/">Firefox Aurora</a>) and visit the <a href="http://en.wikipedia.org/wiki/URL">URL</a>, specifically, the <a href="http://en.wikipedia.org/wiki/File_url">file URL</a> of my blog. For me, I visit <code>file://Users/neil/www-nb</code>, and then I can see my entire blog through the magic of a static websites, <a href="http://en.wikipedia.org/wiki/File_url">file URLs</a>, and <a href="http://en.wikipedia.org/wiki/Relative_URL#Absolute_and_relative_URLs">relative URLs</a>. 
-</p>
+<a href="http://sparkleshare.org">Sparkleshare</a> is an <a href="http://en.wikipedia.org/wiki/Free_and_Open_Source_Software">open source</a> alternative to Dropbox that hit my
+radar screen about 6 months ago. I played with it a bit back then but
+it didn&#8217;t seem to be quite there. I think I was using an early-alpha,
+pre-release version so I this was to be expected.
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2011/12/15/sparkleshare/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -176,7 +162,7 @@ While not nearly as <a href="http://en.wikipedia.org/wiki/Cool_(aesthetic)">cool
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2000/01/01/neil-smithline-links/">My Pages Elsewhere on the Web</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/12/11/SOPA-the-end-of-free-speech/">SOPA: The End of Free Speech</a></h1>
     
     
       <p class="meta">
@@ -192,163 +178,108 @@ While not nearly as <a href="http://en.wikipedia.org/wiki/Cool_(aesthetic)">cool
   
 
 
-<time datetime="2000-01-01T00:30:00-05:00" pubdate data-updated="true">Jan 1<span>st</span>, 2000</time>
+<time datetime="2011-12-11T00:31:05-05:00" pubdate data-updated="true">Dec 11<span>th</span>, 2011</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div id="outline-container-1" class="outline-3">
-<h3 id="sec-1">My Resume</h3>
-<div class="outline-text-3" id="text-1">
-
-<p>As of Thu May 17 13:35:23 2012 (-0400) I am actively looking for a contract or permanent position.  Familial obligations prevent me from relocating from the metro-Boston area. I am comfortable remotely with reasonable travel. View <a href="file:///neilsmithline">my resume</a>.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-3">
-<h3 id="sec-2">Github</h3>
-<div class="outline-text-3" id="text-2">
-
-<p>See my projects on <a href="http://bit.ly/ygCNdO">Github</a>.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-3" class="outline-3">
-<h3 id="sec-3">LinkedIn</h3>
-<div class="outline-text-3" id="text-3">
-
-<p>Connect with me on <a href="http://linkd.in/KE1CZj">LinkedIn</a>.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-4" class="outline-3">
-<h3 id="sec-4">Facebook</h3>
-<div class="outline-text-3" id="text-4">
-
-<p>Read up on my personal life on <a href="http://on.fb.me/KE1DfP">Facebook</a>.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-5" class="outline-3">
-<h3 id="sec-5">Google+</h3>
-<div class="outline-text-3" id="text-5">
-
-<p>Read about what entertains me on <a href="http://bit.ly/KE1Dwc">Google+</a>. This tends to be more nerdy than Facebook.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-6" class="outline-3">
-<h3 id="sec-6">My Bookmarks</h3>
-<div class="outline-text-3" id="text-6">
-
-<p>I keep a lot of <a href="file:///archives/2012/03/23/my_bookmark_tag_cloud">my bookmarks</a> on Diigo.com.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-7" class="outline-3">
-<h3 id="sec-7">My Patents</h3>
-<div class="outline-text-3" id="text-7">
-
-<p>I&#8217;ve filed several <a href="file:///archives/2012/02/21/my_patents">patents</a> related to computer science. 
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-8" class="outline-3">
-<h3 id="sec-8">My Browser Extensions</h3>
-<div class="outline-text-3" id="text-8">
-
-<p>I&#8217;ve written a Firefox add-on, <a href="http://bit.ly/Kkbh43">AMO Up Top Version Info</a>, that makes finding Firefox add-ons for your browser version a little easier. By default, the Mozilla add-ons website, frequently called AMO, displays browser version compatibility only after you click on the version information box that is at the bottom of the add-on page. My add-on duplicates this information so that it is front and center.
+  <div class="entry-content"><p> 
+<a href="https://wfc2.wiredforchange.com/o/9042/p/dia/action/public/?action_KEY=8173">SOPA</a>, and its sister bill PROTECT-IP, are currently making their way
+through congress. I have pointers to some of the excellent sources of
+information on the bills at the end of this article.
 </p>
 <p>
-Before:
-<img src="file:///assets/screen-snapshots/AMO-Up-Top-Version-Info-Before.png"  alt="file:///assets/screen-snapshots/AMO-Up-Top-Version-Info-Before.png" />
+While the magnitude of these bills is staggering, this posting focuses
+on how the passage of these bills will dramatically remove the ability
+of individuals to produce and share content on the internet.
 </p>
 <p>
-After:
-<img src="file:///assets/screen-snapshots/AMO-Up-Top-Version-Info-After.png"  alt="file:///assets/screen-snapshots/AMO-Up-Top-Version-Info-After.png" />
-</p>
+While I favor reasonable enforcement and punishment of internet-based
+crimes, these bills introduce the concepts of:
+</p><ul>
+<li><b>Guilty until proven innocent</b> 
+</li>
+<li><b>Guilty by association</b> 
+</li>
+<li><b>Whoopsy daisy legal recourse</b> that restricts damages (eg: going bankrupt) due to abuse of SOPA to
+  &#8220;s&mdash; happens&#8221; response.
+</li>
+</ul>
+
+
 <p>
-Being that <a href="http://bit.ly/Kkbh43">AMO Up Top Version Info</a> is a restartless add-on, you can install it in just a few seconds and then visit a page on AMO such as the <a href="http://bit.ly/xYcpv7">Scriptish Add-On page</a>.
-</p>
-<p>
-I have also written several UserScripts.  UserScripts are tiny web browser add-ons. Some of those that I&#8217;ve written can be found in my <a href="http://bit.ly/JkwJHB">UserScripts Github repository</a>. If you are running <a href="http://www.mozilla.org/en-US/firefox/fx/">Mozilla Firefox</a> with either the <a href="http://bit.ly/Kk9A6R">Greasemonkey</a> or <a href="http://bit.ly/Kk9JHu">Scriptish</a> (my favorite) add-ons or using <a href="http://bit.ly/Kk8PdU">Google Chrome</a>, you can install them and try them out in just a few seconds.
-</p>
+into American law. At least to me, those concepts don&#8217;t seem very
+&#8220;American&#8221;.
 </div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2011/12/11/SOPA-the-end-of-free-speech/">Read on &rarr;</a>
+    </footer>
+  
 
-</div>
 
-<div id="outline-container-9" class="outline-3">
-<h3 id="sec-9">Contact Me</h3>
-<div class="outline-text-3" id="text-9">
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/12/10/got-tags-working-manually/">Got Tags Working Manually</a></h1>
+    
+    
+      <p class="meta">
+        
 
-<p>You can contact me via email at this address <img src="file:///assets/email-images/blog-neilsmithline-com.png"  alt="file:///assets/email-images/blog-neilsmithline-com.png" />. You cannot copy-and-paste the address as it is an image. This prevents spam. Sorry about the hassle :-(
-</p>
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-10T20:09:57-05:00" pubdate data-updated="true">Dec 10<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p> 
+<a href="http://nanoblogger.sourceforge.net">NanoBlogger</a> supports <a href="http://en.wikipedia.org/wiki/Tag_(metadata)">tags</a>. While they came working out of the box,
+their UI is a bit awkward. I now have it so that I can easily tag
+entries with just a single command line. For example, I&#8217;ll tag this
+posting by typing: 
+nbeta about-this-blogs-tech 1
+<code>nbeta</code> is my shell script to add tags to an entry. It seems a bit
+hard to remember but:
+</p><table style='border: 2px solid black !important; border-collapse: separate;' cellspacing="0" cellpadding="6" rules="all" frame="2">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">Letters</th><th scope="col" class="left">Word</th><th scope="col" class="left">Meaning</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">nb</td><td class="left">NanoBlogger</td><td class="left">This is a NanoBlogger command</td></tr>
+<tr><td class="left">e</td><td class="left">Entry</td><td class="left">This command will affect one or more entries</td></tr>
+<tr><td class="left">t</td><td class="left">Tags</td><td class="left">Affects the tags, in this case, of entries</td></tr>
+<tr><td class="left">a</td><td class="left">Add</td><td class="left">We&#8217;ll be adding tags</td></tr>
+</tbody>
+</table>
+
+
 <p>
-You can also call me courtesy of <a href="http://bit.ly/KkfTqQ">Google Voice</a>. Simply type your phone number into the widget below and click. Your phone will ring. Once you answer your phone, my phone will ring. Very cool. (One of my tenets in life is that the best gadgets are the useful and fun ones that are also happen to be free.)
-<object type="application/x-shockwave-flash" data="https://clients4.google.com/voice/embed/webCallButton" width="230" height="85"><param name="movie" value="https://clients4.google.com/voice/embed/webCallButton" /><param name="wmode" value="transparent" /><param name="FlashVars" value="id=eea51078ff6725b038a69d0625bee1c11137b4b1&style=0" /></object>
+<code>about-this-blogs-tech</code> is the tag name. <code>1</code> is the entry ID number.
+I&#8217;d like it to be the entry name but that isn&#8217;t done yet and seems of
+lower priority as the newest entry is always entry #1.
 </p></div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2000/01/01/diigo-cloud/">My Bookmark Tag Cloud</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2000-01-01T00:10:00-05:00" pubdate data-updated="true">Jan 1<span>st</span>, 2000</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>
-I happen to be partial to <a href="http://www.diigo.com">Diigo</a>&#8217;s bookmarking facilities. I&#8217;ve been using it, on-and-off, for a few years. Like most bookmarking systems, Diigo allows you to tag your bookmarks and then display the tags in a cloud. Here&#8217;s my tag cloud for my Diigo bookmarks.
-</p>
-
-
-
-<div class="diigo-tags"><div class="diigo-banner sidebar-title" style="font: bold 12px arial;margin-bottom:5px;"><a href="http://www.diigo.com"><img src="http://www.diigo.com/images/ii_blue.gif" width="16" height="16" alt="diigo"/></a> <a href="http://www.diigo.com/cloud/neilsmithline">My Diigo Tags</a></div><script type="text/javascript" src="http://www.diigo.com/tools/tagrolls_script/neilsmithline?icon;size=15-36;color=cccccc-000000;title=My%20Diigo%20Tags;name;showadd;v=3"></script>
-
-<br/>
-</div>
   
   
 
@@ -380,15 +311,15 @@ I happen to be partial to <a href="http://www.diigo.com">Diigo</a>&#8217;s bookm
       </li>
     
       <li class="post">
-        <a href="/blog/2012/07/01/yahoo-cancellation-notice/">Yahoo! Forgets To Proofread Emails?</a>
+        <a href="/blog/2012/07/10/goodbye-fink-and-macport-hello-homebrew/">fix me</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2012/06/14/the-new-privacy-invading-facebook-like-button/">The New, Privacy Invading, Facebook Like Button</a>
+        <a href="/blog/2012/07/10/confusing-google-stats/">Confusing Google Stats</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2012/06/10/secure-password-generator/">SPG: The Secure Password Generator</a>
+        <a href="/blog/2012/07/10/browser-market-share---bs-for-short/">Browser Market Share - BS For Short</a>
       </li>
     
   </ul>
