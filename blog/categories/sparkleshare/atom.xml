@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: sparkleshare | My Geekdom]]></title>
-  <link href="http://Neil-Smithline.github.com/blog/categories/sparkleshare/atom.xml" rel="self"/>
-  <link href="http://Neil-Smithline.github.com/"/>
-  <updated>2012-07-22T23:37:09-04:00</updated>
-  <id>http://Neil-Smithline.github.com/</id>
+  <link href="http://www.neilsmithline.com/blog/categories/sparkleshare/atom.xml" rel="self"/>
+  <link href="http://www.neilsmithline.com/"/>
+  <updated>2012-07-22T23:41:35-04:00</updated>
+  <id>http://www.neilsmithline.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[SparkleShare Doesn't Sparkle]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/05/09/sparkleshare-bomb/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/05/09/sparkleshare-bomb/"/>
     <updated>2012-05-09T23:12:00-04:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/05/09/sparkleshare-bomb</id>
+    <id>http://www.neilsmithline.com/blog/2012/05/09/sparkleshare-bomb</id>
     <content type="html"><![CDATA[<p>
 Based on a LifeHacker posting, I previously blogged about giving SparkleShare a try.. It was cool. A free Dropbox with private hosting. So I installed, configured, and started using SparkleShare. While I was quite excited when I embarked upon my journey using SparkleShare, things didn't work out as well as I had hoped.
 </p>
@@ -59,9 +59,9 @@ I am currently using the following scheme for file distribution/backups:
   
   <entry>
     <title type="html"><![CDATA[Sparkleshare: Maybe An Open, Privately Hosted, Dropbox Alternative]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2011/12/15/sparkleshare/"/>
+    <link href="http://www.neilsmithline.com/blog/2011/12/15/sparkleshare/"/>
     <updated>2011-12-15T10:04:43-05:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2011/12/15/sparkleshare</id>
+    <id>http://www.neilsmithline.com/blog/2011/12/15/sparkleshare</id>
     <content type="html"><![CDATA[<p> 
 <a href="http://dropbox.com">Dropbox</a> took the internet by storm with its free storage and ease of
 access. But Dropbox comes with a limited amount of data, a level of

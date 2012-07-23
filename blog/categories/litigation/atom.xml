@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: litigation | My Geekdom]]></title>
-  <link href="http://Neil-Smithline.github.com/blog/categories/litigation/atom.xml" rel="self"/>
-  <link href="http://Neil-Smithline.github.com/"/>
-  <updated>2012-07-22T23:37:09-04:00</updated>
-  <id>http://Neil-Smithline.github.com/</id>
+  <link href="http://www.neilsmithline.com/blog/categories/litigation/atom.xml" rel="self"/>
+  <link href="http://www.neilsmithline.com/"/>
+  <updated>2012-07-22T23:41:35-04:00</updated>
+  <id>http://www.neilsmithline.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[The Litigious Trio]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2011/12/28/the-litigious-trio/"/>
+    <link href="http://www.neilsmithline.com/blog/2011/12/28/the-litigious-trio/"/>
     <updated>2011-12-28T12:04:20-05:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2011/12/28/the-litigious-trio</id>
+    <id>http://www.neilsmithline.com/blog/2011/12/28/the-litigious-trio</id>
     <content type="html"><![CDATA[<p>          
 This posting is best viewed as part of the series of postings about <a href="http://neilsmithline.com/archives/litigious-trio/index.html">The Litigious Trio</a> and, in a larger context, <a href="http://neilsmithline.com/archives/online-freedom/index.html">Online Freedom</a>.
 </p>

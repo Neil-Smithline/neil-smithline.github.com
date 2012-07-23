@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: twitter | My Geekdom]]></title>
-  <link href="http://Neil-Smithline.github.com/blog/categories/twitter/atom.xml" rel="self"/>
-  <link href="http://Neil-Smithline.github.com/"/>
-  <updated>2012-07-22T23:37:09-04:00</updated>
-  <id>http://Neil-Smithline.github.com/</id>
+  <link href="http://www.neilsmithline.com/blog/categories/twitter/atom.xml" rel="self"/>
+  <link href="http://www.neilsmithline.com/"/>
+  <updated>2012-07-22T23:41:35-04:00</updated>
+  <id>http://www.neilsmithline.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Blurring Static And Dynamic Blogs]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/07/22/blurring-static-and-dynamic-blogs/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/07/22/blurring-static-and-dynamic-blogs/"/>
     <updated>2012-07-22T18:23:00-04:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/07/22/blurring-static-and-dynamic-blogs</id>
+    <id>http://www.neilsmithline.com/blog/2012/07/22/blurring-static-and-dynamic-blogs</id>
     <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">Static Blogging</h2>
 <div class="outline-text-2" id="text-1">
@@ -172,9 +172,9 @@ Given the large and growing number of web services in the cloud, I'm sure that t
   
   <entry>
     <title type="html"><![CDATA[Org-Mode + t Makes Tweeting Easy]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/05/27/org-mode-plus-t-makes-tweeting-easy/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/05/27/org-mode-plus-t-makes-tweeting-easy/"/>
     <updated>2012-05-27T18:23:00-04:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/05/27/org-mode-plus-t-makes-tweeting-easy</id>
+    <id>http://www.neilsmithline.com/blog/2012/05/27/org-mode-plus-t-makes-tweeting-easy</id>
     <content type="html"><![CDATA[<div id="outline-container-1" class="outline-3">
 <h3 id="sec-1">Update <span class="timestamp-wrapper"> <span class="timestamp">2012-06-04 Mon 00:57</span></span></h3>
 <div class="outline-text-3" id="text-1">

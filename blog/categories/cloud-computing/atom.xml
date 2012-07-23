@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: cloud-computing | My Geekdom]]></title>
-  <link href="http://Neil-Smithline.github.com/blog/categories/cloud-computing/atom.xml" rel="self"/>
-  <link href="http://Neil-Smithline.github.com/"/>
-  <updated>2012-07-22T23:37:09-04:00</updated>
-  <id>http://Neil-Smithline.github.com/</id>
+  <link href="http://www.neilsmithline.com/blog/categories/cloud-computing/atom.xml" rel="self"/>
+  <link href="http://www.neilsmithline.com/"/>
+  <updated>2012-07-22T23:41:35-04:00</updated>
+  <id>http://www.neilsmithline.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Blurring Static And Dynamic Blogs]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/07/22/blurring-static-and-dynamic-blogs/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/07/22/blurring-static-and-dynamic-blogs/"/>
     <updated>2012-07-22T18:23:00-04:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/07/22/blurring-static-and-dynamic-blogs</id>
+    <id>http://www.neilsmithline.com/blog/2012/07/22/blurring-static-and-dynamic-blogs</id>
     <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">Static Blogging</h2>
 <div class="outline-text-2" id="text-1">
@@ -172,9 +172,9 @@ Given the large and growing number of web services in the cloud, I'm sure that t
   
   <entry>
     <title type="html"><![CDATA[SparkleShare Doesn't Sparkle]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/05/09/sparkleshare-bomb/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/05/09/sparkleshare-bomb/"/>
     <updated>2012-05-09T23:12:00-04:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/05/09/sparkleshare-bomb</id>
+    <id>http://www.neilsmithline.com/blog/2012/05/09/sparkleshare-bomb</id>
     <content type="html"><![CDATA[<p>
 Based on a LifeHacker posting, I previously blogged about giving SparkleShare a try.. It was cool. A free Dropbox with private hosting. So I installed, configured, and started using SparkleShare. While I was quite excited when I embarked upon my journey using SparkleShare, things didn't work out as well as I had hoped.
 </p>
@@ -216,9 +216,9 @@ I am currently using the following scheme for file distribution/backups:
   
   <entry>
     <title type="html"><![CDATA[Cloud Computing: How Expensive Is A Rainy Day?]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/02/29/azure-sunny-day/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/02/29/azure-sunny-day/"/>
     <updated>2012-02-29T11:42:35-05:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/02/29/azure-sunny-day</id>
+    <id>http://www.neilsmithline.com/blog/2012/02/29/azure-sunny-day</id>
     <content type="html"><![CDATA[<p>
 According to <a href="http://bit.ly/zc1OOr">The Register</a> (via <a href="http://bit.ly/wzufGC">Slashdot</a>), Microsoft's cloud computing platform, Azure, has been down, and I mean <a href="http://dictionary.reference.com/browse/kaput">kaput</a>, for 8+ hours. Worse yet, Azure's status page that tells its customers about outages and expected repair times, to which I won't provide a link, has now been <a href="http://en.wikipedia.org/wiki/Slashdotted">Slashdotted</a> and is down.
 </p>
@@ -261,9 +261,9 @@ But, when it comes to managing an enterprise, "can't" means things like "can't g
   
   <entry>
     <title type="html"><![CDATA[Sparkleshare: Maybe An Open, Privately Hosted, Dropbox Alternative]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2011/12/15/sparkleshare/"/>
+    <link href="http://www.neilsmithline.com/blog/2011/12/15/sparkleshare/"/>
     <updated>2011-12-15T10:04:43-05:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2011/12/15/sparkleshare</id>
+    <id>http://www.neilsmithline.com/blog/2011/12/15/sparkleshare</id>
     <content type="html"><![CDATA[<p> 
 <a href="http://dropbox.com">Dropbox</a> took the internet by storm with its free storage and ease of
 access. But Dropbox comes with a limited amount of data, a level of

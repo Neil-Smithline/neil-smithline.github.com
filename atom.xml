@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[My Geekdom]]></title>
-  <link href="http://Neil-Smithline.github.com/atom.xml" rel="self"/>
-  <link href="http://Neil-Smithline.github.com/"/>
-  <updated>2012-07-22T23:37:09-04:00</updated>
-  <id>http://Neil-Smithline.github.com/</id>
+  <link href="http://www.neilsmithline.com/atom.xml" rel="self"/>
+  <link href="http://www.neilsmithline.com/"/>
+  <updated>2012-07-22T23:41:35-04:00</updated>
+  <id>http://www.neilsmithline.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Blurring Static And Dynamic Blogs]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/07/22/blurring-static-and-dynamic-blogs/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/07/22/blurring-static-and-dynamic-blogs/"/>
     <updated>2012-07-22T18:23:00-04:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/07/22/blurring-static-and-dynamic-blogs</id>
+    <id>http://www.neilsmithline.com/blog/2012/07/22/blurring-static-and-dynamic-blogs</id>
     <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">Static Blogging</h2>
 <div class="outline-text-2" id="text-1">
@@ -159,9 +159,9 @@ Given the large and growing number of web services in the cloud, I&#8217;m sure 
   
   <entry>
     <title type="html"><![CDATA[Desktop Time Tracking]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/07/21/desktop-time-tracking/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/07/21/desktop-time-tracking/"/>
     <updated>2012-07-21T20:17:00-04:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/07/21/desktop-time-tracking</id>
+    <id>http://www.neilsmithline.com/blog/2012/07/21/desktop-time-tracking</id>
     <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">Motivation</h2>
 <div class="outline-text-2" id="text-1">
@@ -335,9 +335,9 @@ I hope to follow-up this posting with more blog postings as well as <a href="htt
   
   <entry>
     <title type="html"><![CDATA[Bookifying News]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/07/15/bookifying-news/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/07/15/bookifying-news/"/>
     <updated>2012-07-15T10:09:00-04:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/07/15/bookifying-news</id>
+    <id>http://www.neilsmithline.com/blog/2012/07/15/bookifying-news</id>
     <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">Bookifying News</h2>
 <div class="outline-text-2" id="text-1">
@@ -441,9 +441,9 @@ While Kindle doesn&#8217;t directly support the epub format, there are <a href="
   
   <entry>
     <title type="html"><![CDATA[Yahoo! Forgets To Proofread Emails?]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/07/01/yahoo-cancellation-notice/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/07/01/yahoo-cancellation-notice/"/>
     <updated>2012-07-01T21:33:00-04:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/07/01/yahoo-cancellation-notice</id>
+    <id>http://www.neilsmithline.com/blog/2012/07/01/yahoo-cancellation-notice</id>
     <content type="html"><![CDATA[<p>
 <b>Update: <span class="timestamp-wrapper"> <span class="timestamp">2012-07-04 Wed</span></span></b> Today <a href="http://en.wikipedia.org/wiki/Igoogle">iGoogle</a> had a notice at the top saying tat Google was discontinuing the service in <b>November 2013</b>! The cancellation notice had this <a href="http://bit.ly/O5prY1">Learn more</a> link. Yahoo!&#8217;s cancellation notice looks even worse when in the shadow of Google&#8217;s.
 </p>
@@ -508,9 +508,9 @@ Being that Yahoo! seems to feel that five days is enough warning to shut down a 
   
   <entry>
     <title type="html"><![CDATA[The New, Privacy Invading, Facebook Like Button]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/06/14/the-new-privacy-invading-facebook-like-button/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/06/14/the-new-privacy-invading-facebook-like-button/"/>
     <updated>2012-06-14T10:51:01-04:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/06/14/the-new-privacy-invading-facebook-like-button</id>
+    <id>http://www.neilsmithline.com/blog/2012/06/14/the-new-privacy-invading-facebook-like-button</id>
     <content type="html"><![CDATA[<p>
 (<a href="http://bit.ly/NADZTP">Background information</a> about online advertising.)
 </p>
@@ -675,9 +675,9 @@ Facebook said that they would consider any vote on their privacy policy as <i>ad
   
   <entry>
     <title type="html"><![CDATA[SPG: The Secure Password Generator]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/06/10/secure-password-generator/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/06/10/secure-password-generator/"/>
     <updated>2012-06-10T16:48:00-04:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/06/10/secure-password-generator</id>
+    <id>http://www.neilsmithline.com/blog/2012/06/10/secure-password-generator</id>
     <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">As Users, We Must Expect Our Passwords To Be Compromised</h2>
 <div class="outline-text-2" id="text-1">
@@ -782,9 +782,9 @@ The reprogramming part is the more difficult. It involves you reprogramming your
   
   <entry>
     <title type="html"><![CDATA[My First Ruby Project]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/06/01/first-ruby-project/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/06/01/first-ruby-project/"/>
     <updated>2012-06-01T19:18:00-04:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/06/01/first-ruby-project</id>
+    <id>http://www.neilsmithline.com/blog/2012/06/01/first-ruby-project</id>
     <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">The Project</h2>
 <div class="outline-text-2" id="text-1">
@@ -959,9 +959,9 @@ I&#8217;m pretty busy this week so I don&#8217;t think I&#8217;ll make much prog
   
   <entry>
     <title type="html"><![CDATA[Org-Mode + t Makes Tweeting Easy]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/05/27/org-mode-plus-t-makes-tweeting-easy/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/05/27/org-mode-plus-t-makes-tweeting-easy/"/>
     <updated>2012-05-27T18:23:00-04:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/05/27/org-mode-plus-t-makes-tweeting-easy</id>
+    <id>http://www.neilsmithline.com/blog/2012/05/27/org-mode-plus-t-makes-tweeting-easy</id>
     <content type="html"><![CDATA[<div id="outline-container-1" class="outline-3">
 <h3 id="sec-1">Update <span class="timestamp-wrapper"> <span class="timestamp">2012-06-04 Mon 00:57</span></span></h3>
 <div class="outline-text-3" id="text-1">
@@ -976,7 +976,7 @@ I&#8217;m pretty busy this week so I don&#8217;t think I&#8217;ll make much prog
 <h2 id="sec-1">Motivation</h2>
 <div class="outline-text-2" id="text-1">
 
-<p>After yesterday&#8217;s <a href="http://Neil-Smithline.github.com/blog/2012/05/26/octopress-is-pretty-great" title="Posting about Octopress">ranting about Octopress</a>, it occurred to me that while I now own the content of my blog postings, I don&#8217;t own the content of my <a href="http://bit.ly/JvoqLE">tweets</a>. I&#8217;m sure that there&#8217;s some way to convince <a href="http://bit.ly/Jvotaj">Twitter</a> to give me my tweets, but why should I rely on them to store my tweets.
+<p>After yesterday&#8217;s <a href="http://www.neilsmithline.com/blog/2012/05/26/octopress-is-pretty-great" title="Posting about Octopress">ranting about Octopress</a>, it occurred to me that while I now own the content of my blog postings, I don&#8217;t own the content of my <a href="http://bit.ly/JvoqLE">tweets</a>. I&#8217;m sure that there&#8217;s some way to convince <a href="http://bit.ly/Jvotaj">Twitter</a> to give me my tweets, but why should I rely on them to store my tweets.
 </p>
 <p>
 The obvious answer is that my tweets should be created on my computer and then sent to Twitter. 
@@ -1211,9 +1211,9 @@ As you look at this screenshot, remember that almost all of this is automaticall
   
   <entry>
     <title type="html"><![CDATA[Octopress Is Pretty Great]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/05/26/octopress-is-pretty-great/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/05/26/octopress-is-pretty-great/"/>
     <updated>2012-05-26T13:32:00-04:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/05/26/octopress-is-pretty-great</id>
+    <id>http://www.neilsmithline.com/blog/2012/05/26/octopress-is-pretty-great</id>
     <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">Jekyll Overview</h2>
 <div class="outline-text-2" id="text-1">
@@ -1554,15 +1554,15 @@ My next posting about Octopress will explain the minor modifications I have made
   
   <entry>
     <title type="html"><![CDATA[YANBT: Yet Another New Blogging Technology]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/05/14/new-blog-tech/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/05/14/new-blog-tech/"/>
     <updated>2012-05-14T12:36:00-04:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/05/14/new-blog-tech</id>
+    <id>http://www.neilsmithline.com/blog/2012/05/14/new-blog-tech</id>
     <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">NanoBlogger Was Killing Me</h2>
 <div class="outline-text-2" id="text-1">
 
 <p><a href="http://bit.ly/wq2Ien">NanoBlogger</a> really looked cool to me 
-(<a href="http://Neil-Smithline.github.com/blog/categories/blogging-tech">my postings about why I liked it</a>):
+(<a href="http://www.neilsmithline.com/blog/categories/blogging-tech">my postings about why I liked it</a>):
 </p><ul>
 <li>Small
 </li>
@@ -1662,9 +1662,9 @@ I think I&#8217;m going to be very happy with Octopress.
   
   <entry>
     <title type="html"><![CDATA[SparkleShare Doesn't Sparkle]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/05/09/sparkleshare-bomb/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/05/09/sparkleshare-bomb/"/>
     <updated>2012-05-09T23:12:00-04:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/05/09/sparkleshare-bomb</id>
+    <id>http://www.neilsmithline.com/blog/2012/05/09/sparkleshare-bomb</id>
     <content type="html"><![CDATA[<p>
 Based on a LifeHacker posting, I previously blogged about giving SparkleShare a try.. It was cool. A free Dropbox with private hosting. So I installed, configured, and started using SparkleShare. While I was quite excited when I embarked upon my journey using SparkleShare, things didn&#8217;t work out as well as I had hoped.
 </p>
@@ -1693,9 +1693,9 @@ I am currently using the following scheme for file distribution/backups:
   
   <entry>
     <title type="html"><![CDATA[Blackberry's Manufacturer RIM Nearly RIP]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/03/31/rim-rip/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/03/31/rim-rip/"/>
     <updated>2012-03-31T20:35:00-04:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/03/31/rim-rip</id>
+    <id>http://www.neilsmithline.com/blog/2012/03/31/rim-rip</id>
     <content type="html"><![CDATA[<p>
 <b>RIM No Longer A Viable Company</b>
 </p>
@@ -1764,9 +1764,9 @@ The trick to surviving in the high-tech marketplace is simple. All you need to d
   
   <entry>
     <title type="html"><![CDATA[Automated Gvoice And Gmail To Gcal]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/03/31/gmail2gcal/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/03/31/gmail2gcal/"/>
     <updated>2012-03-31T16:14:00-04:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/03/31/gmail2gcal</id>
+    <id>http://www.neilsmithline.com/blog/2012/03/31/gmail2gcal</id>
     <content type="html"><![CDATA[<p>
 I seem able to hold incredibly large amounts of technical details in my head. In contrast to this, I&#8217;m excited when I can remember what year my kids were born in. From my viewpoint, this is just the way I have always been. From the viewpoint of people in my personal life, it can be frustrating.
 </p>
@@ -1796,9 +1796,9 @@ My newest electronic assistive technology is a rather complete phone and SMS man
   
   <entry>
     <title type="html"><![CDATA[Cloud Computing: How Expensive Is A Rainy Day?]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/02/29/azure-sunny-day/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/02/29/azure-sunny-day/"/>
     <updated>2012-02-29T11:42:35-05:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/02/29/azure-sunny-day</id>
+    <id>http://www.neilsmithline.com/blog/2012/02/29/azure-sunny-day</id>
     <content type="html"><![CDATA[<p>
 According to <a href="http://bit.ly/zc1OOr">The Register</a> (via <a href="http://bit.ly/wzufGC">Slashdot</a>), Microsoft&#8217;s cloud computing platform, Azure, has been down, and I mean <a href="http://dictionary.reference.com/browse/kaput">kaput</a>, for 8+ hours. Worse yet, Azure&#8217;s status page that tells its customers about outages and expected repair times, to which I won&#8217;t provide a link, has now been <a href="http://en.wikipedia.org/wiki/Slashdotted">Slashdotted</a> and is down.
 </p>
@@ -1827,9 +1827,9 @@ But, when it comes to managing an enterprise, &#8220;can&#8217;t&#8221; means th
   
   <entry>
     <title type="html"><![CDATA[Smartphones Everywhere]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/02/22/smartphones/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/02/22/smartphones/"/>
     <updated>2012-02-22T13:38:14-05:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/02/22/smartphones</id>
+    <id>http://www.neilsmithline.com/blog/2012/02/22/smartphones</id>
     <content type="html"><![CDATA[<p>
 Interpreting this chart from <a href="http://blog.nielsen.com/nielsenwire/online_mobile/survey-new-u-s-smartphone-growth-by-age-and-income/">Nielsen</a> (via <a href="http://www.wired.com/epicenter/2012/02/smartphone-buying-machine/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed:+wired/index+(Wired:+Index+3+(Top+Stories+2))">Wired</a>) does not require any great amount of effort.
 </p>
@@ -1897,9 +1897,9 @@ I don&#8217;t claim to be the <a href="http://article.wn.com/view/2012/02/02/Did
   
   <entry>
     <title type="html"><![CDATA[Blog In A Box (actually, a repo)]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/02/15/nogit-blog-in-a-box/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/02/15/nogit-blog-in-a-box/"/>
     <updated>2012-02-15T22:54:25-05:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/02/15/nogit-blog-in-a-box</id>
+    <id>http://www.neilsmithline.com/blog/2012/02/15/nogit-blog-in-a-box</id>
     <content type="html"><![CDATA[<p>
 As I have been developing my blog&#8217;s technology, I have been surprised at the lack of a pre-packaged <a href="http://en.wikipedia.org/wiki/Blog">blogging</a> solution for <a href="http://www.gnu.org/software/emacs/">Emacs</a>&#8217; <a href="http://orgmode.org/">Org Mode</a>. Org Mode is simply a wonderful tool for organizing thoughts, ideas, text, links, etc&hellip; While Org Mode has a rather difficult learning curve, its motto, <i>Your life in plain text.</i>, seems to be accurate.
 </p>
@@ -1951,9 +1951,9 @@ There is no need to install a local web server for staging. Provided you have ve
   
   <entry>
     <title type="html"><![CDATA[New NanoBlogger Command-Line]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/02/14/nbc/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/02/14/nbc/"/>
     <updated>2012-02-14T13:13:34-05:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/02/14/nbc</id>
+    <id>http://www.neilsmithline.com/blog/2012/02/14/nbc</id>
     <content type="html"><![CDATA[<p>
 As I&#8217;ve discussed in previous <a href="http://www.neilsmithline.com/archives/blog">postings about this blog&#8217;s technology</a>, this is a static blog written with NanoBlogger. NanoBlogger is a <a href="http://en.wikipedia.org/wiki/Command-line_interface">CLI</a> driven blogging system. Alas, I have found the <a href="http://nanoblogger.sourceforge.net/docs/nanoblogger.html">NanoBlogger manual</a> to be difficult to follow and the syntax of the CLI to be non-intuitive. (See the footnote <a href="https://github.com/Neil-Smithline/nbc">here</a> regarding the existing CLI.) On the upside, NanoBlogger is a CLI system which makes it easy to modify. 
 </p>
@@ -2040,9 +2040,9 @@ If you wish to use NBC, look at the source code, or tell me why NBC sucks, you c
   
   <entry>
     <title type="html"><![CDATA[This Blog Is Now Hosted For Free (and it's slashdot proof too)]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/02/03/github/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/02/03/github/"/>
     <updated>2012-02-03T21:49:09-05:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/02/03/github</id>
+    <id>http://www.neilsmithline.com/blog/2012/02/03/github</id>
     <content type="html"><![CDATA[<p>
 While there are many free or nearly free blog hosting sites available, most of them come with a long list of restrictions. Either they restrict you to using their blogging software, throw ads on your pages, give you the &#8220;unlimited bandwidth&#8221; plan that they&#8217;ll cut off if your site gets too much traffic, limit you to only the ugly themes, etc.
 </p>
@@ -2077,9 +2077,9 @@ There seems to be another problem with hosting my blog on Github. While practica
   
   <entry>
     <title type="html"><![CDATA[Nastiest Hack I've Seen In Awhile]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/02/01/nasty-su-hack/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/02/01/nasty-su-hack/"/>
     <updated>2012-02-01T20:40:51-05:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/02/01/nasty-su-hack</id>
+    <id>http://www.neilsmithline.com/blog/2012/02/01/nasty-su-hack</id>
     <content type="html"><![CDATA[<p>
 I was reading about <a href="http://code.google.com/p/android-scripting">SL4A</a>, also known as <a href="http://android.com">Android</a> <a href="http://en.wikipedia.org/wiki/Scripting_language">Scripting Languages</a>. They are a set of <a href="http://en.wikipedia.org/wiki/Quick_and_dirty">quick-and-dirty</a> ports of programming languages to the Android that interact with the Android <a href="http://en.wikipedia.org/wiki/Operating_system">OS</a>. I just stumbled upon this &#8221;<a href="http://code.google.com/p/android-scripting/issues/detail?id=184">issue page</a>&#8221; (it&#8217;s more like a <a href="http://en.wikipedia.org/wiki/Internet_forum">forum</a> than a bug report). 
 </p>
@@ -2118,9 +2118,9 @@ So I expanded upon the existing code, making it a full shell script utility. You
   
   <entry>
     <title type="html"><![CDATA[SOPA DOA? Not Quite But Getting There]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/01/14/SOPA-DOA/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/01/14/SOPA-DOA/"/>
     <updated>2012-01-14T00:18:39-05:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/01/14/SOPA-DOA</id>
+    <id>http://www.neilsmithline.com/blog/2012/01/14/SOPA-DOA</id>
     <content type="html"><![CDATA[<p>
 While not dead, SOPA is losing its teeth. Despite having had its major backer remove one of the more totalitarian portions from the bill (the ability to block non-US DNS addresses), SOPA appears unable to make progress in Congress. 
 </p>

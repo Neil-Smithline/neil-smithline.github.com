@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: quantified-self | My Geekdom]]></title>
-  <link href="http://Neil-Smithline.github.com/blog/categories/quantified-self/atom.xml" rel="self"/>
-  <link href="http://Neil-Smithline.github.com/"/>
-  <updated>2012-07-22T23:37:09-04:00</updated>
-  <id>http://Neil-Smithline.github.com/</id>
+  <link href="http://www.neilsmithline.com/blog/categories/quantified-self/atom.xml" rel="self"/>
+  <link href="http://www.neilsmithline.com/"/>
+  <updated>2012-07-22T23:41:35-04:00</updated>
+  <id>http://www.neilsmithline.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Desktop Time Tracking]]></title>
-    <link href="http://Neil-Smithline.github.com/blog/2012/07/21/desktop-time-tracking/"/>
+    <link href="http://www.neilsmithline.com/blog/2012/07/21/desktop-time-tracking/"/>
     <updated>2012-07-21T20:17:00-04:00</updated>
-    <id>http://Neil-Smithline.github.com/blog/2012/07/21/desktop-time-tracking</id>
+    <id>http://www.neilsmithline.com/blog/2012/07/21/desktop-time-tracking</id>
     <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">Motivation</h2>
 <div class="outline-text-2" id="text-1">
