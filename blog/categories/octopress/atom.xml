@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: octopress | My Geekdom]]></title>
-  <link href="http://www.neilsmithline.com/blog/categories/octopress/atom.xml" rel="self"/>
-  <link href="http://www.neilsmithline.com/"/>
-  <updated>2012-07-22T21:35:35-04:00</updated>
-  <id>http://www.neilsmithline.com/</id>
+  <link href="http://Neil-Smithline.github.com/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://Neil-Smithline.github.com/"/>
+  <updated>2012-07-22T21:42:51-04:00</updated>
+  <id>http://Neil-Smithline.github.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Octopress Is Pretty Great]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/05/26/octopress-is-pretty-great/"/>
+    <link href="http://Neil-Smithline.github.com/blog/2012/05/26/octopress-is-pretty-great/"/>
     <updated>2012-05-26T13:32:00-04:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/05/26/octopress-is-pretty-great</id>
+    <id>http://Neil-Smithline.github.com/blog/2012/05/26/octopress-is-pretty-great</id>
     <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">Jekyll Overview</h2>
 <div class="outline-text-2" id="text-1">
@@ -371,9 +371,9 @@ My next posting about Octopress will explain the minor modifications I have made
   
   <entry>
     <title type="html"><![CDATA[YANBT: Yet Another New Blogging Technology]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/05/14/new-blog-tech/"/>
+    <link href="http://Neil-Smithline.github.com/blog/2012/05/14/new-blog-tech/"/>
     <updated>2012-05-14T12:36:00-04:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/05/14/new-blog-tech</id>
+    <id>http://Neil-Smithline.github.com/blog/2012/05/14/new-blog-tech</id>
     <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">NanoBlogger Was Killing Me</h2>
 <div class="outline-text-2" id="text-1">

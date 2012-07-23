@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: blogging-tech | My Geekdom]]></title>
-  <link href="http://www.neilsmithline.com/blog/categories/blogging-tech/atom.xml" rel="self"/>
-  <link href="http://www.neilsmithline.com/"/>
-  <updated>2012-07-22T21:35:35-04:00</updated>
-  <id>http://www.neilsmithline.com/</id>
+  <link href="http://Neil-Smithline.github.com/blog/categories/blogging-tech/atom.xml" rel="self"/>
+  <link href="http://Neil-Smithline.github.com/"/>
+  <updated>2012-07-22T21:42:51-04:00</updated>
+  <id>http://Neil-Smithline.github.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Org-Mode + t Makes Tweeting Easy]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/05/27/org-mode-plus-t-makes-tweeting-easy/"/>
+    <link href="http://Neil-Smithline.github.com/blog/2012/05/27/org-mode-plus-t-makes-tweeting-easy/"/>
     <updated>2012-05-27T18:23:00-04:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/05/27/org-mode-plus-t-makes-tweeting-easy</id>
+    <id>http://Neil-Smithline.github.com/blog/2012/05/27/org-mode-plus-t-makes-tweeting-easy</id>
     <content type="html"><![CDATA[<div id="outline-container-1" class="outline-3">
 <h3 id="sec-1">Update <span class="timestamp-wrapper"> <span class="timestamp">2012-06-04 Mon 00:57</span></span></h3>
 <div class="outline-text-3" id="text-1">
@@ -295,9 +295,9 @@ As you look at this screenshot, remember that almost all of this is automaticall
   
   <entry>
     <title type="html"><![CDATA[Octopress Is Pretty Great]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/05/26/octopress-is-pretty-great/"/>
+    <link href="http://Neil-Smithline.github.com/blog/2012/05/26/octopress-is-pretty-great/"/>
     <updated>2012-05-26T13:32:00-04:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/05/26/octopress-is-pretty-great</id>
+    <id>http://Neil-Smithline.github.com/blog/2012/05/26/octopress-is-pretty-great</id>
     <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">Jekyll Overview</h2>
 <div class="outline-text-2" id="text-1">
@@ -651,9 +651,9 @@ My next posting about Octopress will explain the minor modifications I have made
   
   <entry>
     <title type="html"><![CDATA[YANBT: Yet Another New Blogging Technology]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/05/14/new-blog-tech/"/>
+    <link href="http://Neil-Smithline.github.com/blog/2012/05/14/new-blog-tech/"/>
     <updated>2012-05-14T12:36:00-04:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/05/14/new-blog-tech</id>
+    <id>http://Neil-Smithline.github.com/blog/2012/05/14/new-blog-tech</id>
     <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">NanoBlogger Was Killing Me</h2>
 <div class="outline-text-2" id="text-1">
@@ -769,9 +769,9 @@ I think I'm going to be very happy with Octopress.
   
   <entry>
     <title type="html"><![CDATA[Blog In A Box (actually, a repo)]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/02/15/nogit-blog-in-a-box/"/>
+    <link href="http://Neil-Smithline.github.com/blog/2012/02/15/nogit-blog-in-a-box/"/>
     <updated>2012-02-15T22:54:25-05:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/02/15/nogit-blog-in-a-box</id>
+    <id>http://Neil-Smithline.github.com/blog/2012/02/15/nogit-blog-in-a-box</id>
     <content type="html"><![CDATA[<p>
 As I have been developing my blog's technology, I have been surprised at the lack of a pre-packaged <a href="http://en.wikipedia.org/wiki/Blog">blogging</a> solution for <a href="http://www.gnu.org/software/emacs/">Emacs</a>' <a href="http://orgmode.org/">Org Mode</a>. Org Mode is simply a wonderful tool for organizing thoughts, ideas, text, links, etc&hellip; While Org Mode has a rather difficult learning curve, its motto, <i>Your life in plain text.</i>, seems to be accurate.
 </p>
@@ -846,9 +846,9 @@ There is no need to install a local web server for staging. Provided you have ve
   
   <entry>
     <title type="html"><![CDATA[New NanoBlogger Command-Line]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/02/14/nbc/"/>
+    <link href="http://Neil-Smithline.github.com/blog/2012/02/14/nbc/"/>
     <updated>2012-02-14T13:13:34-05:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/02/14/nbc</id>
+    <id>http://Neil-Smithline.github.com/blog/2012/02/14/nbc</id>
     <content type="html"><![CDATA[<p>
 As I've discussed in previous <a href="http://www.neilsmithline.com/archives/blog">postings about this blog's technology</a>, this is a static blog written with NanoBlogger. NanoBlogger is a <a href="http://en.wikipedia.org/wiki/Command-line_interface">CLI</a> driven blogging system. Alas, I have found the <a href="http://nanoblogger.sourceforge.net/docs/nanoblogger.html">NanoBlogger manual</a> to be difficult to follow and the syntax of the CLI to be non-intuitive. (See the footnote <a href="https://github.com/Neil-Smithline/nbc">here</a> regarding the existing CLI.) On the upside, NanoBlogger is a CLI system which makes it easy to modify. 
 </p>

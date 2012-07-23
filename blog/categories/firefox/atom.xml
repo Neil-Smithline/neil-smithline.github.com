@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: firefox | My Geekdom]]></title>
-  <link href="http://www.neilsmithline.com/blog/categories/firefox/atom.xml" rel="self"/>
-  <link href="http://www.neilsmithline.com/"/>
-  <updated>2012-07-22T21:35:35-04:00</updated>
-  <id>http://www.neilsmithline.com/</id>
+  <link href="http://Neil-Smithline.github.com/blog/categories/firefox/atom.xml" rel="self"/>
+  <link href="http://Neil-Smithline.github.com/"/>
+  <updated>2012-07-22T21:42:51-04:00</updated>
+  <id>http://Neil-Smithline.github.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[My First Ruby Project]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/06/01/first-ruby-project/"/>
+    <link href="http://Neil-Smithline.github.com/blog/2012/06/01/first-ruby-project/"/>
     <updated>2012-06-01T19:18:00-04:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/06/01/first-ruby-project</id>
+    <id>http://Neil-Smithline.github.com/blog/2012/06/01/first-ruby-project</id>
     <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">The Project</h2>
 <div class="outline-text-2" id="text-1">

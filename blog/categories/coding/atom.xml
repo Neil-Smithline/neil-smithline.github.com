@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: coding | My Geekdom]]></title>
-  <link href="http://www.neilsmithline.com/blog/categories/coding/atom.xml" rel="self"/>
-  <link href="http://www.neilsmithline.com/"/>
-  <updated>2012-07-22T21:35:35-04:00</updated>
-  <id>http://www.neilsmithline.com/</id>
+  <link href="http://Neil-Smithline.github.com/blog/categories/coding/atom.xml" rel="self"/>
+  <link href="http://Neil-Smithline.github.com/"/>
+  <updated>2012-07-22T21:42:51-04:00</updated>
+  <id>http://Neil-Smithline.github.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Nastiest Hack I've Seen In Awhile]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/02/01/nasty-su-hack/"/>
+    <link href="http://Neil-Smithline.github.com/blog/2012/02/01/nasty-su-hack/"/>
     <updated>2012-02-01T20:40:51-05:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/02/01/nasty-su-hack</id>
+    <id>http://Neil-Smithline.github.com/blog/2012/02/01/nasty-su-hack</id>
     <content type="html"><![CDATA[<p>
 I was reading about <a href="http://code.google.com/p/android-scripting">SL4A</a>, also known as <a href="http://android.com">Android</a> <a href="http://en.wikipedia.org/wiki/Scripting_language">Scripting Languages</a>. They are a set of <a href="http://en.wikipedia.org/wiki/Quick_and_dirty">quick-and-dirty</a> ports of programming languages to the Android that interact with the Android <a href="http://en.wikipedia.org/wiki/Operating_system">OS</a>. I just stumbled upon this "<a href="http://code.google.com/p/android-scripting/issues/detail?id=184">issue page</a>" (it's more like a <a href="http://en.wikipedia.org/wiki/Internet_forum">forum</a> than a bug report). 
 </p>

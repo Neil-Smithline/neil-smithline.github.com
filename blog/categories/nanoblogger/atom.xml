@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: nanoblogger | My Geekdom]]></title>
-  <link href="http://www.neilsmithline.com/blog/categories/nanoblogger/atom.xml" rel="self"/>
-  <link href="http://www.neilsmithline.com/"/>
-  <updated>2012-07-22T21:35:35-04:00</updated>
-  <id>http://www.neilsmithline.com/</id>
+  <link href="http://Neil-Smithline.github.com/blog/categories/nanoblogger/atom.xml" rel="self"/>
+  <link href="http://Neil-Smithline.github.com/"/>
+  <updated>2012-07-22T21:42:51-04:00</updated>
+  <id>http://Neil-Smithline.github.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[YANBT: Yet Another New Blogging Technology]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/05/14/new-blog-tech/"/>
+    <link href="http://Neil-Smithline.github.com/blog/2012/05/14/new-blog-tech/"/>
     <updated>2012-05-14T12:36:00-04:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/05/14/new-blog-tech</id>
+    <id>http://Neil-Smithline.github.com/blog/2012/05/14/new-blog-tech</id>
     <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">NanoBlogger Was Killing Me</h2>
 <div class="outline-text-2" id="text-1">
@@ -133,9 +133,9 @@ I think I'm going to be very happy with Octopress.
   
   <entry>
     <title type="html"><![CDATA[Blog In A Box (actually, a repo)]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/02/15/nogit-blog-in-a-box/"/>
+    <link href="http://Neil-Smithline.github.com/blog/2012/02/15/nogit-blog-in-a-box/"/>
     <updated>2012-02-15T22:54:25-05:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/02/15/nogit-blog-in-a-box</id>
+    <id>http://Neil-Smithline.github.com/blog/2012/02/15/nogit-blog-in-a-box</id>
     <content type="html"><![CDATA[<p>
 As I have been developing my blog's technology, I have been surprised at the lack of a pre-packaged <a href="http://en.wikipedia.org/wiki/Blog">blogging</a> solution for <a href="http://www.gnu.org/software/emacs/">Emacs</a>' <a href="http://orgmode.org/">Org Mode</a>. Org Mode is simply a wonderful tool for organizing thoughts, ideas, text, links, etc&hellip; While Org Mode has a rather difficult learning curve, its motto, <i>Your life in plain text.</i>, seems to be accurate.
 </p>
@@ -210,9 +210,9 @@ There is no need to install a local web server for staging. Provided you have ve
   
   <entry>
     <title type="html"><![CDATA[New NanoBlogger Command-Line]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/02/14/nbc/"/>
+    <link href="http://Neil-Smithline.github.com/blog/2012/02/14/nbc/"/>
     <updated>2012-02-14T13:13:34-05:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/02/14/nbc</id>
+    <id>http://Neil-Smithline.github.com/blog/2012/02/14/nbc</id>
     <content type="html"><![CDATA[<p>
 As I've discussed in previous <a href="http://www.neilsmithline.com/archives/blog">postings about this blog's technology</a>, this is a static blog written with NanoBlogger. NanoBlogger is a <a href="http://en.wikipedia.org/wiki/Command-line_interface">CLI</a> driven blogging system. Alas, I have found the <a href="http://nanoblogger.sourceforge.net/docs/nanoblogger.html">NanoBlogger manual</a> to be difficult to follow and the syntax of the CLI to be non-intuitive. (See the footnote <a href="https://github.com/Neil-Smithline/nbc">here</a> regarding the existing CLI.) On the upside, NanoBlogger is a CLI system which makes it easy to modify. 
 </p>
@@ -345,9 +345,9 @@ If you wish to use NBC, look at the source code, or tell me why NBC sucks, you c
   
   <entry>
     <title type="html"><![CDATA[Got Tags Working Manually]]></title>
-    <link href="http://www.neilsmithline.com/blog/2011/12/10/got-tags-working-manually/"/>
+    <link href="http://Neil-Smithline.github.com/blog/2011/12/10/got-tags-working-manually/"/>
     <updated>2011-12-10T20:09:57-05:00</updated>
-    <id>http://www.neilsmithline.com/blog/2011/12/10/got-tags-working-manually</id>
+    <id>http://Neil-Smithline.github.com/blog/2011/12/10/got-tags-working-manually</id>
     <content type="html"><![CDATA[<p> 
 <a href="http://nanoblogger.sourceforge.net">NanoBlogger</a> supports <a href="http://en.wikipedia.org/wiki/Tag_(metadata)">tags</a>. While they came working out of the box,
 their UI is a bit awkward. I now have it so that I can easily tag
@@ -388,9 +388,9 @@ lower priority as the newest entry is always entry #1.
   
   <entry>
     <title type="html"><![CDATA[Seems It Really Works]]></title>
-    <link href="http://www.neilsmithline.com/blog/2011/12/10/new-tech-really/"/>
+    <link href="http://Neil-Smithline.github.com/blog/2011/12/10/new-tech-really/"/>
     <updated>2011-12-10T01:27:23-05:00</updated>
-    <id>http://www.neilsmithline.com/blog/2011/12/10/new-tech-really</id>
+    <id>http://Neil-Smithline.github.com/blog/2011/12/10/new-tech-really</id>
     <content type="html"><![CDATA[<p> 
 Well, it appears this actually does work. I seem to be having a few
 issues integrating with <a href="http://nanoblogger.sourceforge.net">NanoBlogger</a> but I'm sure I'll work those out.

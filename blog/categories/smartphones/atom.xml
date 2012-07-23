@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: smartphones | My Geekdom]]></title>
-  <link href="http://www.neilsmithline.com/blog/categories/smartphones/atom.xml" rel="self"/>
-  <link href="http://www.neilsmithline.com/"/>
-  <updated>2012-07-22T21:35:35-04:00</updated>
-  <id>http://www.neilsmithline.com/</id>
+  <link href="http://Neil-Smithline.github.com/blog/categories/smartphones/atom.xml" rel="self"/>
+  <link href="http://Neil-Smithline.github.com/"/>
+  <updated>2012-07-22T21:42:51-04:00</updated>
+  <id>http://Neil-Smithline.github.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Bookifying News]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/07/15/bookifying-news/"/>
+    <link href="http://Neil-Smithline.github.com/blog/2012/07/15/bookifying-news/"/>
     <updated>2012-07-15T10:09:00-04:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/07/15/bookifying-news</id>
+    <id>http://Neil-Smithline.github.com/blog/2012/07/15/bookifying-news</id>
     <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">Bookifying News</h2>
 <div class="outline-text-2" id="text-1">
@@ -128,9 +128,9 @@ While Kindle doesn't directly support the epub format, there are <a href="http:/
   
   <entry>
     <title type="html"><![CDATA[Blackberry's Manufacturer RIM Nearly RIP]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/03/31/rim-rip/"/>
+    <link href="http://Neil-Smithline.github.com/blog/2012/03/31/rim-rip/"/>
     <updated>2012-03-31T20:35:00-04:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/03/31/rim-rip</id>
+    <id>http://Neil-Smithline.github.com/blog/2012/03/31/rim-rip</id>
     <content type="html"><![CDATA[<p>
 <b>RIM No Longer A Viable Company</b>
 </p>
@@ -233,9 +233,9 @@ The trick to surviving in the high-tech marketplace is simple. All you need to d
   
   <entry>
     <title type="html"><![CDATA[Smartphones Everywhere]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/02/22/smartphones/"/>
+    <link href="http://Neil-Smithline.github.com/blog/2012/02/22/smartphones/"/>
     <updated>2012-02-22T13:38:14-05:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/02/22/smartphones</id>
+    <id>http://Neil-Smithline.github.com/blog/2012/02/22/smartphones</id>
     <content type="html"><![CDATA[<p>
 Interpreting this chart from <a href="http://blog.nielsen.com/nielsenwire/online_mobile/survey-new-u-s-smartphone-growth-by-age-and-income/">Nielsen</a> (via <a href="http://www.wired.com/epicenter/2012/02/smartphone-buying-machine/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed:+wired/index+(Wired:+Index+3+(Top+Stories+2))">Wired</a>) does not require any great amount of effort.
 </p>
