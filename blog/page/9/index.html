@@ -9,9 +9,8 @@
   <meta name="author" content="Neil Smithline">
 
   
-  <meta name="description" content="Dropbox took the internet by storm with its free storage and ease of
-access. But Dropbox comes with a limited amount of data, a level of
-secureness &hellip;">
+  <meta name="description" content="SOPA, and its sister bill PROTECT-IP, are currently making their way
+through congress. I have pointers to some of the excellent sources of &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -107,55 +106,6 @@ secureness &hellip;">
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/12/15/sparkleshare/">Sparkleshare: Maybe an Open, Privately Hosted, Dropbox Alternative</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-12-15T10:04:43-05:00" pubdate data-updated="true">Dec 15<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p> 
-<a href="http://dropbox.com">Dropbox</a> took the internet by storm with its free storage and ease of
-access. But Dropbox comes with a limited amount of data, a level of
-secureness that is hard-to-understand, and rather proprietary.
-</p>
-<p>
-<a href="http://sparkleshare.org">Sparkleshare</a> is an <a href="http://en.wikipedia.org/wiki/Free_and_Open_Source_Software">open source</a> alternative to Dropbox that hit my
-radar screen about 6 months ago. I played with it a bit back then but
-it didn&#8217;t seem to be quite there. I think I was using an early-alpha,
-pre-release version so I this was to be expected.
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/12/15/sparkleshare/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
   
   
     <article>
@@ -286,6 +236,101 @@ lower priority as the newest entry is always entry #1.
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/12/10/new-tech-really/">Seems It Really Works</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-10T01:27:23-05:00" pubdate data-updated="true">Dec 10<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p> 
+Well, it appears this actually does work. I seem to be having a few
+issues integrating with <a href="http://nanoblogger.sourceforge.net">NanoBlogger</a> but I&#8217;m sure I&#8217;ll work those out.
+The problems that I&#8217;ve seen are:
+</p><ol>
+<li>It seems that adding or even updating a new entry is as costly
+       as rebuilding the entire blog from scratch. Right now, that&#8217;s
+       OK. But what am I going to do when I have 10, or 100 postings?
+       I hope NanoBlogger can handle this.
+</li>
+<li>NB seems to assume that its input files are hand-written in
+       some legacy text editor called <a href="http://www.vim.org">Vim</a> or something :-). While my
+       strategy of using <a href="http://www.gnu.org/s/emacs/">GNU Emacs</a>&#8217; <a href="http://orgmode.org">Org Mode</a> keeps the flavor of NB in
+       that it is written in a simple markup language, it doesn&#8217;t seem
+       to fit the NB model perfectly. There is nothing wrong with NB&#8217;s
+       markup, it is just that Org Mode&#8217;s markup can easily be
+       exported to virtually every other markup on the planet. So I
+       just need to learn Org Mode markup, write my content in Org
+       Mode, and then publish that data into whatever format I choose.
+       Seems a better solution but NB isn&#8217;t quite prepared for it.
+</li>
+<li>I would still like better integration with Org Mode and NB. The
+       steps I&#8217;ve used to produce this entry are:
+<ul>
+<li>Ran a little shell script I wrote to create a new NB
+             entry. All I do is give the shell script the title of the
+             Org Mode file I want to store the new entry in and it
+             does its magic, leaving me with an Org Mode skeleton for
+             NB.
+</li>
+<li>Edit the Org Mode file just created.
+</li>
+<li>Use Org Mode to publish the entry. This just stores it in
+            my local NB folder.
+</li>
+<li>Run <code>nb update</code> to have my changes put into the local
+            copy of the blog.
+</li>
+<li>Run <code>nb preview</code> to view the changes before publishing.
+</li>
+<li>Run <code>nb publish</code> to update my blog.
+</li>
+</ul>
+
+</li>
+</ol>
+
+
+<p>
+So, while they&#8217;re are still some problems,  I have to say I love it.
+The advantages of using Org Mode and the simple NB blogging engine on
+both my local and production server is way cool.
+</p>
+<p>
+<a href="http://orgmode.org">Org Mode</a> is actually way cool. I&#8217;ve only started using it in the past
+year and will likely spend years learning it as it supports so many
+features. But, like all well-designed pieces of software, you don&#8217;t
+need to learn it all at once. I&#8217;ll yabber about Org Mode another day.
+In any case, I&#8217;m real happy with my blog and the ease with which I can
+add postings to it.
+</p></div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/10/">&larr; Older</a>
@@ -303,10 +348,6 @@ lower priority as the newest entry is always entry #1.
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/07/22/goodbye-fink-and-macport-hello-homebrew/">Goodbye Fink And Macport Hello Homebrew</a>
-      </li>
-    
-      <li class="post">
         <a href="/blog/2012/07/21/desktop-time-tracking/">Desktop Time Tracking</a>
       </li>
     
@@ -320,6 +361,10 @@ lower priority as the newest entry is always entry #1.
     
       <li class="post">
         <a href="/blog/2012/06/14/the-new-privacy-invading-facebook-like-button/">The New, Privacy Invading, Facebook Like Button</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/10/secure-password-generator/">SPG: The Secure Password Generator</a>
       </li>
     
   </ul>
