@@ -9,7 +9,7 @@
   <meta name="author" content="Neil Smithline">
 
   
-  <meta name="description" content="The Project Typically, even my pet projects have a specific goal in mind. I don&#8217;t write a spec for my personal projects, there&#8217;s just a &hellip;">
+  <meta name="description" content="NanoBlogger Was Killing Me NanoBlogger really looked cool to me (my postings about why I liked it): Small Most functionality provided via plugins &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -111,7 +111,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/06/01/first-ruby-project/">My First Ruby Project</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/05/14/new-blog-tech/">YANBT: Yet Another New Blogging Technology</a></h1>
     
     
       <p class="meta">
@@ -127,7 +127,7 @@
   
 
 
-<time datetime="2012-06-01T19:18:00-04:00" pubdate data-updated="true">Jun 1<span>st</span>, 2012</time>
+<time datetime="2012-05-14T12:36:00-04:00" pubdate data-updated="true">May 14<span>th</span>, 2012</time>
         
       </p>
     
@@ -135,41 +135,53 @@
 
 
   <div class="entry-content"><div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">The Project</h2>
+<h2 id="sec-1">NanoBlogger Was Killing Me</h2>
 <div class="outline-text-2" id="text-1">
 
-<p>Typically, even my pet projects have a specific goal in mind. I don&#8217;t write a spec for my personal projects, there&#8217;s just a, maybe slightly fuzzy, goal. Generally I want something that will be useful. I&#8217;ll work on a project until:
+<p><a href="http://bit.ly/wq2Ien">NanoBlogger</a> really looked cool to me 
+(<a href="/blog/categories/blogging-tech">my postings about why I liked it</a>):
 </p><ul>
-<li>The project does everything I hoped for. Maybe even more!
+<li>Small
 </li>
-<li>I run out of spare time to work on it. This doesn&#8217;t happen as often as you may imagine. I really enjoy coding. So, after a tiring day of coding at the office, I come home to relax and work on one of my pet projects. If it was any different, then I have no right to call my blog <a href="http://bit.ly/yGGszW">My Geekdom</a>. 
+<li>Most functionality provided via plugins
 </li>
-<li>I decide that I did a poor job picking a pet project as they&#8217;re supposed to be fun and this projects isn&#8217;t. So long!
+<li><a href="http://bit.ly/xOIkfJ">CLI</a> only
 </li>
-<li>I get stuck such that proceeding will require more effort than I feel it&#8217;s worth. That said, hopefully I learned something working on the project.
+<li>It is <a href="http://bit.ly/Mlkg9X">FOSS</a>.
+</li>
+<li>Produced a static site (ie: only serves static pages)
+</li>
+<li>It was built on <a href="http://bit.ly/JbQmzE">Bash</a> &ndash; I thought this was the coolest
 </li>
 </ul>
 
 
 <p>
-But, unlike my typical pet projects, my goal with my new project is rather amorphous. I want to analyze some data. At time of writing this, I have just shy of 5K records totally 181MB of data. 
+I liked it so much that I wrote a CLI for it that was better suited to my personal workflow. I also spent some time integrating it with Emacs. But it had endless problems.
 </p>
 <p>
-Leaving the details for a later posting, each record is a snapshot of the state of my <a href="http://bit.ly/Kfv0n2">Mac OS X</a> computer. I&#8217;ve been collecting, and am continuing to collect, samples every five minutes since the beginning of March. At least every five minutes that my computer isn&#8217;t <a href="http://bit.ly/LUSEY8">sleeping</a> or hanging.
+It was slow, it did not do anything automatically, frequently required rebuilding of the entire blog, was hard to view on my local machine, isn&#8217;t really being maintained, doesn&#8217;t have a real templating system, breaks the RSS feed on special characters such as etc&hellip;
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Where Next</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Over the past few weeks I&#8217;ve been looking around for a new blogging system. The only real contender seemed to be <a href="http://bit.ly/Jm1bmc">Jekyll</a>. It is written in <a href="http://bit.ly/KAfYv0">Ruby</a> and used by Github to power Github Pages. It has so many contributors to it that its <a href="http://bit.ly/JetyoE">Github repository</a> has, at the moment, 50+ pull requests.
 </p>
 <p>
-I decided to collect the samples because I was getting downright frustrated with the performance of <a href="http://bit.ly/LUT7tx">Mozilla</a>&#8217;s <a href="http://bit.ly/HzqbTy">Firefox</a> browser. For reasons that are off-topic for this posting, I feel a strong interest in making sure that Firefox continues to be successful. 
+I had nearly chosen Jekyll when I moved to NanoBlogger. I found that the discussion about moving to Jekyll on the <a href="http://bit.ly/JH7cIy">0xdecafbad.com</a> blog really aligned with my thoughts.
 </p>
 <p>
-For years I thought Firefox was the bomb. Starting about 9-12 months ago I started to notice that Firefox was routinely using all the resources on my computer. This concerned me because <a href="http://bit.ly/LUUGHN">Google</a>&#8217;s <a href="http://bit.ly/LUUHLP">Chrome</a> browser was starting to have enough functionality to be a primary browser.
-</p>
-<p>
-Being that I wanted Firefox to stay competitive, I decided to try to stay with it. As Mozilla changed their release model, I started to use <a href="http://bit.ly/LUV1u1">Aurora</a> and <a href="http://bit.ly/LUV4Ga">Firefox Beta</a> and provide lots of feedback. The newer versions also seemed to consume a more reasonable amount of my computer&#8217;s resources. Being that the Firefox team was working hard at fixing performance problems, especially memory leaks, I stayed with Firefox. (See <a href="#sec-5">Reference: Articles About Firefox&#8217;s Memory Leaks And Repair Efforts</a> for information about FF&#8217;s memory leaks.)
+But, after playing with it a bit, I found that Jekyll was difficult to configure. And I just so liked the Bash thing that NanoBlogger had that I decided to go with NanoBlogger. But now I&#8217;m wasting too much of my time fighting with Nanoblogger and I should reconsider Jekyll.
 </div>
   
   
     <footer>
-      <a rel="full-article" href="/blog/2012/06/01/first-ruby-project/">Read on &rarr;</a>
+      <a rel="full-article" href="/blog/2012/05/14/new-blog-tech/">Read on &rarr;</a>
     </footer>
   
 
@@ -181,7 +193,7 @@ Being that I wanted Firefox to stay competitive, I decided to try to stay with i
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/05/27/org-mode-plus-t-makes-tweeting-easy/">Org-Mode + T Makes Tweeting Easy</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/05/09/sparkleshare-bomb/">SparkleShare Doesn&#8217;t Sparkle</a></h1>
     
     
       <p class="meta">
@@ -197,63 +209,38 @@ Being that I wanted Firefox to stay competitive, I decided to try to stay with i
   
 
 
-<time datetime="2012-05-27T18:23:00-04:00" pubdate data-updated="true">May 27<span>th</span>, 2012</time>
+<time datetime="2012-05-09T23:12:00-04:00" pubdate data-updated="true">May 9<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div id="outline-container-1" class="outline-3">
-<h3 id="sec-1">Update <span class="timestamp-wrapper"> <span class="timestamp">2012-06-04 Mon 00:57</span></span></h3>
-<div class="outline-text-3" id="text-1">
-
-<p>You can download the code from its <a href="http://cnet.co/M2O9L8">Github repository</a>.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Motivation</h2>
-<div class="outline-text-2" id="text-1">
-
-<p>After yesterday&#8217;s <a href="/blog/2012/05/26/octopress-is-pretty-great" title="Posting about Octopress">ranting about Octopress</a>, it occurred to me that while I now own the content of my blog postings, I don&#8217;t own the content of my <a href="http://bit.ly/JvoqLE">tweets</a>. I&#8217;m sure that there&#8217;s some way to convince <a href="http://bit.ly/Jvotaj">Twitter</a> to give me my tweets, but why should I rely on them to store my tweets.
+  <div class="entry-content"><p>
+Based on a LifeHacker posting, I previously blogged about giving SparkleShare a try.. It was cool. A free Dropbox with private hosting. So I installed, configured, and started using SparkleShare. While I was quite excited when I embarked upon my journey using SparkleShare, things didn&#8217;t work out as well as I had hoped.
 </p>
 <p>
-The obvious answer is that my tweets should be created on my computer and then sent to Twitter. 
+I quickly found out that SparkleShare doesn&#8217;t handle symbolic links. Not at all. There&#8217;s no workaround. The problem is that SparkleShare relies on Git for synchronization and Git doesn&#8217;t support symbolic links. At least for me, this rendered SparkleShare useless. 
 </p>
 <p>
-It should be noted that I&#8217;m not interested in implementing a full Twitter client. There are more than enough of those. I&#8217;m interested in having my tweets, or at least the bulk of my tweets, in a simple and easily accessible format.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">The Answer Must Be Cheap</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>While I want to author and store my tweets locally, it is not a high priority task for me. Whatever solution I come up with must add little or no overhead to my tweeting workflow, must be simple to implement, and cannot require ongoing tinkering to keep working.
+When I moved to Dropbox directory, what I had been using for synchronization before SparkleShare, had no files in it, just a bunch of symbolic links. But with SparkleShare, you have to move all your directories into your SparkleShare directory and then scatter symbolic links around your system where the you want the directories to be. This caused a variety of minor but really annoying problems.
 </p>
 <p>
-Being that my relationship with <a href="http://bit.ly/zhYdcB">Org Mode</a> is rather simple: The more I learn about it the more of my life I want to be based on Org Mode. Org Mode just seems to make everything easier. So I decided to use Org Mode for the author, publication, and storage of my tweets. The system I&#8217;m describing has these properties:
+But SparkleShare totally fails if you want to synchronize a directory that has symbolic links in it. SparkleShare&#8217;s forum was covered with complaints about the symbolic link problem.
+</p>
+<p>
+I am currently using the following scheme for file distribution/backups:
 </p><ul>
-<li>It took me just a few hours to design, implement, test, and begin using it for tweeting.
+<li>I&#8217;m using rsync to keep my media, bin directory, dot-files, and the like in sync on all my computers.
 </li>
-<li>Besides not adding overhead to my tweeting, it has made tweeting dramatically simpler.
+<li>For actual backups, I&#8217;ve been using Crashplan for years and couldn&#8217;t be happier.
 </li>
-<li>The entire implementation is a single file of <a href="http://bit.ly/wTaGtn">elisp</a> that is 120 lines long. 50 of those lines are standard Emacs header comments that are automatically created. The implementation, along with its documentation, is only 70 lines long. While a small code base isn&#8217;t one of my goals, not needing ongoing tinkering is. It is hard to imagine that 70 lines of code will require too much tinkering.
+<li>And, in the past week or two, I&#8217;ve put Dropbox synchronization back into the mix to manage synchronization between Org Mode files on my computers and MobileOrg files on my Android. Despite the strong cult following that Dropbox has, synching with my mobile seems to be the only effective use I can find for it. 
 </li>
 </ul>
 
-
 </div>
   
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/05/27/org-mode-plus-t-makes-tweeting-easy/">Read on &rarr;</a>
-    </footer>
   
 
 
@@ -264,7 +251,7 @@ Being that my relationship with <a href="http://bit.ly/zhYdcB">Org Mode</a> is r
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/05/26/octopress-is-pretty-great/">Octopress Is Pretty Great</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/03/31/rim-rip/">Blackberry&#8217;s Manufacturer RIM Nearly RIP</a></h1>
     
     
       <p class="meta">
@@ -280,36 +267,32 @@ Being that my relationship with <a href="http://bit.ly/zhYdcB">Org Mode</a> is r
   
 
 
-<time datetime="2012-05-26T13:32:00-04:00" pubdate data-updated="true">May 26<span>th</span>, 2012</time>
+<time datetime="2012-03-31T20:35:00-04:00" pubdate data-updated="true">Mar 31<span>st</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Jekyll Overview</h2>
-<div class="outline-text-2" id="text-1">
-
-<p>I have simply fallen in love with <a href="http://bit.ly/KT1aFT">Octopress</a>. I think I mentioned previously that Octopress is an auto-configuration tool wrapped around <a href="http://bit.ly/Jm1bmc">Jekyll</a>. And Jekyll is the technology behind <a href="http://bit.ly/Krch8n">Github pages</a>. As such, if you use Jekyll for your blogging platform, you can preview your blog locally, push it to Github, and let Github do all the page serving. 
+  <div class="entry-content"><p>
+<b>RIM No Longer A Viable Company</b>
 </p>
 <p>
-This isn&#8217;t actually as much work for the Github servers as you may think. Jekyll is a <a href="http://bit.ly/KrdOeu">static</a> <a href="http://bit.ly/KrdUmf">blogging system</a> with no <a href="http://bit.ly/KrdX1s">CMS support</a>. A static blog needs to be <a href="http://bit.ly/Kre8tB">compiled</a> whenever content is modified, but once compiled, the only thing the server needs to do is serve the pages. Dynamic blogging systems such as <a href="http://bit.ly/KreoZJ">Wordpress</a> and <a href="http://bit.ly/KreuAH">Joomla</a> are programs that run on the server and work interactively with the web server to produce each page.
+<a href="http://bit.ly/HAtKtt">RIM</a>, arguably the manufacturer of the first successful smartphone, the <a href="http://bit.ly/HAub73">Blackberry</a>, has not only lost its market lead, but is facing a rather unpredictable future. RIM&#8217;s new CEO, <a href="http://bit.ly/HAuOO6">Thorsten Heins</a>, <a href="http://www.washingtonpost.com/business/rim-charts-risky-survival-plan-while-opening-door-to-sale/2012/03/31/gIQAJYZRnS_story.html?tid=pm_business_pop">has stated</a> that RIM is open to acquisition. At least for the short-term, his statements have led to a one-day, 5% bounce back of the stock price which was down 70% in the 12 months.
 </p>
-</div>
+<p>
+<b>RIM&#8217;s History</b>
+</p>
+<p>
+For those of you that are unaware of RIM&#8217;s history, it got its start in <a href="http://en.wikipedia.org/wiki/Canada">Canada</a> as a <a href="http://bit.ly/H9vfx5">2-way pager</a> provider. In 1999, RIM moved into the smartphone market with its first Blackberry and immediately achieved market dominance. 
+</p>
 
-</div>
 
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">Configuration</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>Octopress&#8217;s biggest addition to Jekyll is that it automagically configures Jekyll for you. I have found that configuring Jekyll is a bit of a pain. Jekyll decided to trade easy configuration for flexibility. This is a common decision in applications and one I can&#8217;t really argue with.
 </div>
   
   
     <footer>
-      <a rel="full-article" href="/blog/2012/05/26/octopress-is-pretty-great/">Read on &rarr;</a>
+      <a rel="full-article" href="/blog/2012/03/31/rim-rip/">Read on &rarr;</a>
     </footer>
   
 
@@ -341,15 +324,15 @@ This isn&#8217;t actually as much work for the Github servers as you may think. 
       </li>
     
       <li class="post">
-        <a href="/blog/2012/07/10/goodbye-fink-and-macport-hello-homebrew/">fix me</a>
+        <a href="/blog/2012/07/01/yahoo-cancellation-notice/">Yahoo! Forgets To Proofread Emails?</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2012/07/10/confusing-google-stats/">Confusing Google Stats</a>
+        <a href="/blog/2012/06/14/the-new-privacy-invading-facebook-like-button/">The New, Privacy Invading, Facebook Like Button</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2012/07/10/browser-market-share---bs-for-short/">Browser Market Share - BS For Short</a>
+        <a href="/blog/2012/06/10/secure-password-generator/">SPG: The Secure Password Generator</a>
       </li>
     
   </ul>

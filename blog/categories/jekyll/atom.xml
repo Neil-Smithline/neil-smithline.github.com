@@ -4,7 +4,7 @@
   <title><![CDATA[Category: jekyll | My Geekdom]]></title>
   <link href="http://Neil-Smithline.github.com/blog/categories/jekyll/atom.xml" rel="self"/>
   <link href="http://Neil-Smithline.github.com/"/>
-  <updated>2012-07-22T23:23:48-04:00</updated>
+  <updated>2012-07-22T23:36:01-04:00</updated>
   <id>http://Neil-Smithline.github.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
@@ -12,6 +12,163 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Blurring Static And Dynamic Blogs]]></title>
+    <link href="http://Neil-Smithline.github.com/blog/2012/05/27/blurring-static-and-dynamic-blogs/"/>
+    <updated>2012-05-27T18:23:00-04:00</updated>
+    <id>http://Neil-Smithline.github.com/blog/2012/05/27/blurring-static-and-dynamic-blogs</id>
+    <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Static Blogging</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>I've discussed the pros and cons about static blogging <a href="http://www.neilsmithline.com/blog/categories/blogging-tech/">many times</a> before. In summary, the cons are that, well that your blog is static. No surprise there.
+</p>
+<p>
+Fortunately, there are ways to push the limits of static blogging so that it is not quite so static.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Website Hosting</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Unless you are self-hosting your <a href="http://octopress.org">Octopress</a> or <a href="http://jekyllrb.com">Jekyll</a> blog, you are using another site to host your blog. I host mine on Github. They have a web server running 24x7 to host it. But that's not my problem. I just use their (free) services.
+</p>
+<p>
+I understand that website hosting isn't a terribly exciting example of stretching the bubble of static blogging, but it is an example nonetheless. Dynamic blogs require specialized software running on their hosting computer to work. Static blogs tend to be able to run on generic web servers, but someone has to be running that web server.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">JavaScript Helps</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>Out of the box, Octopress comes with some features to show your most recent tweets as well as recent activity within your <a href="http://github.com">Github</a> repositories. This is dynamic data that Octopress implements with some JavaScript.
+</p>
+<p>
+Just to be clear, by <i>dynamic data/</i> I mean that the data displayed on the page may change without a republication of the blog. I am not necessarily referring to a scrolling widget or something. Just dynamic data. On the other hand, JavaScript can be used to display some data that is embedded in the pages source in a scrolling widget. Being that the data is embedded in the page's source at or before publication time, that is <i>static data</i>.
+</p>
+<p>
+But client-side JavaScript (ie: JavaScript running in the user's browser) has its limits. For example, if you want to send a tweet whenever you add a new blog entry, client-side JavaScript is going to have a hard time at it.
+</p>
+
+
+<!-- more -->
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Pushing Beyond Web Hosting JavaScript</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>The trick behind adding a much wider array of dynamic features to your <i>static</i> blog is:
+</p><blockquote>
+
+<p>Integrate with external web services and let them do the work for you.
+</p>
+</blockquote>
+
+
+<p>
+It is even better if you can let other sites do the hard work for you free of charge. For example, Github is hosting this blog at no cost to me. Thank you Github! But Github won't tweet about my new blog postings or search through my website. Fortunately, there are services that will happily do that for you.
+</p>
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1">Site Search</h3>
+<div class="outline-text-3" id="text-4-1">
+
+<p>This blog's search functionality is provided by Google. Dynamic blogging systems such as <a href="http://joomla.org">Joomla</a> have a large array of <a href="http://extensions.joomla.org/extensions/search-a-indexing">search extensions</a> that you can run on your server to provide various searching features. I'm sure that they provide a much larger set of functionality than my site's Google search provides. 
+</p>
+<p>
+Richer functionality or not, each extension needs to be installed, configured, and maintained. With Octopress, you never need to think about your site's search functionality. The site comes preconfigured for Google site search. That works for me.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2">Automated Tweeting</h3>
+<div class="outline-text-3" id="text-4-2">
+
+<p>There are many ways to tweet via an email message but there is no way, at least none that I've bothered to think through, to get Github to send emails formatted for a tweet whenever you post. But, there are many sites that will watch your blog for change and perform some activity when your blog changes.
+</p>
+<p>
+Exactly which site you use depends on what your needs are. For automated tweeting I decided to use <a href="http://feedburner.com/">FeedBurner</a>. If you're unfamiliar with FeedBurner, it provides a web service that takes your site's RSS/Atom feed as input and adds value to that feed. My site's RSS feed is <a href="http://feeds.feedburner.com/MyGeekdom">http://feeds.feedburner.com/MyGeekdom</a>. Assuming you don't have uncommon browser settings, you should see something that looks a lot better than raw XML: 
+<img src="http://www.neilsmithline.com/assets/screen-snapshots/feedburner.png"  alt="http://www.neilsmithline.com/assets/screen-snapshots/feedburner.png" />
+</p>
+<p>
+Amongst the multitude of options that FeedBurner provides is the ability to subscribe to a site by email. So I subscribed myself, using a unique email alias, to FeedBurner emails about updates to my site. I then have an email filter that automatically sends the FeedBurner emails to my tweeting email address and <i>voila</i>, whenever I post a new article I automatically produce a tweet <a href="https://twitter.com/neil_smithline/status/227220890109218816">like this one</a>.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4-3" class="outline-3">
+<h3 id="sec-4-3">Tracking "The Buzz"</h3>
+<div class="outline-text-3" id="text-4-3">
+
+<p>"The Buzz", also known as "Trending" or simply "current events", is a term to describe what is popular on the internet at any given moment. While tracking all of the internet's news doesn't seem appropriate for a blog, tracking news related to your blog posting may be desirable.
+</p>
+<p>
+Courtesy of <a href="http://socialmention.com">SocialMention</a>, many of my blog postings have current news in the sidebar (see <a href="http://www.neilsmithline.com/blog/2012/07/15/bookifying-news/">example blog posting</a>). In many ways this is similar to tracking a Twitter #hashtag. But SocialMention gathers data from many dozens of web sites providing a richer and more diverse collection of data than Twitter can. 
+</p>
+<p>
+For example, by tracking several popular bookmarking sites such as <a href="http://delicious.com">Delicious</a>, SocialMention can tell you what pages people are bookmarking that are related to your blog posting. Most people, thankfully, don't send a tweet whenever they bookmark a site.
+</p>
+<p>
+While it may be redundant to state,
+</p><blockquote>
+
+<p>Displaying current events on your blog postings means that they will always have current information.
+</p>
+</blockquote>
+
+
+<p>
+This means that there's no need to update your blog posting with links to relevant websites. That is clearly a task that would become unmanageable as your blog grows. Instead, your <i>static blog</i> will always have <i>dynamic data</i> on it.
+</p>
+</div>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">The Age Of Cloud Computing</h2>
+<div class="outline-text-2" id="text-5">
+
+<p>While my blog is far from a large operation, it has only recently become possible due to the advent of <a href="http://en.wikipedia.org/wiki/Cloud_computing">cloud computing</a>. From tiny systems like my blog to large systems like Google's search engine, cloud computing is about wiring together the most appropriate services in a manner that produces your desired functionality with a minimal amount of setup, cost, and maintenance.
+</p>
+<p>
+While I don't have exact dates, my automated tweeting on new blog posts has been working maintenance free long enough that I forgot that I had implemented it until I noticed that I had just tweeted about my previous blog posting. I believe that defines "minimal maintenance".
+</p>
+<p>
+Given the large and growing number of web services in the cloud, I'm sure that this is just the beginning of dynamic data in static blogs.
+</p></div>
+</div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress Is Pretty Great]]></title>
