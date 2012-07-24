@@ -4,7 +4,7 @@
   <title><![CDATA[Category: jekyll | My Geekdom]]></title>
   <link href="http://www.neilsmithline.com/blog/categories/jekyll/atom.xml" rel="self"/>
   <link href="http://www.neilsmithline.com/"/>
-  <updated>2012-07-22T23:41:35-04:00</updated>
+  <updated>2012-07-24T18:15:47-04:00</updated>
   <id>http://www.neilsmithline.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
@@ -41,7 +41,7 @@ Fortunately, there are ways to push the limits of static blogging so that it is 
 <p>Unless you are self-hosting your <a href="http://octopress.org">Octopress</a> or <a href="http://jekyllrb.com">Jekyll</a> blog, you are using another site to host your blog. I host mine on Github. They have a web server running 24x7 to host it. But that's not my problem. I just use their (free) services.
 </p>
 <p>
-I understand that website hosting isn't a terribly exciting example of stretching the bubble of static blogging, but it is an example nonetheless. Dynamic blogs require specialized software running on their hosting computer to work. Static blogs tend to be able to run on generic web servers, but someone has to be running that web server.
+I understand that website hosting isn't a terribly exciting example of stretching the bubble of static blogging, but it is an example nonetheless. Dynamic blogs require specialized software running on their hosting computer to work. Static blogs tend to be able to run on generic web servers but there still must be a web server or there's no blog.
 </p>
 </div>
 
@@ -57,7 +57,10 @@ I understand that website hosting isn't a terribly exciting example of stretchin
 <p>Out of the box, Octopress comes with some features to show your most recent tweets as well as recent activity within your <a href="http://github.com">Github</a> repositories. This is dynamic data that Octopress implements with some JavaScript.
 </p>
 <p>
-Just to be clear, by <i>dynamic data/</i> I mean that the data displayed on the page may change without a republication of the blog. I am not necessarily referring to a scrolling widget or something. Just dynamic data. On the other hand, JavaScript can be used to display some data that is embedded in the pages source in a scrolling widget. Being that the data is embedded in the page's source at or before publication time, that is <i>static data</i>.
+Just to be clear, by <i>dynamic data</i> I mean that the data displayed on the page may change without a republication of the blog. I am not necessarily referring to a scrolling widget or something. Just dynamic data. 
+</p>
+<p>
+Conversely, JavaScript can be used to dynamically display static data. That is, data that is embedded in the source of the web page. Being that the data is embedded in the page's source at or before publication time, it is assuredly <i>static data</i>.
 </p>
 <p>
 But client-side JavaScript (ie: JavaScript running in the user's browser) has its limits. For example, if you want to send a tweet whenever you add a new blog entry, client-side JavaScript is going to have a hard time at it.
@@ -111,11 +114,13 @@ Richer functionality or not, each extension needs to be installed, configured, a
 <p>There are many ways to tweet via an email message but there is no way, at least none that I've bothered to think through, to get Github to send emails formatted for a tweet whenever you post. But, there are many sites that will watch your blog for change and perform some activity when your blog changes.
 </p>
 <p>
-Exactly which site you use depends on what your needs are. For automated tweeting I decided to use <a href="http://feedburner.com/">FeedBurner</a>. If you're unfamiliar with FeedBurner, it provides a web service that takes your site's RSS/Atom feed as input and adds value to that feed. My site's RSS feed is <a href="http://feeds.feedburner.com/MyGeekdom">http://feeds.feedburner.com/MyGeekdom</a>. Assuming you don't have uncommon browser settings, you should see something that looks a lot better than raw XML: 
+Exactly which site you use depends on what your needs are. For automated tweeting I decided to use <a href="http://feedburner.com/">FeedBurner</a>. If you're unfamiliar with FeedBurner, it provides a web service that takes your site's RSS/Atom feed as input and adds value to that feed. My site's RSS feed is <a href="http://feeds.feedburner.com/MyGeekdom">http://feeds.feedburner.com/MyGeekdom</a>. Assuming you don't have uncommon browser settings, if you visit that URL  you will see something that looks like: 
+</p>
+<p>
 <img src="http://www.neilsmithline.com/assets/screen-snapshots/feedburner.png"  alt="http://www.neilsmithline.com/assets/screen-snapshots/feedburner.png" />
 </p>
 <p>
-Amongst the multitude of options that FeedBurner provides is the ability to subscribe to a site by email. So I subscribed myself, using a unique email alias, to FeedBurner emails about updates to my site. I then have an email filter that automatically sends the FeedBurner emails to my tweeting email address and <i>voila</i>, whenever I post a new article I automatically produce a tweet <a href="https://twitter.com/neil_smithline/status/227220890109218816">like this one</a>.
+Amongst the multitude of options that FeedBurner provides is the ability to subscribe to a site by email. So I subscribed myself, using a unique email alias, to FeedBurner emails about updates to my site. I then created an email filter that automatically forwards the FeedBurner emails to my tweeting email address and <i>voila</i>, whenever I post a new article I automatically produce a tweet <a href="https://twitter.com/neil_smithline/status/227220890109218816">like this one</a>.
 </p>
 </div>
 
@@ -143,7 +148,7 @@ While it may be redundant to state,
 
 
 <p>
-This means that there's no need to update your blog posting with links to relevant websites. That is clearly a task that would become unmanageable as your blog grows. Instead, your <i>static blog</i> will always have <i>dynamic data</i> on it.
+This means that there's no need to update your blog posting with links to relevant websites as new information becomes available. That is clearly a task that would become unmanageable as your blog grows. Instead, your <i>static blog</i> will always have <i>dynamic data</i> on it.
 </p>
 </div>
 </div>
@@ -157,13 +162,13 @@ This means that there's no need to update your blog posting with links to releva
 <h2 id="sec-5">The Age Of Cloud Computing</h2>
 <div class="outline-text-2" id="text-5">
 
-<p>While my blog is far from a large operation, it has only recently become possible due to the advent of <a href="http://en.wikipedia.org/wiki/Cloud_computing">cloud computing</a>. From tiny systems like my blog to large systems like Google's search engine, cloud computing is about wiring together the most appropriate services in a manner that produces your desired functionality with a minimal amount of setup, cost, and maintenance.
+<p>While my blog is far from a large operation, the advent of <a href="http://en.wikipedia.org/wiki/Cloud_computing">cloud computing</a> has made these dynamic features possible. From tiny systems like my blog to large systems like Google's search engine, cloud computing is about wiring together the most appropriate services in a manner that produces your desired functionality with a minimal amount of setup, cost, and maintenance.
 </p>
 <p>
-While I don't have exact dates, my automated tweeting on new blog posts has been working maintenance free long enough that I forgot that I had implemented it until I noticed that I had just tweeted about my previous blog posting. I believe that defines "minimal maintenance".
+While I don't have exact dates, my automated tweeting on new blog posts has been working maintenance free long enough that I forgot that I had implemented it until I noticed that I had just tweeted about my previous blog posting. I believe that is the very definition of "minimal maintenance".
 </p>
 <p>
-Given the large and growing number of web services in the cloud, I'm sure that this is just the beginning of dynamic data in static blogs.
+Given the large and growing number of web services in the cloud and my limited time to explore them, I'm sure that this is but a small sampling of the different ways to use dynamic data in static blogs.
 </p></div>
 </div>
 

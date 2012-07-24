@@ -154,7 +154,7 @@ Fortunately, there are ways to push the limits of static blogging so that it is 
 <p>Unless you are self-hosting your <a href="http://octopress.org">Octopress</a> or <a href="http://jekyllrb.com">Jekyll</a> blog, you are using another site to host your blog. I host mine on Github. They have a web server running 24x7 to host it. But that&#8217;s not my problem. I just use their (free) services.
 </p>
 <p>
-I understand that website hosting isn&#8217;t a terribly exciting example of stretching the bubble of static blogging, but it is an example nonetheless. Dynamic blogs require specialized software running on their hosting computer to work. Static blogs tend to be able to run on generic web servers, but someone has to be running that web server.
+I understand that website hosting isn&#8217;t a terribly exciting example of stretching the bubble of static blogging, but it is an example nonetheless. Dynamic blogs require specialized software running on their hosting computer to work. Static blogs tend to be able to run on generic web servers but there still must be a web server or there&#8217;s no blog.
 </p>
 </div>
 
@@ -167,7 +167,10 @@ I understand that website hosting isn&#8217;t a terribly exciting example of str
 <p>Out of the box, Octopress comes with some features to show your most recent tweets as well as recent activity within your <a href="http://github.com">Github</a> repositories. This is dynamic data that Octopress implements with some JavaScript.
 </p>
 <p>
-Just to be clear, by <i>dynamic data/</i> I mean that the data displayed on the page may change without a republication of the blog. I am not necessarily referring to a scrolling widget or something. Just dynamic data. On the other hand, JavaScript can be used to display some data that is embedded in the pages source in a scrolling widget. Being that the data is embedded in the page&#8217;s source at or before publication time, that is <i>static data</i>.
+Just to be clear, by <i>dynamic data</i> I mean that the data displayed on the page may change without a republication of the blog. I am not necessarily referring to a scrolling widget or something. Just dynamic data. 
+</p>
+<p>
+Conversely, JavaScript can be used to dynamically display static data. That is, data that is embedded in the source of the web page. Being that the data is embedded in the page&#8217;s source at or before publication time, it is assuredly <i>static data</i>.
 </p>
 <p>
 But client-side JavaScript (ie: JavaScript running in the user&#8217;s browser) has its limits. For example, if you want to send a tweet whenever you add a new blog entry, client-side JavaScript is going to have a hard time at it.
