@@ -355,8 +355,10 @@ lower priority as the newest entry is always entry #1.
 
 
 <!-- ShareThis -->
-<script type="text/javascript" src="[http://w.sharethis.com/button/buttons.js]"></script>
-<script type="text/javascript">stLight.options({publisher: "4eafa479-c64d-49ab-9e91-90cb169b33c2"}); </script>
+<script>
+  var options={ "publisher": "4eafa479-c64d-49ab-9e91-90cb169b33c2", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["twitter", "googleplus", "linkedin", "facebook", "email", "sharethis"]}};
+  var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+</script>
 <!-- /ShareThis -->
 
   
