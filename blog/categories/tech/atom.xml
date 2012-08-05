@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tech | My Geekdom]]></title>
   <link href="http://www.neilsmithline.com/blog/categories/tech/atom.xml" rel="self"/>
   <link href="http://www.neilsmithline.com/"/>
-  <updated>2012-07-27T19:57:28-04:00</updated>
+  <updated>2012-08-04T22:10:15-04:00</updated>
   <id>http://www.neilsmithline.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
@@ -35,7 +35,7 @@
 <h2 id="sec-2">Basic Activity Tracking</h2>
 <div class="outline-text-2" id="text-2">
 
-<p>While I I had not initially planned to focus on Mac OS X time tracking, it turned out to be easy. For a couple of weeks I've been playing around with two Mac OS X applications that track your computer activities: <a href="http://timingapp.com/">Timing</a> (actually <i>Timing Lite</i>) and <a href="http://manytricks.com/timesink/">Time Sink</a>.
+<p>While I had not initially planned to focus on Mac OS X time tracking, it turned out to be easy. For a couple of weeks I've been playing around with two Mac OS X applications that track your computer activities: <a href="http://timingapp.com/">Timing</a> (actually <i>Timing Lite</i>) and <a href="http://manytricks.com/timesink/">Time Sink</a>.
 </p>
 <p>
 Time Sink integrates with Mac OS X to track the <i>active</i> or <i>foreground</i> application and provides a variety of reports to display that information. In addition to tracking the current app, Time Sink tries to track what you were doing in that app. It achieves this by using a relatively low-tech process of collecting the active window's name.

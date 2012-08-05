@@ -4,7 +4,7 @@
   <title><![CDATA[My Geekdom]]></title>
   <link href="http://www.neilsmithline.com/atom.xml" rel="self"/>
   <link href="http://www.neilsmithline.com/"/>
-  <updated>2012-07-27T19:57:28-04:00</updated>
+  <updated>2012-08-04T22:10:15-04:00</updated>
   <id>http://www.neilsmithline.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
@@ -12,6 +12,79 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Time Tracking]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/08/04/time-tracking/"/>
+    <updated>2012-08-04T19:29:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/08/04/time-tracking</id>
+    <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">The Quantified Self</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>A couple of months ago I heard about this <del>nerdy</del> cool movement called <a href="http://en.wikipedia.org/wiki/Quantified_Self">Quantified Self</a>. Its goal is improving life by leveraging organized data about yourself. The ideas behind Quantified Self are far from new. Recording your caloric intake with the aim of reaching a goal, ie: counting calories, has been around for&hellip; well for a long time.
+</p>
+<p>
+The Quantified Self movement takes old principles, such as calorie counting, and improves upon them in two key ways:
+</p><ul>
+<li><b>QS is more of an atitude than an activity.</b> Tracking calories, cholesterol levels, blood pressure, etc&hellip; are generally targeted at a very specific goal. For example, a baseball player that records his batting performance against different pitchers is looking to be a better batter. The Quantified Self movement encourages people to look for new means of measurement, as wel as to use existing means of measurement differently, with no single goal. If you will, QS is an umbrella encompassing both old and new tools.
+</li>
+<li><b>Technology is a game changer.</b> Almost overnight it became possible to measure and record huge amounts of data about yourself. This ranges from relatively low-tech activities such as &#8220;checking in&#8221; to a social network during the day or using an online to-do management system to <a href="http://fitbit.com">multipurpose devices</a> that collect fairly complex data.
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">My Project</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Beinng the type of person who likes <del>nerdy</del> cool things, I got all excited the moment I heard about QS. After toying around with some ideas I decided to monitor my daily activities with the goal of using my time more wisely.
+</p>
+<p>
+I am not referring to the type of activity data you can get from your <a href="http://en.wikipedia.org/wiki/Filofax">Filofax</a> or the detailed location data that a service such as <a href="http://en.wikipedia.org/wiki/Google_Latitude">Google Latitude</a> provides. I am going to <a href="http://en.wikipedia.org/wiki/Sample_(statistics)">sample</a> my activity several dozen times a day.
+</p>
+<p>
+I have a <a href="https://github.com/Neil-Smithline/time-tracking-experiments/">living document and code repository</a> that discusses my goals in more detail. I also have a <a href="https://github.com/Neil-Smithline/time-tracking-experiments/blob/1254eb4cb744305f66f547fbccfc0189db542198/README.org">snapshot</a> taken at the time of writing this.
+</p>
+<p>
+Besides documenting my goals, I have tried, for the first time, to keep a <a href="http://www.neilsmithline.com/time-tracking-experiments/journal.html">journal</a> of the problem solving process as I was going through it. To reduce the overhead of maintaining a journal I have left it pretty raw so please forgive its informal presentation.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Implementing Time Tracking</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>The broad solution I&#8217;ve implemented in my time tracking experiment is documented in the living document and journal referenced above. To save time, I&#8217;ll not duplicate what is documented there. What I will discuss is my first solution, perhaps my first prototype of the time tracking system.
+</p>
+<p>
+The goal is to track my activities via my ever-handy Android phone and record that data in a structured manner on my computer. Due to my personal preferences, I&#8217;m storing the data in <a href="http://www.orgmode.org">Org Mode</a> but the concepts are not limited to Org Mode.
+</p>
+<p>
+Being that I&#8217;m storing my data in Org Mode and using Org Mode as my task manager, the solution has a very Org Mode&#8217;ish feel. I&#8217;ll try to explain enough about Org Mode so that you can follow.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">In Next posting</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>I&#8217;m going to post this blog entry in two parts because my time tracking system just interrupted me, asking for a sampling of my activity. When I responded to the request I saw that I&#8217;ve used up the time I&#8217;ve allotted for blogging today so I&#8217;m putting this aside for now.
+</p>
+<p>
+PS: I don&#8217;t think I&#8217;ve mentioned it before but my time tracking system provides instantaneous feedback. Every time it requests a sample of my activity it tells me how long I&#8217;ve been doing that activity as well as all the other activities I&#8217;ve done during the day. This allows me to immediately alter my behavior without waiting for longer-term analyses. Definitely cool (OK, and nerdy too).
+</p></div>
+</div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Blurring Static And Dynamic Blogs]]></title>
@@ -181,7 +254,7 @@ Given the large and growing number of web services in the cloud and my limited t
 <h2 id="sec-2">Basic Activity Tracking</h2>
 <div class="outline-text-2" id="text-2">
 
-<p>While I I had not initially planned to focus on Mac OS X time tracking, it turned out to be easy. For a couple of weeks I&#8217;ve been playing around with two Mac OS X applications that track your computer activities: <a href="http://timingapp.com/">Timing</a> (actually <i>Timing Lite</i>) and <a href="http://manytricks.com/timesink/">Time Sink</a>.
+<p>While I had not initially planned to focus on Mac OS X time tracking, it turned out to be easy. For a couple of weeks I&#8217;ve been playing around with two Mac OS X applications that track your computer activities: <a href="http://timingapp.com/">Timing</a> (actually <i>Timing Lite</i>) and <a href="http://manytricks.com/timesink/">Time Sink</a>.
 </p>
 <p>
 Time Sink integrates with Mac OS X to track the <i>active</i> or <i>foreground</i> application and provides a variety of reports to display that information. In addition to tracking the current app, Time Sink tries to track what you were doing in that app. It achieves this by using a relatively low-tech process of collecting the active window&#8217;s name.
@@ -2118,36 +2191,6 @@ Being as I often write shell scripts with calls to <a href="http://linux.die.net
 </p>
 <p>
 So I expanded upon the existing code, making it a full shell script utility. You can look the code or grab a copy at my <a href="https://github.com">GitHub</a> <a href="https://github.com/Neil-Smithline">page</a> in the <a href="https://github.com/Neil-Smithline/rerunasroot">rerunasroot</a> repository. I&#8217;ll be using it in the future.
-</p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[SOPA DOA? Not Quite But Getting There]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/01/14/SOPA-DOA/"/>
-    <updated>2012-01-14T00:18:39-05:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/01/14/SOPA-DOA</id>
-    <content type="html"><![CDATA[<p>
-While not dead, SOPA is losing its teeth. Despite having had its major backer remove one of the more totalitarian portions from the bill (the ability to block non-US DNS addresses), SOPA appears unable to make progress in Congress. 
-</p>
-<p>
-In a <a href="http://cnet.co/ArcHPH">CNET</a> article (via <a href="http://bit.ly/zMTg3h">Slashdot</a>), the <a href="#wiki-RIAA">RIAA</a> whines:
-</p><blockquote>
-
-<p>Instead of helping to come up with mechanisms to deny access to
-the U.S. market by foreign criminals,&#8221; the RIAA wrote, &#8220;the
-opposition just keeps saying no. It is incumbent upon them to help
-develop language that will ensure that criminals can&#8217;t access our
-market, while at the same time protecting our need for national
-cybersecurity.
-</p>
-</blockquote>
-
-
-<p>
-As <a href="#SOPA-the-end-of-free-speech.org">discussed previously</a>, SOPA claims to support American businesses while it really supports the very large media companies and stifles smaller companies and individuals rights to publish.
-</p>
-<p>
-As I&#8217;ve stated in my previous <a href="#SOPA-the-end-of-free-speech.org">posting about SOPA</a>, I am strongly opposed to <a href="#wiki-Piracy-of-software">piracy</a> as I am a software engineer (ie: software pays my rent). But I also believe that piracy can be dealt with without destroying <a href="#wiki-Freedom_of_speech">free speech</a>. My viewpoints are similar to those of the <a href="#wiki-Electronic_Frontier_Foundation">EFF</a> and differ from the <a href="#wiki-Free_Software_Foundation">FSF</a>&#8217;s viewpoint which opposes proprietary software altogether.
 </p>]]></content>
   </entry>
   
