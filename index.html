@@ -185,81 +185,14 @@ Grumble while cleaning up.
 Laugh quietly to myself as I know it won't help.
 </pre>
 
-</div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3">Adding Tags</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>Org Mode allows you to further organize your tasks by adding <a href="http://en.wikipedia.org/wiki/Tag_(metadata)">tags</a> to your todo list. Being that Org Mode is plain text, tags are words wrapped in colons (<code>:</code>).
-</p>
 
 
-<pre class="example">* Work                                                              :work:
-** Work hard.
-Finish my project ahead of schedule.
-** Ask boss for raise.
-Remember to compliment him lots when asking.
-
-* Personal                                                          :personal:
-** Clean up after my kids.
-Grumble while cleaning up.
-** Tell my kids that they should clean up after themselves.
-Laugh quietly to myself when they say they will but I know they won't.
-</pre>
-
-
-<p>
-Tags in Org Mode are inherited with the hierarchical layout of the outline. In the above example, only the two level 1 headlines have tags on their line but their children inherit these tags. For example, the task
-</p><pre class="example">
-** Clean up after my kids.
-</pre>
-
-<p>inherits the <code>:personal:</code> tag.
-</p></div>
-
-</div>
-
-<div id="outline-container-4" class="outline-2">
-<h2 id="sec-4">Using Tags To Describe Multiple Facets Of A Task</h2>
-<div class="outline-text-2" id="text-4">
-
-<p>The above use of tags was rather dull. The tags repeated data that was already in the outline hierarchy. The real power of tags becomes apparent when you use them to classify different facets of a task. For example, a <a href="http://en.wikipedia.org/wiki/Getting_Things_Done">GTD</a> style of tagging can include context tags such as <code>:@home:</code>, as well as priority tags such as <code>:next_action:</code>. Adding these tasks, our example becomes:
-</p>
-
-
-<pre class="example">* Work                                                              :work:
-** Work hard.                                                      :@work:@home:%next_action:
-Finish my project ahead of schedule.
-** Ask boss for raise.                                             :@boss:%someday:
-Remember to compliment him lots when asking.
-
-* Personal                                                          :personal:
-** Clean up after my kids.                                         :@home:next_action:
-Grumble while cleaning up.
-** Tell my kids that they should clean up after themselves.        :@home:%why_bother:
-Laugh quietly to myself as I know it won't help.
-</pre>
-
-
-<p>
-Org Mode provides no categories of tags. For example, priority tags aren&#8217;t different than location or topic tags. Keeping with Org Mode&#8217;s plain text file format,I decided to distinguish my priority tags with a percent sign (<code>%</code>). This makes GTD&#8217;s common <code>:next_action:</code> tag <code>:%next_action:</code>.
-</p></div>
-
-</div>
-
-<div id="outline-container-5" class="outline-2">
-<h2 id="sec-5">More Info</h2>
-<div class="outline-text-2" id="text-5">
-
-<p>If you are interested, you can read more about Org Mode on its <a href="http://orgmode.org">home page</a>, from any one of the vast collection of <a href="http://orgmode.org/worg/org-tutorials/index.html">tutorials</a> on the Org website, or one of the links from <a href="https://www.google.com/webhp?sourceid=chrome-instant&amp;ie=UTF-8&amp;ion=1#hl=en&amp;newwindow=1&amp;qscrl=1&amp;sclient=psy-ab&amp;q=org mode &amp;qscrl=1&amp;oq=&amp;gs_l=&amp;pbx=1&amp;fp=3e0aac4b0855dc98&amp;ion=1&amp;bav=on.2,or.r_gc.r_pw.r_cp.r_qf.&amp;biw=1130&amp;bih=932">Google search</a>.
-</p>
-</div>
-</div>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/08/05/time-tracking-part-2/">Read on &rarr;</a>
+    </footer>
   
 
 
