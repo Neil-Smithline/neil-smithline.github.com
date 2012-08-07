@@ -9,7 +9,7 @@
   <meta name="author" content="Neil Smithline">
 
   
-  <meta name="description" content="The Quantified Self A couple of months ago I heard about this nerdy cool movement called Quantified Self. Its goal is improving life by leveraging &hellip;">
+  <meta name="description" content="A Brief Introduction To Org Mode File Syntax I&#8217;ve decided that my time tracking solution requires some basic understanding of the file format &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -105,6 +105,165 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/05/time-tracking-part-2/">Time Tracking, Part 2: Org Mode File Format</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-05T18:38:00-04:00" pubdate data-updated="true">Aug 5<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">A Brief Introduction To Org Mode File Syntax</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>I&#8217;ve decided that my time tracking solution requires some basic understanding of the file format of <a href="http://orgmode.org">Org Mode</a> as Org Mode syntax pervades the system. I&#8217;ve done my best to cover the smallest amount of Org Mode syntax that is needed to understand the examples I&#8217;ll of my time tracking system.
+</p>
+<p>
+It is frequently said that when you buy a house the three most important things to look for are <a href="http://homebuying.about.com/od/marketfactstrends/qt/013008_location.htm">location, location, and location</a>. When it comes to Org Mode, the three most important things to remember are Org Mode file format is plain text, Org Mode file format is plain text, and Org Mode file format is plain text.
+</p>
+<p>
+By <a href="http://en.wikipedia.org/wiki/Plain_text">plain text</a> I mean:
+</p><ul>
+<li>You don&#8217;t need a <a href="http://en.wikipedia.org/wiki/Graphical_user_interface">GUI</a> or any other program to read an Org Mode file.
+</li>
+<li>Any <a href="http://en.wikipedia.org/wiki/Text_editor">text editor</a> can be used to create Org Mode files.
+</li>
+<li>Org Mode files are highly compatible with standard text file utilities such as <a href="http://linux.die.net/man/1/grep">grep(1)</a>.
+</li>
+</ul>
+
+
+<p>
+While Org Mode&#8217;s use of plain text has many advantages, the files tend to look a bit intimidating to a newcomer.
+</p>
+<p>
+While this posting only discusses Org Mode&#8217;s file format, I use Org Mode for its incredibly rich organizational functionality.
+</p></div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Hierarchical Outlines</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Org Mode encourages you to store your data in an outline. A level one headline is simply a line of text that begins with a single asterisk (<code>*</code>). A level two headline begins with two asterisks (<code>**</code>), etc&hellip;
+</p>
+
+
+<pre class="example">* Work
+** Work hard.
+Finish my project ahead of schedule.
+** Ask boss for raise.
+Remember to compliment him lots when asking.
+
+* Personal
+** Clean up after my kids.
+Grumble while cleaning up.
+** Tell my kids that they should clean up after themselves.
+Laugh quietly to myself as I know it won't help.
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Adding Tags</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>Org Mode allows you to further organize your tasks by adding <a href="http://en.wikipedia.org/wiki/Tag_(metadata)">tags</a> to your todo list. Being that Org Mode is plain text, tags are words wrapped in colons (<code>:</code>).
+</p>
+
+
+<pre class="example">* Work                                                              :work:
+** Work hard.
+Finish my project ahead of schedule.
+** Ask boss for raise.
+Remember to compliment him lots when asking.
+
+* Personal                                                          :personal:
+** Clean up after my kids.
+Grumble while cleaning up.
+** Tell my kids that they should clean up after themselves.
+Laugh quietly to myself when they say they will but I know they won't.
+</pre>
+
+
+<p>
+Tags in Org Mode are inherited with the hierarchical layout of the outline. In the above example, only the two level 1 headlines have tags on their line but their children inherit these tags. For example, the task
+</p><pre class="example">
+** Clean up after my kids.
+</pre>
+
+<p>inherits the <code>:personal:</code> tag.
+</p></div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Using Tags To Describe Multiple Facets Of A Task</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>The above use of tags was rather dull. The tags repeated data that was already in the outline hierarchy. The real power of tags becomes apparent when you use them to classify different facets of a task. For example, a <a href="http://en.wikipedia.org/wiki/Getting_Things_Done">GTD</a> style of tagging can include context tags such as <code>:@home:</code>, as well as priority tags such as <code>:next_action:</code>. Adding these tasks, our example becomes:
+</p>
+
+
+<pre class="example">* Work                                                              :work:
+** Work hard.                                                      :@work:@home:%next_action:
+Finish my project ahead of schedule.
+** Ask boss for raise.                                             :@boss:%someday:
+Remember to compliment him lots when asking.
+
+* Personal                                                          :personal:
+** Clean up after my kids.                                         :@home:next_action:
+Grumble while cleaning up.
+** Tell my kids that they should clean up after themselves.        :@home:%why_bother:
+Laugh quietly to myself as I know it won't help.
+</pre>
+
+
+<p>
+Org Mode provides no categories of tags. For example, priority tags aren&#8217;t different than location or topic tags. Keeping with Org Mode&#8217;s plain text file format,I decided to distinguish my priority tags with a percent sign (<code>%</code>). This makes GTD&#8217;s common <code>:next_action:</code> tag <code>:%next_action:</code>.
+</p></div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">More Info</h2>
+<div class="outline-text-2" id="text-5">
+
+<p>If you are interested, you can read more about Org Mode on its <a href="http://orgmode.org">home page</a>, from any one of the vast collection of <a href="http://orgmode.org/worg/org-tutorials/index.html">tutorials</a> on the Org website, or one of the links from <a href="https://www.google.com/webhp?sourceid=chrome-instant&amp;ie=UTF-8&amp;ion=1#hl=en&amp;newwindow=1&amp;qscrl=1&amp;sclient=psy-ab&amp;q=org mode &amp;qscrl=1&amp;oq=&amp;gs_l=&amp;pbx=1&amp;fp=3e0aac4b0855dc98&amp;ion=1&amp;bav=on.2,or.r_gc.r_pw.r_cp.r_qf.&amp;biw=1130&amp;bih=932">Google search</a>.
+</p>
+</div>
+</div>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -288,82 +447,6 @@ But client-side JavaScript (ie: JavaScript running in the user&#8217;s browser) 
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/07/21/desktop-time-tracking/">Desktop Time Tracking</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-07-21T20:17:00-04:00" pubdate data-updated="true">Jul 21<span>st</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Motivation</h2>
-<div class="outline-text-2" id="text-1">
-
-<p>Recently I&#8217;ve been trying to improve my time management skills. This is further discussed in this <a href="https://github.com/Neil-Smithline/time-tracking-experiments">Github README</a> file. I have also been keeping a <a href="http://www.neilsmithline.com/time-tracking-experiments/journal.html">journal</a> my activities and thoughts as I work on this project. You may also wish to read up on the <a href="http://en.wikipedia.org/wiki/Quantified_Self">Quantified Self</a>.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">Basic Activity Tracking</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>While I had not initially planned to focus on Mac OS X time tracking, it turned out to be easy. For a couple of weeks I&#8217;ve been playing around with two Mac OS X applications that track your computer activities: <a href="http://timingapp.com/">Timing</a> (actually <i>Timing Lite</i>) and <a href="http://manytricks.com/timesink/">Time Sink</a>.
-</p>
-<p>
-Time Sink integrates with Mac OS X to track the <i>active</i> or <i>foreground</i> application and provides a variety of reports to display that information. In addition to tracking the current app, Time Sink tries to track what you were doing in that app. It achieves this by using a relatively low-tech process of collecting the active window&#8217;s name.
-</p>
-<p>
-While a window name does not seem like a lot of information, it turns out to be surprisingly useful. From the window name Time Sink distinguishes, for example, the amount of time you spent browsing Facebook from the amount of time you spent browsing Github.
-</p>
-<p>
-Time Sink can harvest this data from any app that includes information about the current activity. This includes editors that put the file being edited in the window name, media plays that put the title of what is currently being played, etc&hellip;
-</p>
-<p>
-Your activities get displayed in a nice graphical format:
-<img src="http://www.neilsmithline.com/assets/screen-snapshots/Time-Sink-Activities.png"  alt="http://www.neilsmithline.com/assets/screen-snapshots/Time-Sink-Activities.png" />
-</p>
-<p>
-Due to browser page size I&#8217;ve excluded information such as how long I did these activities were as well as when I was doing them.
-</p>
-<p>
-In addition to the activity tracking performed by Time Sink, Timing has some <a href="http://timingapp.com/faq.php#compatibility">application-specific</a> functionality that allows it to better track what you are doing inside an app.
-</p>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/07/21/desktop-time-tracking/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -379,6 +462,10 @@ In addition to the activity tracking performed by Time Sink, Timing has some <a 
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/08/05/time-tracking-part-2/">Time Tracking, Part 2: Org Mode File Format</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/08/04/time-tracking/">Time Tracking</a>
       </li>
     
@@ -392,10 +479,6 @@ In addition to the activity tracking performed by Time Sink, Timing has some <a 
     
       <li class="post">
         <a href="/blog/2012/07/15/bookifying-news/">Bookifying News</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/07/01/yahoo-cancellation-notice/">Yahoo! Forgets To Proofread Emails?</a>
       </li>
     
   </ul>
@@ -468,7 +551,7 @@ In addition to the activity tracking performed by Time Sink, Timing has some <a 
 </section>
 
 
-<section class="sociallink googleplus googleplus-hidden">
+<section class="sociallink googleplus">
   <h1>
     <a href="https://plus.google.com/104257546204106753046?rel=author">
       <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32"></img>

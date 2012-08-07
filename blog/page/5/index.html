@@ -9,7 +9,7 @@
   <meta name="author" content="Neil Smithline">
 
   
-  <meta name="description" content="RIM No Longer A Viable Company RIM, arguably the manufacturer of the first successful smartphone, the Blackberry, has not only lost its market lead &hellip;">
+  <meta name="description" content="Based on a LifeHacker posting, I previously blogged about giving SparkleShare a try.. It was cool. A free Dropbox with private hosting. So I &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -105,6 +105,64 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/09/sparkleshare-bomb/">SparkleShare Doesn&#8217;t Sparkle</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-09T23:12:00-04:00" pubdate data-updated="true">May 9<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+Based on a LifeHacker posting, I previously blogged about giving SparkleShare a try.. It was cool. A free Dropbox with private hosting. So I installed, configured, and started using SparkleShare. While I was quite excited when I embarked upon my journey using SparkleShare, things didn&#8217;t work out as well as I had hoped.
+</p>
+<p>
+I quickly found out that SparkleShare doesn&#8217;t handle symbolic links. Not at all. There&#8217;s no workaround. The problem is that SparkleShare relies on Git for synchronization and Git doesn&#8217;t support symbolic links. At least for me, this rendered SparkleShare useless. 
+</p>
+<p>
+When I moved to Dropbox directory, what I had been using for synchronization before SparkleShare, had no files in it, just a bunch of symbolic links. But with SparkleShare, you have to move all your directories into your SparkleShare directory and then scatter symbolic links around your system where the you want the directories to be. This caused a variety of minor but really annoying problems.
+</p>
+<p>
+But SparkleShare totally fails if you want to synchronize a directory that has symbolic links in it. SparkleShare&#8217;s forum was covered with complaints about the symbolic link problem.
+</p>
+<p>
+I am currently using the following scheme for file distribution/backups:
+</p><ul>
+<li>I&#8217;m using rsync to keep my media, bin directory, dot-files, and the like in sync on all my computers.
+</li>
+<li>For actual backups, I&#8217;ve been using Crashplan for years and couldn&#8217;t be happier.
+</li>
+<li>And, in the past week or two, I&#8217;ve put Dropbox synchronization back into the mix to manage synchronization between Org Mode files on my computers and MobileOrg files on my Android. Despite the strong cult following that Dropbox has, synching with my mobile seems to be the only effective use I can find for it. 
+</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -218,53 +276,6 @@ My newest electronic assistive technology is a rather complete phone and SMS man
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/29/azure-sunny-day/">Cloud Computing: How Expensive Is a Rainy Day?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-29T11:42:35-05:00" pubdate data-updated="true">Feb 29<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>
-According to <a href="http://bit.ly/zc1OOr">The Register</a> (via <a href="http://bit.ly/wzufGC">Slashdot</a>), Microsoft&#8217;s cloud computing platform, Azure, has been down, and I mean <a href="http://dictionary.reference.com/browse/kaput">kaput</a>, for 8+ hours. Worse yet, Azure&#8217;s status page that tells its customers about outages and expected repair times, to which I won&#8217;t provide a link, has now been <a href="http://en.wikipedia.org/wiki/Slashdotted">Slashdotted</a> and is down.
-</p>
-<p>
-Less than a year ago, <a href="http://bit.ly/Ay7loE">AWS</a> suffered a significant, though less serious, <a href="http://bit.ly/yNzqJy">outage</a>.
-</p>
-<p>
-While highly-distributed, cloud-based computing is clearly the future of IT, how can an organization understand the costs and prepare for the unavoidable outages? With the relative newness of 3^rd party cloud services, what statistics are useful.
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/02/29/azure-sunny-day/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/">&larr; Older</a>
@@ -282,6 +293,10 @@ While highly-distributed, cloud-based computing is clearly the future of IT, how
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/08/05/time-tracking-part-2/">Time Tracking, Part 2: Org Mode File Format</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/08/04/time-tracking/">Time Tracking</a>
       </li>
     
@@ -295,10 +310,6 @@ While highly-distributed, cloud-based computing is clearly the future of IT, how
     
       <li class="post">
         <a href="/blog/2012/07/15/bookifying-news/">Bookifying News</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/07/01/yahoo-cancellation-notice/">Yahoo! Forgets To Proofread Emails?</a>
       </li>
     
   </ul>
@@ -371,7 +382,7 @@ While highly-distributed, cloud-based computing is clearly the future of IT, how
 </section>
 
 
-<section class="sociallink googleplus googleplus-hidden">
+<section class="sociallink googleplus">
   <h1>
     <a href="https://plus.google.com/104257546204106753046?rel=author">
       <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32"></img>

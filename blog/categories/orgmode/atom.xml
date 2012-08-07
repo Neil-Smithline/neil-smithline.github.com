@@ -4,7 +4,7 @@
   <title><![CDATA[Category: orgmode | My Geekdom]]></title>
   <link href="http://www.neilsmithline.com/blog/categories/orgmode/atom.xml" rel="self"/>
   <link href="http://www.neilsmithline.com/"/>
-  <updated>2012-08-04T22:10:15-04:00</updated>
+  <updated>2012-08-06T20:30:21-04:00</updated>
   <id>http://www.neilsmithline.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
@@ -12,6 +12,151 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Time Tracking, Part 2: Org Mode File Format]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/08/05/time-tracking-part-2/"/>
+    <updated>2012-08-05T18:38:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/08/05/time-tracking-part-2</id>
+    <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">A Brief Introduction To Org Mode File Syntax</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>I've decided that my time tracking solution requires some basic understanding of the file format of <a href="http://orgmode.org">Org Mode</a> as Org Mode syntax pervades the system. I've done my best to cover the smallest amount of Org Mode syntax that is needed to understand the examples I'll of my time tracking system.
+</p>
+<p>
+It is frequently said that when you buy a house the three most important things to look for are <a href="http://homebuying.about.com/od/marketfactstrends/qt/013008_location.htm">location, location, and location</a>. When it comes to Org Mode, the three most important things to remember are Org Mode file format is plain text, Org Mode file format is plain text, and Org Mode file format is plain text.
+</p>
+<p>
+By <a href="http://en.wikipedia.org/wiki/Plain_text">plain text</a> I mean:
+</p><ul>
+<li>You don't need a <a href="http://en.wikipedia.org/wiki/Graphical_user_interface">GUI</a> or any other program to read an Org Mode file.
+</li>
+<li>Any <a href="http://en.wikipedia.org/wiki/Text_editor">text editor</a> can be used to create Org Mode files.
+</li>
+<li>Org Mode files are highly compatible with standard text file utilities such as <a href="http://linux.die.net/man/1/grep">grep(1)</a>.
+</li>
+</ul>
+
+
+<p>
+While Org Mode's use of plain text has many advantages, the files tend to look a bit intimidating to a newcomer.
+</p>
+<p>
+While this posting only discusses Org Mode's file format, I use Org Mode for its incredibly rich organizational functionality.
+</p></div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Hierarchical Outlines</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Org Mode encourages you to store your data in an outline. A level one headline is simply a line of text that begins with a single asterisk (<code>*</code>). A level two headline begins with two asterisks (<code>**</code>), etc&hellip;
+</p>
+
+
+<pre class="example">* Work
+** Work hard.
+Finish my project ahead of schedule.
+** Ask boss for raise.
+Remember to compliment him lots when asking.
+
+* Personal
+** Clean up after my kids.
+Grumble while cleaning up.
+** Tell my kids that they should clean up after themselves.
+Laugh quietly to myself as I know it won't help.
+</pre>
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Adding Tags</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>Org Mode allows you to further organize your tasks by adding <a href="http://en.wikipedia.org/wiki/Tag_(metadata)">tags</a> to your todo list. Being that Org Mode is plain text, tags are words wrapped in colons (<code>:</code>).
+</p>
+
+
+<pre class="example">* Work                                                              :work:
+** Work hard.
+Finish my project ahead of schedule.
+** Ask boss for raise.
+Remember to compliment him lots when asking.
+
+* Personal                                                          :personal:
+** Clean up after my kids.
+Grumble while cleaning up.
+** Tell my kids that they should clean up after themselves.
+Laugh quietly to myself when they say they will but I know they won't.
+</pre>
+
+
+<p>
+Tags in Org Mode are inherited with the hierarchical layout of the outline. In the above example, only the two level 1 headlines have tags on their line but their children inherit these tags. For example, the task
+</p><pre class="example">
+** Clean up after my kids.
+</pre>
+
+<p>inherits the <code>:personal:</code> tag.
+</p></div>
+
+</div>
+
+
+
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Using Tags To Describe Multiple Facets Of A Task</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>The above use of tags was rather dull. The tags repeated data that was already in the outline hierarchy. The real power of tags becomes apparent when you use them to classify different facets of a task. For example, a <a href="http://en.wikipedia.org/wiki/Getting_Things_Done">GTD</a> style of tagging can include context tags such as <code>:@home:</code>, as well as priority tags such as <code>:next_action:</code>. Adding these tasks, our example becomes:
+</p>
+
+
+<pre class="example">* Work                                                              :work:
+** Work hard.                                                      :@work:@home:%next_action:
+Finish my project ahead of schedule.
+** Ask boss for raise.                                             :@boss:%someday:
+Remember to compliment him lots when asking.
+
+* Personal                                                          :personal:
+** Clean up after my kids.                                         :@home:next_action:
+Grumble while cleaning up.
+** Tell my kids that they should clean up after themselves.        :@home:%why_bother:
+Laugh quietly to myself as I know it won't help.
+</pre>
+
+
+<p>
+Org Mode provides no categories of tags. For example, priority tags aren't different than location or topic tags. Keeping with Org Mode's plain text file format,I decided to distinguish my priority tags with a percent sign (<code>%</code>). This makes GTD's common <code>:next_action:</code> tag <code>:%next_action:</code>.
+</p></div>
+
+</div>
+
+
+
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">More Info</h2>
+<div class="outline-text-2" id="text-5">
+
+<p>If you are interested, you can read more about Org Mode on its <a href="http://orgmode.org">home page</a>, from any one of the vast collection of <a href="http://orgmode.org/worg/org-tutorials/index.html">tutorials</a> on the Org website, or one of the links from <a href="https://www.google.com/webhp?sourceid=chrome-instant&amp;ie=UTF-8&amp;ion=1#hl=en&amp;newwindow=1&amp;qscrl=1&amp;sclient=psy-ab&amp;q=org mode &amp;qscrl=1&amp;oq=&amp;gs_l=&amp;pbx=1&amp;fp=3e0aac4b0855dc98&amp;ion=1&amp;bav=on.2,or.r_gc.r_pw.r_cp.r_qf.&amp;biw=1130&amp;bih=932">Google search</a>.
+</p>
+</div>
+</div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Org-Mode + t Makes Tweeting Easy]]></title>

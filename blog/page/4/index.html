@@ -9,7 +9,7 @@
   <meta name="author" content="Neil Smithline">
 
   
-  <meta name="description" content="Jekyll Overview I have simply fallen in love with Octopress. I think I mentioned previously that Octopress is an auto-configuration tool wrapped &hellip;">
+  <meta name="description" content="Update 2012-06-04 Mon 00:57 You can download the code from its Github repository. Motivation After yesterday&#8217;s ranting about Octopress, it &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -105,6 +105,89 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/27/org-mode-plus-t-makes-tweeting-easy/">Org-Mode + T Makes Tweeting Easy</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-27T18:23:00-04:00" pubdate data-updated="true">May 27<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div id="outline-container-1" class="outline-3">
+<h3 id="sec-1">Update <span class="timestamp-wrapper"> <span class="timestamp">2012-06-04 Mon 00:57</span></span></h3>
+<div class="outline-text-3" id="text-1">
+
+<p>You can download the code from its <a href="http://cnet.co/M2O9L8">Github repository</a>.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Motivation</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>After yesterday&#8217;s <a href="/blog/2012/05/26/octopress-is-pretty-great" title="Posting about Octopress">ranting about Octopress</a>, it occurred to me that while I now own the content of my blog postings, I don&#8217;t own the content of my <a href="http://bit.ly/JvoqLE">tweets</a>. I&#8217;m sure that there&#8217;s some way to convince <a href="http://bit.ly/Jvotaj">Twitter</a> to give me my tweets, but why should I rely on them to store my tweets.
+</p>
+<p>
+The obvious answer is that my tweets should be created on my computer and then sent to Twitter. 
+</p>
+<p>
+It should be noted that I&#8217;m not interested in implementing a full Twitter client. There are more than enough of those. I&#8217;m interested in having my tweets, or at least the bulk of my tweets, in a simple and easily accessible format.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">The Answer Must Be Cheap</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>While I want to author and store my tweets locally, it is not a high priority task for me. Whatever solution I come up with must add little or no overhead to my tweeting workflow, must be simple to implement, and cannot require ongoing tinkering to keep working.
+</p>
+<p>
+Being that my relationship with <a href="http://bit.ly/zhYdcB">Org Mode</a> is rather simple: The more I learn about it the more of my life I want to be based on Org Mode. Org Mode just seems to make everything easier. So I decided to use Org Mode for the author, publication, and storage of my tweets. The system I&#8217;m describing has these properties:
+</p><ul>
+<li>It took me just a few hours to design, implement, test, and begin using it for tweeting.
+</li>
+<li>Besides not adding overhead to my tweeting, it has made tweeting dramatically simpler.
+</li>
+<li>The entire implementation is a single file of <a href="http://bit.ly/wTaGtn">elisp</a> that is 120 lines long. 50 of those lines are standard Emacs header comments that are automatically created. The implementation, along with its documentation, is only 70 lines long. While a small code base isn&#8217;t one of my goals, not needing ongoing tinkering is. It is hard to imagine that 70 lines of code will require too much tinkering.
+</li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/05/27/org-mode-plus-t-makes-tweeting-easy/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -245,64 +328,6 @@ But, after playing with it a bit, I found that Jekyll was difficult to configure
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/09/sparkleshare-bomb/">SparkleShare Doesn&#8217;t Sparkle</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-09T23:12:00-04:00" pubdate data-updated="true">May 9<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>
-Based on a LifeHacker posting, I previously blogged about giving SparkleShare a try.. It was cool. A free Dropbox with private hosting. So I installed, configured, and started using SparkleShare. While I was quite excited when I embarked upon my journey using SparkleShare, things didn&#8217;t work out as well as I had hoped.
-</p>
-<p>
-I quickly found out that SparkleShare doesn&#8217;t handle symbolic links. Not at all. There&#8217;s no workaround. The problem is that SparkleShare relies on Git for synchronization and Git doesn&#8217;t support symbolic links. At least for me, this rendered SparkleShare useless. 
-</p>
-<p>
-When I moved to Dropbox directory, what I had been using for synchronization before SparkleShare, had no files in it, just a bunch of symbolic links. But with SparkleShare, you have to move all your directories into your SparkleShare directory and then scatter symbolic links around your system where the you want the directories to be. This caused a variety of minor but really annoying problems.
-</p>
-<p>
-But SparkleShare totally fails if you want to synchronize a directory that has symbolic links in it. SparkleShare&#8217;s forum was covered with complaints about the symbolic link problem.
-</p>
-<p>
-I am currently using the following scheme for file distribution/backups:
-</p><ul>
-<li>I&#8217;m using rsync to keep my media, bin directory, dot-files, and the like in sync on all my computers.
-</li>
-<li>For actual backups, I&#8217;ve been using Crashplan for years and couldn&#8217;t be happier.
-</li>
-<li>And, in the past week or two, I&#8217;ve put Dropbox synchronization back into the mix to manage synchronization between Org Mode files on my computers and MobileOrg files on my Android. Despite the strong cult following that Dropbox has, synching with my mobile seems to be the only effective use I can find for it. 
-</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -320,6 +345,10 @@ I am currently using the following scheme for file distribution/backups:
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/08/05/time-tracking-part-2/">Time Tracking, Part 2: Org Mode File Format</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/08/04/time-tracking/">Time Tracking</a>
       </li>
     
@@ -333,10 +362,6 @@ I am currently using the following scheme for file distribution/backups:
     
       <li class="post">
         <a href="/blog/2012/07/15/bookifying-news/">Bookifying News</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/07/01/yahoo-cancellation-notice/">Yahoo! Forgets To Proofread Emails?</a>
       </li>
     
   </ul>
@@ -409,7 +434,7 @@ I am currently using the following scheme for file distribution/backups:
 </section>
 
 
-<section class="sociallink googleplus googleplus-hidden">
+<section class="sociallink googleplus">
   <h1>
     <a href="https://plus.google.com/104257546204106753046?rel=author">
       <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32"></img>
