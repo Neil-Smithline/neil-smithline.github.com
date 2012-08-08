@@ -4,7 +4,7 @@
   <title><![CDATA[Category: orgmode | My Geekdom]]></title>
   <link href="http://www.neilsmithline.com/blog/categories/orgmode/atom.xml" rel="self"/>
   <link href="http://www.neilsmithline.com/"/>
-  <updated>2012-08-06T20:34:49-04:00</updated>
+  <updated>2012-08-08T16:34:17-04:00</updated>
   <id>http://www.neilsmithline.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
@@ -141,7 +141,7 @@ Laugh quietly to myself as I know it won't help.
 
 
 <p>
-Org Mode provides no categories of tags. For example, priority tags aren't different than location or topic tags. Keeping with Org Mode's plain text file format,I decided to distinguish my priority tags with a percent sign (<code>%</code>). This makes GTD's common <code>:next_action:</code> tag <code>:%next_action:</code>.
+In Org Mode all tags are created equal. For example, priority tags aren't different than location or topic tags. Keeping with Org Mode's plain text file format, I decided to distinguish my priority tags with a percent sign (<code>%</code>), changing GTD's common <code>:next_action:</code> tag <code>:%next_action:</code>.
 </p></div>
 
 </div>
