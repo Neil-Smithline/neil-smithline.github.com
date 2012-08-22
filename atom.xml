@@ -4,7 +4,7 @@
   <title><![CDATA[My Geekdom]]></title>
   <link href="http://www.neilsmithline.com/atom.xml" rel="self"/>
   <link href="http://www.neilsmithline.com/"/>
-  <updated>2012-08-22T15:40:31-04:00</updated>
+  <updated>2012-08-22T15:43:34-04:00</updated>
   <id>http://www.neilsmithline.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
@@ -76,7 +76,7 @@ In practice this leads to four types of files:
 </li>
 <li><b>Low/Delayed:</b> Files that are convenient to have across my machines but aren&#8217;t essential to my immediate productivity. For example, I frequently download manuals for various appliances that I own. I like to have them handy but it&#8217;s fine if they aren&#8217;t synched immediately. As I can easily download them again, they&#8217;re of relatively low importance.
 </li>
-<li><b>Everything else:</b> These are files that are of significantly low importance that I don&#8217;t worry too much about them.
+<li><b>Everything Else:</b> These are files that are of significantly low importance that I don&#8217;t worry too much about them.
 </li>
 </ul>
 
@@ -89,17 +89,8 @@ My backup and distribution strategy varies by which quadrant (I&#8217;m excludin
 </div>
 
 <div id="outline-container-4" class="outline-2">
-<h2 id="sec-4"></h2>
+<h2 id="sec-4">There&#8217;s Data That Should Be Backed Up That Is Not In A File</h2>
 <div class="outline-text-2" id="text-4">
-
-
-</div>
-
-</div>
-
-<div id="outline-container-5" class="outline-2">
-<h2 id="sec-5">There&#8217;s Data That Should Be Backed Up That Is Not In A File</h2>
-<div class="outline-text-2" id="text-5">
 
 <p>My first lesson was that not all data is backupable via file backup and distribution processes. The best example I have of this is the set of installed applications. Applications are typically large files and frequently require complex installations. While many <a href="http://en.wikipedia.org/wiki/Mac_os_x">Mac OS X</a> applications can be installed by copying the file into the <code>/Applications</code> directory, others require the use of package installers. This is similar to <a href="http://en.wikipedia.org/wiki/Windows">Windows</a> applications that store data in the <a href="http://en.wikipedia.org/wiki/Windows_registry">Windows Registry</a>.
 </p>
@@ -109,9 +100,9 @@ Knowing that applications were cumbersome and frequently needed special installa
 
 </div>
 
-<div id="outline-container-5-1" class="outline-3">
-<h3 id="sec-5-1">Monitor Installed Applications</h3>
-<div class="outline-text-3" id="text-5-1">
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1">Monitor Installed Applications</h3>
+<div class="outline-text-3" id="text-4-1">
 
 <p>My initial response to the lack of a list of installed apps was to start recording apps as I installed them. After the first half-dozen or so apps I decided that this was a bad idea. I could see that the list was going to be incomplete, outdated, and generally not very helpful.
 </p>
@@ -165,9 +156,9 @@ I still have some changes planned for the script:
 
 </div>
 
-<div id="outline-container-5-2" class="outline-3">
-<h3 id="sec-5-2">Other Missing Data</h3>
-<div class="outline-text-3" id="text-5-2">
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2">Other Missing Data</h3>
+<div class="outline-text-3" id="text-4-2">
 
 <p>Missing the list of installed apps had a quick fix but other data isn&#8217;t so readily available or I don&#8217;t know how to access it. Some examples of missing data are:
 </p><ul>
@@ -206,9 +197,9 @@ The <code>$HOME/bin/crontab-jobs</code> file gets automatically backed up with t
 
 </div>
 
-<div id="outline-container-6" class="outline-2">
-<h2 id="sec-6">Other Backup And Distribution Strategies</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Other Backup And Distribution Strategies</h2>
+<div class="outline-text-2" id="text-5">
 
 <p>I&#8217;ll discuss the rest of my backup strategy in a subsequent posting. As a sneak-peek I&#8217;ll tell you that the technologies I use include:
 </p><ul>
