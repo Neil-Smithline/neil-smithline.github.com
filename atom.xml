@@ -4,7 +4,7 @@
   <title><![CDATA[My Geekdom]]></title>
   <link href="http://www.neilsmithline.com/atom.xml" rel="self"/>
   <link href="http://www.neilsmithline.com/"/>
-  <updated>2012-08-22T10:00:42-04:00</updated>
+  <updated>2012-08-22T15:30:27-04:00</updated>
   <id>http://www.neilsmithline.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
@@ -25,43 +25,60 @@
 <p>My <a href="http://en.wikipedia.org/wiki/MacBook_Pro">MacBook Pro</a> became unusable and required a complete repartition and several reformats before I could resuscitate it. Recovering from the disk crash was surprisingly easy, there were a few hitches. Being that, without a duplicate computer, the only time that you can see how well your backup strategy works and correct it, I&#8217;ve been using this disk crash as an opportunity to bolster my backup strategy.
 </p>
 <p>
-It&#8217;s too late and I&#8217;m too tired to discuss my backup strategy in any depth but I&#8217;ve written up a bit that I can include here.
+While I had some gaps in my backup strategy, within 2 hours of my disk crash I had my backup computer running, complete with my data files, shell scripts, config files, etc&hellip;
 </p>
 </div>
 
 </div>
 
 <div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">Prioritized Backup and File Distribution Strategy</h2>
+<h2 id="sec-2">File Distribution</h2>
 <div class="outline-text-2" id="text-2">
 
-<p>In my mind, file backup and file distribution across multiple machines are intimately related. My backup and distribution (B&amp;D) strategy categorizes files in two dimensions:
-</p><ol>
-<li><b>File Importance:</b> This describes how critical each file is. Files in <code>~/Downloads</code> are typically not very important while code I&#8217;m working on or this blog entry is very important (at least to me).
-</li>
-<li><b>Synchronization Delay:</b> As I move between multiple computers, my productivity is related to how frequently some files are synchronized across the computers. Some I want optimized as soon as possible while other files can take hours or even days to get synchronized without affecting my productivity. Some low priority files, such as those in <code>~/Downloads</code> don&#8217;t ever need to be synchronized across machines.
-</li>
-</ol>
+<p>In my mind, file backup and file distribution across multiple machines are intimately related. File backup is, well it&#8217;s file backup. I use file distribution to keep various files synchronized across my devices. It should be noted that while the goal of file distribution is synchronization of data across computers, distributing files to other computers effectively backs them up.
+</p>
+<p>
+My primary computers are my MacBook Pro and an <a href="http://en.wikipedia.org/wiki/Hewlett-Packard">HP</a> laptop running <a href="http://en.wikipedia.org/wiki/Ubuntu_(operating_system)">Ubuntu Linux</a>. My mobile is a <a href="http://en.wikipedia.org/wiki/Samsung_Infuse_4G">Samsung Infuse</a> running <a href="http://en.wikipedia.org/wiki/CyanogenMod#CyanogenMod_10">CyanogenMod 10</a>, a customized version of <a href="http://en.wikipedia.org/wiki/Android_version_history#Android_4.1.x_Jelly_Bean">Android 4.1 Jelly Bean</a>. I also rent a <a href="http://en.wikipedia.org/wiki/Virtual_private_server">VPS</a> <a href="http://en.wikipedia.org/wiki/Cloud_computing">cloud computer</a> running Ubuntu. Lastly, I have an <a href="http://en.wikipedia.org/wiki/Asus">Asus</a> running <a href="http://en.wikipedia.org/wiki/Windows_7">Windows 7</a>. I primarily use te Windows computer for <a href="http://en.wikipedia.org/wiki/Streaming_media">streaming media</a> (I don&#8217;t dig Windows).
+</p>
+<p>
+I use file distribution to achieve two goals. I like to keep my configuration files consistent across my MacBook and two Ubuntu computers. This includes my <a href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)#Startup_scripts">.bashrc</a> and my <a href="http://en.wikipedia.org/wiki/Emacs_Lisp#Source_code">.emacs</a> site startup files. While I want those files to stay in sync to make the management of them simpler, there&#8217;s generally no rush in synchronizing them. 
+</p>
+<p>
+Another example of my file distribution involves my <a href="http://en.wikipedia.org/wiki/Personal_information_manager">PIM</a>. I use <a href="http://orgmode.org">Org Mode</a> as my <a href="http://en.wikipedia.org/wiki/Personal_information_manager">PIM</a> and want the data files to be synchronized across my MacBook, two Linux boxes, and my Android. I want those files synchronized immediately as I frequently move from computer to computer and always want my PIM data to be up to date.
+</p>
+</div>
 
-<p>This can be diagrammed as:
-</p><table style='border: 2px solid black !important; border-collapse: separate;' cellspacing="0" cellpadding="6" rules="all" frame="2">
-<caption></caption>
-<colgroup><col class="left" /><col class="left" /><col class="left" />
-</colgroup>
-<thead>
-<tr><th scope="col" class="left"></th><th scope="col" class="left">Low Importance</th><th scope="col" class="left">High Importance</th></tr>
-</thead>
-<tbody>
-<tr><td class="left">Timely Synchronization</td><td class="left">Low/Timely</td><td class="left">High/Timely</td></tr>
-<tr><td class="left">Delayed Synchronization</td><td class="left">Low/Delayed</td><td class="left">High/Delayed</td></tr>
-<tr><td class="left">No Synchronization Needed</td><td class="left">N/A</td><td class="left">N/A</td></tr>
-</tbody>
-</table>
+</div>
 
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Prioritization Of File Backup And File Distribution</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>My backup and distribution strategy categorizes files using two metrics:
+</p><dl>
+<dt>File Importance</dt><dd>This describes how critical each file is. Files in <code>~/Downloads</code> are typically not very important while the text for this blog entry is very important (at least to me).
+</dd>
+<dt>Synchronization Delay</dt><dd>As I move between multiple computers, my productivity is related to how frequently some files are synchronized across the computers. Some I want optimized as soon as possible while other files can take hours or even days to get synchronized without affecting my productivity. Some low priority files, such as those in <code>~/Downloads</code> don&#8217;t ever need to be synchronized across machines.
+</dd>
+</dl>
 
 
 <p>
-My backup and distribution strategy varies by which quadrant (I&#8217;m not including the N/A boxes) a file is in.
+In practice this leads to four types of files:
+</p><dl>
+<dt>High/Timely</dt><dd>Files that are very important and need to be synchronized in a timely fashion. My PIM files fall into this category.
+</dd>
+<dt>High/Delayed</dt><dd>Important files that don&#8217;t need to timely synchronization. Configuration files such as my .bashrc are High/Delayed.
+</dd>
+<dt>Low/Delayed</dt><dd>Files that are convenient to have across my machines but aren&#8217;t essential to my immediate productivity. For example, I frequently download manuals for various appliances that I own. I like to have them handy but it&#8217;s fine if they aren&#8217;t synched immediately. As I can easily download them again, they&#8217;re of relatively low importance.
+</dd>
+<dt>Everything else</dt><dd>These are files that are of significantly low importance that I don&#8217;t worry too much about them.
+</dd>
+</dl>
+
+
+<p>
+My backup and distribution strategy varies by which quadrant (I&#8217;m excluding the N/A boxes) a file is in.
 </p>
 
 
@@ -71,9 +88,9 @@ My backup and distribution strategy varies by which quadrant (I&#8217;m not incl
 
 </div>
 
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3">There&#8217;s Important Data That Is Not In A File</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">There&#8217;s Data That Should Be Backed Up That Is Not In A File</h2>
+<div class="outline-text-2" id="text-4">
 
 <p>My first lesson was that not all data is backupable via file backup and distribution processes. The best example I have of this is the set of installed applications. Applications are typically large files and frequently require complex installations. While many <a href="http://en.wikipedia.org/wiki/Mac_os_x">Mac OS X</a> applications can be installed by copying the file into the <code>/Applications</code> directory, others require the use of package installers. This is similar to <a href="http://en.wikipedia.org/wiki/Windows">Windows</a> applications that store data in the <a href="http://en.wikipedia.org/wiki/Windows_registry">Windows Registry</a>.
 </p>
@@ -83,9 +100,9 @@ Knowing that applications were cumbersome and frequently needed special installa
 
 </div>
 
-<div id="outline-container-3-1" class="outline-3">
-<h3 id="sec-3-1">Installed Apps Monitor</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1">Monitor Installed Applications</h3>
+<div class="outline-text-3" id="text-4-1">
 
 <p>My initial response to the lack of a list of installed apps was to start recording apps as I installed them. After the first half-dozen or so apps I decided that this was a bad idea. I could see that the list was going to be incomplete, outdated, and generally not very helpful.
 </p>
@@ -139,9 +156,9 @@ I still have some changes planned for the script:
 
 </div>
 
-<div id="outline-container-3-2" class="outline-3">
-<h3 id="sec-3-2">Other Missing Data</h3>
-<div class="outline-text-3" id="text-3-2">
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2">Other Missing Data</h3>
+<div class="outline-text-3" id="text-4-2">
 
 <p>Missing the list of installed apps had a quick fix but other data isn&#8217;t so readily available or I don&#8217;t know how to access it. Some examples of missing data are:
 </p><ul>
@@ -173,9 +190,250 @@ crontab $HOME/bin/crontab-jobs
 
 
 <p>
-The <code>$HOME/in/crontab-jobs</code> file gets automatically backed up with the rest of my bin files.
+The <code>$HOME/bin/crontab-jobs</code> file gets automatically backed up with the rest of my bin files.
 </p>
 </div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Other Backup And Distribution Strategies</h2>
+<div class="outline-text-2" id="text-5">
+
+<p>I&#8217;ll discuss the rest of my backup strategy in a subsequent posting. As a sneak-peek I&#8217;ll tell you that the technologies I use include:
+</p><ul>
+<li><a href="http://en.wikipedia.org/wiki/Dropbox_(service)">Dropbox</a>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/CrashPlan">CrashPlan</a>
+</li>
+<li><a href="http://linux.about.com/library/cmd/blcmdl1_rdist.htm">rdist</a>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/GitHub">GitHub</a>
+</li>
+</ul>
+
+
+
+</div>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Disk Crash]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/08/21/disk-crash/"/>
+    <updated>2012-08-21T22:02:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/08/21/disk-crash</id>
+    <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Ouch! My Disk Crashed</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>My <a href="http://en.wikipedia.org/wiki/MacBook_Pro">MacBook Pro</a> became unusable and required a complete repartition and several reformats before I could resuscitate it. Recovering from the disk crash was surprisingly easy, there were a few hitches. Being that, without a duplicate computer, the only time that you can see how well your backup strategy works and correct it, I&#8217;ve been using this disk crash as an opportunity to bolster my backup strategy.
+</p>
+<p>
+While I had some gaps in my backup strategy, within 2 hours of my disk crash I had my backup computer running, complete with my data files, shell scripts, config files, etc&hellip;
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">File Distribution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>In my mind, file backup and file distribution across multiple machines are intimately related. File backup is, well it&#8217;s file backup. I use file distribution to keep various files synchronized across my devices. It should be noted that while the goal of file distribution is synchronization of data across computers, distributing files to other computers effectively backs them up.
+</p>
+<p>
+My primary computers are my MacBook Pro and an <a href="http://en.wikipedia.org/wiki/Hewlett-Packard">HP</a> laptop running <a href="http://en.wikipedia.org/wiki/Ubuntu_(operating_system)">Ubuntu Linux</a>. My mobile is a <a href="http://en.wikipedia.org/wiki/Samsung_Infuse_4G">Samsung Infuse</a> running <a href="http://en.wikipedia.org/wiki/CyanogenMod#CyanogenMod_10">CyanogenMod 10</a>, a customized version of <a href="http://en.wikipedia.org/wiki/Android_version_history#Android_4.1.x_Jelly_Bean">Android 4.1 Jelly Bean</a>. I also rent a <a href="http://en.wikipedia.org/wiki/Virtual_private_server">VPS</a> <a href="http://en.wikipedia.org/wiki/Cloud_computing">cloud computer</a> running Ubuntu. Lastly, I have an <a href="http://en.wikipedia.org/wiki/Asus">Asus</a> running <a href="http://en.wikipedia.org/wiki/Windows_7">Windows 7</a>. I primarily use te Windows computer for <a href="http://en.wikipedia.org/wiki/Streaming_media">streaming media</a> (I don&#8217;t dig Windows).
+</p>
+<p>
+I use file distribution to achieve two goals. I like to keep my configuration files consistent across my MacBook and two Ubuntu computers. This includes my <a href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)#Startup_scripts">.bashrc</a> and my <a href="http://en.wikipedia.org/wiki/Emacs_Lisp#Source_code">.emacs</a> site startup files. While I want those files to stay in sync to make the management of them simpler, there&#8217;s generally no rush in synchronizing them. 
+</p>
+<p>
+Another example of my file distribution involves my <a href="http://en.wikipedia.org/wiki/Personal_information_manager">PIM</a>. I use <a href="http://orgmode.org">Org Mode</a> as my <a href="http://en.wikipedia.org/wiki/Personal_information_manager">PIM</a> and want the data files to be synchronized across my MacBook, two Linux boxes, and my Android. I want those files synchronized immediately as I frequently move from computer to computer and always want my PIM data to be up to date.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Prioritization Of File Backup And File Distribution</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>My backup and distribution strategy categorizes files using two metrics:
+</p><ol>
+<li><b>File Importance:</b> This describes how critical each file is. Files in <code>~/Downloads</code> are typically not very important while code I&#8217;m working on or this blog entry is very important (at least to me).
+</li>
+<li><b>Synchronization Delay:</b> As I move between multiple computers, my productivity is related to how frequently some files are synchronized across the computers. Some I want optimized as soon as possible while other files can take hours or even days to get synchronized without affecting my productivity. Some low priority files, such as those in <code>~/Downloads</code> don&#8217;t ever need to be synchronized across machines.
+</li>
+</ol>
+
+
+
+
+<div class="centered-table">
+
+<table style='border: 2px solid black !important; border-collapse: separate;' cellspacing="0" cellpadding="6" rules="all" frame="2">
+<caption><b>File Backup/Distribution Categories</b></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left"></th><th scope="col" class="left">Low Importance</th><th scope="col" class="left">High Importance</th></tr>
+</thead>
+<tbody>
+<tr><td class="left"><b>Timely Synchronization</b></td><td class="left">Low/Timely</td><td class="left">High/Timely</td></tr>
+<tr><td class="left"><b>Delayed Synchronization</b></td><td class="left">Low/Delayed</td><td class="left">High/Delayed</td></tr>
+<tr><td class="left"><b>No Synchronization Needed</b></td><td class="left">N/A</td><td class="left">N/A</td></tr>
+</tbody>
+</table>
+
+
+
+
+</div> <!-- class="centered-table" -->
+
+<br>
+
+
+<p>
+My backup and distribution strategy varies by which quadrant (I&#8217;m excluding the N/A boxes) a file is in.
+</p>
+
+
+<!-- more -->
+
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">There&#8217;s Important Data That Is Not In A File</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>My first lesson was that not all data is backupable via file backup and distribution processes. The best example I have of this is the set of installed applications. Applications are typically large files and frequently require complex installations. While many <a href="http://en.wikipedia.org/wiki/Mac_os_x">Mac OS X</a> applications can be installed by copying the file into the <code>/Applications</code> directory, others require the use of package installers. This is similar to <a href="http://en.wikipedia.org/wiki/Windows">Windows</a> applications that store data in the <a href="http://en.wikipedia.org/wiki/Windows_registry">Windows Registry</a>.
+</p>
+<p>
+Knowing that applications were cumbersome and frequently needed special installation scripts led me to decide to not back up my applications. After this disk crash, I continue to think that it makes no sense to backup your installed apps. That said, I have sorely missed having a list of the applications that I had installed before the disk problems.
+</p>
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1">Monitor Installed Applications</h3>
+<div class="outline-text-3" id="text-4-1">
+
+<p>My initial response to the lack of a list of installed apps was to start recording apps as I installed them. After the first half-dozen or so apps I decided that this was a bad idea. I could see that the list was going to be incomplete, outdated, and generally not very helpful.
+</p>
+<p>
+So I took a few minutes to whip up a trivial shell script that I run once a day via crontab. The shell script attempts to record the names of installed applications rather than the actual applications themselves. The version of the shell script that I&#8217;m currently using is:
+</p>
+
+
+<pre class="src src-sh-mode">#!/bin/sh
+shopt -s nullglob
+shopt -u failglob
+ls -dlrt /Applications/* /Library/PreferencePanes/* ~/Library/PreferencePanes/* &gt; ~/Dropbox/Backups/InstalledApps.txt
+</pre>
+
+
+<p>
+An abbreviated sample of its output is:
+</p>
+
+
+<pre class="example">drwxr-xr-x   3 root  wheel  102 May  5  2009 /Applications/Font Book.app
+drwxr-xr-x   3 root  wheel  102 May 19  2009 /Applications/Stickies.app
+drwxr-xr-x   3 root  wheel  102 May 19  2009 /Applications/Chess.app
+drwxr-xr-x   3 root  admin  102 Sep 19  2009 /Library/PreferencePanes/RCDefaultApp.prefPane
+drwxrwxr-x   3 root  wheel  102 May 24  2011 /Library/PreferencePanes/Growl.prefPane
+drwxr-xr-x@  3 neil  admin  102 May 24  2011 /Applications/HardwareGrowler.app
+drwxr-xr-x@  3 neil  admin  102 May 24  2011 /Applications/GrowlTunes.app
+drwxr-xr-x   3 neil  staff  102 Jul 25 18:27 /Applications/BetterTouchTool.app
+drwxr-xr-x@  3 neil  admin  102 Aug 13 22:51 /Applications/Google Chrome.app
+drwxr-xr-x@  4 neil  admin  136 Aug 18 08:19 /Applications/FirefoxAurora.app
+drwxr-xr-x   3 neil  staff  102 Aug 18 11:52 /Applications/GrowlSafari.app
+</pre>
+
+
+<p>
+As this script is run once a day and stored in my Dropbox folder, I always have an up-to-date copy of the file.
+</p>
+<p>
+I still have some changes planned for the script:
+</p><ul>
+<li>The script only works for typical Mac OS X applications. It doesn&#8217;t check for command line applications as well as applications installed by a package manager such os <a href="http://mxcl.github.com/homebrew/">Homebrew</a> (Mac OS X package installer), <a href="http://www.cpan.org/">CPAN</a> (Perl package installer), or <a href="https://github.com/sstephenson/rbenv/">rbenv</a> (Ruby package installer - sort of).
+</li>
+<li>Perhaps I had a good reason to put the data file into my Dropbox folder but I can&#8217;t recall it now. This data seems a perfect example of High/Delayed data as discussed in the table above.
+</li>
+<li>The script misses some peculiar applications. Most of these applications are from Apple. <a href="https://developer.apple.com/xcode/">Xcode</a> is a good example of a &#8220;peculiar&#8221; application. Xcode includes a GUI application, command line programs, and runtime libraries. These get scattered across the machine. I suspect I&#8217;ll just hardcode these applications into my script rather than trying to create the logic to find them. For example, I&#8217;ll have my script add a line to the installed applications that reads <code>Xcode from https://developer.apple.com/xcode/</code>. That seems good enough.
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2">Other Missing Data</h3>
+<div class="outline-text-3" id="text-4-2">
+
+<p>Missing the list of installed apps had a quick fix but other data isn&#8217;t so readily available or I don&#8217;t know how to access it. Some examples of missing data are:
+</p><ul>
+<li>Customized icons for folders: On Mac OS X you can associate a small icon to each folder. On the directories that I use routinely I have customized the icons so that I can find them quickly.
+</li>
+<li>The settings of some Chrome extensions did not get restored.
+</li>
+<li>My cron jobs were only stored within cron&#8217;s database.
+</li>
+</ul>
+
+
+<p>
+The cron jobs problem was another one that I was able to fix with a simple shell script and a minor modification to my workflow. Instead of editing my cron jobs directly via <code>crontab -e</code>, I now keep them in a file in my <code>bin</code> directory and modify that file as needed. When I modify my cron jobs I can either run crontab to immediately update my cron jobs or wait until I run my nightly cron job as that auto-updates my cron jobs:
+</p>
+
+
+
+<pre class="src src-sh-mode">#!/bin/sh
+
+# Run my apps lister
+$HOME/bin/installed-apps-lister.sh
+
+# Run other stuff that I've removed from this example.
+
+# Update my cron jobs in case I've modified the cron file.
+crontab $HOME/bin/crontab-jobs
+</pre>
+
+
+<p>
+The <code>$HOME/bin/crontab-jobs</code> file gets automatically backed up with the rest of my bin files.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Other Backup And Distribution Strategies</h2>
+<div class="outline-text-2" id="text-5">
+
+<p>I&#8217;ll discuss the rest of my backup strategy in a subsequent posting. As a sneak-peek I&#8217;ll tell you that the technologies I use include:
+</p><ul>
+<li><a href="http://en.wikipedia.org/wiki/Dropbox_(service)">Dropbox</a>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/CrashPlan">CrashPlan</a>
+</li>
+<li><a href="http://linux.about.com/library/cmd/blcmdl1_rdist.htm">rdist</a>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/GitHub">GitHub</a>
+</li>
+</ul>
+
+
+
 </div>
 </div>
 ]]></content>
@@ -2327,95 +2585,6 @@ Being that this blogging system is only aimed at Emacs users, it is certain that
 </p>
 <p>
 There is no need to install a local web server for staging. Provided you have versions from this decade, there is no need to ensure you have the right version of any of this software. Managing versions of installed software can be a major pain for many systems (eg: Python based-apps). You also have full access to your blog&#8217;s data without having to export anything (everything is already in plain text files) or provide a credit card (Github is free).
-</p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[New NanoBlogger Command-Line]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/02/14/nbc/"/>
-    <updated>2012-02-14T13:13:34-05:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/02/14/nbc</id>
-    <content type="html"><![CDATA[<p>
-As I&#8217;ve discussed in previous <a href="http://www.neilsmithline.com/archives/blog">postings about this blog&#8217;s technology</a>, this is a static blog written with NanoBlogger. NanoBlogger is a <a href="http://en.wikipedia.org/wiki/Command-line_interface">CLI</a> driven blogging system. Alas, I have found the <a href="http://nanoblogger.sourceforge.net/docs/nanoblogger.html">NanoBlogger manual</a> to be difficult to follow and the syntax of the CLI to be non-intuitive. (See the footnote <a href="https://github.com/Neil-Smithline/nbc">here</a> regarding the existing CLI.) On the upside, NanoBlogger is a CLI system which makes it easy to modify. 
-</p>
-<p>
-I started out with a few small helper scripts, eventually merging them into a single helper script. As I was using that script and learning more about NanoBlogger, I found myself writing smaller helper scripts for my big helper script. Eventually, I was never calling my original, large helper script directly.
-<!-- more -->
-
-At this point it became clear that some refactoring was needed. So I refactored. I came up with a single shell script call <i>nbc.sh</i> that does all the work and a series of shell scripts that simply call nbc.sh.
-</p>
-<p>
-The key idea behind nbc.sh, or simply <i>nbc</i>, is that the scripts that call it are trivial. By &#8220;trivial&#8221; I mean that each script is only a few lines long, all the side scripts have identical content, and, if not for the semantics of <a href="http://en.wikipedia.org/wiki/Git_(software)">Git</a>, would simply be multiple symbolic links to the same program.
-</p>
-<p>
-As you can see below, the code for the side scripts simply stores the command name, <i>$0</i>, of the side script that was called and then calls the <i>nbc.sh</i> script that is in the same directory as the side script. 
-</p>
-
-
-<pre class="example">#!/bin/sh
-
-# Code to load include file.
-ORIG_ARG_0="$0"
-NBDIR=${0%/*}
-. ${NBDIR}/nbc.sh
-</pre>
-
-<p>
-This means that as I continue to add functionality to nbc, all I need to do is copy one of the side scripts to the filename of the new command I added. 
-</p>
-<p>
-While I won&#8217;t discuss the exact naming scheme used for these side scripts in detail in this posting, I will say that I have tried to systematic in how the scripts are named. Once you learn a few abbreviations (eg: &#8220;e&#8221; for &#8220;Entry&#8221; or &#8220;Entries&#8221;, &#8220;u&#8221; for &#8220;Update&#8221;) and the rules for combining those abbreviations (standard <a href="http://en.wikipedia.org/wiki/Reverse_Polish_Notation">RPN</a>), you will know the names of all the commands, what each command does, and the type and order of arguments each command takes.
-</p>
-<p>
-I still need to write richer documentation for nbc and its side scripts, but I can finish this posting off with some concrete examples.
-</p>
-<p>
-NB supports an &#8220;update&#8221; command that essentially tells NB to rebuild the blog from scratch. The syntax of this command is:
-</p>
-
-
-<pre class="example">nb update
-</pre>
-
-<p>
-My nbc version of this command is:
-</p>
-
-
-<pre class="example">nbu
-</pre>
-
-<p>
-All of the commands for nbc start with the letters &#8220;nb&#8221;. The letter &#8220;U&#8221; is the abbreviation for &#8220;Update&#8221;. So &#8220;nbu&#8221; tells nb to run the update command. As I said, the code for nbu and the other side scripts are trivial and given above. As far as examples go, nbu is not very exciting. But the nbc&#8217;s CLI for creating tags is a bit more exciting.
-</p>
-<p>
-NB&#8217;s syntax for creating tags, as documented in its manual, is:
-</p>
-
-
-<pre class="example">nb --title &lt;tag-name&gt; add tag
-</pre>
-
-<p>
-Gosh! That&#8217;s both tough to remember and tough to type. In nbc, the command for adding a tag is <i>nbga</i>. All commands start with &#8220;nb&#8221;. After that, the &#8220;g&#8221; means that we are talking about &#8220;taGs&#8221;. The &#8220;a&#8221; stands for &#8220;Add&#8221;. The syntax for the command is 
-</p>
-
-
-<pre class="example">nbga &lt;tag list&gt;
-</pre>
-
-
-<p>
-Besides being much easier to type and remember, it allows a tag list as compared to a single tag name. That is, you can create multiple tags in a single command rather than needing to call nb once for each new tag.
-</p>
-<p>
-In NBC, a tag list is a comma-separated list of one or more tag names. So &#8220;tag1&#8221; is a tag list and &#8220;tag1,tag2,tag3&#8221; is also a tag list. If you prefer you can space-separate the tag list but you need to ensure that you pass the entire tag list as the first argument to nbga. 
-</p>
-<p>
-As the operations become more complex, NBC&#8217;s simplifications become greater and more obvious. My next posting about NBC will discuss some of these simplifications.
-</p>
-<p>
-If you wish to use NBC, look at the source code, or tell me why NBC sucks, you can get the scripts at <a href="https://github.com/Neil-Smithline/nbc">https://github.com/Neil-Smithline/nbc</a>.
 </p>]]></content>
   </entry>
   
