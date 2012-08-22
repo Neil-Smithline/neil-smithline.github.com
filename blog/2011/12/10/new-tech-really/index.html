@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Seems It Really Works - My Geekdom</title>
+  <meta name="author" content="Neil Smithline">
+
+  
+  <meta name="description" content="Quick follow-up to initial posting.">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.neilsmithline.com/blog/2011/12/10/new-tech-really/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="http://feeds.feedburner.com/MyGeekdom" rel="alternate" title="My Geekdom" type="application/atom+xml">
+    <!-- ShareThis -->
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+  <!-- /ShareThis -->
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25833963-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Geekdom</a></h1>
+
+  <div  style="float: right; position: relative; top: 75px;" id="header-image-container">
+    <a href="" accesskey="1">
+      <img title="Neil Smithline" src="/assets/images/NS-Keycaps.png"></img>
+    </a>
+  </div>
+
+  
+    <h2>Ramblings about my nerdy pursuits.</h2>
+  
+
+  
+    <a href="https://github.com/neil-smithline">
+      <img
+          style="position: absolute;
+            top: 0;
+            right: 0;
+            border: 0;"
+         src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></img></a>
+
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/MyGeekdom" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.neilsmithline.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <!-- <li><a href="/">Home</a></li> -->
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/contact">Contact</a></li>
+  <li><a href="/about/elsewhere">About</a></li>
+  <li><a href="/neilsmithline">Resume (Seeking employment)</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Seems It Really Works</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-10T01:27:23-05:00" pubdate data-updated="true">Dec 10<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p> 
+Well, it appears this actually does work. I seem to be having a few
+issues integrating with <a href="http://nanoblogger.sourceforge.net">NanoBlogger</a> but I&#8217;m sure I&#8217;ll work those out.
+The problems that I&#8217;ve seen are:
+</p><ol>
+<li>It seems that adding or even updating a new entry is as costly
+       as rebuilding the entire blog from scratch. Right now, that&#8217;s
+       OK. But what am I going to do when I have 10, or 100 postings?
+       I hope NanoBlogger can handle this.
+</li>
+<li>NB seems to assume that its input files are hand-written in
+       some legacy text editor called <a href="http://www.vim.org">Vim</a> or something :-). While my
+       strategy of using <a href="http://www.gnu.org/s/emacs/">GNU Emacs</a>&#8217; <a href="http://orgmode.org">Org Mode</a> keeps the flavor of NB in
+       that it is written in a simple markup language, it doesn&#8217;t seem
+       to fit the NB model perfectly. There is nothing wrong with NB&#8217;s
+       markup, it is just that Org Mode&#8217;s markup can easily be
+       exported to virtually every other markup on the planet. So I
+       just need to learn Org Mode markup, write my content in Org
+       Mode, and then publish that data into whatever format I choose.
+       Seems a better solution but NB isn&#8217;t quite prepared for it.
+</li>
+<li>I would still like better integration with Org Mode and NB. The
+       steps I&#8217;ve used to produce this entry are:
+<ul>
+<li>Ran a little shell script I wrote to create a new NB
+             entry. All I do is give the shell script the title of the
+             Org Mode file I want to store the new entry in and it
+             does its magic, leaving me with an Org Mode skeleton for
+             NB.
+</li>
+<li>Edit the Org Mode file just created.
+</li>
+<li>Use Org Mode to publish the entry. This just stores it in
+            my local NB folder.
+</li>
+<li>Run <code>nb update</code> to have my changes put into the local
+            copy of the blog.
+</li>
+<li>Run <code>nb preview</code> to view the changes before publishing.
+</li>
+<li>Run <code>nb publish</code> to update my blog.
+</li>
+</ul>
+
+</li>
+</ol>
+
+
+<p>
+So, while they&#8217;re are still some problems,  I have to say I love it.
+The advantages of using Org Mode and the simple NB blogging engine on
+both my local and production server is way cool.
+</p>
+<p>
+<a href="http://orgmode.org">Org Mode</a> is actually way cool. I&#8217;ve only started using it in the past
+year and will likely spend years learning it as it supports so many
+features. But, like all well-designed pieces of software, you don&#8217;t
+need to learn it all at once. I&#8217;ll yabber about Org Mode another day.
+In any case, I&#8217;m real happy with my blog and the ease with which I can
+add postings to it.
+</p></div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Neil Smithline</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-10T01:27:23-05:00" pubdate data-updated="true">Dec 10<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/blogging-tech/'>blogging-tech</a>, <a class='category' href='/blog/categories/nanoblogger/'>nanoblogger</a>, <a class='category' href='/blog/categories/tech/'>tech</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.neilsmithline.com/blog/2011/12/10/new-tech-really/" data-via="neil_smithline" data-counturl="http://www.neilsmithline.com/blog/2011/12/10/new-tech-really/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/12/07/new-blog-tech/" title="Previous Post: My New Blogging Technology">&laquo; My New Blogging Technology</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/12/10/got-tags-working-manually/" title="Next Post: Got Tags Working Manually">Got Tags Working Manually &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/08/21/disk-crash/">Disk Crash</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/05/time-tracking-part-2/">Time Tracking, Part 2: Org Mode File Format</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/04/time-tracking/">Time Tracking</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/22/blurring-static-and-dynamic-blogs/">Blurring Static And Dynamic Blogs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/21/desktop-time-tracking/">Desktop Time Tracking</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/neil-smithline">@neil-smithline</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'neil-smithline',
+            count: 8,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>My Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("neil_smithline", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <p>Follow <a href="http://twitter.com/neil_smithline">@neil_smithline</a></p>
+  
+</section>
+
+
+
+<section class="socialmention">
+  <h1>Elsewhere On The Web</h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="https://twitter.com/#!/neil_smithline"><img src="/assets/service-logos/twitter/twitter-32.png" alt="My Tweets"/>Twitter</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://www.linkedin.com/profile/view?2519386"><img src="/assets/service-logos/linkedin/linkedin-32.png" alt="My LinkedIn Account" />LinkedIn</a>
+  </h1>
+</section>
+
+
+<section class="sociallink googleplus">
+  <h1>
+    <a href="https://plus.google.com/104257546204106753046?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32"></img>
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="https://github.com/neil-smithline"><img src="/assets/service-logos/github/github-32.png" alt="Checkout My Code" />Github</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://coderwall.com/neilsmithline"><img src="/assets/service-logos/coderwall/coderwall-32.png" alt="My Coderwall Badges" />Coderwall</a>
+  </h1>
+</section>
+
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://www.diigo.com/user/neilsmithline"><img src="/assets/service-logos/diigo/diigo-32.png" alt="My Diigo Bookmarks"/>Bookmarks</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://klout.com/#/neil_smithline"><img src="/assets/service-logos/klout/klout-32.png" alt="My Klout Score"/>Klout</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://disqus.com/NeilSmithline"><img src="/assets/service-logos/disqus/disqus-32.png" alt="My Disqus Comments"/>Disqus</a>
+  </h1>
+</section>
+
+
+<!-- ShareThis -->
+  <script>
+    var options={ "publisher": "4eafa479-c64d-49ab-9e91-90cb169b33c2", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["twitter", "googleplus", "linkedin", "facebook", "email", "sharethis"]}};
+    var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+  </script>
+<!-- /ShareThis -->
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Neil Smithline -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> -
+  <span class="credit">Authored with <a href="http://www.gnu.org/s/emacs"">Emacs</a> and
+  <a href="http://orgmode.org">Org Mode</a></span> -
+  <span class="credit">Hosted by <a href="http://github.com">Github</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'mygeekdom';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.neilsmithline.com/blog/2011/12/10/new-tech-really/';
+        var disqus_url = 'http://www.neilsmithline.com/blog/2011/12/10/new-tech-really/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

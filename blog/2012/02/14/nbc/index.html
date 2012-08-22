@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>New NanoBlogger Command-Line - My Geekdom</title>
+  <meta name="author" content="Neil Smithline">
+
+  
+  <meta name="description" content="I've written a nearly-complete, new CLI for NanoBlogger, the technology behind this blog.">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.neilsmithline.com/blog/2012/02/14/nbc/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="http://feeds.feedburner.com/MyGeekdom" rel="alternate" title="My Geekdom" type="application/atom+xml">
+    <!-- ShareThis -->
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+  <!-- /ShareThis -->
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25833963-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Geekdom</a></h1>
+
+  <div  style="float: right; position: relative; top: 75px;" id="header-image-container">
+    <a href="" accesskey="1">
+      <img title="Neil Smithline" src="/assets/images/NS-Keycaps.png"></img>
+    </a>
+  </div>
+
+  
+    <h2>Ramblings about my nerdy pursuits.</h2>
+  
+
+  
+    <a href="https://github.com/neil-smithline">
+      <img
+          style="position: absolute;
+            top: 0;
+            right: 0;
+            border: 0;"
+         src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></img></a>
+
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/MyGeekdom" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.neilsmithline.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <!-- <li><a href="/">Home</a></li> -->
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/contact">Contact</a></li>
+  <li><a href="/about/elsewhere">About</a></li>
+  <li><a href="/neilsmithline">Resume (Seeking employment)</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">New NanoBlogger Command-Line</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-14T13:13:34-05:00" pubdate data-updated="true">Feb 14<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>
+As I&#8217;ve discussed in previous <a href="http://www.neilsmithline.com/archives/blog">postings about this blog&#8217;s technology</a>, this is a static blog written with NanoBlogger. NanoBlogger is a <a href="http://en.wikipedia.org/wiki/Command-line_interface">CLI</a> driven blogging system. Alas, I have found the <a href="http://nanoblogger.sourceforge.net/docs/nanoblogger.html">NanoBlogger manual</a> to be difficult to follow and the syntax of the CLI to be non-intuitive. (See the footnote <a href="https://github.com/Neil-Smithline/nbc">here</a> regarding the existing CLI.) On the upside, NanoBlogger is a CLI system which makes it easy to modify. 
+</p>
+<p>
+I started out with a few small helper scripts, eventually merging them into a single helper script. As I was using that script and learning more about NanoBlogger, I found myself writing smaller helper scripts for my big helper script. Eventually, I was never calling my original, large helper script directly.
+<!-- more -->
+
+At this point it became clear that some refactoring was needed. So I refactored. I came up with a single shell script call <i>nbc.sh</i> that does all the work and a series of shell scripts that simply call nbc.sh.
+</p>
+<p>
+The key idea behind nbc.sh, or simply <i>nbc</i>, is that the scripts that call it are trivial. By &#8220;trivial&#8221; I mean that each script is only a few lines long, all the side scripts have identical content, and, if not for the semantics of <a href="http://en.wikipedia.org/wiki/Git_(software)">Git</a>, would simply be multiple symbolic links to the same program.
+</p>
+<p>
+As you can see below, the code for the side scripts simply stores the command name, <i>$0</i>, of the side script that was called and then calls the <i>nbc.sh</i> script that is in the same directory as the side script. 
+</p>
+
+
+<pre class="example">#!/bin/sh
+
+# Code to load include file.
+ORIG_ARG_0="$0"
+NBDIR=${0%/*}
+. ${NBDIR}/nbc.sh
+</pre>
+
+<p>
+This means that as I continue to add functionality to nbc, all I need to do is copy one of the side scripts to the filename of the new command I added. 
+</p>
+<p>
+While I won&#8217;t discuss the exact naming scheme used for these side scripts in detail in this posting, I will say that I have tried to systematic in how the scripts are named. Once you learn a few abbreviations (eg: &#8220;e&#8221; for &#8220;Entry&#8221; or &#8220;Entries&#8221;, &#8220;u&#8221; for &#8220;Update&#8221;) and the rules for combining those abbreviations (standard <a href="http://en.wikipedia.org/wiki/Reverse_Polish_Notation">RPN</a>), you will know the names of all the commands, what each command does, and the type and order of arguments each command takes.
+</p>
+<p>
+I still need to write richer documentation for nbc and its side scripts, but I can finish this posting off with some concrete examples.
+</p>
+<p>
+NB supports an &#8220;update&#8221; command that essentially tells NB to rebuild the blog from scratch. The syntax of this command is:
+</p>
+
+
+<pre class="example">nb update
+</pre>
+
+<p>
+My nbc version of this command is:
+</p>
+
+
+<pre class="example">nbu
+</pre>
+
+<p>
+All of the commands for nbc start with the letters &#8220;nb&#8221;. The letter &#8220;U&#8221; is the abbreviation for &#8220;Update&#8221;. So &#8220;nbu&#8221; tells nb to run the update command. As I said, the code for nbu and the other side scripts are trivial and given above. As far as examples go, nbu is not very exciting. But the nbc&#8217;s CLI for creating tags is a bit more exciting.
+</p>
+<p>
+NB&#8217;s syntax for creating tags, as documented in its manual, is:
+</p>
+
+
+<pre class="example">nb --title &lt;tag-name&gt; add tag
+</pre>
+
+<p>
+Gosh! That&#8217;s both tough to remember and tough to type. In nbc, the command for adding a tag is <i>nbga</i>. All commands start with &#8220;nb&#8221;. After that, the &#8220;g&#8221; means that we are talking about &#8220;taGs&#8221;. The &#8220;a&#8221; stands for &#8220;Add&#8221;. The syntax for the command is 
+</p>
+
+
+<pre class="example">nbga &lt;tag list&gt;
+</pre>
+
+
+<p>
+Besides being much easier to type and remember, it allows a tag list as compared to a single tag name. That is, you can create multiple tags in a single command rather than needing to call nb once for each new tag.
+</p>
+<p>
+In NBC, a tag list is a comma-separated list of one or more tag names. So &#8220;tag1&#8221; is a tag list and &#8220;tag1,tag2,tag3&#8221; is also a tag list. If you prefer you can space-separate the tag list but you need to ensure that you pass the entire tag list as the first argument to nbga. 
+</p>
+<p>
+As the operations become more complex, NBC&#8217;s simplifications become greater and more obvious. My next posting about NBC will discuss some of these simplifications.
+</p>
+<p>
+If you wish to use NBC, look at the source code, or tell me why NBC sucks, you can get the scripts at <a href="https://github.com/Neil-Smithline/nbc">https://github.com/Neil-Smithline/nbc</a>.
+</p></div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Neil Smithline</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-14T13:13:34-05:00" pubdate data-updated="true">Feb 14<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/blogging-tech/'>blogging-tech</a>, <a class='category' href='/blog/categories/nanoblogger/'>nanoblogger</a>, <a class='category' href='/blog/categories/tech/'>tech</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.neilsmithline.com/blog/2012/02/14/nbc/" data-via="neil_smithline" data-counturl="http://www.neilsmithline.com/blog/2012/02/14/nbc/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/02/03/github/" title="Previous Post: This Blog Is Now Hosted For Free (and it's slashdot proof too)">&laquo; This Blog Is Now Hosted For Free (and it's slashdot proof too)</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/02/15/nogit-blog-in-a-box/" title="Next Post: Blog In A Box (actually, a repo)">Blog In A Box (actually, a repo) &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/08/21/disk-crash/">Disk Crash</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/05/time-tracking-part-2/">Time Tracking, Part 2: Org Mode File Format</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/04/time-tracking/">Time Tracking</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/22/blurring-static-and-dynamic-blogs/">Blurring Static And Dynamic Blogs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/21/desktop-time-tracking/">Desktop Time Tracking</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/neil-smithline">@neil-smithline</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'neil-smithline',
+            count: 8,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>My Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("neil_smithline", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <p>Follow <a href="http://twitter.com/neil_smithline">@neil_smithline</a></p>
+  
+</section>
+
+
+
+<section class="socialmention">
+  <h1>Elsewhere On The Web</h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="https://twitter.com/#!/neil_smithline"><img src="/assets/service-logos/twitter/twitter-32.png" alt="My Tweets"/>Twitter</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://www.linkedin.com/profile/view?2519386"><img src="/assets/service-logos/linkedin/linkedin-32.png" alt="My LinkedIn Account" />LinkedIn</a>
+  </h1>
+</section>
+
+
+<section class="sociallink googleplus">
+  <h1>
+    <a href="https://plus.google.com/104257546204106753046?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32"></img>
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="https://github.com/neil-smithline"><img src="/assets/service-logos/github/github-32.png" alt="Checkout My Code" />Github</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://coderwall.com/neilsmithline"><img src="/assets/service-logos/coderwall/coderwall-32.png" alt="My Coderwall Badges" />Coderwall</a>
+  </h1>
+</section>
+
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://www.diigo.com/user/neilsmithline"><img src="/assets/service-logos/diigo/diigo-32.png" alt="My Diigo Bookmarks"/>Bookmarks</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://klout.com/#/neil_smithline"><img src="/assets/service-logos/klout/klout-32.png" alt="My Klout Score"/>Klout</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://disqus.com/NeilSmithline"><img src="/assets/service-logos/disqus/disqus-32.png" alt="My Disqus Comments"/>Disqus</a>
+  </h1>
+</section>
+
+
+<!-- ShareThis -->
+  <script>
+    var options={ "publisher": "4eafa479-c64d-49ab-9e91-90cb169b33c2", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["twitter", "googleplus", "linkedin", "facebook", "email", "sharethis"]}};
+    var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+  </script>
+<!-- /ShareThis -->
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Neil Smithline -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> -
+  <span class="credit">Authored with <a href="http://www.gnu.org/s/emacs"">Emacs</a> and
+  <a href="http://orgmode.org">Org Mode</a></span> -
+  <span class="credit">Hosted by <a href="http://github.com">Github</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'mygeekdom';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.neilsmithline.com/blog/2012/02/14/nbc/';
+        var disqus_url = 'http://www.neilsmithline.com/blog/2012/02/14/nbc/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

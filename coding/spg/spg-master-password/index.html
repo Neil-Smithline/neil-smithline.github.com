@@ -1,0 +1,548 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>SPG: Generating Your Master Password - My Geekdom</title>
+  <meta name="author" content="Neil Smithline">
+
+  
+  <meta name="description" content="SPG: Generating Your Master Password Jun 11th, 2012 var special = new Array(); special[0] = "abcdefghijklmnopqrstuvwxyz"; // Lower-case for password &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.neilsmithline.com/coding/spg/spg-master-password/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="http://feeds.feedburner.com/MyGeekdom" rel="alternate" title="My Geekdom" type="application/atom+xml">
+    <!-- ShareThis -->
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+  <!-- /ShareThis -->
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25833963-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Geekdom</a></h1>
+
+  <div  style="float: right; position: relative; top: 75px;" id="header-image-container">
+    <a href="" accesskey="1">
+      <img title="Neil Smithline" src="/assets/images/NS-Keycaps.png"></img>
+    </a>
+  </div>
+
+  
+    <h2>Ramblings about my nerdy pursuits.</h2>
+  
+
+  
+    <a href="https://github.com/neil-smithline">
+      <img
+          style="position: absolute;
+            top: 0;
+            right: 0;
+            border: 0;"
+         src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></img></a>
+
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/MyGeekdom" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.neilsmithline.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <!-- <li><a href="/">Home</a></li> -->
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/contact">Contact</a></li>
+  <li><a href="/about/elsewhere">About</a></li>
+  <li><a href="/neilsmithline">Resume (Seeking employment)</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <header>
+    <h1 class="entry-title">SPG: Generating Your Master Password</h1>
+    <p class="meta">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-11T10:56:00-04:00" pubdate data-updated="true">Jun 11<span>th</span>, 2012</time></p>
+  </header>
+  
+    <script type="text/javascript">
+        var special = new Array();
+        special[0] = "abcdefghijklmnopqrstuvwxyz"; // Lower-case for password
+        special[1] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; // Upper-case for password
+        special[2] = "!@#$%^&*()"; // Symbols for password
+        special[3] = "0123456789"; // Digits for password
+        
+        var size = 8; // Size of password without specials added to it
+
+        // Get a random number that is between 0 .. max-1
+        function max_rand(max) {
+            // We boot numbers bigger than cap
+            var cap = Math.floor(256 / max) * max;
+            var num = cap + 1;
+
+            while (num >= cap) {
+                num = CryptoJS.lib.WordArray.random(1); 
+                num = "0x" + num;
+                num = parseInt(num);
+            }
+            num = Math.floor(num / cap * max);
+
+            return num;
+        }
+
+        function passwordify(input) {
+            // We create the password by taking the random bits and
+            // base-64 encoding them. and taking the first `size'
+            // characters of it as that is enough entropy for our
+            // needs.
+            //
+            // To ensure that we include all character types, we'll
+            // then add one character from each array item of
+            // `special' into a randomly chosen part of the password.
+
+            //////////////////////////////////////////////////////////////
+            // Base-64 encode and use first `size' characters for
+            // the password
+            //////////////////////////////////////////////////////////////
+            var b64 = input.toString(CryptoJS.enc.Base64);
+            var pwd = b64.substr(0, size);
+            var pwd_array = pwd.split("");
+
+            for (i=0; i < special.length; i++) {
+                var index = max_rand(special[i].length);
+                var spcl_char = special[i].substring(index, index + 1);
+                var location = max_rand(pwd_array.length);
+                pwd_array.splice(location, 0, spcl_char);
+            }
+
+            return pwd_array.join("");
+        }
+
+        function genMaster() {
+            var master = CryptoJS.lib.WordArray.random(256);
+            var pwd = passwordify(master);
+            alert("         !!THIS IS YOUR MASTER PASSWORD!!\n" +
+                  "Copy it per the instructions then close this alert.\n" +
+                  "                    " + pwd);
+        }
+  </script>
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">First Time Users</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>SPG generates unique passwords for each website that you use. It does this by combining a <i>master password</i> the website name, and your birthday. You do not need to remember each site&#8217;s individual password, only your master password and your birthday See <a href="#Footnote-1">Footnote 1</a> for the nasty technical details.
+In order to use SPG, you must create a master password. 
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">About The Master Password</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>The master password must have the following qualities:
+</p><ul>
+<li><b>Cryptographically random:</b> You don&#8217;t need to understand the math behind being cryptographically random^<a href="#Footnote-2">Footnote 2</a> just need to know that a password needs to be cryptographically random to be secure and that you can&#8217;t easily create a cryptographically random password without help. SPG provides this help.
+</li>
+<li><b>Sufficiently long:</b> To be exact, it is not the size of the password that matters. It is the number of bits of <a href="http://bit.ly/LQPOz1">entropy</a> that the password has. Once again, no need to worry about the details, SPG takes care of them for you.
+</li>
+<li><b>Something that you will never forget:</b> If you have a great memory and happen to know the first 50 digits of pi off the top of your head, then memorizing a random password should be easy. Otherwise, write it down.
+</li>
+<li><b>Something that is not related to your life:</b> Your dog&#8217;s name, your kindergarten teacher&#8217;s name, and the name of the first person you kissed are all out. So too is any combination of personally meaningful passwords. For example, if <i>Spot-Mrs.-Johnson</i> is your dog&#8217;s name and your kindergarten teacher&#8217;s name, it is not a good master password.
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">How To Get Your Master Password</h2>
+<div class="outline-text-2" id="text-3">
+
+
+<table border="0" align="right" cellpadding="5" cellspacing="0">
+    <tr>
+        <td align="center" valign="top">
+            <img
+                src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Zocchihedron2.jpg/180px-Zocchihedron2.jpg" title="A Zocchihedron" align="right" alt="http://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Zocchihedron2.jpg/180px-Zocchihedron2.jpg"/>
+            <div style="text-align:center">
+              A 100-sided die called a 
+              <a href="http://bit.ly/KWRc90" title="A Zocchihedron">zocchihedron</a>
+            </div>
+        </td>
+    </tr>
+</table>
+<p>
+Without boring you with the math, the way you get your cryptographically secure, sufficiently sized, can&#8217;t be easily guessed, never-to-be-forgotten password that is completely unrelated to anything in your life is to use a tool.
+</p>
+<p>
+If you happen to have a handful zocchihedrons, you can use them to create your password. Otherwise, you can get a master password by clicking on the button below.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">My Master Password Is !@#$</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>While I&#8217;m sorry that your master password is hard for you to memorize, type, or reminds you of the school bully when you were 5^th grade, it&#8217;s a good sign. If you look at the qualities listed above for master passwords, your master password is pretty much guaranteed to be difficult to remember. Regenerating your master password until you get one that you like can dramatically reduce the entropy of your master password. 
+</p>
+<p>
+Depending on how many master passwords you go through before you pick one and why you liked the one you picked one, the reduction in entropy may be minimal or may be severe. The problem is that it is hard to know how much entropy is lost by regenerating your master password. So stick with the first one you get and do your best to memorize it. 
+</p>
+<p>
+If you find that, after a few days of use, you can&#8217;t remember your master password, you may want to try some common <a href="http://bit.ly/KZhp73">memorization strategies</a>. Whatever you do, just stick with the first master password.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Generating Your Master Password</h2>
+<div class="outline-text-2" id="text-5">
+
+<p>Before you press the generate button, make sure that:
+</p><ul>
+<li>Nobody is standing over your shoulder or walking by. There are many cases of compromised passwords due to so called <a href="http://bit.ly/KZeqLG">shoulder surfing</a>, but better safe than sorry.
+</li>
+<li>You do not copy-and-paste the password. Copying new contents to the clipboard does not guarantee that the clipboard&#8217;s contents have been erased.
+</li>
+<li>You write the password down. Yes, I know people tell you not to write your passwords down (more on this later) but this is a special case. 
+</li>
+</ul>
+
+
+<p>
+When you write your master password down, do not write the password in a notebook. Just grab a sticky or tear a piece of paper out of a notebook. Be sure that the when you are writing the master password down that piece of paper is placed on a hard surface. Your desk and your computer monitor (be careful if you have a laptop) are good choices. Worrying about <a href="http://bit.ly/KZgbIJ">indented writing</a> attacks on your master password is a bit paranoid but this is an important password and it is easy to write on a hard surface.
+</p>
+<p>
+Assuming you have followed everything above, you are ready to get your master password. Click the button below. You will get a popup with your master password. Write down your master password, and put it in your wallet or lock it in a secure location. In general I wouldn&#8217;t consider standard office desk drawers &#8220;secure&#8221;, but the security varies greatly from office to office.
+<center>
+    <button name="get-master" type="button" onclick="genMaster()">
+        Generate Your Master Password
+    </button>
+</center>
+<br/>
+
+</p></div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6">Securing Your Master Password</h2>
+<div class="outline-text-2" id="text-6">
+
+<p>Until you memorize your master password, keep a copy of it in your wallet or in your cell phone&#8217;s battery case. Anything that you&#8217;ll always have with you is fine.
+</p>
+<p>
+You need one hard-copy of your master password in case you ever forget it, get into a car accident, etc.. You should store that in a secure place. Unless you feel that someone may specificaly <a href="http://bit.ly/KnUtgU">target</a> you for an attack, work for the NSA, or have mischievous teenage children, the bottom of your sock drawer may be secure enough.
+</p>
+<p>
+You may also wish to archive a copy of your master password and these instructions along with your <a href="http://bit.ly/KnVq96">last will testament</a>. Between the master password, the instructions, and access to your email account, your heirs will likely have access to all of your online accounts.
+</p></div>
+</div>
+
+  
+    <footer>
+      <p class="meta">
+        
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-11T10:56:00-04:00" pubdate data-updated="true">Jun 11<span>th</span>, 2012</time>
+        
+      </p>
+      
+        <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.neilsmithline.com/coding/spg/spg-master-password/index.html" data-via="neil_smithline" data-counturl="http://www.neilsmithline.com/coding/spg/spg-master-password/index.html" >Tweet</a>
+  
+  
+  
+</div>
+
+      
+    </footer>
+  
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/08/21/disk-crash/">Disk Crash</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/05/time-tracking-part-2/">Time Tracking, Part 2: Org Mode File Format</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/04/time-tracking/">Time Tracking</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/22/blurring-static-and-dynamic-blogs/">Blurring Static And Dynamic Blogs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/21/desktop-time-tracking/">Desktop Time Tracking</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/neil-smithline">@neil-smithline</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'neil-smithline',
+            count: 8,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>My Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("neil_smithline", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <p>Follow <a href="http://twitter.com/neil_smithline">@neil_smithline</a></p>
+  
+</section>
+
+
+
+<section class="socialmention">
+  <h1>Elsewhere On The Web</h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="https://twitter.com/#!/neil_smithline"><img src="/assets/service-logos/twitter/twitter-32.png" alt="My Tweets"/>Twitter</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://www.linkedin.com/profile/view?2519386"><img src="/assets/service-logos/linkedin/linkedin-32.png" alt="My LinkedIn Account" />LinkedIn</a>
+  </h1>
+</section>
+
+
+<section class="sociallink googleplus">
+  <h1>
+    <a href="https://plus.google.com/104257546204106753046?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32"></img>
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="https://github.com/neil-smithline"><img src="/assets/service-logos/github/github-32.png" alt="Checkout My Code" />Github</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://coderwall.com/neilsmithline"><img src="/assets/service-logos/coderwall/coderwall-32.png" alt="My Coderwall Badges" />Coderwall</a>
+  </h1>
+</section>
+
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://www.diigo.com/user/neilsmithline"><img src="/assets/service-logos/diigo/diigo-32.png" alt="My Diigo Bookmarks"/>Bookmarks</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://klout.com/#/neil_smithline"><img src="/assets/service-logos/klout/klout-32.png" alt="My Klout Score"/>Klout</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://disqus.com/NeilSmithline"><img src="/assets/service-logos/disqus/disqus-32.png" alt="My Disqus Comments"/>Disqus</a>
+  </h1>
+</section>
+
+
+<!-- ShareThis -->
+  <script>
+    var options={ "publisher": "4eafa479-c64d-49ab-9e91-90cb169b33c2", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["twitter", "googleplus", "linkedin", "facebook", "email", "sharethis"]}};
+    var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+  </script>
+<!-- /ShareThis -->
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Neil Smithline -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> -
+  <span class="credit">Authored with <a href="http://www.gnu.org/s/emacs"">Emacs</a> and
+  <a href="http://orgmode.org">Org Mode</a></span> -
+  <span class="credit">Hosted by <a href="http://github.com">Github</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'mygeekdom';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.neilsmithline.com/coding/spg/spg-master-password/index.html';
+        var disqus_url = 'http://www.neilsmithline.com/coding/spg/spg-master-password/index.html';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

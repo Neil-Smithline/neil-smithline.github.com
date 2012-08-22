@@ -1,0 +1,600 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Disk Crash - My Geekdom</title>
+  <meta name="author" content="Neil Smithline">
+
+  
+  <meta name="description" content="Ouch! My Disk Crashed My MacBook Pro became unusable and required a complete repartition and several reformats before I could resuscitate it. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.neilsmithline.com/blog/2012/08/21/disk-crash/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="http://feeds.feedburner.com/MyGeekdom" rel="alternate" title="My Geekdom" type="application/atom+xml">
+    <!-- ShareThis -->
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+  <!-- /ShareThis -->
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25833963-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Geekdom</a></h1>
+
+  <div  style="float: right; position: relative; top: 75px;" id="header-image-container">
+    <a href="" accesskey="1">
+      <img title="Neil Smithline" src="/assets/images/NS-Keycaps.png"></img>
+    </a>
+  </div>
+
+  
+    <h2>Ramblings about my nerdy pursuits.</h2>
+  
+
+  
+    <a href="https://github.com/neil-smithline">
+      <img
+          style="position: absolute;
+            top: 0;
+            right: 0;
+            border: 0;"
+         src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></img></a>
+
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/MyGeekdom" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.neilsmithline.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <!-- <li><a href="/">Home</a></li> -->
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/contact">Contact</a></li>
+  <li><a href="/about/elsewhere">About</a></li>
+  <li><a href="/neilsmithline">Resume (Seeking employment)</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Disk Crash</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-21T22:02:00-04:00" pubdate data-updated="true">Aug 21<span>st</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Ouch! My Disk Crashed</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>My <a href="http://en.wikipedia.org/wiki/MacBook_Pro">MacBook Pro</a> became unusable and required a complete repartition and several reformats before I could resuscitate it. Recovering from the disk crash was surprisingly easy, there were a few hitches. Being that, without a duplicate computer, the only time that you can see how well your backup strategy works and correct it, I&#8217;ve been using this disk crash as an opportunity to bolster my backup strategy.
+</p>
+<p>
+While I had some gaps in my backup strategy, within 2 hours of my disk crash I had my backup computer running, complete with my data files, shell scripts, config files, etc&hellip;
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">File Distribution</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>In my mind, file backup and file distribution across multiple machines are intimately related. File backup is, well it&#8217;s file backup. I use file distribution to keep various files synchronized across my devices. It should be noted that while the goal of file distribution is synchronization of data across computers, distributing files to other computers effectively backs them up.
+</p>
+<p>
+My primary computers are my MacBook Pro and an <a href="http://en.wikipedia.org/wiki/Hewlett-Packard">HP</a> laptop running <a href="http://en.wikipedia.org/wiki/Ubuntu_(operating_system)">Ubuntu Linux</a>. My mobile is a <a href="http://en.wikipedia.org/wiki/Samsung_Infuse_4G">Samsung Infuse</a> running <a href="http://en.wikipedia.org/wiki/CyanogenMod#CyanogenMod_10">CyanogenMod 10</a>, a customized version of <a href="http://en.wikipedia.org/wiki/Android_version_history#Android_4.1.x_Jelly_Bean">Android 4.1 Jelly Bean</a>. I also rent a <a href="http://en.wikipedia.org/wiki/Virtual_private_server">VPS</a> <a href="http://en.wikipedia.org/wiki/Cloud_computing">cloud computer</a> running Ubuntu. Lastly, I have an <a href="http://en.wikipedia.org/wiki/Asus">Asus</a> running <a href="http://en.wikipedia.org/wiki/Windows_7">Windows 7</a>. I primarily use te Windows computer for <a href="http://en.wikipedia.org/wiki/Streaming_media">streaming media</a> (I don&#8217;t dig Windows).
+</p>
+<p>
+I use file distribution to achieve two goals. I like to keep my configuration files consistent across my MacBook and two Ubuntu computers. This includes my <a href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)#Startup_scripts">.bashrc</a> and my <a href="http://en.wikipedia.org/wiki/Emacs_Lisp#Source_code">.emacs</a> site startup files. While I want those files to stay in sync to make the management of them simpler, there&#8217;s generally no rush in synchronizing them. 
+</p>
+<p>
+Another example of my file distribution involves my <a href="http://en.wikipedia.org/wiki/Personal_information_manager">PIM</a>. I use <a href="http://orgmode.org">Org Mode</a> as my <a href="http://en.wikipedia.org/wiki/Personal_information_manager">PIM</a> and want the data files to be synchronized across my MacBook, two Linux boxes, and my Android. I want those files synchronized immediately as I frequently move from computer to computer and always want my PIM data to be up to date.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Prioritization Of File Backup And File Distribution</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>My backup and distribution strategy categorizes files using two metrics:
+</p><ul>
+<li><b>File Importance:</b> This describes how critical each file is. Files in <code>~/Downloads</code> are typically not very important while the text for this blog entry is very important (at least to me).
+</li>
+<li><b>Synchronization Delay:</b> As I move between multiple computers, my productivity is related to how frequently some files are synchronized across the computers. Some I want optimized as soon as possible while other files can take hours or even days to get synchronized without affecting my productivity. Some low priority files, such as those in <code>~/Downloads</code> don&#8217;t ever need to be synchronized across machines.
+</li>
+</ul>
+
+
+
+
+<!-- more -->
+
+<p>
+In practice this leads to four types of files:
+</p><ul>
+<li><b>High/Timely:</b> Files that are very important and need to be synchronized in a timely fashion. My PIM files fall into this category.
+</li>
+<li><b>High/Delayed:</b> Important files that don&#8217;t need to timely synchronization. Configuration files such as my .bashrc are High/Delayed.
+</li>
+<li><b>Low/Delayed:</b> Files that are convenient to have across my machines but aren&#8217;t essential to my immediate productivity. For example, I frequently download manuals for various appliances that I own. I like to have them handy but it&#8217;s fine if they aren&#8217;t synched immediately. As I can easily download them again, they&#8217;re of relatively low importance.
+</li>
+<li><b>Everything else:</b> These are files that are of significantly low importance that I don&#8217;t worry too much about them.
+</li>
+</ul>
+
+
+<p>
+My backup and distribution strategy varies by which quadrant (I&#8217;m excluding the N/A boxes) a file is in.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"></h2>
+<div class="outline-text-2" id="text-4">
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">There&#8217;s Data That Should Be Backed Up That Is Not In A File</h2>
+<div class="outline-text-2" id="text-5">
+
+<p>My first lesson was that not all data is backupable via file backup and distribution processes. The best example I have of this is the set of installed applications. Applications are typically large files and frequently require complex installations. While many <a href="http://en.wikipedia.org/wiki/Mac_os_x">Mac OS X</a> applications can be installed by copying the file into the <code>/Applications</code> directory, others require the use of package installers. This is similar to <a href="http://en.wikipedia.org/wiki/Windows">Windows</a> applications that store data in the <a href="http://en.wikipedia.org/wiki/Windows_registry">Windows Registry</a>.
+</p>
+<p>
+Knowing that applications were cumbersome and frequently needed special installation scripts led me to decide to not back up my applications. After this disk crash, I continue to think that it makes no sense to backup your installed apps. That said, I have sorely missed having a list of the applications that I had installed before the disk problems.
+</p>
+
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1">Monitor Installed Applications</h3>
+<div class="outline-text-3" id="text-5-1">
+
+<p>My initial response to the lack of a list of installed apps was to start recording apps as I installed them. After the first half-dozen or so apps I decided that this was a bad idea. I could see that the list was going to be incomplete, outdated, and generally not very helpful.
+</p>
+<p>
+So I took a few minutes to whip up a trivial shell script that I run once a day via crontab. The shell script attempts to record the names of installed applications rather than the actual applications themselves. The version of the shell script that I&#8217;m currently using is:
+</p>
+
+
+<pre class="src src-sh-mode">#!/bin/sh
+shopt -s nullglob
+shopt -u failglob
+ls -dlrt /Applications/* /Library/PreferencePanes/* ~/Library/PreferencePanes/* &gt; ~/Dropbox/Backups/InstalledApps.txt
+</pre>
+
+
+<p>
+An abbreviated sample of its output is:
+</p>
+
+
+<pre class="example">drwxr-xr-x   3 root  wheel  102 May  5  2009 /Applications/Font Book.app
+drwxr-xr-x   3 root  wheel  102 May 19  2009 /Applications/Stickies.app
+drwxr-xr-x   3 root  wheel  102 May 19  2009 /Applications/Chess.app
+drwxr-xr-x   3 root  admin  102 Sep 19  2009 /Library/PreferencePanes/RCDefaultApp.prefPane
+drwxrwxr-x   3 root  wheel  102 May 24  2011 /Library/PreferencePanes/Growl.prefPane
+drwxr-xr-x@  3 neil  admin  102 May 24  2011 /Applications/HardwareGrowler.app
+drwxr-xr-x@  3 neil  admin  102 May 24  2011 /Applications/GrowlTunes.app
+drwxr-xr-x   3 neil  staff  102 Jul 25 18:27 /Applications/BetterTouchTool.app
+drwxr-xr-x@  3 neil  admin  102 Aug 13 22:51 /Applications/Google Chrome.app
+drwxr-xr-x@  4 neil  admin  136 Aug 18 08:19 /Applications/FirefoxAurora.app
+drwxr-xr-x   3 neil  staff  102 Aug 18 11:52 /Applications/GrowlSafari.app
+</pre>
+
+
+<p>
+As this script is run once a day and stored in my Dropbox folder, I always have an up-to-date copy of the file.
+</p>
+<p>
+I still have some changes planned for the script:
+</p><ul>
+<li>The script only works for typical Mac OS X applications. It doesn&#8217;t check for command line applications as well as applications installed by a package manager such os <a href="http://mxcl.github.com/homebrew/">Homebrew</a> (Mac OS X package installer), <a href="http://www.cpan.org/">CPAN</a> (Perl package installer), or <a href="https://github.com/sstephenson/rbenv/">rbenv</a> (Ruby package installer - sort of).
+</li>
+<li>Perhaps I had a good reason to put the data file into my Dropbox folder but I can&#8217;t recall it now. This data seems a perfect example of High/Delayed data as discussed in the table above.
+</li>
+<li>The script misses some peculiar applications. Most of these applications are from Apple. <a href="https://developer.apple.com/xcode/">Xcode</a> is a good example of a &#8220;peculiar&#8221; application. Xcode includes a GUI application, command line programs, and runtime libraries. These get scattered across the machine. I suspect I&#8217;ll just hardcode these applications into my script rather than trying to create the logic to find them. For example, I&#8217;ll have my script add a line to the installed applications that reads <code>Xcode from https://developer.apple.com/xcode/</code>. That seems good enough.
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5-2" class="outline-3">
+<h3 id="sec-5-2">Other Missing Data</h3>
+<div class="outline-text-3" id="text-5-2">
+
+<p>Missing the list of installed apps had a quick fix but other data isn&#8217;t so readily available or I don&#8217;t know how to access it. Some examples of missing data are:
+</p><ul>
+<li>Customized icons for folders: On Mac OS X you can associate a small icon to each folder. On the directories that I use routinely I have customized the icons so that I can find them quickly.
+</li>
+<li>The settings of some Chrome extensions did not get restored.
+</li>
+<li>My cron jobs were only stored within cron&#8217;s database.
+</li>
+</ul>
+
+
+<p>
+The cron jobs problem was another one that I was able to fix with a simple shell script and a minor modification to my workflow. Instead of editing my cron jobs directly via <code>crontab -e</code>, I now keep them in a file in my <code>bin</code> directory and modify that file as needed. When I modify my cron jobs I can either run crontab to immediately update my cron jobs or wait until I run my nightly cron job as that auto-updates my cron jobs:
+</p>
+
+
+
+<pre class="src src-sh-mode">#!/bin/sh
+
+# Run my apps lister
+$HOME/bin/installed-apps-lister.sh
+
+# Run other stuff that I've removed from this example.
+
+# Update my cron jobs in case I've modified the cron file.
+crontab $HOME/bin/crontab-jobs
+</pre>
+
+
+<p>
+The <code>$HOME/bin/crontab-jobs</code> file gets automatically backed up with the rest of my bin files.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6">Other Backup And Distribution Strategies</h2>
+<div class="outline-text-2" id="text-6">
+
+<p>I&#8217;ll discuss the rest of my backup strategy in a subsequent posting. As a sneak-peek I&#8217;ll tell you that the technologies I use include:
+</p><ul>
+<li><a href="http://en.wikipedia.org/wiki/Dropbox_(service)">Dropbox</a>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/CrashPlan">CrashPlan</a>
+</li>
+<li><a href="http://linux.about.com/library/cmd/blcmdl1_rdist.htm">rdist</a>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/GitHub">GitHub</a>
+</li>
+</ul>
+
+
+
+</div>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Neil Smithline</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-21T22:02:00-04:00" pubdate data-updated="true">Aug 21<span>st</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/blogging-tech/'>blogging-tech</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.neilsmithline.com/blog/2012/08/21/disk-crash/" data-via="neil_smithline" data-counturl="http://www.neilsmithline.com/blog/2012/08/21/disk-crash/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/08/05/time-tracking-part-2/" title="Previous Post: Time Tracking, Part 2: Org Mode File Format">&laquo; Time Tracking, Part 2: Org Mode File Format</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/08/21/disk-crash/">Disk Crash</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/05/time-tracking-part-2/">Time Tracking, Part 2: Org Mode File Format</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/04/time-tracking/">Time Tracking</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/22/blurring-static-and-dynamic-blogs/">Blurring Static And Dynamic Blogs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/21/desktop-time-tracking/">Desktop Time Tracking</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/neil-smithline">@neil-smithline</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'neil-smithline',
+            count: 8,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>My Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("neil_smithline", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <p>Follow <a href="http://twitter.com/neil_smithline">@neil_smithline</a></p>
+  
+</section>
+
+
+
+<section class="socialmention">
+  <h1>Elsewhere On The Web</h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="https://twitter.com/#!/neil_smithline"><img src="/assets/service-logos/twitter/twitter-32.png" alt="My Tweets"/>Twitter</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://www.linkedin.com/profile/view?2519386"><img src="/assets/service-logos/linkedin/linkedin-32.png" alt="My LinkedIn Account" />LinkedIn</a>
+  </h1>
+</section>
+
+
+<section class="sociallink googleplus">
+  <h1>
+    <a href="https://plus.google.com/104257546204106753046?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32"></img>
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="https://github.com/neil-smithline"><img src="/assets/service-logos/github/github-32.png" alt="Checkout My Code" />Github</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://coderwall.com/neilsmithline"><img src="/assets/service-logos/coderwall/coderwall-32.png" alt="My Coderwall Badges" />Coderwall</a>
+  </h1>
+</section>
+
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://www.diigo.com/user/neilsmithline"><img src="/assets/service-logos/diigo/diigo-32.png" alt="My Diigo Bookmarks"/>Bookmarks</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://klout.com/#/neil_smithline"><img src="/assets/service-logos/klout/klout-32.png" alt="My Klout Score"/>Klout</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://disqus.com/NeilSmithline"><img src="/assets/service-logos/disqus/disqus-32.png" alt="My Disqus Comments"/>Disqus</a>
+  </h1>
+</section>
+
+
+<!-- ShareThis -->
+  <script>
+    var options={ "publisher": "4eafa479-c64d-49ab-9e91-90cb169b33c2", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["twitter", "googleplus", "linkedin", "facebook", "email", "sharethis"]}};
+    var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+  </script>
+<!-- /ShareThis -->
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Neil Smithline -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> -
+  <span class="credit">Authored with <a href="http://www.gnu.org/s/emacs"">Emacs</a> and
+  <a href="http://orgmode.org">Org Mode</a></span> -
+  <span class="credit">Hosted by <a href="http://github.com">Github</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'mygeekdom';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.neilsmithline.com/blog/2012/08/21/disk-crash/';
+        var disqus_url = 'http://www.neilsmithline.com/blog/2012/08/21/disk-crash/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

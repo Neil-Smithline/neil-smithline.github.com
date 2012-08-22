@@ -1,0 +1,494 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>YANBT: Yet Another New Blogging Technology - My Geekdom</title>
+  <meta name="author" content="Neil Smithline">
+
+  
+  <meta name="description" content="NanoBlogger Was Killing Me NanoBlogger really looked cool to me (my postings about why I liked it): Small Most functionality provided via plugins &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.neilsmithline.com/blog/2012/05/14/new-blog-tech/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="http://feeds.feedburner.com/MyGeekdom" rel="alternate" title="My Geekdom" type="application/atom+xml">
+    <!-- ShareThis -->
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+  <!-- /ShareThis -->
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25833963-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Geekdom</a></h1>
+
+  <div  style="float: right; position: relative; top: 75px;" id="header-image-container">
+    <a href="" accesskey="1">
+      <img title="Neil Smithline" src="/assets/images/NS-Keycaps.png"></img>
+    </a>
+  </div>
+
+  
+    <h2>Ramblings about my nerdy pursuits.</h2>
+  
+
+  
+    <a href="https://github.com/neil-smithline">
+      <img
+          style="position: absolute;
+            top: 0;
+            right: 0;
+            border: 0;"
+         src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></img></a>
+
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/MyGeekdom" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.neilsmithline.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <!-- <li><a href="/">Home</a></li> -->
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/contact">Contact</a></li>
+  <li><a href="/about/elsewhere">About</a></li>
+  <li><a href="/neilsmithline">Resume (Seeking employment)</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">YANBT: Yet Another New Blogging Technology</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-14T12:36:00-04:00" pubdate data-updated="true">May 14<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">NanoBlogger Was Killing Me</h2>
+<div class="outline-text-2" id="text-1">
+
+<p><a href="http://bit.ly/wq2Ien">NanoBlogger</a> really looked cool to me 
+(<a href="/blog/categories/blogging-tech">my postings about why I liked it</a>):
+</p><ul>
+<li>Small
+</li>
+<li>Most functionality provided via plugins
+</li>
+<li><a href="http://bit.ly/xOIkfJ">CLI</a> only
+</li>
+<li>It is <a href="http://bit.ly/Mlkg9X">FOSS</a>.
+</li>
+<li>Produced a static site (ie: only serves static pages)
+</li>
+<li>It was built on <a href="http://bit.ly/JbQmzE">Bash</a> &ndash; I thought this was the coolest
+</li>
+</ul>
+
+
+<p>
+I liked it so much that I wrote a CLI for it that was better suited to my personal workflow. I also spent some time integrating it with Emacs. But it had endless problems.
+</p>
+<p>
+It was slow, it did not do anything automatically, frequently required rebuilding of the entire blog, was hard to view on my local machine, isn&#8217;t really being maintained, doesn&#8217;t have a real templating system, breaks the RSS feed on special characters such as etc&hellip;
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Where Next</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Over the past few weeks I&#8217;ve been looking around for a new blogging system. The only real contender seemed to be <a href="http://bit.ly/Jm1bmc">Jekyll</a>. It is written in <a href="http://bit.ly/KAfYv0">Ruby</a> and used by Github to power Github Pages. It has so many contributors to it that its <a href="http://bit.ly/JetyoE">Github repository</a> has, at the moment, 50+ pull requests.
+</p>
+<p>
+I had nearly chosen Jekyll when I moved to NanoBlogger. I found that the discussion about moving to Jekyll on the <a href="http://bit.ly/JH7cIy">0xdecafbad.com</a> blog really aligned with my thoughts.
+</p>
+<p>
+But, after playing with it a bit, I found that Jekyll was difficult to configure. And I just so liked the Bash thing that NanoBlogger had that I decided to go with NanoBlogger. But now I&#8217;m wasting too much of my time fighting with Nanoblogger and I should reconsider Jekyll.
+<!-- more -->
+
+This time, when I was researching Jekyll, I found <a href="http://bit.ly/KT1aFT">Octopress</a>. Octopress is Jekyll on steroids. It provides an automated configuration and maintenance system that takes the pain out of using Jekyll.
+</p>
+<p>
+So now I&#8217;m giving Octopress/Jekyll a try. I&#8217;ll see how it goes. Configuring a site with a <i>hello world</i> blog entry only took a couple of hours. Most of that was just downloading Octopress and reading the docs to figure out what to do. It turned out that configuration was running three <a href="http://bit.ly/KT2jxn">rake</a> commands. 
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Converting From Nanoblogger To Jekyll</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>Because NanoBlogger blog entries are plain text with markup, converting my entire old blog to Octopress was fairly easy as Octopress also uses plain text with markup for blog entries. I ran into two snags. The first one was in Emacs&#8217; <a href="http://bit.ly/zhYdcB">Org Mode</a>, my authoring tool. It broke when you had a &#8220;+&#8221; in the path name of your input files (in my case, in the path of my blog). It took me several hours to find the bug. Once I found it, it was easy to patch and I sent my fix to be included in subsequent Org Mode releases.
+</p>
+<p>
+The second problem was a bit trickier. Octopress was breaking on some of my blog&#8217;s generated HTML files. The error message gave me the line number and the character number in that line that was causing the error but it omitted to give me the file name. I believe the technical term for that is &#8220;Oops!&#8221;.
+</p>
+<p>
+To find the file that was casing the problem I started to remove blog files using a <a href="http://bit.ly/KT3gpo">binary search</a>-ish style to track the problem file down. This proved more difficult than I thought it should. After much frustration, it occurred to me that the problem was in many blog entries so the binary search wasn&#8217;t so helpful. So I wiped my blog and started adding one posting at a time. 
+</p>
+<p>
+Even after I found the first posting that caused Octopress, actually Jekyll, to crash, I couldn&#8217;t figure out what was wrong with the file. The error message said something about non-ASCII characters but I only had ASCII, or so I thought. It turned out that I had copied and pasted some text from my browser and it had inserted a hyphen (-) that was not the ASCII hyphen. To me, they looked identical. 
+</p>
+<p>
+Despite knowing what the problem was, I couldn&#8217;t automate Emacs or grep to find the offensive hyphens. In Emacs, the search treated ASCII and non-ASCII hyphens the same. I forget the problems I had with grep but I couldn&#8217;t get it to work either. This meant I was going to have to add one entry at a time to my blog to track down the other problems. Thank you &ndash; NOT!
+</p>
+<p>
+But Jekyll is written in Ruby and Ruby is a scripting language so I have the source code for Jekyll. Being that the error message included a full stack trace, I figured I could update the error message. In the end I just ended up making Jekyll a bit more verbose: it announces which file it is about to process with the message:
+:Processing file <i>myfile</i>.
+</p>
+<p>
+Then I added all my blog entries, ran Jekyll, got the same error message with only the line and character position, but now had the name of the file it was processing when it had a problem.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Plain Text Blogs Rock!</h2>
+<div class="outline-text-2" id="text-4">
+
+<p> After correcting a couple of entries I noticed that the problem only occurred on hyphens (-) and single quotes (&#8216;). Being that both NanoBlogger and Octopress/Jekyll use plain text files for their input, I had a whole bunch of tools to help me fix the problem. 
+</p>
+<p>
+ In the end I ended up turning Emacs failure to distinguish between the ASCII and non-ASCII versions of these characters to my advantage. I did a search-and-replace on all my blog entries replacing hyphens with hyphens and single quotes with single quotes. While Emacs&#8217; search found both ASCII and non-ASCII characters, it always replaced them with what I typed as the replacement, ASCII.
+</p>
+<p>
+Then, <i>voila</i>, there was my blog. And my blog looked way better in Octopress than NanoBlogger. Check out a NanoBlogger <a href="http://bit.ly/wq2Ien">sample blog</a> and an Octopress <a href="http://bit.ly/KT1aFT">sample blog</a>. Huge difference. Also, excluding the weak error message from Jekyll (I&#8217;ll file a bug report on that and I suspect someone will fixed it as Jekyll is so heavily used), I didn&#8217;t need to do a thing to build and publish the blog. Octopress even pushes the blog to Github automatically. I had written a script to do this automatically for NanoBlogger, but I&#8217;d much rather use someone else&#8217;s perfectly good solution rather than writing my own.
+</p>
+<p>
+I think I&#8217;m going to be very happy with Octopress.
+</p>
+</div>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Neil Smithline</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-14T12:36:00-04:00" pubdate data-updated="true">May 14<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/blogging-tech/'>blogging-tech</a>, <a class='category' href='/blog/categories/jekyll/'>jekyll</a>, <a class='category' href='/blog/categories/nanoblogger/'>nanoblogger</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.neilsmithline.com/blog/2012/05/14/new-blog-tech/" data-via="neil_smithline" data-counturl="http://www.neilsmithline.com/blog/2012/05/14/new-blog-tech/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/05/09/sparkleshare-bomb/" title="Previous Post: SparkleShare Doesn't Sparkle">&laquo; SparkleShare Doesn't Sparkle</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/05/26/octopress-is-pretty-great/" title="Next Post: Octopress Is Pretty Great">Octopress Is Pretty Great &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/08/21/disk-crash/">Disk Crash</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/05/time-tracking-part-2/">Time Tracking, Part 2: Org Mode File Format</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/04/time-tracking/">Time Tracking</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/22/blurring-static-and-dynamic-blogs/">Blurring Static And Dynamic Blogs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/21/desktop-time-tracking/">Desktop Time Tracking</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/neil-smithline">@neil-smithline</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'neil-smithline',
+            count: 8,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>My Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("neil_smithline", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <p>Follow <a href="http://twitter.com/neil_smithline">@neil_smithline</a></p>
+  
+</section>
+
+
+
+<section class="socialmention">
+  <h1>Elsewhere On The Web</h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="https://twitter.com/#!/neil_smithline"><img src="/assets/service-logos/twitter/twitter-32.png" alt="My Tweets"/>Twitter</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://www.linkedin.com/profile/view?2519386"><img src="/assets/service-logos/linkedin/linkedin-32.png" alt="My LinkedIn Account" />LinkedIn</a>
+  </h1>
+</section>
+
+
+<section class="sociallink googleplus">
+  <h1>
+    <a href="https://plus.google.com/104257546204106753046?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32"></img>
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="https://github.com/neil-smithline"><img src="/assets/service-logos/github/github-32.png" alt="Checkout My Code" />Github</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://coderwall.com/neilsmithline"><img src="/assets/service-logos/coderwall/coderwall-32.png" alt="My Coderwall Badges" />Coderwall</a>
+  </h1>
+</section>
+
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://www.diigo.com/user/neilsmithline"><img src="/assets/service-logos/diigo/diigo-32.png" alt="My Diigo Bookmarks"/>Bookmarks</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://klout.com/#/neil_smithline"><img src="/assets/service-logos/klout/klout-32.png" alt="My Klout Score"/>Klout</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://disqus.com/NeilSmithline"><img src="/assets/service-logos/disqus/disqus-32.png" alt="My Disqus Comments"/>Disqus</a>
+  </h1>
+</section>
+
+
+<!-- ShareThis -->
+  <script>
+    var options={ "publisher": "4eafa479-c64d-49ab-9e91-90cb169b33c2", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["twitter", "googleplus", "linkedin", "facebook", "email", "sharethis"]}};
+    var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+  </script>
+<!-- /ShareThis -->
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Neil Smithline -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> -
+  <span class="credit">Authored with <a href="http://www.gnu.org/s/emacs"">Emacs</a> and
+  <a href="http://orgmode.org">Org Mode</a></span> -
+  <span class="credit">Hosted by <a href="http://github.com">Github</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'mygeekdom';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.neilsmithline.com/blog/2012/05/14/new-blog-tech/';
+        var disqus_url = 'http://www.neilsmithline.com/blog/2012/05/14/new-blog-tech/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

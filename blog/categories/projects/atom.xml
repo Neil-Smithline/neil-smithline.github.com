@@ -4,7 +4,7 @@
   <title><![CDATA[Category: projects | My Geekdom]]></title>
   <link href="http://www.neilsmithline.com/blog/categories/projects/atom.xml" rel="self"/>
   <link href="http://www.neilsmithline.com/"/>
-  <updated>2012-08-22T15:31:38-04:00</updated>
+  <updated>2012-08-22T15:40:31-04:00</updated>
   <id>http://www.neilsmithline.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
@@ -83,7 +83,7 @@ Being that I'm storing my data in Org Mode and using Org Mode as my task manager
 
 
 <div id="outline-container-4" class="outline-2">
-<h2 id="sec-4">In Next posting</h2>
+<h2 id="sec-4">In The Next Posting</h2>
 <div class="outline-text-2" id="text-4">
 
 <p>I'm going to post this blog entry in two parts because my time tracking system just interrupted me, asking for a sampling of my activity. When I responded to the request I saw that I've used up the time I've allotted for blogging today so I'm putting this aside for now.
@@ -593,7 +593,7 @@ I'm pretty busy this week so I don't think I'll make much progress on it. I was 
 <h2 id="sec-1">Motivation</h2>
 <div class="outline-text-2" id="text-1">
 
-<p>After yesterday's <a href="{{ root_url }}/blog/2012/05/26/octopress-is-pretty-great" title="Posting about Octopress">ranting about Octopress</a>, it occurred to me that while I now own the content of my blog postings, I don't own the content of my <a href="http://bit.ly/JvoqLE">tweets</a>. I'm sure that there's some way to convince <a href="http://bit.ly/Jvotaj">Twitter</a> to give me my tweets, but why should I rely on them to store my tweets.
+<p>After yesterday's <a href="/blog/2012/05/26/octopress-is-pretty-great" title="Posting about Octopress">ranting about Octopress</a>, it occurred to me that while I now own the content of my blog postings, I don't own the content of my <a href="http://bit.ly/JvoqLE">tweets</a>. I'm sure that there's some way to convince <a href="http://bit.ly/Jvotaj">Twitter</a> to give me my tweets, but why should I rely on them to store my tweets.
 </p>
 <p>
 The obvious answer is that my tweets should be created on my computer and then sent to Twitter. 

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: sparkleshare | My Geekdom]]></title>
+  <link href="http://www.neilsmithline.com/blog/categories/sparkleshare/atom.xml" rel="self"/>
+  <link href="http://www.neilsmithline.com/"/>
+  <updated>2012-08-22T15:40:31-04:00</updated>
+  <id>http://www.neilsmithline.com/</id>
+  <author>
+    <name><![CDATA[Neil Smithline]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[SparkleShare Doesn't Sparkle]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/05/09/sparkleshare-bomb/"/>
+    <updated>2012-05-09T23:12:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/05/09/sparkleshare-bomb</id>
+    <content type="html"><![CDATA[<p>
+Based on a LifeHacker posting, I previously blogged about giving SparkleShare a try.. It was cool. A free Dropbox with private hosting. So I installed, configured, and started using SparkleShare. While I was quite excited when I embarked upon my journey using SparkleShare, things didn't work out as well as I had hoped.
+</p>
+
+
+<p>
+I quickly found out that SparkleShare doesn't handle symbolic links. Not at all. There's no workaround. The problem is that SparkleShare relies on Git for synchronization and Git doesn't support symbolic links. At least for me, this rendered SparkleShare useless. 
+</p>
+
+
+<p>
+When I moved to Dropbox directory, what I had been using for synchronization before SparkleShare, had no files in it, just a bunch of symbolic links. But with SparkleShare, you have to move all your directories into your SparkleShare directory and then scatter symbolic links around your system where the you want the directories to be. This caused a variety of minor but really annoying problems.
+</p>
+
+
+<p>
+But SparkleShare totally fails if you want to synchronize a directory that has symbolic links in it. SparkleShare's forum was covered with complaints about the symbolic link problem.
+</p>
+
+
+<p>
+I am currently using the following scheme for file distribution/backups:
+</p>
+
+
+<ul>
+<li>I'm using rsync to keep my media, bin directory, dot-files, and the like in sync on all my computers.
+</li>
+<li>For actual backups, I've been using Crashplan for years and couldn't be happier.
+</li>
+<li>And, in the past week or two, I've put Dropbox synchronization back into the mix to manage synchronization between Org Mode files on my computers and MobileOrg files on my Android. Despite the strong cult following that Dropbox has, synching with my mobile seems to be the only effective use I can find for it. 
+</li>
+</ul>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Sparkleshare: Maybe An Open, Privately Hosted, Dropbox Alternative]]></title>
+    <link href="http://www.neilsmithline.com/blog/2011/12/15/sparkleshare/"/>
+    <updated>2011-12-15T10:04:43-05:00</updated>
+    <id>http://www.neilsmithline.com/blog/2011/12/15/sparkleshare</id>
+    <content type="html"><![CDATA[<p> 
+<a href="http://dropbox.com">Dropbox</a> took the internet by storm with its free storage and ease of
+access. But Dropbox comes with a limited amount of data, a level of
+secureness that is hard-to-understand, and rather proprietary.
+</p>
+
+
+<p>
+<a href="http://sparkleshare.org">Sparkleshare</a> is an <a href="http://en.wikipedia.org/wiki/Free_and_Open_Source_Software">open source</a> alternative to Dropbox that hit my
+radar screen about 6 months ago. I played with it a bit back then but
+it didn't seem to be quite there. I think I was using an early-alpha,
+pre-release version so I this was to be expected.
+<!-- more -->
+
+I gave it another try earlier this week and seem to be pretty happy
+with it. Some of the things I like about it include:
+</p>
+
+
+<ol>
+<li>I get to host it on my own server. This means the data is
+     private. I own it. Nobody else has a copy of it. Etc.
+</li>
+<li>I have been renting a Linux <a href="http://en.wikipedia.org/wiki/Virtual_private_server">VPS</a> from <a href="http://rosehosting.com">RoseHosting.com</a> ($20/month)
+     for many years so they provide me with a convenient, managed, and
+     relatively secure place to host Sparkleshare.
+</li>
+<li>It only took me about 5 minutes to install and configure
+     sparkleshare on my Linux VPS. Not because I'm brilliant but
+     because Linux doesn't suck and Sparkleshare requires no special
+     server software. Just a few standard packages such as <a href="http://en.wikipedia.org/wiki/Git_(software)">Git</a> and a
+     copy-and-paste of one command line. The client install (Mac OS X)
+     was equally simple.
+</li>
+<li>Being that it is <a href="http://en.wikipedia.org/wiki/Free_and_Open_Source_Software">FOSS</a>, there is continual scrutiny of the source
+     code to maintain quality and security.
+</li>
+</ol>
+
+
+
+
+<p>
+The only real objection I have with it is that Dropbox allows <a href="http://en.wikipedia.org/wiki/Symbolic_link">symbolic links</a> in the Dropbox folder so I don't need to have all of my files in
+one directory. I haven't yet gotten this to work on Sparkleshare.
+Either I just haven't figured it out, someone else will add it
+shortly, or, being it is <a href="http://www.wikipedia.com/Foss">FOSS</a>, I'll add it if I get motivated enough
+(BTW: I'm voting for someone else implementing it).
+</p>
+
+]]></content>
+  </entry>
+  
+</feed>

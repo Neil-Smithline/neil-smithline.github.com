@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: online-freedom | My Geekdom]]></title>
+  <link href="http://www.neilsmithline.com/blog/categories/online-freedom/atom.xml" rel="self"/>
+  <link href="http://www.neilsmithline.com/"/>
+  <updated>2012-08-22T15:40:31-04:00</updated>
+  <id>http://www.neilsmithline.com/</id>
+  <author>
+    <name><![CDATA[Neil Smithline]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The New, Privacy Invading, Facebook Like Button]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/06/14/the-new-privacy-invading-facebook-like-button/"/>
+    <updated>2012-06-14T10:51:01-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/06/14/the-new-privacy-invading-facebook-like-button</id>
+    <content type="html"><![CDATA[<p>
+(<a href="http://bit.ly/NADZTP">Background information</a> about online advertising.)
+</p>
+
+
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Facebook Keeping Tabs On You</h2>
+<div class="outline-text-2" id="text-1">
+
+<p><a href="http://on.fb.me/L787EG">Facebook</a> has announced that it will sell user <a href="http://on.mash.to/L789wg">tracking information</a> to its
+advertisers. Facebook, following in the steps of other large web <a href="http://bit.ly/NAEA84">advertising publishers</a> such as <a href="http://bit.ly/Kk80BT">Google</a>, claims that <a href="http://bit.ly/NAyR1R">targetted advertisements</a> are a <i>win-win</i> deal.
+Advertisers win because they are able to provide ads that have a greater chance of
+being <a href="http://bit.ly/L78I9p">clicked</a> and, hopefully, higher profit for the advertiser.
+</p>
+<p>
+Users win because they see ads that they are more pertinent to their interests. For
+example, a user who frequents technology websites may not have a strong interest in
+an ad for laundry detergent. But that same user may appreciate ads about the newest
+gadgets.
+</p>
+<p>
+So, <i>win-win</i>! Everybody's happy.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Even I Can Count To Three</h2>
+<div class="outline-text-2" id="text-2">
+
+
+<p>
+The phrase <i>win-win</i> implies that there are two involved parties. Facebook, Google, and other companies that track users for targeted ads seem to forget to mention that there are three involved parties:
+</p>
+<ol>
+<li>The advertiser
+</li>
+<li>The user
+</li>
+<li>The publisher, that is the company selling the advertising
+</li>
+</ol>
+
+
+<p>
+Perhaps <i>win-win-win</i> is a more apropos statement than <i>win-win</i>.  The advertiser wins because their ads have a higher click-through rate, users win because they see ads that they are more interested in, and the publisher wins because they can charge a premium for targeted ads. For years Google has been running an instantaneous, automated <a href="http://bit.ly/NAzmZX">auction</a> so that Google gets the highest price possible for its ads.
+</p>
+<p>
+A higher click-through rate is especially important for Facebook. Besides Facebook's <a href="http://engt.co/NAAf4x">new obligation</a> to its shareholders, Facebook has a notoriously low click-through rate. From a 2010 <a href="http://tcrn.ch/NAzZ5N">TechCrunch article</a>:
+</p><blockquote>
+
+<p>Biggest [advertising presence] doesn't mean most profitable. Facebook might be serving up more ads than almost anyone else, but they are still selling at very low ad rates because they perform poorly for the most part. If Facebook can figure out a way to make the ads on its site become more relevant and useful, it has a lot of room to boost its ad rates.
+</p>
+</blockquote>
+
+
+
+
+<!-- more -->
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Facebook's Dilemma</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>While Facebook is forced to look for ways to increase their revenue via targeted
+advertising, users tend to feel that having their internet usage being tracked is a
+<a href="http://bit.ly/NAFtxi">privacy invasion</a>. As user tracking becomes more accurate, and hence more valuable to
+Facebook and other advertising publishers, it is also viewed by users as a greater
+invasion of privacy.
+</p>
+<p>
+For years Facebook has been tracking users' activities as they roam the pages of Facebook. Facebook has also been gathering information about what non-Facebook pages users <a href="http://bit.ly/KIZZ8L">like</a>. These two types of tracking have a common property:
+</p><blockquote>
+
+<p>Facebook only tracks users when they interact with Facebook.
+</p>
+</blockquote>
+
+
+<p>
+Whether the interaction is on the Facebook site or on another site where a user does a Facebook share or like.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Facebook's Bait And Switch</h2>
+<div class="outline-text-2" id="text-4">
+
+
+<p>
+The change in user tracking that Facebook announced is that they will track users even if they do not interact directly with Facebook. Facebook will now gather users' behavior whenever a user visits a site that has any Facebook code on it. That includes every page that has the ubiquitous:
+<img src="http://upload.wikimedia.org/wikipedia/commons/1/13/Facebook_like_thumb.png"  alt="http://upload.wikimedia.org/wikipedia/commons/1/13/Facebook_like_thumb.png" /> 
+button.
+</p>
+<p>
+For years, Facebook has been facilitating websites to use its <i>Like</i> button as well as social widgets and other means of <a href="http://bit.ly/KJ4alc">Facebook integration</a> with your site. Facebook has discussed the <a href="http://bit.ly/KJ4Zdz">many benefits</a> this brings to website publishers.
+</p>
+<p>
+Facebook's change in user tracking has many ramifications:
+</p>
+<ol>
+<li>After years of facilitating Facebook integration with websites, Facebook has
+     unilaterally decided to make every one of those sites a data collector for
+     Facebook. 
+</li>
+<li>Once Facebook starts gathering this data, Websites with Facebook integration will be providing Facebook with valuable information without receiving any compensation for that information.
+</li>
+<li>Short of not using Facebook, users cannot effectively <a href="http://bit.ly/KJ7Inj">opting out</a> of this data tracking.
+</li>
+<li>Some sites will have to update their privacy policy to reflect Facebook's new data collection.
+</li>
+</ol>
+
+
+<p>
+Furthermore, Facebook says that this change will happen within the <a href="http://bloom.bg/KJ6CI8">next few weeks</a>, leaving users and websites little time to react to the change. 
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Alternates</h2>
+<div class="outline-text-2" id="text-5">
+
+<p>Even if a website decided to make changes to their site, there are few options to the <i>Like</i> button that do not involve severing all Facebook integration. One solution would be to replace the <i>Like</i> button, along with badges from other sites, with a generic <a href="http://bit.ly/KJ91ma">social bookmarking widget</a>.
+</p>
+<p>
+That said, only <a href="http://brightpinkstudio.com/pinkink/resources/social-bookmarking-widgets/3/">five of the top ten</a> social bookmarking widgets do not add tracking to their own widgets.
+</p>
+<p>
+The bottom line is that Facebook, likely due to pressure from their recent IPO and their <a href="http://bit.ly/KJ9Ds6">plummeting stock price</a>, has decided to enlist, rather, <i>to draft</i> millions of sites into providing Facebook with valuable information at the cost of invading the users of those sites.
+</p>
+<p>
+As this change in policy seems to leave Facebook as the only clear winner with users and other websites as losers, I think the phrase <i>win-lose-lose</i> is more appropriate Though probably not a good sales pitch.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6">Update <span class="timestamp-wrapper"> <span class="timestamp">2012-06-14 Thu 12:39</span></span></h2>
+<div class="outline-text-2" id="text-6">
+
+<p>Just saw that Facebook allowed its users to <a href="http://huff.to/JSfscI">vote</a> on the changes to its privacy policy. That said, comparing an old and a proposed privacy policy and understanding what the ramifications are is a very difficult task. Especially when there is little publicity about the voting process.
+</p>
+<p>
+If if you heard about the voting, waded the through the privacy policy's legal jargon, understood how the change would affect you, and decided to vote, your vote wouldn't have counted.
+</p>
+<p>
+Facebook said that they would consider any vote on their privacy policy as <i>advisory</i> unless a third of their 900M active users voted. The lack of publicity around the privacy policy change and  <a href="http://onforb.es/KYar2D">serious questions</a> about the veracity of Facebook's claim of 900M active users all but guaranteed that, whatever the votes were, they would be <i>advisory</i>.
+</p></div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Litigious Trio]]></title>
+    <link href="http://www.neilsmithline.com/blog/2011/12/28/the-litigious-trio/"/>
+    <updated>2011-12-28T12:04:20-05:00</updated>
+    <id>http://www.neilsmithline.com/blog/2011/12/28/the-litigious-trio</id>
+    <content type="html"><![CDATA[<p>          
+This posting is best viewed as part of the series of postings about <a href="http://neilsmithline.com/archives/litigious-trio/index.html">The Litigious Trio</a> and, in a larger context, <a href="http://neilsmithline.com/archives/online-freedom/index.html">Online Freedom</a>.
+</p>
+
+
+<p>
+To be clear, <i>The Litigious Trio</i> are, in alphabetical order, <a href="http://apple.com">Apple</a>, <a href="http://google.com">Google</a> and <a href="http://microsoft.com">Microsoft</a>. While they are three wonderful technology companies, over time, each has turned to an increasingly large amount of litigation to enforce their current market status.
+</p>
+
+
+<p>
+While I do not believe that the three companies actively collaborate with each other to hinder the success of smaller companies, I believe that selfish<sup><a class="footref" name="fnr.1" href="#fn.1">1</a></sup> business practices by the trio have had the affect of having created a three company monopoly<sup><a class="footref" name="fnr.2" href="#fn.2">2</a></sup>. While the three companies are locked in a near-endless stream of litigation against each other, this is rather typical amongst large corporate competitors. I can't say that I'm in favor of such litigation but I the three companies can spend their money that way if they want to. They have more than enough of it.
+</p>
+
+
+<p>
+But when <i>The Litigious Trio</i>, behaving in a pseudo-monopolistic manner, use litigation to block competition from smaller companies, they end up stifling innovation. 
+<!-- more -->
+
+Furthermore, <i>The Litigious Trio</i> are not necessarily the most user-friendly companies. They, along with <a href="http://en.wikipedia.org/wiki/Facebook">Facebook</a>, are some of the leaders in gathering information about its users. Consider the following:
+</p>
+
+
+<ul>
+<li>Nearly all of Google's revenue comes from advertising. Their advertising is so valuable, and profitable, because they are able to sell well targeted ads. That is, they know so much about each user that they can sell ad space for that specific user for more than other advertising vendors. The article, <a href="http://www.globalreports.com/?article=12">We Are Google's Products</a>, provides a good summary of this concept. 
+</li>
+<li>Google has a near-monopoly on internet advertising. The US Senate <a href="http://tech.slashdot.org/story/11/12/21/1356246/senators-recommend-ftc-perform-antitrust-investigation-of-google">has recently requested</a> the <a href="http://en.wikipedia.org/wiki/Federal_Trade_Commission">FTC</a> to investigate this.
+</li>
+<li>Microsoft's <a href="https://www.google.com/search?q=microsoft+antitrust&amp;ie=utf-8&amp;oe=utf-8&amp;aq=t&amp;rls=org.mozilla:en-US:unofficial&amp;client=firefox-a">monopolistic practices</a> have been discussed and challenged by courts around the world for years.
+</li>
+<li>Apple is currently under investigation for <a href="http://www.huffingtonpost.com/2011/12/07/us-justice-department-apple-ebooks_n_1134983.html">price fixing on its eBooks</a>, has just been fined for <a href="http://www.pluggedin.co.uk/article/apple-fined-over-misleading-customers-italy">charging customers in Italy</a> for providing federally mandated, free support, and has tried to <a href="http://apple.slashdot.org/story/11/08/09/1832254/sale-of-samsung-galaxy-tab-blocked-in-the-eu">destroy Samsung's mobile market</a> by presenting <a href="http://yro.slashdot.org/story/11/08/15/1758224/flawed-evidence-in-eu-apple-vs-samsung-case">falsified evidence</a> to courts around the world. While this last claim seems hard to believe, an <a href="http://www.pcworld.com/article/238047/apple_offers_flawed_evidence_in_lawsuit_against_samsung.html">easily accessible description and images</a> demonstrate that Apple is either incompetent or dishonest.
+</li>
+</ul>
+
+
+
+
+<p>
+The only question seems to be whether the public is motivated to address this problem and what the public can do to address it. The reason monopolies are illegal is because fighting them is difficult.
+</p>
+
+
+
+
+<div id="outline-container-1" class="outline-3">
+<h3 id="sec-1">Footnotes</h3>
+<div class="outline-text-3" id="text-1">
+
+
+<div id='footnotes'>
+<h4 class='footnotes'>Footnotes: </h4>
+<div id='text-footnotes'>
+<p class="footnote"><sup><a class="footnum" name="fn.1" href="#fnr.1">1</a></sup> I use <i>selfish</i> as defined in the book <a href="http://www.amazon.com/gp/product/0199291152/ref=as_li_ss_tl?ie=UTF8&amp;tag=mygee-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0199291152">The Selfish Gene</a>. If you've not have the pleasure, I strongly recommend the book. You can also see a brief <a href="http://en.wikipedia.org/wiki/The_Selfish_Gene#.22Selfish.22_genes">definition</a> from the <a href="http://en.wikipedia.org/wiki/">Wikipedia</a>.
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn.2" href="#fnr.2">2</a></sup> I'm not an expert in <a href="http://en.wikipedia.org/wiki/History_of_competition_law">competitive law</a> (eg: I just learned that term) and I have used the term <i>monopoly</i> or <i>pseudo-monopoly</i> rather loosely. I believe that what <i>The Litigious Trio</i> are partaking in is more similar to <a href="http://en.wikipedia.org/wiki/Tacit_collusion">tacit collusion</a>, <a href="http://en.wikipedia.org/wiki/Conscious_parallelism">conscious parallelism</a>, and <a href="http://en.wikipedia.org/wiki/Patent_misuse">patent misuse</a>. It is perhaps best described as an <a href="http://en.wikipedia.org/wiki/Oligopoly">oligopoly</a> or a <a href="http://en.wikipedia.org/wiki/Natural_monopoly">natural monopoly</a> that involves three companies rather than one.
+</p></div>
+</div>
+
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

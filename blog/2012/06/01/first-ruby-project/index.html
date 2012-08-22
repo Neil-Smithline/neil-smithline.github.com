@@ -1,0 +1,584 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>My First Ruby Project - My Geekdom</title>
+  <meta name="author" content="Neil Smithline">
+
+  
+  <meta name="description" content="The Project Typically, even my pet projects have a specific goal in mind. I don&#8217;t write a spec for my personal projects, there&#8217;s just a &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.neilsmithline.com/blog/2012/06/01/first-ruby-project/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="http://feeds.feedburner.com/MyGeekdom" rel="alternate" title="My Geekdom" type="application/atom+xml">
+    <!-- ShareThis -->
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+  <!-- /ShareThis -->
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25833963-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Geekdom</a></h1>
+
+  <div  style="float: right; position: relative; top: 75px;" id="header-image-container">
+    <a href="" accesskey="1">
+      <img title="Neil Smithline" src="/assets/images/NS-Keycaps.png"></img>
+    </a>
+  </div>
+
+  
+    <h2>Ramblings about my nerdy pursuits.</h2>
+  
+
+  
+    <a href="https://github.com/neil-smithline">
+      <img
+          style="position: absolute;
+            top: 0;
+            right: 0;
+            border: 0;"
+         src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></img></a>
+
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/MyGeekdom" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.neilsmithline.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <!-- <li><a href="/">Home</a></li> -->
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/contact">Contact</a></li>
+  <li><a href="/about/elsewhere">About</a></li>
+  <li><a href="/neilsmithline">Resume (Seeking employment)</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">My First Ruby Project</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-01T19:18:00-04:00" pubdate data-updated="true">Jun 1<span>st</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">The Project</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>Typically, even my pet projects have a specific goal in mind. I don&#8217;t write a spec for my personal projects, there&#8217;s just a, maybe slightly fuzzy, goal. Generally I want something that will be useful. I&#8217;ll work on a project until:
+</p><ul>
+<li>The project does everything I hoped for. Maybe even more!
+</li>
+<li>I run out of spare time to work on it. This doesn&#8217;t happen as often as you may imagine. I really enjoy coding. So, after a tiring day of coding at the office, I come home to relax and work on one of my pet projects. If it was any different, then I have no right to call my blog <a href="http://bit.ly/yGGszW">My Geekdom</a>. 
+</li>
+<li>I decide that I did a poor job picking a pet project as they&#8217;re supposed to be fun and this projects isn&#8217;t. So long!
+</li>
+<li>I get stuck such that proceeding will require more effort than I feel it&#8217;s worth. That said, hopefully I learned something working on the project.
+</li>
+</ul>
+
+
+<p>
+But, unlike my typical pet projects, my goal with my new project is rather amorphous. I want to analyze some data. At time of writing this, I have just shy of 5K records totally 181MB of data. 
+</p>
+<p>
+Leaving the details for a later posting, each record is a snapshot of the state of my <a href="http://bit.ly/Kfv0n2">Mac OS X</a> computer. I&#8217;ve been collecting, and am continuing to collect, samples every five minutes since the beginning of March. At least every five minutes that my computer isn&#8217;t <a href="http://bit.ly/LUSEY8">sleeping</a> or hanging.
+</p>
+<p>
+I decided to collect the samples because I was getting downright frustrated with the performance of <a href="http://bit.ly/LUT7tx">Mozilla</a>&#8217;s <a href="http://bit.ly/HzqbTy">Firefox</a> browser. For reasons that are off-topic for this posting, I feel a strong interest in making sure that Firefox continues to be successful. 
+</p>
+<p>
+For years I thought Firefox was the bomb. Starting about 9-12 months ago I started to notice that Firefox was routinely using all the resources on my computer. This concerned me because <a href="http://bit.ly/LUUGHN">Google</a>&#8217;s <a href="http://bit.ly/LUUHLP">Chrome</a> browser was starting to have enough functionality to be a primary browser.
+</p>
+<p>
+Being that I wanted Firefox to stay competitive, I decided to try to stay with it. As Mozilla changed their release model, I started to use <a href="http://bit.ly/LUV1u1">Aurora</a> and <a href="http://bit.ly/LUV4Ga">Firefox Beta</a> and provide lots of feedback. The newer versions also seemed to consume a more reasonable amount of my computer&#8217;s resources. Being that the Firefox team was working hard at fixing performance problems, especially memory leaks, I stayed with Firefox. (See <a href="#sec-5">Reference: Articles About Firefox&#8217;s Memory Leaks And Repair Efforts</a> for information about FF&#8217;s memory leaks.)
+<!-- more -->
+
+Around the beginning of this calendar year I started to think that Firefox wasn&#8217;t getting faster and may have been getting slower. That said, I can be a pretty heavy user of my computer. Running FF with a couple of dozen add-ons is typical. Also, my experience with performance tuning has taught me that I don&#8217;t know enough to make accurate guesses. Guessing can be used to lead your performance tuning investigations, but you always need hard data.
+</p>
+<p>
+After a bit of thought, I decided to collect some data and see if I can convince myself that Firefox is or is not the problem. There are, of course, simpler solutions to tracking a performance problem than sampling your entire process every five minutes for months. But this is a pet project. It wouldn&#8217;t be any fun if I just switched from Firefox to Chrome to see if I notice a difference.
+</p>
+<p>
+Now that I have accumulated a few months of the data, I need to try to analyze the data and see what, if any, conclusions I can make from it. I have some ideas about where to start my data analysis and will just need to follow the path they outline. In short, I&#8217;m prepared to <a href="http://en.wikipedia.org/wiki/MacGyverism#MacGyverisms">MacGyver</a> the analysis as I go along.
+</p>
+<p>
+My new pet project is the exploration of these data samples.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">The Programming Language</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Forensic performance analysis is never simple. For this project I anticipate that the difficulties will be in determining what types of data analyses are required. I&#8217;m hoping the actual coding will be relatively simple as there is no need for network interaction, provide real time responses, or even have a <a href="http://bit.ly/n1i2v2">GUI</a>. As long as I don&#8217;t need to do very complex statistical analyses, the choice programming language won&#8217;t likely matter to much.
+</p>
+<p>
+So I have chosen to implement this project in <a href="http://bit.ly/LUK5N0">Ruby</a>. I&#8217;m certain I could implement it faster in any of a few dozen other programming languages but I chose Ruby for two reasons:
+</p><ol>
+<li>This is a personal project. One of my main goals is to have fun. Being that I don&#8217;t know Ruby, learning it will be more fun. Especially being that I haven&#8217;t learned a new language in a year or so.
+</li>
+<li>Ruby is a new-ish language, growing in popularity, likely to be around for awhile, so it seems like something I should learn or at least be familiar with.
+</li>
+</ol>
+
+
+<p>
+Ruby isn&#8217;t wholly unfamiliar to me. I&#8217;ve made a few small (very small) changes to the <a href="http://bit.ly/JBwXrU">org-ruby</a> <a href="http://bit.ly/M5PRvb">gem</a>. Based on that experience, I think that the syntax of Ruby is kind of strange but the functionality it provides seems comparable to other languages such as C and Java. I just have to learn the new syntax. Unlike C and Java, Ruby has <a href="http://bit.ly/M5T4ei">dynamic typing</a>. But languages that I&#8217;m fluent in, such as Lisp, Python, Bash, and AWK have dynamic typing. Doesn&#8217;t seem a problem.
+</p>
+<p>
+But the structure of a Ruby application, at least the structure of the org-ruby gem, feels different to me than the structure of programs I&#8217;ve seen in other languages. Sure Ruby has classes and modules and functions and inheritance as many other languages do. But the design of the org-ruby gem feels a bit unusual to me. 
+</p>
+<p>
+I think that part of the atypicality of the design of the org-ruby gem is that it is a parser that is written in a manner that is not familiar to me. I have a strong background in designing and implementing programming languages, their associated runtimes, IDE&#8217;s, and such. In my world, there are only a few ways to implement a <a href="http://bit.ly/JBxKsI">parser</a> and org-ruby doesn&#8217;t use any of them. 
+</p>
+<p>
+That said, I don&#8217;t think the feeling of unfamiliarity stems from org-ruby&#8217;s parser not being a <a href="http://bit.ly/JBxTfU">recursive descent parser</a> or implemented with a <a href="http://bit.ly/JBxXMI">parser generator</a> from a <a href="http://bit.ly/JBxYAi">formal grammar</a>. I&#8217;ve seem plenty of really terrible parser implementations that left queasy but didn&#8217;t feel unfamiliar.
+</p>
+<p>
+Not only do I not think that org-ruby gem is terrible, I think it has a certain elegance to its design. 
+</p>
+<p>
+Having eliminated other possibilities, I&#8217;m left to think that the feeling of unfamiliarity must stem from Ruby itself.
+</p>
+<p>
+For example, C and Pascal have a similar feel when you use them. So too do <a href="http://bit.ly/JByk9Q">object oriented</a> languages such as Java and C++. While not OO, C and Pascal are somewhat similar to Java and C++. But a Scheme application doesn&#8217;t feel anything like a C application (at least not if you understand how to program in Scheme). While I don&#8217;t have a word for it, I think that Ruby leads to a different way of writing applications than languages that I&#8217;m familiar with.. 
+</p>
+<p>
+While I&#8217;m not sure what that difference is, I hope to figure it out as I move through this project. In the end, I don&#8217;t want to have a great &#8220;Java program&#8221; that happens to have been written using Ruby syntax. I want to have a great Ruby program &ndash; period.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">The Project&#8217;s Current Progress</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>&#8220;Not much&#8221; seems to sum up my current project. While I&#8217;ve been collecting data for months and easing myself into Ruby by working on the org-ruby gem, I just started coding for this project a few hours ago. All I&#8217;ve done so far is write a tiny class to hold a line of data output by the <a href="http://bit.ly/M5V9H3">ps(1)</a> program:
+</p>
+
+
+<pre class="src src-ruby-mode"><span class="linenr"> 1:  </span>class PSDataLine
+<span class="linenr"> 2:  </span>  attr_accessor :pid
+<span class="linenr"> 3:  </span>  attr_accessor :stat
+<span class="linenr"> 4:  </span>  attr_accessor :time
+<span class="linenr"> 5:  </span>  attr_accessor :elapsed_time
+<span class="linenr"> 6:  </span>  attr_accessor :virtual_size
+<span class="linenr"> 7:  </span>  attr_accessor :rss
+<span class="linenr"> 8:  </span>  attr_accessor :percent_cpu
+<span class="linenr"> 9:  </span>  attr_accessor :percent_mem
+<span class="linenr">10:  </span>  attr_accessor :command
+<span class="linenr">11:  </span>
+<span class="linenr">12:  </span>  # Create the object
+<span class="linenr">13:  </span>  def initialize(line_string)
+<span class="linenr">14:  </span>    line = line_string.split(' ')
+<span class="linenr">15:  </span>    @pid = line[0]
+<span class="linenr">16:  </span>    @stat = line[1]
+<span class="linenr">17:  </span>    @time = line[2]
+<span class="linenr">18:  </span>    @elapsed_time = line[3]
+<span class="linenr">19:  </span>    @virtual_size = line[4]
+<span class="linenr">20:  </span>    @rss = line[5]
+<span class="linenr">21:  </span>    @percent_cpu = line[6]
+<span class="linenr">22:  </span>    @percent_mem = line[7]
+<span class="linenr">23:  </span>    @command = line[8]
+<span class="linenr">24:  </span>  end
+<span class="linenr">25:  </span>end
+</pre>
+
+
+<p>
+I know it isn&#8217;t much but I still learned writing it. For example, when I was tinkering with the org-ruby gem, I just copied and pasted code, looked up some details in the Ruby library, etc&hellip; Being that I was modifying existing code, I never learned even the basic syntax. 
+</p>
+<p>
+For example, in order to write my <code>PSDataLine</code> class, I needed to learn how Ruby uses syntax to determine if an identifier is a local variable, an instance variable, a global variable, or a constant. (My thanks to the <a href="http://bit.ly/JBzTER">Rubyist</a> for the good reference.)
+</p>
+<p>
+I&#8217;m pretty busy this week so I don&#8217;t think I&#8217;ll make much progress on it. I was only able to get this work done by staying up till midnight on a Friday night and squeezing in time for a proofreading today.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Process Data</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>While I&#8217;ve only begun writing my program and haven&#8217;t reached any conclusions about anything yet, I do have lots of data. If you have an interest in seeing what my computer&#8217;s been up to you can view the process data, read about my sampling mechanism, and copy the data from my <a href="http://bit.ly/M1nUBf">process-data</a> Github repository.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Reference: Articles About Firefox&#8217;s Memory Leaks And Repair Efforts</h2>
+<div class="outline-text-2" id="text-5">
+
+
+<ul>
+<li>A <a href="http://bit.ly/LsNgcq">blog posting</a> posting by Mozillian Nicholas Nethercote. A <a href="http://bit.ly/LsNhNi">second posting</a> of Nicholas about weeks 49 &amp; 50 of the Mozilla effort to reduce the memory footprint.
+</li>
+<li>A different engineer&#8217;s <a href="http://bit.ly/LsNgZS">blog posting</a> discussing the hunt for memory leaks in Firefox.
+</li>
+<li>Another posting from Nicholas regarding the great [[http://bit.ly/LsNjF0][performance improvements in Firefox V7. - A September 26, 2011 <a href="http://bit.ly/LsNkJ8">article</a> in <a href="http://bit.ly/LsPLeE">CRN</a> discussing the lack of progress Mozilla has been making. Even if you ignore any opinions in the article, it has a lot of facts and links.
+</li>
+<li>A <a href="http://bit.ly/LsNkZB">Firefox Forum posting</a> expressing user frustration.
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Neil Smithline</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-01T19:18:00-04:00" pubdate data-updated="true">Jun 1<span>st</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/firefox/'>firefox</a>, <a class='category' href='/blog/categories/macosx/'>macosx</a>, <a class='category' href='/blog/categories/mozilla/'>mozilla</a>, <a class='category' href='/blog/categories/programming-languages/'>programming-languages</a>, <a class='category' href='/blog/categories/projects/'>projects</a>, <a class='category' href='/blog/categories/python/'>python</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.neilsmithline.com/blog/2012/06/01/first-ruby-project/" data-via="neil_smithline" data-counturl="http://www.neilsmithline.com/blog/2012/06/01/first-ruby-project/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/05/27/org-mode-plus-t-makes-tweeting-easy/" title="Previous Post: Org-Mode + t Makes Tweeting Easy">&laquo; Org-Mode + t Makes Tweeting Easy</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/06/10/secure-password-generator/" title="Next Post: SPG: The Secure Password Generator">SPG: The Secure Password Generator &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/08/21/disk-crash/">Disk Crash</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/05/time-tracking-part-2/">Time Tracking, Part 2: Org Mode File Format</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/04/time-tracking/">Time Tracking</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/22/blurring-static-and-dynamic-blogs/">Blurring Static And Dynamic Blogs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/21/desktop-time-tracking/">Desktop Time Tracking</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/neil-smithline">@neil-smithline</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'neil-smithline',
+            count: 8,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>My Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("neil_smithline", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <p>Follow <a href="http://twitter.com/neil_smithline">@neil_smithline</a></p>
+  
+</section>
+
+
+
+<section class="socialmention">
+  <h1>Elsewhere On The Web</h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="https://twitter.com/#!/neil_smithline"><img src="/assets/service-logos/twitter/twitter-32.png" alt="My Tweets"/>Twitter</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://www.linkedin.com/profile/view?2519386"><img src="/assets/service-logos/linkedin/linkedin-32.png" alt="My LinkedIn Account" />LinkedIn</a>
+  </h1>
+</section>
+
+
+<section class="sociallink googleplus">
+  <h1>
+    <a href="https://plus.google.com/104257546204106753046?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32"></img>
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="https://github.com/neil-smithline"><img src="/assets/service-logos/github/github-32.png" alt="Checkout My Code" />Github</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://coderwall.com/neilsmithline"><img src="/assets/service-logos/coderwall/coderwall-32.png" alt="My Coderwall Badges" />Coderwall</a>
+  </h1>
+</section>
+
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://www.diigo.com/user/neilsmithline"><img src="/assets/service-logos/diigo/diigo-32.png" alt="My Diigo Bookmarks"/>Bookmarks</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://klout.com/#/neil_smithline"><img src="/assets/service-logos/klout/klout-32.png" alt="My Klout Score"/>Klout</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://disqus.com/NeilSmithline"><img src="/assets/service-logos/disqus/disqus-32.png" alt="My Disqus Comments"/>Disqus</a>
+  </h1>
+</section>
+
+
+<section class="socialmention">
+  <h1>Ruby Buzz</h1>
+    <script type="text/javascript">
+      // search phrase (replace this)
+      var smSearchPhrase = 'ruby AND (programming OR language OR coding OR rails)';
+      // title (optional)
+      var smTitle = 'Ruby News Around The Web';
+      // items per page
+      var smItemsPerPage = 3;
+      // show or hide user profile images
+      var smShowUserImages = true;
+      // widget font size in pixels
+      var smFontSize = 11;
+      // height of the widget
+      var smWidgetHeight = 600;
+      // sources (optional, comment out for "all")
+      //var smSources = ['twitter', 'facebook', 'googleblog', 'identica'];
+    </script>
+    <script type="text/javascript" language="javascript" src="http://socialmention.s3.amazonaws.com/buzz_widget/buzz.js"></script>
+</section>
+
+<!-- ShareThis -->
+  <script>
+    var options={ "publisher": "4eafa479-c64d-49ab-9e91-90cb169b33c2", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["twitter", "googleplus", "linkedin", "facebook", "email", "sharethis"]}};
+    var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+  </script>
+<!-- /ShareThis -->
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Neil Smithline -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> -
+  <span class="credit">Authored with <a href="http://www.gnu.org/s/emacs"">Emacs</a> and
+  <a href="http://orgmode.org">Org Mode</a></span> -
+  <span class="credit">Hosted by <a href="http://github.com">Github</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'mygeekdom';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.neilsmithline.com/blog/2012/06/01/first-ruby-project/';
+        var disqus_url = 'http://www.neilsmithline.com/blog/2012/06/01/first-ruby-project/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: security | My Geekdom]]></title>
+  <link href="http://www.neilsmithline.com/blog/categories/security/atom.xml" rel="self"/>
+  <link href="http://www.neilsmithline.com/"/>
+  <updated>2012-08-22T15:40:31-04:00</updated>
+  <id>http://www.neilsmithline.com/</id>
+  <author>
+    <name><![CDATA[Neil Smithline]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[SPG: The Secure Password Generator]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/06/10/secure-password-generator/"/>
+    <updated>2012-06-10T16:48:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/06/10/secure-password-generator</id>
+    <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">As Users, We Must Expect Our Passwords To Be Compromised</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>It is an unfortunate fact that, if you create accounts on websites, some of your passwords will be stolen. For example:
+</p><ul>
+<li>There has been a lot of recent press about <a href="http://linkd.in/Mz4gjU">LinkedIn</a>'s recent 6.5M <a href="http://yhoo.it/Mz4o2T">stolen passwords</a>. 
+</li>
+<li>In the week since LinkedIn's attack became public, <a href="http://bit.ly/Mz4yHu">eHarmony</a> lost 1.5M passwords in an <a href="http://lat.ms/Mz4I1y">unrelated attack</a>. 
+</li>
+<li>Earlier in the year, an undisclosed number of <a href="http://bit.ly/LLAaXu">Zappos</a> 24M users had their <a href="http://bit.ly/LLAfdJ">passwords compromised</a>. 
+</li>
+<li>The <a href="http://bit.ly/LLB5Hl">attack</a> on Gawker Media's collection of popular sites (<a href="http://gaw.kr/LLBedR">Gawker</a>, <a href="http://bit.ly/LLBf1y">Lifehacker</a>, <a href="http://bit.ly/LLBfhZ">Gizmodo</a>, <a href="http://bit.ly/LLBh9N">io9</a>,<a href="http://bit.ly/LLBhqe"> Jalopnik</a>, <a href="http://bit.ly/LLBfyC">Kotaku</a>, <a href="http://deadsp.in/LLBfyD">Deadspin</a>, and <a href="http://bit.ly/LLBhqh">Fleshbot</a>) in late 2010 that compromised 1.3M accounts shows that this is not a new phenomenon. 
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Cascading Damages</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Having your password stolen from a website is a problem. But if you use the same password for many sites, the problem becomes a nightmare. I know that everyone tells you to use <a href="http://bit.ly/KWPdld">strong passwords</a> and to use a different password for each website &ndash; but few people do. A quick look at these <a href="http://bit.ly/KWPowF">Google search results</a> should be convince you that people just don't follow that advice.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">The Reason Behind The Mega-Password Thefts</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>Despite every assurance made by websites (eg: <a href="http://bit.ly/LLEqX3">LinkedIn</a>'s recent message), the only way a website can lose millions of passwords is if they just didn't bother to follow standard security procedures for storing your password. So LinkedIn, Gawker, Zappos, etc.., didn't care about your password's security until a breach made it into the headlines.
+<!-- more -->
+
+As revolting as that fact is, it is accurate.
+</p>
+<p>
+The trick to securely storing a user's password is rather simple: don't store the user's password as it can't be stolen if it is never stored. 
+</p><blockquote>
+
+<p>Huh?
+</p>
+</blockquote>
+
+
+<p>
+You heard me correctly. Websites should store a &lt;geek vernacular warning&gt; <i>salted hash</i> of your password rather than your password. Understanding the math and computer science behind salted hashes is unimportant. All you need to know is that the technology exists. If you are curious, you can read this <a href="http://bit.ly/LLGvlN">OWASP article</a> about salted hashes.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">An Ounce Of Prevention</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>The only way to protect yourself against these thefts is to, as everyone will tell you, use a unique, strong password for every site. Don't worry, I won't preach to you. You know that this is what should be done and I know that you know that this should be done.
+</p>
+<p>
+There are two problems with this:
+</p><ol>
+<li>It is difficult to keep track of so many passwords.
+</li>
+<li>People are astoundingly bad at creating secure passwords.
+</li>
+</ol>
+
+
+<p>
+<a href="http://bit.ly/KWS3GH">Other than that, how was the play, Mrs. Lincoln?</a>
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Tools And Reprogramming Are The Answer</h2>
+<div class="outline-text-2" id="text-5">
+
+<p>It turns out that the best solution to managing your passwords involves the use of tools and reprogramming. The tools are used to help you create unique passwords as well as remember them. The tools can be simple. For example, a handful of <a href="http://bit.ly/KWRhcK">dice</a> can be used to generate unique and secure passwords.
+</p>
+<p>
+The reprogramming part is the more difficult. It involves you reprogramming your brain so that you protect yourself. Think of it as <i>safe surfing</i>.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6">The Answer Is&hellip;</h2>
+<div class="outline-text-2" id="text-6">
+
+<p>The answer is going to be in my next blog posting. I'll present several tools and strategies, including one that I'm currently developing, that work better than carrying around a handful of <a href="http://bit.ly/KWRc90">zocchihedrons</a> :-)
+</p></div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

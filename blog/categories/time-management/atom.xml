@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: time-management | My Geekdom]]></title>
+  <link href="http://www.neilsmithline.com/blog/categories/time-management/atom.xml" rel="self"/>
+  <link href="http://www.neilsmithline.com/"/>
+  <updated>2012-08-22T15:40:31-04:00</updated>
+  <id>http://www.neilsmithline.com/</id>
+  <author>
+    <name><![CDATA[Neil Smithline]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Time Tracking, Part 2: Org Mode File Format]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/08/05/time-tracking-part-2/"/>
+    <updated>2012-08-05T18:38:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/08/05/time-tracking-part-2</id>
+    <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">A Brief Introduction To Org Mode File Syntax</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>I've decided that my time tracking solution requires some basic understanding of the file format of <a href="http://orgmode.org">Org Mode</a> as Org Mode syntax pervades the system. I've done my best to cover the smallest amount of Org Mode syntax that is needed to understand the examples I'll of my time tracking system.
+</p>
+<p>
+It is frequently said that when you buy a house the three most important things to look for are <a href="http://homebuying.about.com/od/marketfactstrends/qt/013008_location.htm">location, location, and location</a>. When it comes to Org Mode, the three most important things to remember are Org Mode file format is plain text, Org Mode file format is plain text, and Org Mode file format is plain text.
+</p>
+<p>
+By <a href="http://en.wikipedia.org/wiki/Plain_text">plain text</a> I mean:
+</p><ul>
+<li>You don't need a <a href="http://en.wikipedia.org/wiki/Graphical_user_interface">GUI</a> or any other program to read an Org Mode file.
+</li>
+<li>Any <a href="http://en.wikipedia.org/wiki/Text_editor">text editor</a> can be used to create Org Mode files.
+</li>
+<li>Org Mode files are highly compatible with standard text file utilities such as <a href="http://linux.die.net/man/1/grep">grep(1)</a>.
+</li>
+</ul>
+
+
+<p>
+While Org Mode's use of plain text has many advantages, the files tend to look a bit intimidating to a newcomer.
+</p>
+<p>
+While this posting only discusses Org Mode's file format, I use Org Mode for its incredibly rich organizational functionality.
+</p></div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Hierarchical Outlines</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Org Mode encourages you to store your data in an outline. A level one headline is simply a line of text that begins with a single asterisk (<code>*</code>). A level two headline begins with two asterisks (<code>**</code>), etc&hellip;
+</p>
+
+
+<pre class="example">* Work
+** Work hard.
+Finish my project ahead of schedule.
+** Ask boss for raise.
+Remember to compliment him lots when asking.
+
+* Personal
+** Clean up after my kids.
+Grumble while cleaning up.
+** Tell my kids that they should clean up after themselves.
+Laugh quietly to myself as I know it won't help.
+</pre>
+
+
+
+<!-- more -->
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Adding Tags</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>Org Mode allows you to further organize your tasks by adding <a href="http://en.wikipedia.org/wiki/Tag_(metadata)">tags</a> to your todo list. Being that Org Mode is plain text, tags are words wrapped in colons (<code>:</code>).
+</p>
+
+
+<pre class="example">* Work                                                              :work:
+** Work hard.
+Finish my project ahead of schedule.
+** Ask boss for raise.
+Remember to compliment him lots when asking.
+
+* Personal                                                          :personal:
+** Clean up after my kids.
+Grumble while cleaning up.
+** Tell my kids that they should clean up after themselves.
+Laugh quietly to myself when they say they will but I know they won't.
+</pre>
+
+
+<p>
+Tags in Org Mode are inherited with the hierarchical layout of the outline. In the above example, only the two level 1 headlines have tags on their line but their children inherit these tags. For example, the task
+</p><pre class="example">
+** Clean up after my kids.
+</pre>
+
+<p>inherits the <code>:personal:</code> tag.
+</p></div>
+
+</div>
+
+
+
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Using Tags To Describe Multiple Facets Of A Task</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>The above use of tags was rather dull. The tags repeated data that was already in the outline hierarchy. The real power of tags becomes apparent when you use them to classify different facets of a task. For example, a <a href="http://en.wikipedia.org/wiki/Getting_Things_Done">GTD</a> style of tagging can include context tags such as <code>:@home:</code>, as well as priority tags such as <code>:next_action:</code>. Adding these tasks, our example becomes:
+</p>
+
+
+<pre class="example">* Work                                                              :work:
+** Work hard.                                                      :@work:@home:%next_action:
+Finish my project ahead of schedule.
+** Ask boss for raise.                                             :@boss:%someday:
+Remember to compliment him lots when asking.
+
+* Personal                                                          :personal:
+** Clean up after my kids.                                         :@home:next_action:
+Grumble while cleaning up.
+** Tell my kids that they should clean up after themselves.        :@home:%why_bother:
+Laugh quietly to myself as I know it won't help.
+</pre>
+
+
+<p>
+In Org Mode all tags are created equal. For example, priority tags aren't different than location or topic tags. Keeping with Org Mode's plain text file format, I decided to distinguish my priority tags with a percent sign (<code>%</code>), changing GTD's common <code>:next_action:</code> tag <code>:%next_action:</code>.
+</p></div>
+
+</div>
+
+
+
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">More Info</h2>
+<div class="outline-text-2" id="text-5">
+
+<p>If you are interested, you can read more about Org Mode on its <a href="http://orgmode.org">home page</a>, from any one of the vast collection of <a href="http://orgmode.org/worg/org-tutorials/index.html">tutorials</a> on the Org website, or one of the links from <a href="https://www.google.com/webhp?sourceid=chrome-instant&amp;ie=UTF-8&amp;ion=1#hl=en&amp;newwindow=1&amp;qscrl=1&amp;sclient=psy-ab&amp;q=org mode &amp;qscrl=1&amp;oq=&amp;gs_l=&amp;pbx=1&amp;fp=3e0aac4b0855dc98&amp;ion=1&amp;bav=on.2,or.r_gc.r_pw.r_cp.r_qf.&amp;biw=1130&amp;bih=932">Google search</a>.
+</p>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Time Tracking]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/08/04/time-tracking/"/>
+    <updated>2012-08-04T19:29:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/08/04/time-tracking</id>
+    <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">The Quantified Self</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>A couple of months ago I heard about this <del>nerdy</del> cool movement called <a href="http://en.wikipedia.org/wiki/Quantified_Self">Quantified Self</a>. Its goal is improving life by leveraging organized data about yourself. The ideas behind Quantified Self are far from new. Recording your caloric intake with the aim of reaching a goal, ie: counting calories, has been around for&hellip; well for a long time.
+</p>
+<p>
+The Quantified Self movement takes old principles, such as calorie counting, and improves upon them in two key ways:
+</p><ul>
+<li><b>QS is more of an atitude than an activity.</b> Tracking calories, cholesterol levels, blood pressure, etc&hellip; are generally targeted at a very specific goal. For example, a baseball player that records his batting performance against different pitchers is looking to be a better batter. The Quantified Self movement encourages people to look for new means of measurement, as wel as to use existing means of measurement differently, with no single goal. If you will, QS is an umbrella encompassing both old and new tools.
+</li>
+<li><b>Technology is a game changer.</b> Almost overnight it became possible to measure and record huge amounts of data about yourself. This ranges from relatively low-tech activities such as "checking in" to a social network during the day or using an online to-do management system to <a href="http://fitbit.com">multipurpose devices</a> that collect fairly complex data.
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">My Project</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Beinng the type of person who likes <del>nerdy</del> cool things, I got all excited the moment I heard about QS. After toying around with some ideas I decided to monitor my daily activities with the goal of using my time more wisely.
+</p>
+<p>
+I am not referring to the type of activity data you can get from your <a href="http://en.wikipedia.org/wiki/Filofax">Filofax</a> or the detailed location data that a service such as <a href="http://en.wikipedia.org/wiki/Google_Latitude">Google Latitude</a> provides. I am going to <a href="http://en.wikipedia.org/wiki/Sample_(statistics)">sample</a> my activity several dozen times a day.
+</p>
+<p>
+I have a <a href="https://github.com/Neil-Smithline/time-tracking-experiments/">living document and code repository</a> that discusses my goals in more detail. I also have a <a href="https://github.com/Neil-Smithline/time-tracking-experiments/blob/1254eb4cb744305f66f547fbccfc0189db542198/README.org">snapshot</a> taken at the time of writing this.
+</p>
+<p>
+Besides documenting my goals, I have tried, for the first time, to keep a <a href="http://www.neilsmithline.com/time-tracking-experiments/journal.html">journal</a> of the problem solving process as I was going through it. To reduce the overhead of maintaining a journal I have left it pretty raw so please forgive its informal presentation.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Implementing Time Tracking</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>The broad solution I've implemented in my time tracking experiment is documented in the living document and journal referenced above. To save time, I'll not duplicate what is documented there. What I will discuss is my first solution, perhaps my first prototype of the time tracking system.
+</p>
+<p>
+The goal is to track my activities via my ever-handy Android phone and record that data in a structured manner on my computer. Due to my personal preferences, I'm storing the data in <a href="http://www.orgmode.org">Org Mode</a> but the concepts are not limited to Org Mode.
+</p>
+<p>
+Being that I'm storing my data in Org Mode and using Org Mode as my task manager, the solution has a very Org Mode'ish feel. I'll try to explain enough about Org Mode so that you can follow.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">In The Next Posting</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>I'm going to post this blog entry in two parts because my time tracking system just interrupted me, asking for a sampling of my activity. When I responded to the request I saw that I've used up the time I've allotted for blogging today so I'm putting this aside for now.
+</p>
+<p>
+PS: I don't think I've mentioned it before but my time tracking system provides instantaneous feedback. Every time it requests a sample of my activity it tells me how long I've been doing that activity as well as all the other activities I've done during the day. This allows me to immediately alter my behavior without waiting for longer-term analyses. Definitely cool (OK, and nerdy too).
+</p></div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Desktop Time Tracking]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/07/21/desktop-time-tracking/"/>
+    <updated>2012-07-21T20:17:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/07/21/desktop-time-tracking</id>
+    <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Motivation</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>Recently I've been trying to improve my time management skills. This is further discussed in this <a href="https://github.com/Neil-Smithline/time-tracking-experiments">Github README</a> file. I have also been keeping a <a href="http://www.neilsmithline.com/time-tracking-experiments/journal.html">journal</a> my activities and thoughts as I work on this project. You may also wish to read up on the <a href="http://en.wikipedia.org/wiki/Quantified_Self">Quantified Self</a>.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Basic Activity Tracking</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>While I had not initially planned to focus on Mac OS X time tracking, it turned out to be easy. For a couple of weeks I've been playing around with two Mac OS X applications that track your computer activities: <a href="http://timingapp.com/">Timing</a> (actually <i>Timing Lite</i>) and <a href="http://manytricks.com/timesink/">Time Sink</a>.
+</p>
+<p>
+Time Sink integrates with Mac OS X to track the <i>active</i> or <i>foreground</i> application and provides a variety of reports to display that information. In addition to tracking the current app, Time Sink tries to track what you were doing in that app. It achieves this by using a relatively low-tech process of collecting the active window's name.
+</p>
+<p>
+While a window name does not seem like a lot of information, it turns out to be surprisingly useful. From the window name Time Sink distinguishes, for example, the amount of time you spent browsing Facebook from the amount of time you spent browsing Github.
+</p>
+<p>
+Time Sink can harvest this data from any app that includes information about the current activity. This includes editors that put the file being edited in the window name, media plays that put the title of what is currently being played, etc&hellip;
+</p>
+<p>
+Your activities get displayed in a nice graphical format:
+<img src="http://www.neilsmithline.com/assets/screen-snapshots/Time-Sink-Activities.png"  alt="http://www.neilsmithline.com/assets/screen-snapshots/Time-Sink-Activities.png" />
+</p>
+<p>
+Due to browser page size I've excluded information such as how long I did these activities were as well as when I was doing them.
+</p>
+<p>
+In addition to the activity tracking performed by Time Sink, Timing has some <a href="http://timingapp.com/faq.php#compatibility">application-specific</a> functionality that allows it to better track what you are doing inside an app.
+</p>
+
+
+<!-- more -->
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">From Activity Tracking To Category Tracking</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>The real power of these apps is that they allow you to categorize your activities. For example, you can specify that time spent browsing Facebook is socializing while time spent on Github is developing and exploring open-source.
+</p>
+<p>
+My open source development category includes:
+</p><ul>
+<li>Time spent browsing Github.
+</li>
+<li>Time spent editing files in <code>$HOME/coding</code>, the root of all of my open-source Github projects.
+</li>
+<li>Time spent in a shell while the current directory is in <code>$HOME/coding</code> directory or one of its subdirectories.
+</li>
+<li>Other stuff not worth describing here.
+</li>
+</ul>
+
+
+<p>
+Due to its fine-granularity and inability to associate activities across apps, the activity tracking data is not that useful. But, once it is categorized, called <i>Pooling</i> by Time Sink, it starts to provide much more useful information. Consider this screen snapshot:
+<img src="http://www.neilsmithline.com/assets/screen-snapshots/Time-Sink-Activities.png"  alt="http://www.neilsmithline.com/assets/screen-snapshots/Time-Sink-Activities.png" />
+</p>
+<p>
+In it you can see that I was spending time on time management. This included time spent in three different apps.
+</p>
+<p>
+Both Time Sink and Timing have a convenient, drag-and-drop mechanism for adding activities to categories.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Choosing Between Timing And Time Sink</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>Today, the end of my 2-week trial period, I decided to purchase Time Sink because of its ability to automatically export data into a CSV file. Besides the automatic scheduling, Time Sink allows you to specify what data is exported as well as whether you want the export to include all data that Time Sink has stored or only data since the last automated export. Being that I want to use <a href="http://orgmode.org">Org Mode</a> as my data repository, this data exporting feature sealed the deal for me.
+</p>
+<p>
+That said, I feel that Timing and Time Sink are on par with each other. Each app costs &lt; $10US so cost is not a factor. Each app has its own pros and cons. Time Sink just fit my specific needs.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Analyzing The Data</h2>
+<div class="outline-text-2" id="text-5">
+
+<p>To state the obvious, collecting time usage data is only useful if you can analyze it such that it improves your time management skills. This is where Org Mode comes into play. With a bit of tweaking, the CSV importer from <a href="https://github.com/novoid/Memacs">Memacs</a> will be able to import this data into Org Mode.
+</p>
+<p>
+Org Mode provides a rich set of features regarding scheduling and time management:
+</p><ul>
+<li>Standard task/to-do list management features.
+</li>
+<li>Comparing actual time spent v. estimated time.
+</li>
+<li>Identifying if you are falling behind on a long-term task.
+</li>
+<li>Summarizing your time usage.
+</li>
+<li>Sophisticated tracking of repeating tasks.
+</li>
+<li>An integrated archive management framework that allows you to focus on the most pertinent information while maintaining all historical data.
+</li>
+<li>Tons more.
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6">Early Payoffs</h2>
+<div class="outline-text-2" id="text-6">
+
+<p>Being as I'm planning on using Org Mode to perform data analysis and I am not yet able to import Time Sink data into Org Mode, one would think that there would be no immediate benefit of having this system working. I thought that would be the case. But I was wrong.
+</p>
+<p>
+For some time I've used a timer that pops up every 15 minutes just to remind me that time is passing. I call it my <i>Focus Alert</i> timer as it reminds me to make sure I'm doing what I should be doing. When I'm notified I can stand up and stretch, check the clock to make sure I'm not late for something, make sure I'm working on my highest priority task, etc&hellip;
+</p>
+<p>
+Today I modified my Focus Alert (a small shell script) so that it helps me track my time with Time Sink. Before today's modification, my Focus Alert simply popped up a notification box that I had to click to close. As you may imagine, clicking quickly became second-nature.
+</p>
+<p>
+Starting today, my Focus Alert interrupts my work and displays the Time Sink application. While I can immediately switch back to whatever I was doing before the notification, it is rather difficult not to notice Time Sink's data. For example, about two sentences ago my Focus alert went off. As you can see in this screenshot of the relevant part of the Time Sink window:
+<img src="http://www.neilsmithline.com/assets/screen-snapshots/Time-Sink-Blog-Posting.png"  alt="http://www.neilsmithline.com/assets/screen-snapshots/Time-Sink-Blog-Posting.png" />
+</p>
+<p>
+I've spent about an hour on this blog posting. As Time Sink is kind enough to distinguish wall-clock time from actual activity time, that hour is a very reliable statement about my activity.
+</p>
+<p>
+Being that I don't think this blog posting is worth more than an hour of my, I would have allocated 30-45 minutes top, I'm ending the posting here.<sup><a class="footref" name="fnr.1" href="#fn.1">1</a></sup>
+</p>
+<p>
+I hope to follow-up this posting with more blog postings as well as <a href="http://www.neilsmithline.com/time-tracking-experiments/journal.html">journal</a> entries as I try to understand what I'm doing and then make myself more efficient.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7">UPDATE <span class="timestamp-wrapper"> <span class="timestamp">2012-07-22 Sun 15:50</span></span></h2>
+<div class="outline-text-2" id="text-7">
+
+<p>Sacha Chua (<a href="http://sachachua.com/blog/">blog</a>, <a href="https://twitter.com/sachac">twitter</a>) responded to one of my <a href="https://twitter.com/neil_smithline/status/225408627643650048">tweets</a> about integrating Org Mode and Quantified Self. She pointed me towards this <a href="http://sachachua.com/blog/2012/05/quantified-awesome-blogging-wpm-and-the-speed-of-reflection/">blog posting</a>. In it she discusses how she uses Org Mode to track her blog writing time. Not only does she use Org Mode to track her activities, she uses it to track her <a href="http://en.wikipedia.org/wiki/Wpm">WPM</a> while writing blog posts. She averages 16 WPM while blogging.
+</p>
+
+<div id='footnotes'>
+<h4 class='footnotes'>Footnotes: </h4>
+<div id='text-footnotes'>
+<p class="footnote"><sup><a class="footnum" name="fn.1" href="#fnr.1">1</a></sup> After reading Sacha's post, I decided to calculate my WPM for this blog post. It turns out that I typed 15 WPM (actually 14.79729729&hellip;). I'll have to readjust my estimates for blogging as I don't think I can hope to outperform the industrious Sacha Chua. Especially being that she types 110 WPM at full speed!
+</p>
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>
