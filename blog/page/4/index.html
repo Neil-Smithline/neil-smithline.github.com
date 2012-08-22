@@ -9,7 +9,7 @@
   <meta name="author" content="Neil Smithline">
 
   
-  <meta name="description" content="Update 2012-06-04 Mon 00:57 You can download the code from its Github repository. Motivation After yesterday&#8217;s ranting about Octopress, it &hellip;">
+  <meta name="description" content="The Project Typically, even my pet projects have a specific goal in mind. I don&#8217;t write a spec for my personal projects, there&#8217;s just a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -100,6 +100,76 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/06/01/first-ruby-project/">My First Ruby Project</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-01T19:18:00-04:00" pubdate data-updated="true">Jun 1<span>st</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">The Project</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>Typically, even my pet projects have a specific goal in mind. I don&#8217;t write a spec for my personal projects, there&#8217;s just a, maybe slightly fuzzy, goal. Generally I want something that will be useful. I&#8217;ll work on a project until:
+</p><ul>
+<li>The project does everything I hoped for. Maybe even more!
+</li>
+<li>I run out of spare time to work on it. This doesn&#8217;t happen as often as you may imagine. I really enjoy coding. So, after a tiring day of coding at the office, I come home to relax and work on one of my pet projects. If it was any different, then I have no right to call my blog <a href="http://bit.ly/yGGszW">My Geekdom</a>. 
+</li>
+<li>I decide that I did a poor job picking a pet project as they&#8217;re supposed to be fun and this projects isn&#8217;t. So long!
+</li>
+<li>I get stuck such that proceeding will require more effort than I feel it&#8217;s worth. That said, hopefully I learned something working on the project.
+</li>
+</ul>
+
+
+<p>
+But, unlike my typical pet projects, my goal with my new project is rather amorphous. I want to analyze some data. At time of writing this, I have just shy of 5K records totally 181MB of data. 
+</p>
+<p>
+Leaving the details for a later posting, each record is a snapshot of the state of my <a href="http://bit.ly/Kfv0n2">Mac OS X</a> computer. I&#8217;ve been collecting, and am continuing to collect, samples every five minutes since the beginning of March. At least every five minutes that my computer isn&#8217;t <a href="http://bit.ly/LUSEY8">sleeping</a> or hanging.
+</p>
+<p>
+I decided to collect the samples because I was getting downright frustrated with the performance of <a href="http://bit.ly/LUT7tx">Mozilla</a>&#8217;s <a href="http://bit.ly/HzqbTy">Firefox</a> browser. For reasons that are off-topic for this posting, I feel a strong interest in making sure that Firefox continues to be successful. 
+</p>
+<p>
+For years I thought Firefox was the bomb. Starting about 9-12 months ago I started to notice that Firefox was routinely using all the resources on my computer. This concerned me because <a href="http://bit.ly/LUUGHN">Google</a>&#8217;s <a href="http://bit.ly/LUUHLP">Chrome</a> browser was starting to have enough functionality to be a primary browser.
+</p>
+<p>
+Being that I wanted Firefox to stay competitive, I decided to try to stay with it. As Mozilla changed their release model, I started to use <a href="http://bit.ly/LUV1u1">Aurora</a> and <a href="http://bit.ly/LUV4Ga">Firefox Beta</a> and provide lots of feedback. The newer versions also seemed to consume a more reasonable amount of my computer&#8217;s resources. Being that the Firefox team was working hard at fixing performance problems, especially memory leaks, I stayed with Firefox. (See <a href="#sec-5">Reference: Articles About Firefox&#8217;s Memory Leaks And Repair Efforts</a> for information about FF&#8217;s memory leaks.)
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/06/01/first-ruby-project/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -241,88 +311,6 @@ This isn&#8217;t actually as much work for the Github servers as you may think. 
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/14/new-blog-tech/">YANBT: Yet Another New Blogging Technology</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-14T12:36:00-04:00" pubdate data-updated="true">May 14<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">NanoBlogger Was Killing Me</h2>
-<div class="outline-text-2" id="text-1">
-
-<p><a href="http://bit.ly/wq2Ien">NanoBlogger</a> really looked cool to me 
-(<a href="/blog/categories/blogging-tech">my postings about why I liked it</a>):
-</p><ul>
-<li>Small
-</li>
-<li>Most functionality provided via plugins
-</li>
-<li><a href="http://bit.ly/xOIkfJ">CLI</a> only
-</li>
-<li>It is <a href="http://bit.ly/Mlkg9X">FOSS</a>.
-</li>
-<li>Produced a static site (ie: only serves static pages)
-</li>
-<li>It was built on <a href="http://bit.ly/JbQmzE">Bash</a> &ndash; I thought this was the coolest
-</li>
-</ul>
-
-
-<p>
-I liked it so much that I wrote a CLI for it that was better suited to my personal workflow. I also spent some time integrating it with Emacs. But it had endless problems.
-</p>
-<p>
-It was slow, it did not do anything automatically, frequently required rebuilding of the entire blog, was hard to view on my local machine, isn&#8217;t really being maintained, doesn&#8217;t have a real templating system, breaks the RSS feed on special characters such as etc&hellip;
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">Where Next</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>Over the past few weeks I&#8217;ve been looking around for a new blogging system. The only real contender seemed to be <a href="http://bit.ly/Jm1bmc">Jekyll</a>. It is written in <a href="http://bit.ly/KAfYv0">Ruby</a> and used by Github to power Github Pages. It has so many contributors to it that its <a href="http://bit.ly/JetyoE">Github repository</a> has, at the moment, 50+ pull requests.
-</p>
-<p>
-I had nearly chosen Jekyll when I moved to NanoBlogger. I found that the discussion about moving to Jekyll on the <a href="http://bit.ly/JH7cIy">0xdecafbad.com</a> blog really aligned with my thoughts.
-</p>
-<p>
-But, after playing with it a bit, I found that Jekyll was difficult to configure. And I just so liked the Bash thing that NanoBlogger had that I decided to go with NanoBlogger. But now I&#8217;m wasting too much of my time fighting with Nanoblogger and I should reconsider Jekyll.
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/05/14/new-blog-tech/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -340,6 +328,10 @@ But, after playing with it a bit, I found that Jekyll was difficult to configure
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/08/21/disk-crash/">Disk Crash</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/08/05/time-tracking-part-2/">Time Tracking, Part 2: Org Mode File Format</a>
       </li>
     
@@ -353,10 +345,6 @@ But, after playing with it a bit, I found that Jekyll was difficult to configure
     
       <li class="post">
         <a href="/blog/2012/07/21/desktop-time-tracking/">Desktop Time Tracking</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/07/15/bookifying-news/">Bookifying News</a>
       </li>
     
   </ul>

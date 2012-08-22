@@ -9,7 +9,7 @@
   <meta name="author" content="Neil Smithline">
 
   
-  <meta name="description" content="A Brief Introduction To Org Mode File Syntax I&#8217;ve decided that my time tracking solution requires some basic understanding of the file format &hellip;">
+  <meta name="description" content="Ouch! My Disk Crashed My MacBook Pro became unusable and required a complete repartition and several reformats before I could resuscitate it. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -100,6 +100,92 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/21/disk-crash/">Disk Crash</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-21T22:02:00-04:00" pubdate data-updated="true">Aug 21<span>st</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Ouch! My Disk Crashed</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>My <a href="http://en.wikipedia.org/wiki/MacBook_Pro">MacBook Pro</a> became unusable and required a complete repartition and several reformats before I could resuscitate it. Recovering from the disk crash was surprisingly easy, there were a few hitches. Being that, without a duplicate computer, the only time that you can see how well your backup strategy works and correct it, I&#8217;ve been using this disk crash as an opportunity to bolster my backup strategy.
+</p>
+<p>
+It&#8217;s too late and I&#8217;m too tired to discuss my backup strategy in any depth but I&#8217;ve written up a bit that I can include here.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Prioritized Backup and File Distribution Strategy</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>In my mind, file backup and file distribution across multiple machines are intimately related. My backup and distribution (B&amp;D) strategy categorizes files in two dimensions:
+</p><ol>
+<li><b>File Importance:</b> This describes how critical each file is. Files in <code>~/Downloads</code> are typically not very important while code I&#8217;m working on or this blog entry is very important (at least to me).
+</li>
+<li><b>Synchronization Delay:</b> As I move between multiple computers, my productivity is related to how frequently some files are synchronized across the computers. Some I want optimized as soon as possible while other files can take hours or even days to get synchronized without affecting my productivity. Some low priority files, such as those in <code>~/Downloads</code> don&#8217;t ever need to be synchronized across machines.
+</li>
+</ol>
+
+<p>This can be diagrammed as:
+</p><table style='border: 2px solid black !important; border-collapse: separate;' cellspacing="0" cellpadding="6" rules="all" frame="2">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left"></th><th scope="col" class="left">Low Importance</th><th scope="col" class="left">High Importance</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">Timely Synchronization</td><td class="left">Low/Timely</td><td class="left">High/Timely</td></tr>
+<tr><td class="left">Delayed Synchronization</td><td class="left">Low/Delayed</td><td class="left">High/Delayed</td></tr>
+<tr><td class="left">No Synchronization Needed</td><td class="left">N/A</td><td class="left">N/A</td></tr>
+</tbody>
+</table>
+
+
+
+<p>
+My backup and distribution strategy varies by which quadrant (I&#8217;m not including the N/A boxes) a file is in.
+</p>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/08/21/disk-crash/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -293,88 +379,6 @@ PS: I don&#8217;t think I&#8217;ve mentioned it before but my time tracking syst
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/07/22/blurring-static-and-dynamic-blogs/">Blurring Static and Dynamic Blogs</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-07-22T18:23:00-04:00" pubdate data-updated="true">Jul 22<span>nd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Static Blogging</h2>
-<div class="outline-text-2" id="text-1">
-
-<p>I&#8217;ve discussed the pros and cons about static blogging <a href="http://www.neilsmithline.com/blog/categories/blogging-tech/">many times</a> before. In summary, the cons are that, well that your blog is static. No surprise there.
-</p>
-<p>
-Fortunately, there are ways to push the limits of static blogging so that it is not quite so static.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">Website Hosting</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>Unless you are self-hosting your <a href="http://octopress.org">Octopress</a> or <a href="http://jekyllrb.com">Jekyll</a> blog, you are using another site to host your blog. I host mine on Github. They have a web server running 24x7 to host it. But that&#8217;s not my problem. I just use their (free) services.
-</p>
-<p>
-I understand that website hosting isn&#8217;t a terribly exciting example of stretching the bubble of static blogging, but it is an example nonetheless. Dynamic blogs require specialized software running on their hosting computer to work. Static blogs tend to be able to run on generic web servers but there still must be a web server or there&#8217;s no blog.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3">JavaScript Helps</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>Out of the box, Octopress comes with some features to show your most recent tweets as well as recent activity within your <a href="http://github.com">Github</a> repositories. This is dynamic data that Octopress implements with some JavaScript.
-</p>
-<p>
-Just to be clear, by <i>dynamic data</i> I mean that the data displayed on the page may change without a republication of the blog. I am not necessarily referring to a scrolling widget or something. Just dynamic data. 
-</p>
-<p>
-Conversely, JavaScript can be used to dynamically display static data. That is, data that is embedded in the source of the web page. Being that the data is embedded in the page&#8217;s source at or before publication time, it is assuredly <i>static data</i>.
-</p>
-<p>
-But client-side JavaScript (ie: JavaScript running in the user&#8217;s browser) has its limits. For example, if you want to send a tweet whenever you add a new blog entry, client-side JavaScript is going to have a hard time at it.
-</p>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/07/22/blurring-static-and-dynamic-blogs/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -390,6 +394,10 @@ But client-side JavaScript (ie: JavaScript running in the user&#8217;s browser) 
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/08/21/disk-crash/">Disk Crash</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/08/05/time-tracking-part-2/">Time Tracking, Part 2: Org Mode File Format</a>
       </li>
     
@@ -403,10 +411,6 @@ But client-side JavaScript (ie: JavaScript running in the user&#8217;s browser) 
     
       <li class="post">
         <a href="/blog/2012/07/21/desktop-time-tracking/">Desktop Time Tracking</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/07/15/bookifying-news/">Bookifying News</a>
       </li>
     
   </ul>

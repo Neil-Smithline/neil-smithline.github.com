@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>SPG: The Secure Password Generator - My Geekdom</title>
+  <title>Disk Crash - My Geekdom</title>
   <meta name="author" content="Neil Smithline">
 
   
-  <meta name="description" content="As Users, We Must Expect Our Passwords To Be Compromised It is an unfortunate fact that, if you create accounts on websites, some of your passwords &hellip;">
+  <meta name="description" content="Ouch! My Disk Crashed My MacBook Pro became unusable and required a complete repartition and several reformats before I could resuscitate it. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.neilsmithline.com/blog/2012/06/10/secure-password-generator/">
+  <link rel="canonical" href="http://www.neilsmithline.com/blog/2012/08/21/disk-crash/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -103,7 +103,7 @@
   
   <header>
     
-      <h1 class="entry-title">SPG: The Secure Password Generator</h1>
+      <h1 class="entry-title">Disk Crash</h1>
     
     
       <p class="meta">
@@ -119,7 +119,7 @@
   
 
 
-<time datetime="2012-06-10T16:48:00-04:00" pubdate data-updated="true">Jun 10<span>th</span>, 2012</time>
+<time datetime="2012-08-21T22:02:00-04:00" pubdate data-updated="true">Aug 21<span>st</span>, 2012</time>
         
       </p>
     
@@ -127,18 +127,118 @@
 
 
 <div class="entry-content"><div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">As Users, We Must Expect Our Passwords To Be Compromised</h2>
+<h2 id="sec-1">Ouch! My Disk Crashed</h2>
 <div class="outline-text-2" id="text-1">
 
-<p>It is an unfortunate fact that, if you create accounts on websites, some of your passwords will be stolen. For example:
+<p>My <a href="http://en.wikipedia.org/wiki/MacBook_Pro">MacBook Pro</a> became unusable and required a complete repartition and several reformats before I could resuscitate it. Recovering from the disk crash was surprisingly easy, there were a few hitches. Being that, without a duplicate computer, the only time that you can see how well your backup strategy works and correct it, I&#8217;ve been using this disk crash as an opportunity to bolster my backup strategy.
+</p>
+<p>
+It&#8217;s too late and I&#8217;m too tired to discuss my backup strategy in any depth but I&#8217;ve written up a bit that I can include here.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Prioritized Backup and File Distribution Strategy</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>In my mind, file backup and file distribution across multiple machines are intimately related. My backup and distribution (B&amp;D) strategy categorizes files in two dimensions:
+</p><ol>
+<li><b>File Importance:</b> This describes how critical each file is. Files in <code>~/Downloads</code> are typically not very important while code I&#8217;m working on or this blog entry is very important (at least to me).
+</li>
+<li><b>Synchronization Delay:</b> As I move between multiple computers, my productivity is related to how frequently some files are synchronized across the computers. Some I want optimized as soon as possible while other files can take hours or even days to get synchronized without affecting my productivity. Some low priority files, such as those in <code>~/Downloads</code> don&#8217;t ever need to be synchronized across machines.
+</li>
+</ol>
+
+<p>This can be diagrammed as:
+</p><table style='border: 2px solid black !important; border-collapse: separate;' cellspacing="0" cellpadding="6" rules="all" frame="2">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left"></th><th scope="col" class="left">Low Importance</th><th scope="col" class="left">High Importance</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">Timely Synchronization</td><td class="left">Low/Timely</td><td class="left">High/Timely</td></tr>
+<tr><td class="left">Delayed Synchronization</td><td class="left">Low/Delayed</td><td class="left">High/Delayed</td></tr>
+<tr><td class="left">No Synchronization Needed</td><td class="left">N/A</td><td class="left">N/A</td></tr>
+</tbody>
+</table>
+
+
+
+<p>
+My backup and distribution strategy varies by which quadrant (I&#8217;m not including the N/A boxes) a file is in.
+</p>
+
+
+<!-- more -->
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">There&#8217;s Important Data That Is Not In A File</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>My first lesson was that not all data is backupable via file backup and distribution processes. The best example I have of this is the set of installed applications. Applications are typically large files and frequently require complex installations. While many <a href="http://en.wikipedia.org/wiki/Mac_os_x">Mac OS X</a> applications can be installed by copying the file into the <code>/Applications</code> directory, others require the use of package installers. This is similar to <a href="http://en.wikipedia.org/wiki/Windows">Windows</a> applications that store data in the <a href="http://en.wikipedia.org/wiki/Windows_registry">Windows Registry</a>.
+</p>
+<p>
+Knowing that applications were cumbersome and frequently needed special installation scripts led me to decide to not back up my applications. After this disk crash, I continue to think that it makes no sense to backup your installed apps. That said, I have sorely missed having a list of the applications that I had installed before the disk problems.
+</p>
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">Installed Apps Monitor</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<p>My initial response to the lack of a list of installed apps was to start recording apps as I installed them. After the first half-dozen or so apps I decided that this was a bad idea. I could see that the list was going to be incomplete, outdated, and generally not very helpful.
+</p>
+<p>
+So I took a few minutes to whip up a trivial shell script that I run once a day via crontab. The shell script attempts to record the names of installed applications rather than the actual applications themselves. The version of the shell script that I&#8217;m currently using is:
+</p>
+
+
+<pre class="src src-sh-mode">#!/bin/sh
+shopt -s nullglob
+shopt -u failglob
+ls -dlrt /Applications/* /Library/PreferencePanes/* ~/Library/PreferencePanes/* &gt; ~/Dropbox/Backups/InstalledApps.txt
+</pre>
+
+
+<p>
+An abbreviated sample of its output is:
+</p>
+
+
+<pre class="example">drwxr-xr-x   3 root  wheel  102 May  5  2009 /Applications/Font Book.app
+drwxr-xr-x   3 root  wheel  102 May 19  2009 /Applications/Stickies.app
+drwxr-xr-x   3 root  wheel  102 May 19  2009 /Applications/Chess.app
+drwxr-xr-x   3 root  admin  102 Sep 19  2009 /Library/PreferencePanes/RCDefaultApp.prefPane
+drwxrwxr-x   3 root  wheel  102 May 24  2011 /Library/PreferencePanes/Growl.prefPane
+drwxr-xr-x@  3 neil  admin  102 May 24  2011 /Applications/HardwareGrowler.app
+drwxr-xr-x@  3 neil  admin  102 May 24  2011 /Applications/GrowlTunes.app
+drwxr-xr-x   3 neil  staff  102 Jul 25 18:27 /Applications/BetterTouchTool.app
+drwxr-xr-x@  3 neil  admin  102 Aug 13 22:51 /Applications/Google Chrome.app
+drwxr-xr-x@  4 neil  admin  136 Aug 18 08:19 /Applications/FirefoxAurora.app
+drwxr-xr-x   3 neil  staff  102 Aug 18 11:52 /Applications/GrowlSafari.app
+</pre>
+
+
+<p>
+As this script is run once a day and stored in my Dropbox folder, I always have an up-to-date copy of the file.
+</p>
+<p>
+I still have some changes planned for the script:
 </p><ul>
-<li>There has been a lot of recent press about <a href="http://linkd.in/Mz4gjU">LinkedIn</a>&#8217;s recent 6.5M <a href="http://yhoo.it/Mz4o2T">stolen passwords</a>. 
+<li>The script only works for typical Mac OS X applications. It doesn&#8217;t check for command line applications as well as applications installed by a package manager such os <a href="http://mxcl.github.com/homebrew/">Homebrew</a> (Mac OS X package installer), <a href="http://www.cpan.org/">CPAN</a> (Perl package installer), or <a href="https://github.com/sstephenson/rbenv/">rbenv</a> (Ruby package installer - sort of).
 </li>
-<li>In the week since LinkedIn&#8217;s attack became public, <a href="http://bit.ly/Mz4yHu">eHarmony</a> lost 1.5M passwords in an <a href="http://lat.ms/Mz4I1y">unrelated attack</a>. 
+<li>Perhaps I had a good reason to put the data file into my Dropbox folder but I can&#8217;t recall it now. This data seems a perfect example of High/Delayed data as discussed in the table above.
 </li>
-<li>Earlier in the year, an undisclosed number of <a href="http://bit.ly/LLAaXu">Zappos</a> 24M users had their <a href="http://bit.ly/LLAfdJ">passwords compromised</a>. 
-</li>
-<li>The <a href="http://bit.ly/LLB5Hl">attack</a> on Gawker Media&#8217;s collection of popular sites (<a href="http://gaw.kr/LLBedR">Gawker</a>, <a href="http://bit.ly/LLBf1y">Lifehacker</a>, <a href="http://bit.ly/LLBfhZ">Gizmodo</a>, <a href="http://bit.ly/LLBh9N">io9</a>,<a href="http://bit.ly/LLBhqe"> Jalopnik</a>, <a href="http://bit.ly/LLBfyC">Kotaku</a>, <a href="http://deadsp.in/LLBfyD">Deadspin</a>, and <a href="http://bit.ly/LLBhqh">Fleshbot</a>) in late 2010 that compromised 1.3M accounts shows that this is not a new phenomenon. 
+<li>The script misses some peculiar applications. Most of these applications are from Apple. <a href="https://developer.apple.com/xcode/">Xcode</a> is a good example of a &#8220;peculiar&#8221; application. Xcode includes a GUI application, command line programs, and runtime libraries. These get scattered across the machine. I suspect I&#8217;ll just hardcode these applications into my script rather than trying to create the logic to find them. For example, I&#8217;ll have my script add a line to the installed applications that reads <code>Xcode from https://developer.apple.com/xcode/</code>. That seems good enough.
 </li>
 </ul>
 
@@ -147,83 +247,44 @@
 
 </div>
 
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">Cascading Damages</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">Other Missing Data</h3>
+<div class="outline-text-3" id="text-3-2">
 
-<p>Having your password stolen from a website is a problem. But if you use the same password for many sites, the problem becomes a nightmare. I know that everyone tells you to use <a href="http://bit.ly/KWPdld">strong passwords</a> and to use a different password for each website &ndash; but few people do. A quick look at these <a href="http://bit.ly/KWPowF">Google search results</a> should be convince you that people just don&#8217;t follow that advice.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3">The Reason Behind The Mega-Password Thefts</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>Despite every assurance made by websites (eg: <a href="http://bit.ly/LLEqX3">LinkedIn</a>&#8217;s recent message), the only way a website can lose millions of passwords is if they just didn&#8217;t bother to follow standard security procedures for storing your password. So LinkedIn, Gawker, Zappos, etc.., didn&#8217;t care about your password&#8217;s security until a breach made it into the headlines.
-<!-- more -->
-
-As revolting as that fact is, it is accurate.
-</p>
-<p>
-The trick to securely storing a user&#8217;s password is rather simple: don&#8217;t store the user&#8217;s password as it can&#8217;t be stolen if it is never stored. 
-</p><blockquote>
-
-<p>Huh?
-</p>
-</blockquote>
-
-
-<p>
-You heard me correctly. Websites should store a &lt;geek vernacular warning&gt; <i>salted hash</i> of your password rather than your password. Understanding the math and computer science behind salted hashes is unimportant. All you need to know is that the technology exists. If you are curious, you can read this <a href="http://bit.ly/LLGvlN">OWASP article</a> about salted hashes.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-4" class="outline-2">
-<h2 id="sec-4">An Ounce Of Prevention</h2>
-<div class="outline-text-2" id="text-4">
-
-<p>The only way to protect yourself against these thefts is to, as everyone will tell you, use a unique, strong password for every site. Don&#8217;t worry, I won&#8217;t preach to you. You know that this is what should be done and I know that you know that this should be done.
-</p>
-<p>
-There are two problems with this:
-</p><ol>
-<li>It is difficult to keep track of so many passwords.
+<p>Missing the list of installed apps had a quick fix but other data isn&#8217;t so readily available or I don&#8217;t know how to access it. Some examples of missing data are:
+</p><ul>
+<li>Customized icons for folders: On Mac OS X you can associate a small icon to each folder. On the directories that I use routinely I have customized the icons so that I can find them quickly.
 </li>
-<li>People are astoundingly bad at creating secure passwords.
+<li>The settings of some Chrome extensions did not get restored.
 </li>
-</ol>
+<li>My cron jobs were only stored within cron&#8217;s database.
+</li>
+</ul>
 
 
 <p>
-<a href="http://bit.ly/KWS3GH">Other than that, how was the play, Mrs. Lincoln?</a>
+The cron jobs problem was another one that I was able to fix with a simple shell script and a minor modification to my workflow. Instead of editing my cron jobs directly via <code>crontab -e</code>, I now keep them in a file in my <code>bin</code> directory and modify that file as needed. When I modify my cron jobs I can either run crontab to immediately update my cron jobs or wait until I run my nightly cron job as that auto-updates my cron jobs:
 </p>
-</div>
 
-</div>
 
-<div id="outline-container-5" class="outline-2">
-<h2 id="sec-5">Tools And Reprogramming Are The Answer</h2>
-<div class="outline-text-2" id="text-5">
 
-<p>It turns out that the best solution to managing your passwords involves the use of tools and reprogramming. The tools are used to help you create unique passwords as well as remember them. The tools can be simple. For example, a handful of <a href="http://bit.ly/KWRhcK">dice</a> can be used to generate unique and secure passwords.
-</p>
+<pre class="src src-sh-mode">#!/bin/sh
+
+# Run my apps lister
+$HOME/bin/installed-apps-lister.sh
+
+# Run other stuff that I've removed from this example.
+
+# Update my cron jobs in case I've modified the cron file.
+crontab $HOME/bin/crontab-jobs
+</pre>
+
+
 <p>
-The reprogramming part is the more difficult. It involves you reprogramming your brain so that you protect yourself. Think of it as <i>safe surfing</i>.
+The <code>$HOME/in/crontab-jobs</code> file gets automatically backed up with the rest of my bin files.
 </p>
 </div>
-
 </div>
-
-<div id="outline-container-6" class="outline-2">
-<h2 id="sec-6">The Answer Is&hellip;</h2>
-<div class="outline-text-2" id="text-6">
-
-<p>The answer is going to be in my next blog posting. I&#8217;ll present several tools and strategies, including one that I&#8217;m currently developing, that work better than carrying around a handful of <a href="http://bit.ly/KWRc90">zocchihedrons</a> :-)
-</p></div>
 </div>
 </div>
 
@@ -247,12 +308,12 @@ The reprogramming part is the more difficult. It involves you reprogramming your
   
 
 
-<time datetime="2012-06-10T16:48:00-04:00" pubdate data-updated="true">Jun 10<span>th</span>, 2012</time>
+<time datetime="2012-08-21T22:02:00-04:00" pubdate data-updated="true">Aug 21<span>st</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/password-generator/'>password-generator</a>, <a class='category' href='/blog/categories/passwords/'>passwords</a>, <a class='category' href='/blog/categories/projects/'>projects</a>, <a class='category' href='/blog/categories/security/'>security</a>
+    <a class='category' href='/blog/categories/blogging-tech/'>blogging-tech</a>
   
 </span>
 
@@ -261,7 +322,7 @@ The reprogramming part is the more difficult. It involves you reprogramming your
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.neilsmithline.com/blog/2012/06/10/secure-password-generator/" data-via="neil_smithline" data-counturl="http://www.neilsmithline.com/blog/2012/06/10/secure-password-generator/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.neilsmithline.com/blog/2012/08/21/disk-crash/" data-via="neil_smithline" data-counturl="http://www.neilsmithline.com/blog/2012/08/21/disk-crash/" >Tweet</a>
   
   
   
@@ -270,10 +331,8 @@ The reprogramming part is the more difficult. It involves you reprogramming your
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/06/01/first-ruby-project/" title="Previous Post: My First Ruby Project">&laquo; My First Ruby Project</a>
+        <a class="basic-alignment left" href="/blog/2012/08/05/time-tracking-part-2/" title="Previous Post: Time Tracking, Part 2: Org Mode File Format">&laquo; Time Tracking, Part 2: Org Mode File Format</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/06/14/the-new-privacy-invading-facebook-like-button/" title="Next Post: The New, Privacy Invading, Facebook Like Button">The New, Privacy Invading, Facebook Like Button &raquo;</a>
       
     </p>
   </footer>
@@ -458,8 +517,8 @@ The reprogramming part is the more difficult. It involves you reprogramming your
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://www.neilsmithline.com/blog/2012/06/10/secure-password-generator/';
-        var disqus_url = 'http://www.neilsmithline.com/blog/2012/06/10/secure-password-generator/';
+        var disqus_identifier = 'http://www.neilsmithline.com/blog/2012/08/21/disk-crash/';
+        var disqus_url = 'http://www.neilsmithline.com/blog/2012/08/21/disk-crash/';
         var disqus_script = 'embed.js';
       
     (function () {

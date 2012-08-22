@@ -4,7 +4,7 @@
   <title><![CDATA[Category: blogging-tech | My Geekdom]]></title>
   <link href="http://www.neilsmithline.com/blog/categories/blogging-tech/atom.xml" rel="self"/>
   <link href="http://www.neilsmithline.com/"/>
-  <updated>2012-08-21T21:53:04-04:00</updated>
+  <updated>2012-08-22T10:00:42-04:00</updated>
   <id>http://www.neilsmithline.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
@@ -12,6 +12,181 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Disk Crash]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/08/21/disk-crash/"/>
+    <updated>2012-08-21T22:02:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/08/21/disk-crash</id>
+    <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Ouch! My Disk Crashed</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>My <a href="http://en.wikipedia.org/wiki/MacBook_Pro">MacBook Pro</a> became unusable and required a complete repartition and several reformats before I could resuscitate it. Recovering from the disk crash was surprisingly easy, there were a few hitches. Being that, without a duplicate computer, the only time that you can see how well your backup strategy works and correct it, I've been using this disk crash as an opportunity to bolster my backup strategy.
+</p>
+<p>
+It's too late and I'm too tired to discuss my backup strategy in any depth but I've written up a bit that I can include here.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Prioritized Backup and File Distribution Strategy</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>In my mind, file backup and file distribution across multiple machines are intimately related. My backup and distribution (B&amp;D) strategy categorizes files in two dimensions:
+</p><ol>
+<li><b>File Importance:</b> This describes how critical each file is. Files in <code>~/Downloads</code> are typically not very important while code I'm working on or this blog entry is very important (at least to me).
+</li>
+<li><b>Synchronization Delay:</b> As I move between multiple computers, my productivity is related to how frequently some files are synchronized across the computers. Some I want optimized as soon as possible while other files can take hours or even days to get synchronized without affecting my productivity. Some low priority files, such as those in <code>~/Downloads</code> don't ever need to be synchronized across machines.
+</li>
+</ol>
+
+<p>This can be diagrammed as:
+</p><table style='border: 2px solid black !important; border-collapse: separate;' cellspacing="0" cellpadding="6" rules="all" frame="2">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left"></th><th scope="col" class="left">Low Importance</th><th scope="col" class="left">High Importance</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">Timely Synchronization</td><td class="left">Low/Timely</td><td class="left">High/Timely</td></tr>
+<tr><td class="left">Delayed Synchronization</td><td class="left">Low/Delayed</td><td class="left">High/Delayed</td></tr>
+<tr><td class="left">No Synchronization Needed</td><td class="left">N/A</td><td class="left">N/A</td></tr>
+</tbody>
+</table>
+
+
+
+<p>
+My backup and distribution strategy varies by which quadrant (I'm not including the N/A boxes) a file is in.
+</p>
+
+
+<!-- more -->
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">There's Important Data That Is Not In A File</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>My first lesson was that not all data is backupable via file backup and distribution processes. The best example I have of this is the set of installed applications. Applications are typically large files and frequently require complex installations. While many <a href="http://en.wikipedia.org/wiki/Mac_os_x">Mac OS X</a> applications can be installed by copying the file into the <code>/Applications</code> directory, others require the use of package installers. This is similar to <a href="http://en.wikipedia.org/wiki/Windows">Windows</a> applications that store data in the <a href="http://en.wikipedia.org/wiki/Windows_registry">Windows Registry</a>.
+</p>
+<p>
+Knowing that applications were cumbersome and frequently needed special installation scripts led me to decide to not back up my applications. After this disk crash, I continue to think that it makes no sense to backup your installed apps. That said, I have sorely missed having a list of the applications that I had installed before the disk problems.
+</p>
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">Installed Apps Monitor</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<p>My initial response to the lack of a list of installed apps was to start recording apps as I installed them. After the first half-dozen or so apps I decided that this was a bad idea. I could see that the list was going to be incomplete, outdated, and generally not very helpful.
+</p>
+<p>
+So I took a few minutes to whip up a trivial shell script that I run once a day via crontab. The shell script attempts to record the names of installed applications rather than the actual applications themselves. The version of the shell script that I'm currently using is:
+</p>
+
+
+<pre class="src src-sh-mode">#!/bin/sh
+shopt -s nullglob
+shopt -u failglob
+ls -dlrt /Applications/* /Library/PreferencePanes/* ~/Library/PreferencePanes/* &gt; ~/Dropbox/Backups/InstalledApps.txt
+</pre>
+
+
+<p>
+An abbreviated sample of its output is:
+</p>
+
+
+<pre class="example">drwxr-xr-x   3 root  wheel  102 May  5  2009 /Applications/Font Book.app
+drwxr-xr-x   3 root  wheel  102 May 19  2009 /Applications/Stickies.app
+drwxr-xr-x   3 root  wheel  102 May 19  2009 /Applications/Chess.app
+drwxr-xr-x   3 root  admin  102 Sep 19  2009 /Library/PreferencePanes/RCDefaultApp.prefPane
+drwxrwxr-x   3 root  wheel  102 May 24  2011 /Library/PreferencePanes/Growl.prefPane
+drwxr-xr-x@  3 neil  admin  102 May 24  2011 /Applications/HardwareGrowler.app
+drwxr-xr-x@  3 neil  admin  102 May 24  2011 /Applications/GrowlTunes.app
+drwxr-xr-x   3 neil  staff  102 Jul 25 18:27 /Applications/BetterTouchTool.app
+drwxr-xr-x@  3 neil  admin  102 Aug 13 22:51 /Applications/Google Chrome.app
+drwxr-xr-x@  4 neil  admin  136 Aug 18 08:19 /Applications/FirefoxAurora.app
+drwxr-xr-x   3 neil  staff  102 Aug 18 11:52 /Applications/GrowlSafari.app
+</pre>
+
+
+<p>
+As this script is run once a day and stored in my Dropbox folder, I always have an up-to-date copy of the file.
+</p>
+<p>
+I still have some changes planned for the script:
+</p><ul>
+<li>The script only works for typical Mac OS X applications. It doesn't check for command line applications as well as applications installed by a package manager such os <a href="http://mxcl.github.com/homebrew/">Homebrew</a> (Mac OS X package installer), <a href="http://www.cpan.org/">CPAN</a> (Perl package installer), or <a href="https://github.com/sstephenson/rbenv/">rbenv</a> (Ruby package installer - sort of).
+</li>
+<li>Perhaps I had a good reason to put the data file into my Dropbox folder but I can't recall it now. This data seems a perfect example of High/Delayed data as discussed in the table above.
+</li>
+<li>The script misses some peculiar applications. Most of these applications are from Apple. <a href="https://developer.apple.com/xcode/">Xcode</a> is a good example of a "peculiar" application. Xcode includes a GUI application, command line programs, and runtime libraries. These get scattered across the machine. I suspect I'll just hardcode these applications into my script rather than trying to create the logic to find them. For example, I'll have my script add a line to the installed applications that reads <code>Xcode from https://developer.apple.com/xcode/</code>. That seems good enough.
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">Other Missing Data</h3>
+<div class="outline-text-3" id="text-3-2">
+
+<p>Missing the list of installed apps had a quick fix but other data isn't so readily available or I don't know how to access it. Some examples of missing data are:
+</p><ul>
+<li>Customized icons for folders: On Mac OS X you can associate a small icon to each folder. On the directories that I use routinely I have customized the icons so that I can find them quickly.
+</li>
+<li>The settings of some Chrome extensions did not get restored.
+</li>
+<li>My cron jobs were only stored within cron's database.
+</li>
+</ul>
+
+
+<p>
+The cron jobs problem was another one that I was able to fix with a simple shell script and a minor modification to my workflow. Instead of editing my cron jobs directly via <code>crontab -e</code>, I now keep them in a file in my <code>bin</code> directory and modify that file as needed. When I modify my cron jobs I can either run crontab to immediately update my cron jobs or wait until I run my nightly cron job as that auto-updates my cron jobs:
+</p>
+
+
+
+<pre class="src src-sh-mode">#!/bin/sh
+
+# Run my apps lister
+$HOME/bin/installed-apps-lister.sh
+
+# Run other stuff that I've removed from this example.
+
+# Update my cron jobs in case I've modified the cron file.
+crontab $HOME/bin/crontab-jobs
+</pre>
+
+
+<p>
+The <code>$HOME/in/crontab-jobs</code> file gets automatically backed up with the rest of my bin files.
+</p>
+</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Blurring Static And Dynamic Blogs]]></title>
@@ -925,83 +1100,6 @@ I think I'm going to be very happy with Octopress.
 </p>
 </div>
 </div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Blog In A Box (actually, a repo)]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/02/15/nogit-blog-in-a-box/"/>
-    <updated>2012-02-15T22:54:25-05:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/02/15/nogit-blog-in-a-box</id>
-    <content type="html"><![CDATA[<p>
-As I have been developing my blog's technology, I have been surprised at the lack of a pre-packaged <a href="http://en.wikipedia.org/wiki/Blog">blogging</a> solution for <a href="http://www.gnu.org/software/emacs/">Emacs</a>' <a href="http://orgmode.org/">Org Mode</a>. Org Mode is simply a wonderful tool for organizing thoughts, ideas, text, links, etc&hellip; While Org Mode has a rather difficult learning curve, its motto, <i>Your life in plain text.</i>, seems to be accurate.
-</p>
-
-
-<p>
-Spurred by ideas from <a href="http://decafbad.com">0xDECAFBAD.com</a> and code from <a href="http://nanoblogger.sourceforge.net/">NanoBlogger</a> (NB), I've gone about creating an Org Mode-based blogging system. And, if you are reading this, it is actually working. While NB and Org Mode do all the heavy lifting, I've simply added some glue to hook them together. What I have is far from a perfect solution, but it seems to work pretty well. 
-<!-- more -->
-
-There is a bit of a UI problem in that the Org Mode editing has a general look-and-feel like that seems like a typical Org Mode editor with a NanoBlogger posting jammed in. That's not surprising as, to save development time, I've basically just jammed a NanoBlogger posting into an Org Mode buffer.
-</p>
-
-
-<p>
-The other problem that I have with the system is that there is no way to automatically detect the difference between postings that have been published and those that have not published (ie: drafts). Unless you take extra care when publishing your blog, all postings, whether or not they are drafts, will be posted.
-</p>
-
-
-<p>
-Once I've fixed these two problems I will have a simple but reasonably functional blog system. By "simple" I mean that it is based off of NanoBlogger, a minimal blogging platform. That being said, the <a href="http://nanoblogger.sourceforge.net/">goals</a> of NB are simple goals compared to most blogging systems. If you want a richer blogging system then NB isn't for you.
-</p>
-
-
-<p>
-The <i>glue</i> that I've written to connect NB with Org Mode is a shell script and some <a href="http://en.wikipedia.org/wiki/Elisp">elisp</a> code. Combined they are only a few hundred lines of extensively-commented code. The entire NanoBlogger installation, living up to its name, is only 844K. 
-</p>
-
-
-<p>
-Being that NB is so very compact, my shell scripts and elisp code are small, everything is in plain text files, and that <a href="http://github.com">Github</a> provides simple and free hosting of both the blogging system and the blog, I'm going to merge my entire blogging system, minus Emacs, with my blog and put it into a single Github repository. 
-</p>
-
-
-<p>
-Once that is done, anyone who wants to try my blogging technology should only have to do a few simple steps:
-  # Fork my blog to their own Github repository.
-  # Clone their copy of my blog to their computer.
-  # Delete my blog postings (I'm assuming people will want to create their own postings and not republish mine).
-  # Run emacs and load the single elisp glue file I've created.
-  # Start blogging.
-</p>
-
-
-<p>
-I believe that it will take less than 10 minutes to get a blog up-and-running. That is longer than it takes to get a hosted blog on <a href="http://www.blogger.com">Blogger</a> but much, much faster than most self-hosted mechanisms such as <a href="http://www.movabletype.com/">MovableType</a>. The only prerequisites for this blogging system are
-</p>
-
-
-<ul>
-<li>Bash and the other common shell script utilities that are required by NanoBlogger such as sed and awk.
-</li>
-<li>A reasonably modern GNU Emacs. It comes with Org Mode pre-installed.
-</li>
-<li>The <i>git</i> command-line program.
-</li>
-</ul>
-
-
-
-
-<p>
-Being that this blogging system is only aimed at Emacs users, it is certain that they'll have Emacs already installed on their machine. It is also very likely that they'll have bash and the shell script utilities. Maybe they'll have git or maybe they'll need to install it. It is a simple installation.
-</p>
-
-
-<p>
-There is no need to install a local web server for staging. Provided you have versions from this decade, there is no need to ensure you have the right version of any of this software. Managing versions of installed software can be a major pain for many systems (eg: Python based-apps). You also have full access to your blog's data without having to export anything (everything is already in plain text files) or provide a credit card (Github is free).
-</p>
 
 ]]></content>
   </entry>

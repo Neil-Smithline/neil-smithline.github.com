@@ -9,7 +9,7 @@
   <meta name="author" content="Neil Smithline">
 
   
-  <meta name="description" content="As I&#8217;ve discussed in previous postings about this blog&#8217;s technology, this is a static blog written with NanoBlogger. NanoBlogger is a &hellip;">
+  <meta name="description" content="As I have been developing my blog&#8217;s technology, I have been surprised at the lack of a pre-packaged blogging solution for Emacs&#8217; Org &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -106,6 +106,50 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/02/15/nogit-blog-in-a-box/">Blog in a Box (Actually, a Repo)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-15T22:54:25-05:00" pubdate data-updated="true">Feb 15<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+As I have been developing my blog&#8217;s technology, I have been surprised at the lack of a pre-packaged <a href="http://en.wikipedia.org/wiki/Blog">blogging</a> solution for <a href="http://www.gnu.org/software/emacs/">Emacs</a>&#8217; <a href="http://orgmode.org/">Org Mode</a>. Org Mode is simply a wonderful tool for organizing thoughts, ideas, text, links, etc&hellip; While Org Mode has a rather difficult learning curve, its motto, <i>Your life in plain text.</i>, seems to be accurate.
+</p>
+<p>
+Spurred by ideas from <a href="http://decafbad.com">0xDECAFBAD.com</a> and code from <a href="http://nanoblogger.sourceforge.net/">NanoBlogger</a> (NB), I&#8217;ve gone about creating an Org Mode-based blogging system. And, if you are reading this, it is actually working. While NB and Org Mode do all the heavy lifting, I&#8217;ve simply added some glue to hook them together. What I have is far from a perfect solution, but it seems to work pretty well. 
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/02/15/nogit-blog-in-a-box/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/02/14/nbc/">New NanoBlogger Command-Line</a></h1>
     
     
@@ -189,74 +233,6 @@ But <a href="http://www.neilsmithline.com">www.neilsmithline.com</a> is now host
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/01/nasty-su-hack/">Nastiest Hack I&#8217;ve Seen in Awhile</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-01T20:40:51-05:00" pubdate data-updated="true">Feb 1<span>st</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>
-I was reading about <a href="http://code.google.com/p/android-scripting">SL4A</a>, also known as <a href="http://android.com">Android</a> <a href="http://en.wikipedia.org/wiki/Scripting_language">Scripting Languages</a>. They are a set of <a href="http://en.wikipedia.org/wiki/Quick_and_dirty">quick-and-dirty</a> ports of programming languages to the Android that interact with the Android <a href="http://en.wikipedia.org/wiki/Operating_system">OS</a>. I just stumbled upon this &#8221;<a href="http://code.google.com/p/android-scripting/issues/detail?id=184">issue page</a>&#8221; (it&#8217;s more like a <a href="http://en.wikipedia.org/wiki/Internet_forum">forum</a> than a bug report). 
-</p>
-<p>
-The developer is trying to run something on his Android, which is basically <a href="http://en.wikipedia.org/wiki/Linux">Linux</a>, that requires <a href="http://en.wikipedia.org/wiki/Superuser">superuser</a> permissions. As the responses started to build upon each other, one user suggested starting his shell script with the following lines (the actual posting was in Android&#8217;s flavor of <a href="http://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> but I&#8217;ve converted it to <a href="http://linux.die.net/man/1/su">bash(1)</a> to make it more accessible):
-</p>
-
-
-
-<pre class="src src--n">#!/bin/sh
-if [ <span style="background-color: #228800;">"$USER"</span> != <span style="background-color: #228800;">"root"</span> ]; then
-    exec sudo $SHELL -c <span style="background-color: #228800;">"`cat /proc/$$/cmdline | tr '\000' ' '`"</span> root
-fi
-</pre>
-
-
-<p>
-I simply couldn&#8217;t help being entertained at how revolting but equally brilliant that code is. But, I started thinking (always something dangerous) about how much I hate having to deal with stupid commands. For example, this is the output of running <a href="http://linux.die.net/man/8/apt-get">apt-get(8)</a> without proper permission:
-</p>
-
-
-
-<pre class="example">$ apt-get install foobar
-E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)
-E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
-</pre>
-
-
-<p>
-Being as I often write shell scripts with calls to <a href="http://linux.die.net/man/8/sudo">sudo(8)</a> in the script, I decided that imitation is the best response to being revolted (I know my mom said something like that :-).
-</p>
-<p>
-So I expanded upon the existing code, making it a full shell script utility. You can look the code or grab a copy at my <a href="https://github.com">GitHub</a> <a href="https://github.com/Neil-Smithline">page</a> in the <a href="https://github.com/Neil-Smithline/rerunasroot">rerunasroot</a> repository. I&#8217;ll be using it in the future.
-</p></div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/8/">&larr; Older</a>
@@ -274,6 +250,10 @@ So I expanded upon the existing code, making it a full shell script utility. You
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/08/21/disk-crash/">Disk Crash</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/08/05/time-tracking-part-2/">Time Tracking, Part 2: Org Mode File Format</a>
       </li>
     
@@ -287,10 +267,6 @@ So I expanded upon the existing code, making it a full shell script utility. You
     
       <li class="post">
         <a href="/blog/2012/07/21/desktop-time-tracking/">Desktop Time Tracking</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/07/15/bookifying-news/">Bookifying News</a>
       </li>
     
   </ul>
