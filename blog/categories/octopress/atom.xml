@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | My Geekdom]]></title>
   <link href="http://www.neilsmithline.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://www.neilsmithline.com/"/>
-  <updated>2012-08-22T15:30:27-04:00</updated>
+  <updated>2012-08-22T15:31:38-04:00</updated>
   <id>http://www.neilsmithline.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
@@ -511,7 +511,7 @@ There are also many discussion groups, forums, and helpful Jekyll users in the b
 <h2 id="sec-5">Future Postings About Octopress</h2>
 <div class="outline-text-2" id="text-5">
 
-<p>This is now my second posting about Octopress. My } discussed my initial opinions about Octopress. They were largely positive but so too were my } of Nanoblogger. 
+<p>This is now my second posting about Octopress. My {{{relative_url(2012/05/14/new-blog-tech, First Posting, first posting)}}} discussed my initial opinions about Octopress. They were largely positive but so too were my {{{relative_url(/blog/2011/12/07/new-blog-tech, Nanoblogger Posting, initial impressions)}}} of Nanoblogger. 
 </p>
 <p>
 At the time of writing this blog posting I'm certain that I'm going to love Octopress. (Though, if I change my mind, I am in possession of my own content so it is easy to switch to another platform.)
@@ -541,7 +541,7 @@ My next posting about Octopress will explain the minor modifications I have made
 <div class="outline-text-2" id="text-1">
 
 <p><a href="http://bit.ly/wq2Ien">NanoBlogger</a> really looked cool to me 
-(<a href="/blog/categories/blogging-tech">my postings about why I liked it</a>):
+(<a href="{{ root_url }}/blog/categories/blogging-tech">my postings about why I liked it</a>):
 </p><ul>
 <li>Small
 </li>

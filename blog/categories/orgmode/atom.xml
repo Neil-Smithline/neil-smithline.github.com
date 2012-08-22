@@ -4,7 +4,7 @@
   <title><![CDATA[Category: orgmode | My Geekdom]]></title>
   <link href="http://www.neilsmithline.com/blog/categories/orgmode/atom.xml" rel="self"/>
   <link href="http://www.neilsmithline.com/"/>
-  <updated>2012-08-22T15:30:27-04:00</updated>
+  <updated>2012-08-22T15:31:38-04:00</updated>
   <id>http://www.neilsmithline.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
@@ -183,7 +183,7 @@ In Org Mode all tags are created equal. For example, priority tags aren't differ
 <h2 id="sec-1">Motivation</h2>
 <div class="outline-text-2" id="text-1">
 
-<p>After yesterday's <a href="/blog/2012/05/26/octopress-is-pretty-great" title="Posting about Octopress">ranting about Octopress</a>, it occurred to me that while I now own the content of my blog postings, I don't own the content of my <a href="http://bit.ly/JvoqLE">tweets</a>. I'm sure that there's some way to convince <a href="http://bit.ly/Jvotaj">Twitter</a> to give me my tweets, but why should I rely on them to store my tweets.
+<p>After yesterday's <a href="{{ root_url }}/blog/2012/05/26/octopress-is-pretty-great" title="Posting about Octopress">ranting about Octopress</a>, it occurred to me that while I now own the content of my blog postings, I don't own the content of my <a href="http://bit.ly/JvoqLE">tweets</a>. I'm sure that there's some way to convince <a href="http://bit.ly/Jvotaj">Twitter</a> to give me my tweets, but why should I rely on them to store my tweets.
 </p>
 <p>
 The obvious answer is that my tweets should be created on my computer and then sent to Twitter. 
