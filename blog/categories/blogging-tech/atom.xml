@@ -4,7 +4,7 @@
   <title><![CDATA[Category: blogging-tech | My Geekdom]]></title>
   <link href="http://www.neilsmithline.com/blog/categories/blogging-tech/atom.xml" rel="self"/>
   <link href="http://www.neilsmithline.com/"/>
-  <updated>2012-08-27T14:36:52-04:00</updated>
+  <updated>2012-09-23T18:28:28-04:00</updated>
   <id>http://www.neilsmithline.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
@@ -12,6 +12,431 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Disk Crash, Part 3: OS Indepent Configuration]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/09/03/disk-crash-part3/"/>
+    <updated>2012-09-03T22:02:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/09/03/disk-crash-part3</id>
+    <content type="html"><![CDATA[<p>
+<i>NOTE: This was written on September 3<sup>rd</sup> and published on September 23<sup>rd</sup>.</i>
+</p>
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Managing Configuration</h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+My previous postings about my <a href="http://www.neilsmithline.com/blog/2012/08/21/disk-crash/">disk crash</a> and my <a href="http://www.neilsmithline.com/blog/2012/08/21/disk-crash-part2/">backup strategy</a> discuss how I keep files in sync across my computers. While I have a 3-tiered system using CrashPlan, DropBox, and rdist to meet different synchronization requirements for different files, this strategy uses tried-and-true technology.
+</p>
+<p>
+But identical files across machines doesn't guarantee identical behavior across the machines. At the moment, my computer collection is:
+</p><ul>
+<li>A laptop running Ubuntu 12.04
+</li>
+<li>A laptop double-booted to run Ubuntu 12.04 and Windows 7. I'm not a big Windows fan but sometimes I need to use it.
+</li>
+<li>My media/game server running Windows 7 (good for games for my kids), and Ubuntu 12.04 (best for me).
+</li>
+<li>My MacBook Pro running OS X 10.6.
+</li>
+<li>My VPS cloud server. It has been running Ubuntu 10.04 but I've requested an upgrade to the newest version of Debian, I think Lenny. I need the upgrade because Ubuntu 10.04 is 2+ years old. I'm switching to Debian because Debian tends to be more stable though it has a weaker <a href="http://en.wikipedia.org/wiki/Desktop_environment">desktop environment</a> than Ubuntu. Being that my VPS is a <a href="http://en.wikipedia.org/wiki/Headless_system">headless server</a>, the desktop features don't really matter to me.
+</li>
+</ul>
+
+
+<!-- more -->
+
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Home Directories</h2>
+<div class="outline-text-2" id="text-2">
+
+
+<p>
+Being that I run three different OSs (Ubuntu is built on Debian so I don't consider it a separate OS), I have different home directories.
+</p><ul>
+<li>Ubuntu/Debian: my home directory is <code>/home/neil</code>.
+</li>
+<li>Mac OS X: My home directory is <code>/Users/neil</code>.
+</li>
+<li>Windows 7: Synchronizing configuration between <a href="http://en.wikipedia.org/wiki/Unix-like">*nix</a> systems and Windows only makes sense if you are running <a href="http://cygwin.com">Cygwin</a>. Unfortunately, Cygwin home directories seem a bit random (info about <a href="http://cygwin.com/faq/faq-nochunks.html#faq.setup.home">Cygwin home directories</a>).
+</li>
+</ul>
+
+
+<p>
+While using the <code>$HOME</code> variable to refer to your home directory works in many situations, it doesn't always help. My solution to this is simple: *nix wins. My home directory is <code>/home/neil</code> on all of my computers. If it is not there by default, I use atypical <a href="http://en.wikipedia.org/wiki/Mount_(computing)">file mounts</a> or, when needed, <a href="http://en.wikipedia.org/wiki/Symbolic_link">symbolic links</a> to achieve conformance.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">My $PATH</h2>
+<div class="outline-text-2" id="text-3">
+
+
+<p>
+Maintaining your <a href="http://en.wikipedia.org/wiki/$PATH">$PATH</a> settings is a real hassle. Not only are executables in different locations based on your OS, I frequently find that executables are in different locations on the same OS.
+</p>
+<p>
+<a href="http://en.wikipedia.org/wiki/Ruby_(programming_language)">Ruby</a> is a good example of a program that tends to be in different locations on different computers. I use <a href="http://mxcl.github.com/homebrew/">Homebrew</a> to install Ruby on my Mac OS X computer, <a href="http://en.wikipedia.org/wiki/Apt-get">APT</a> to install Ruby on one of my Ubuntu laptops, and <a href="https://github.com/sstephenson/rbenv">rbenv</a> on my other Ubuntu laptop. I don't bother installying Ruby on my Windows computer as I only use Windows when I have to.
+</p>
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">Dynamically Assigned $PATH Variables</h3>
+<div class="outline-text-3" id="text-3-1">
+
+
+<p>
+As I use a single <code>.bashrc</code> file across all my computers and exectuables are scattered everywhere, I dynamically configure my <code>$PATH</code> variable based on the computer's file system. I use my a <code>bash</code> function, <code>addpath</code>, to add directories to <code>$PATH</code>:
+</p>
+
+
+
+<pre class="src src--n">addpath() {
+    if [ -d <span style="color: #004400; background-color: #CCCCCC;">"$@"</span> ]; then
+        PATH=<span style="color: #004400; background-color: #CCCCCC;">"$@:$PATH"</span>
+    fi
+}
+</pre>
+
+
+<p>
+With <code>addpath</code>, I don't have to worry about adding too many directories to my <code>$PATH</code>. This allows code such as:
+</p>
+
+
+
+<pre class="src src-sh"><span class="linenr">1:  </span>addpath /usr/bin        <span style="color: #550055; background-color: #CCCCCC;"># </span><span style="color: #550055; background-color: #CCCCCC;">typical *nix path component</span>
+<span class="linenr">2:  </span>addpath /sw/bin         <span style="color: #550055; background-color: #CCCCCC;"># </span><span style="color: #550055; background-color: #CCCCCC;">used by some Mac OS X package managers</span>
+<span class="linenr">3:  </span>addpath /c/usr/bin      <span style="color: #550055; background-color: #CCCCCC;"># </span><span style="color: #550055; background-color: #CCCCCC;">used by Cygwin on Windows</span>
+</pre>
+
+
+<p>
+<code>addpath</code> ensures that only existing directories are added to <code>$PATH</code>.
+</p>
+<p>
+This meets <i>nearly</i> all of my needs. The one problem I have with this solution is that I find that my <code>$PATH</code> frequently changes. For example, when I recently started using <code>rbenv</code>, a path change was required. These changes aren't major but sometimes I need a few tries to get it right.
+</p>
+<p>
+So I have a strategy for repeatedly updating my <code>.bashrc</code> file, executing the <code>.bashrc</code> file, and testing my new <code>$PATH</code>. The first part of this strategy is that, the first time <code>bash</code> is run, I squirrel away the value of <code>$PATH</code> into another variable:
+</p>
+
+
+<pre class="src src-SH"><span class="linenr">1:  </span>export ORIG_PATH=<span style="color: #004400; background-color: #CCCCCC;">"${ORIG_PATH:-$PATH}"</span>
+<span class="linenr">2:  </span>export PATH=<span style="color: #004400; background-color: #CCCCCC;">"$ORIG_PATH"</span>
+</pre>
+
+
+<p>
+For those of you that aren't fluent in shell syntax, <code>ORIG_PATH=${ORIG_PATH:-$PATH}</code> will set the value of <code>$ORIG_PATH</code> to <code>$PATH</code> the first time it is executed. On subsequent executions, <code>$ORIG_PATH</code> will be assigned the value of <code>$ORIG_PATH</code>. This ensures that <code>$ORIG_PATH</code> always equals the value of <code>$PATH</code> the first time the <code>.bashrc</code> file is executed.
+</p>
+<p>
+I then use <code>$ORIG_PATH</code> as the basis for all of my <code>$PATH</code> changes.
+</p>
+<p>
+The final piece of my <code>$PATH</code> management is this function:
+</p>
+
+
+<pre class="src src-SH"><span class="linenr">1:  </span>reinit () {
+<span class="linenr">2:  </span>    . $HOME/.bashrc
+<span class="linenr">3:  </span>}
+</pre>
+
+
+<p>
+It is just a convenience function to execute my <code>.bashrc</code> file in the current shell. Being that my <code>.bashrc</code> file is <a href="http://en.wikipedia.org/wiki/Idempotent">idempotent</a>, I can rerun it as often as I need, confident that my <code>bash</code> environment will be the same no matter how many times I've executed my <code>.bashrc</code>.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">Miscellaneous Path Differences</h3>
+<div class="outline-text-3" id="text-3-2">
+
+
+
+</div>
+
+<div id="outline-container-3-2-1" class="outline-4">
+<h4 id="sec-3-2-1">Managing <code>rbenv</code></h4>
+<div class="outline-text-4" id="text-3-2-1">
+
+<p>While the above solution handles general <code>$PATH</code> configuration, some special cases still arise. Managing my <code>$PATH</code> to work best with Ruby tends to change across my computers and even change over time on the same computer.
+</p>
+<p>
+For Ruby, some of my machines have <code>rbenv</code> installed on them and some don't. On one machine I find that sometimes I use <code>rbenv</code> and at other times I don't wish to use it. So I have a one-off solution for managing my <code>rbenv</code> environment in my <code>.bashrc</code> file:
+</p>
+
+
+
+<pre class="src src--n">if [ -f <span style="color: #004400; background-color: #CCCCCC;">"$HOME/.rbenv/USE-RBENV"</span> ]; then
+    addpath $HOME/.rbenv/shims
+    ... other stuff ...
+fi
+</pre>
+
+
+<p>
+The file <code>USE-RBENV</code> is an empty file that I create when I want to, not surprisingly, use <code>rbenv</code>. To switch between using and not using <code>rbenv</code> I create or delete the <code>USE-RBENV</code> file and re-execute my <code>.bashrc</code> file using my <code>bash</code>  <code>reinit</code> function. This strategy leverages the dynamic path settings and idempotency of my <code>.bashrc</code> file.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-2-2" class="outline-4">
+<h4 id="sec-3-2-2">Managing My <code>.emacs</code></h4>
+<div class="outline-text-4" id="text-3-2-2">
+
+
+<p>
+Avoiding most of the details, <a href="http://en.wikipedia.org/wiki/Emacs">Emacs</a> needs to find some <a href="http://en.wikipedia.org/wiki/Elisp">elisp</a> files as well as some *nix files that are not in the same place on all of my computers. For loading elisp files, I have written a function that is similar to my <code>addpath</code> function that I use in my <code>.bashrc</code> file.
+</p>
+<p>
+The elisp function, <code>add-load-path</code>, has a bit more smarts than <code>addpath</code>. <code>addpath</code> works by omitting non-relevant directories to <code>$PATH</code>. <code>add-load-path</code> knows how to search through directories that may contain an elisp package and then include that directory. A call to <code>add-load-path</code> is simply:
+</p><pre class="example">
+(add-load-path "jdee/lisp")
+</pre>
+
+
+<p>
+There are also some functions of Emacs that behavior better if they know the full path of some executables. For example, Emacs can make use of the *nix <a href="http://en.wikipedia.org/wiki/Man_page">man(1)</a> command. While <code>add-load-path</code> finds elisp files, <code>find-first-executable</code> searches for executable files. This is the elisp command I use to find the <code>man</code> executable:
+</p>
+
+
+<pre class="src src--n">(setq manual-program
+        (find-first-executable
+         '(<span style="color: #004400; background-color: #CCCCCC;">"/usr/local/bin/man"</span> <span style="color: #004400; background-color: #CCCCCC;">"/usr/bin/man"</span>
+           <span style="color: #004400; background-color: #CCCCCC;">"/bin/man"</span> <span style="color: #004400; background-color: #CCCCCC;">"c:/cygwin/bin/man.exe"</span>)))
+</pre>
+
+
+<p>
+<code>find-first-executable</code> returns the first path that corresponds to an executable. You may have noticed the <code>c:/cygwin/bin/man.exe</code> argument which allows the same <code>.emacs</code> file to run on Windows as well as *nix.
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">In The Next Installment</h2>
+<div class="outline-text-2" id="text-4">
+
+
+<p>
+The next and final part of this series will delve a bit deeper into my general philosophy of portable and maintainable configuration and code. In general, I try to plan for the unplannable. I try not to let the fact that planning for the unplannable is impossible get in my way.
+</p>
+<p>
+I try to produce flexible designs that typically include a separation of data and code. Then, when the unexpected occurs, in theory, I can return to work with only a minimal hit to my productivity. In some sense, I use the <a href="http://en.wikipedia.org/wiki/Model-view-controller">MVC</a> programming model in my data management and system configuration.
+</p></div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Disk Crash, Part 2: My Backup Strategy]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/08/21/disk-crash-part2/"/>
+    <updated>2012-08-21T22:02:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/08/21/disk-crash-part2</id>
+    <content type="html"><![CDATA[<p>
+/NOTE: This was written on August 21<sup>st</sup> and published on September 23<sup>rd</sup>
+</p>
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">My File Distribution And Backup Strategy</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>In my <a href="http://www.neilsmithline.com/blog/2012/08/21/disk-crash/">previous posting</a> I discussed my how I categorize files in terms of importance, timeliness when distributing files, and the platforms I distribute the files to. Here I'll cover the technologies I use to meet my file management goals.
+</p>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">My Backup Strategy</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Making sure your computer is backed up is typically a hassle. Even worse, my experience has taught me that thinking that you are backing up your system is very different from actually backing up your system. Numerous times I've been told by a system admin that, unbeknownst to them, the backups are unusable.
+</p>
+<p>
+Knowing how difficult backing up your computer can be, I outsource it to a company whose only business is backing up data.
+</p>
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">CrashPlan</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+
+
+<!-- more -->
+<p>
+I started using <a href="http://www.crashplan.com">CrashPlan</a> because they have a <a href="http://www.crashplan.com/consumer/compare.html">$25/year backup plan</a>. That is, they are cheap. As their service was simple, reliable, and pretty much configure-and-forget-about-it, I upgraded to their <a href="http://www.crashplan.com/consumer/crashplan-plus.html">premium plan</a>. It costs $120/year. For that $10/month I get unlimited data storage and can backup as many as 10 computers.
+</p>
+<p>
+While my household has more than 10 computers, many of them aren't used very often and don't need to be backed up so the limit of 10 computers has never been a problem.
+</p>
+<p>
+I consider the $10/month a great deal as CrashPlan has been a life saver for me  more than once. CrashPlan has an application that runs in the background, similar to DropBox's application, and continually backs up your computer. The initial backup can take a few days but once backed up, the Crashplan database is never more than a few minutes behind changes on your disk drive.
+</p>
+<p>
+I should mention that the initial backup takes a few days because CrashPlan tries to share the computer with other applications. I can restore all my backed up data from CrashPlan in about an hour.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2">Not Just Backup, Secure Backup</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<p>When configured properly, CrashPlan uses the <a href="http://en.wikipedia.org/wiki/Blowfish_(cipher)">Blowfish</a> encryption algorithm with a <a href="http://support.crashplan.com/doku.php/faq/security#what_type_of_encryption_does_crashplancrashplan_use">448-bit key</a>. My encryption key was generated on my computer and has never left it. This means that even if CrashPlan's servers are compromised and all of my backup data is stolen, it is very unlikely that the attacker could decrypt my data.
+</p></div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3">Backup Everything</h3>
+<div class="outline-text-3" id="text-2-3">
+
+<p>I use CrashPlan to backup everything that I want to backup. I don't distinguish between more or less important files. I just backup everything I think I may miss if it were to go away. CrashPlan is even kind enough to keep multiple revisions of each file and deleted files available for restoration. What a deal.
+</p>
+<p>
+On my Mac OS X, I back up nearly everything in my home directory. While I try to keep my application preferences out of <code>~/Library/...</code>, some applications just won't cooperate. So I also selectively backup directories in <code>~/Library/...</code> I also don't bother backing up <code>~/Downloads</code>. I don't currently back up <code>~/.cpan</code>, the data directory for the Perl package installer. As mentioned in my previous posting, I don't yet have a working strategy for what applications have been installed by package managers such as CPAN.
+</p>
+</div>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">My File Distribution Strategy</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>My file distribution strategy is more complex than my backup strategy. To date I've not found any service that meets all of my needs for data distribution. This leaves me using multiple distribution technologies based on the importance and timeliness of the data.
+</p>
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">Dropbox</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<p><a href="http://dropbox.com">Dropbox</a> and similar services have become quite popular the last few years. I use Dropbox far data distribution continually. In fact, this blog entry is being authored inside my Dropbox directory. Dropbox is the primary data distribution technology that I use for managing the distribution of High Importance, Timely Distribution files. Especially my <a href="http://www.orgmode.org">Org Mode</a> PIM files.
+</p>
+<p>
+Because of Dropbox's nearly instantaneous file distribution, I can be working on one laptop, save my Org Mode files, pick up my other laptop to find the updated Org Mode files waiting for me. Wonderful!
+</p>
+
+</div>
+
+<div id="outline-container-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1">Dropbox Security Concerns</h4>
+<div class="outline-text-4" id="text-3-1-1">
+
+<p>While Dropbox is awfully convenient, I'm not terribly comfortable with its security. <a href="https://www.dropbox.com/help/27/en">Dropbox's security claims</a> state that they use <a href="http://en.wikipedia.org/wiki/Transport_Layer_Security">TLS</a>, which is frequently referred to as "SSL", for network security. But the rest of their claims are intangible. For example, what is a "hardened" website and how is it better than other websites? They flat out state:
+</p><blockquote>
+
+<p>Like most online services, we have a small number of employees who must be able to access user data for the reasons stated in our privacy policy (e.g., when legally required to do so).
+</p>
+</blockquote>
+
+
+<p>
+Without disputing Dropbox's claim that most online services have a means to allow their employees to access your private data, I use CrashPlan for my backups and know that they can't access my private data.
+</p>
+<p>
+Even if Dropbox's employees are 100% trustworthy, if their employees can access your data, so too can a hacker.
+</p>
+<p>
+Because of my security concerns, I avoid using Dropbox for my more sensitive data. For example, I have an Org Mode todo list related to financial matters such as taxes and bill paying. The files that have the details about those tasks are not in my Dropbox directory.
+</p>
+<p>
+If you are interested, here's a <a href="http://lifehacker.com/5794486/how-to-add-a-second-layer-of-encryption-to-dropbox">nice article</a> covering some of Dropbox's security problems as well as strategies to make them less of a problem.
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">rdist + ssh</h3>
+<div class="outline-text-3" id="text-3-2">
+
+<p><a href="http://linux.about.com/library/cmd/blcmdl1_rdist.htm">rdist</a> and <a href="http://linux.about.com/od/commands/l/blcmdl1_ssh.htm">ssh</a> are two tried and true Unix programs. rdist is used to keep two directories synchronized. The directories can be on one computer but are typically on two different computers (<i>rdist</i> = Remote Distribution).
+</p>
+<p>
+rdist and Dropbox are similar in that they both keep directories across multiple machines synchronized. However, unlike Dropbox, rdist must be manually run. It doesn't watch specific directories watching for a file modification and then automatically synchronize the files across all of your computers.
+</p>
+<p>
+I use rdist to sync files to my <a href="http://ubuntu.com">Ubuntu</a> <a href="http://en.wikipedia.org/wiki/Virtual_private_server">VPS</a> server that I rent, quite happily, from <a href="http://rosehosting.com">RoseHosting</a>. The reason for synching to my VPS is that it is my only computer that is always accessible from the internet:
+</p><ul>
+<li>Rosehosting keeps my server running.
+</li>
+<li>It has a <a href="http://en.wikipedia.org/wiki/Domain_Name_System">DNS</a> entry so it can be found from any computer.
+</li>
+<li>Unlike my personal computers, especially my laptops, my VPS is never turned off or not online.
+</li>
+<li>Unlike computers on my home network, the firewall my VPS is behind allows incoming connections. My home network firewall is significantly more restrictive.
+</li>
+</ul>
+
+
+<p>
+In short, my VPS is the only computer I have that is available 24x7 from any internet connection. This means that every computer can sync with it at any time. While it would be faster and use less network bandwidth if I synched the computers in my home to each other rather than a VPS somewhere out in the cloud, I have more than enough bandwidth to use.
+</p>
+</div>
+</div>
+
+</div>
+
+
+
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Next Up</h2>
+<div class="outline-text-2" id="text-4">
+
+
+<p>
+Keeping files in sync is great but identical files don't always behave identically on different systems. For example, there tends to be lots of file paths in my <code>.bashrc</code> and my <code>.emacs</code> files. I utilize a series of tricks to allow many of these files to behave identically on different machines.
+</p></div>
+</div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Disk Crash]]></title>
@@ -44,7 +469,7 @@ While I had some gaps in my backup strategy, within 2 hours of my disk crash I h
 My primary computers are my MacBook Pro and an <a href="http://en.wikipedia.org/wiki/Hewlett-Packard">HP</a> laptop running <a href="http://en.wikipedia.org/wiki/Ubuntu_(operating_system)">Ubuntu Linux</a>. My mobile is a <a href="http://en.wikipedia.org/wiki/Samsung_Infuse_4G">Samsung Infuse</a> running <a href="http://en.wikipedia.org/wiki/CyanogenMod#CyanogenMod_10">CyanogenMod 10</a>, a customized version of <a href="http://en.wikipedia.org/wiki/Android_version_history#Android_4.1.x_Jelly_Bean">Android 4.1 Jelly Bean</a>. I also rent a <a href="http://en.wikipedia.org/wiki/Virtual_private_server">VPS</a> <a href="http://en.wikipedia.org/wiki/Cloud_computing">cloud computer</a> running Ubuntu. Lastly, I have an <a href="http://en.wikipedia.org/wiki/Asus">Asus</a> running <a href="http://en.wikipedia.org/wiki/Windows_7">Windows 7</a>. I primarily use te Windows computer for <a href="http://en.wikipedia.org/wiki/Streaming_media">streaming media</a> (I don't dig Windows).
 </p>
 <p>
-I use file distribution to achieve two goals. I like to keep my configuration files consistent across my MacBook and two Ubuntu computers. This includes my <a href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)#Startup_scripts">.bashrc</a> and my <a href="http://en.wikipedia.org/wiki/Emacs_Lisp#Source_code">.emacs</a> site startup files. While I want those files to stay in sync to make the management of them simpler, there's generally no rush in synchronizing them. 
+I use file distribution to achieve two goals. I like to keep my configuration files consistent across my MacBook and two Ubuntu computers. This includes my <a href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)#Startup_scripts">.bashrc</a> and my <a href="http://en.wikipedia.org/wiki/Emacs_Lisp#Source_code">.emacs</a> site startup files. While I want those files to stay in sync to make the management of them simpler, there's generally no rush in synchronizing them.
 </p>
 <p>
 Another example of my file distribution involves my <a href="http://en.wikipedia.org/wiki/Personal_information_manager">PIM</a>. I use <a href="http://orgmode.org">Org Mode</a> as my <a href="http://en.wikipedia.org/wiki/Personal_information_manager">PIM</a> and want the data files to be synchronized across my MacBook, two Linux boxes, and my Android. I want those files synchronized immediately as I frequently move from computer to computer and always want my PIM data to be up to date.
@@ -670,480 +1095,6 @@ As you look at this screenshot, remember that almost all of this is automaticall
 <img src="http://www.neilsmithline.com/assets/screen-snapshots/tweets-screenshot.png"  alt="http://www.neilsmithline.com/assets/screen-snapshots/tweets-screenshot.png" />
 <span style="color:#F8F8F8;">For Technorati: PHTDYXEZKM3Q</span>
 </p></div>
-</div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Octopress Is Pretty Great]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/05/26/octopress-is-pretty-great/"/>
-    <updated>2012-05-26T13:32:00-04:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/05/26/octopress-is-pretty-great</id>
-    <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Jekyll Overview</h2>
-<div class="outline-text-2" id="text-1">
-
-<p>I have simply fallen in love with <a href="http://bit.ly/KT1aFT">Octopress</a>. I think I mentioned previously that Octopress is an auto-configuration tool wrapped around <a href="http://bit.ly/Jm1bmc">Jekyll</a>. And Jekyll is the technology behind <a href="http://bit.ly/Krch8n">Github pages</a>. As such, if you use Jekyll for your blogging platform, you can preview your blog locally, push it to Github, and let Github do all the page serving. 
-</p>
-<p>
-This isn't actually as much work for the Github servers as you may think. Jekyll is a <a href="http://bit.ly/KrdOeu">static</a> <a href="http://bit.ly/KrdUmf">blogging system</a> with no <a href="http://bit.ly/KrdX1s">CMS support</a>. A static blog needs to be <a href="http://bit.ly/Kre8tB">compiled</a> whenever content is modified, but once compiled, the only thing the server needs to do is serve the pages. Dynamic blogging systems such as <a href="http://bit.ly/KreoZJ">Wordpress</a> and <a href="http://bit.ly/KreuAH">Joomla</a> are programs that run on the server and work interactively with the web server to produce each page.
-</p>
-</div>
-
-</div>
-
-
-
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">Configuration</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>Octopress's biggest addition to Jekyll is that it automagically configures Jekyll for you. I have found that configuring Jekyll is a bit of a pain. Jekyll decided to trade easy configuration for flexibility. This is a common decision in applications and one I can't really argue with.
-<!-- more -->
-
-But Octopress packages a mostly configured Jekyll installation in a neat little package. The introductory paragraph on <a href="http://bit.ly/KT1aFT">Octopress.org</a> states:
-</p><blockquote>
-
-<p>Octopress is a framework designed by Brandon Mathis for Jekyll, the blog aware static site generator powering Github Pages. To start blogging with Jekyll, you have to write your own HTML templates, CSS, Javascripts and set up your configuration. But with Octopress All of that is already taken care of. Simply clone or fork Octopress, install dependencies and the theme, and you're set.
-</p>
-</blockquote>
-
-
-<p>
-While that may sound a bit intimidating to the less-computer literate, the Octopress site carefully steps you through the process. I've installed and used Wordpress, Joomla, <a href="http://bit.ly/KrgcC1">Drupal</a>, <a href="http://bit.ly/wq2Ien">Nanoblogger</a>, and many other blogging systems. I can say that Octopress is, by far, the easiest. 
-</p>
-<p>
-The above quote states three steps for installing Octopress but there are actually a few more steps:
-</p><ol>
-<li>Install Git
-</li>
-<li>Clone or fork Octopress
-</li>
-<li>Install dependencies
-</li>
-<li>Install theme
-</li>
-<li>Configure your blog
-</li>
-<li>Configure deployment
-</li>
-</ol>
-
-
-
-</div>
-
-<div id="outline-container-2-1" class="outline-3">
-<h3 id="sec-2-1">Git</h3>
-<div class="outline-text-3" id="text-2-1">
-
-<p>If you don't have <a href="http://bit.ly/KrgU2a">Git</a> installed, you need to install it. This was a trivial task for most users but, thanks to the clever folk at Github, has become idiot-proof. Github created a <a href="http://bit.ly/KrhqgF">Mac OS X</a> and <a href="http://windows.github.com/">Windows</a> application that allows easy use of Github. These make installing and using Git user-friendly for those who prefer to avoid <a href="http://bit.ly/xOIkfJ">CLI</a>s.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-2-2" class="outline-3">
-<h3 id="sec-2-2">Clone Or Fork Octopress</h3>
-<div class="outline-text-3" id="text-2-2">
-
-<p>Cloning Octopress, simpler than forking it, is a single command line 
-</p><pre class="example">
-git clone git://github.com/imathis/octopress.git octopress
-</pre>
-
-<p>It takes only a few mouse clicks if you are using one of Github's applications to do the clone. 
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-2-3" class="outline-3">
-<h3 id="sec-2-3">Install Dependencies</h3>
-<div class="outline-text-3" id="text-2-3">
-
-<p>Installing the dependencies is, yet again, a few simple CLI commands described in an easy-to-read style on Octopress's <a href="http://bit.ly/LExpsY">setup</a> page.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-2-4" class="outline-3">
-<h3 id="sec-2-4">Install The Theme</h3>
-<div class="outline-text-3" id="text-2-4">
-
-<p>Installing the theme is a single CLI command:
-</p><pre class="example">
-rake install
-</pre>
-
-<p>There are additional theme installation options but you can simply ignore them as the defaults work well. In a subsequent blog post I'll discuss how I have made a minor alteration to the Octopress installation that allows me to entirely change my theme as often as I like without losing any data. Simple theme changes (eg: page colors) are easy to make at anytime. 
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-2-5" class="outline-3">
-<h3 id="sec-2-5">Configure Your Blog</h3>
-<div class="outline-text-3" id="text-2-5">
-
-<p>Configuring your blog is perhaps the most complicated step in the entire installation process. You'll need to open a text editor such as <a href="http://bit.ly/LEyD7l">Textedit</a> on a Mac or <a href="http://bit.ly/LEyRvo">Notepad</a> on Windows. 
-</p>
-<p>
-The configuration file is written in a format called <a href="http://bit.ly/LEzjd3">YAML</a>. That sounds a lot scarier than it actually is. Octopress's <a href="http://bit.ly/Mlynfm">configuration page</a> states that you just need to edit the existing <code>_config.yml</code>, and modify the following lines:
-</p><pre class="example">
-url:                # For rewriting urls for RSS, etc
-title:              # Used in the header and title tags
-subtitle:           # A description used in the header
-author:             # Your name, for RSS, Copyright, Metadata
-simple_search:      # Search engine for simple site search
-description:        # A default meta description for your site
-subscribe_rss:      # Url for your blog's feed, defauts to /atom.xml
-subscribe_email:    # Url to subscribe by email (service required)
-email:              # Email address for the RSS feed if you want it.
-</pre>
-
-
-<p>
-Several of the configuration options have default values or can be left empty.
-</p>
-<p>
-This configuration step in Octopress differs from other blogging systems only in that you have to use Textedit or Notepad to enter the data. Many other systems allow you to enter the data into a <a href="http://bit.ly/n1i2v2">GUI</a> or a web page. 
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-2-6" class="outline-3">
-<h3 id="sec-2-6">Configuring Deployment</h3>
-<div class="outline-text-3" id="text-2-6">
-
-<p>Configuring your deployment, the final setup action, involves telling Octopress what computer is going to <a href="http://bit.ly/LECz8n">host</a> your blog. While you can run your blog right on your desktop or laptop, it will only be visible by other people in your home or office. This is helpful if you want to preview your blog before "publishing" it so the rest of the world can see it but when you want to publish your blog you will need to have access to a hosting computer (AKA: a server) that is on the internet <a href="http://bit.ly/LEIgTI">24x7</a>.
-</p>
-<p>
-Getting access to a server can be less than straightforward and almost always costs money. But this is rather simple with Octopress because:
-</p><ul>
-<li>Octopress is a static blog. This is compared to a dynamic blog that requires programs to interact with the server. Once Octopress has done its job, you just need to put the blog into the right location on your server and everything will magically work.
-</li>
-<li>Octopress, the blogging system that tries to make configuration easy, has carefully documented, in easy-to-read text, three different ways to <a href="http://bit.ly/LEGcuN">host your blog</a> on a server. Two of them are absolutely free: Github itself (the one I use) and <a href="http://bit.ly/LEGIsK">Heroku</a>. The third strategy using <a href="http://bit.ly/LEIdHt">rsync</a> is a bit more complex and typically costs some money to use. That being said, the documentation guides you to a hosting company that charges only $5 a month for server access. Unless you <b>know</b> that you need a server for something besides hosting a blog, I strongly recommend going with one of the other options. 
-</li>
-</ul>
-
-
-<p>
-As I said, I am using Github to host my blog. It takes exactly one line to configure your blog to use Github. I haven't used the other deployment mechanisms but Heroku seems to be of equal complexity while rsync definitely requires more work and a greater knowledge of computers.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-2-7" class="outline-3">
-<h3 id="sec-2-7">Configuration Summary</h3>
-<div class="outline-text-3" id="text-2-7">
-
-<p>While there is a lot of descriptive text above, the entire configuration process took me a couple of hours the first time and about 20 minutes the second time. Unless you are like me and enjoy trying stupid things, you'll only need to install it once :-) I would imagine that a non-technical users could easily install Octopress in half a day.
-</p>
-<p>
-The only exception that I can think of would be if you're on a Windows computer and have lots of difficulties installing the dependencies. Mac OSX and Linux come with most of the dependencies pre-installed. I don't think that Windows does.
-</p>
-</div>
-</div>
-
-</div>
-
-
-
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3">It's Blogging Time!</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>Before you can actually start to blog, you need to choose an editor and a markup language. While you can change these at anytime, you need one of each to blog. I'll discuss this in a subsequent blog posting where I discuss my personal Octopress configuration.
-</p>
-<p>
-Now that everything is configured, it's time to blog. While this involves using the command line, it is a trivial usage. When you want to create a new post you execute the command:
-</p><pre class="example">
-rake 'new_post[Name Of My Post]'
-</pre>
-
-<p>The reason why that is the magical incantation to create a new post is unimportant. All you need to do is remember (or be able to lookup) that command.
-</p>
-<p>
-When the <code>rake</code> command finishes, it will tell you the name of the file for your new posting. Just open the file and start typing. If you want to see a preview of your blog before publishing it to the server, run the command
-</p><pre class="example">
-rake preview
-</pre>
-
-
-<p>
-Then you can open your web browser to <a href="http://localhost:4000">http://localhost:4000</a> to see your blog. I strongly recommend that you copy-and-paste that URL and then bookmark it. 
-</p>
-<p>
-Once you are ready to publish your blog to the world, execute the command
-</p><pre class="example">
-rake gen_deploy
-</pre>
-
-<p>And <i>voila</i>! You have updated your blog.
-</p>
-</div>
-
-</div>
-
-
-
-
-<div id="outline-container-4" class="outline-2">
-<h2 id="sec-4">Octopress Summary</h2>
-<div class="outline-text-2" id="text-4">
-
-
-</div>
-
-<div id="outline-container-4-1" class="outline-3">
-<h3 id="sec-4-1">Cons</h3>
-<div class="outline-text-3" id="text-4-1">
-
-
-</div>
-
-<div id="outline-container-4-1-1" class="outline-4">
-<h4 id="sec-4-1-1">Configuration</h4>
-<div class="outline-text-4" id="text-4-1-1">
-
-<p>Configuring Octopress is definitely more complex than configuring a blog on Blogger.com or a similar service. If you are looking for the easiest solution, no-frills solution, go with one of those.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-4-1-2" class="outline-4">
-<h4 id="sec-4-1-2">Single Computer Publishing</h4>
-<div class="outline-text-4" id="text-4-1-2">
-
-<p>While I haven't seen it explicitly stated in any documentation for Octopress or Jekyll, they really are intended to publish new posts from a single computer. You can author the posts on any computer or network service. The first option that jumps into my head is <a href="http://bit.ly/KTgaWb">Google Docs</a>. But to publish (ie: to deploy) your site from more than one computer will definitely require extra configuration, computer skills, and tinkering. If you absolutely must <i>publish</i> from multiple computers, the online blogging systems may be a better choice.
-</p>
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-4-2" class="outline-3">
-<h3 id="sec-4-2">Pros</h3>
-<div class="outline-text-3" id="text-4-2">
-
-
-</div>
-
-<div id="outline-container-4-2-1" class="outline-4">
-<h4 id="sec-4-2-1">Configuration</h4>
-<div class="outline-text-4" id="text-4-2-1">
-
-<p>While configuring a blog on a site like Blogger is definitely easier than configuring Octopress, if Blogger doesn't meet your needs, I think Octopress is easier to manage than all Joomla, Drupal, and all of its competitors &ndash; at least the ones I've seen.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-4-2-2" class="outline-4">
-<h4 id="sec-4-2-2">Content Possession</h4>
-<div class="outline-text-4" id="text-4-2-2">
-
-<p>When you use a site like Blogger.com, the content you have posted is in the possession of Blogger. They determine how they will store your content, how they will let you export it, modify it, delete it, etc&hellip; But with Octopress, you are always in possession of your content. In order to have your blog visible on the web, you must deploy it to a server, but that is just a copy of your content. You are always in possession of the original content.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-4-2-3" class="outline-4">
-<h4 id="sec-4-2-3">Content Accessibility</h4>
-<div class="outline-text-4" id="text-4-2-3">
-
-<p>Whether you are using an online blogging service such as Blogger.com or hosting your own blogging application such as Joomla or Drupal, your postings are typically not stored in a convenient manner. Even if the blogging system lets you get access to all of your content, the content is frequently meaningless or difficult to use.
-</p>
-<p>
-But with Octopress, the content for each posting is in a file. One file for each posting. While I've not discussed choosing an editor or a markup language in this posting, it is your choice of editor and markup language that determine what you can do with your content.
-</p>
-<p>
-For example, I was blogging with Nanoblogger for a few months. As it required continual tinkering, I moved to Octopress. Like Octopress, Nanoblogger lets you choose your editor and markup language. Because both blogging systems give you accessibility to your content, I was able to convert about 20 Nanoblogger postings into Octopress postings in about 20 minutes. I imagine it would have taken less computer-savvy users as long as 2-3 minutes a posting. 
-</p>
-<p>
-The one-file-one-posting principal of Octopress, and Nanoblogger, make life so much simpler.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-4-2-4" class="outline-4">
-<h4 id="sec-4-2-4">And It Looks Good Too!</h4>
-<div class="outline-text-4" id="text-4-2-4">
-
-<p>Even after customizing them, I find that Wordpress blogs tend to be drap and all look like <a href="http://bit.ly/KThoAU">this</a> and that Blogger.com blogs require lots of tinkering but still tend to look like <a href="http://bit.ly/KThtVf">this</a>. On the other hand, Octopress blogs tend to look like the <a href="http://bit.ly/KT1aFT">Octopress homepage</a> or my <a href="http://bit.ly/yGGszW">blog</a>.
-</p>
-<p>
-IMO, Octopress looks great out of the box. I am partial to using dark themes where black, white, and shades of gray are the main colors. It took me about 10 minutes to change the default <a href="http://bit.ly/KT1aFT">colors for Octopress</a> to use my preferred <a href="http://bit.ly/yGGszW">color pallette</a>.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-4-2-5" class="outline-4">
-<h4 id="sec-4-2-5">It Will Grow With You</h4>
-<div class="outline-text-4" id="text-4-2-5">
-
-<p>I think that Octopress's greatest features are the above mentioned ease-of-configuration and the fact that, while it is hidden from you, it is built on a very strong blogging engine, Jekyll. So, if you wake up one day and say "Gee. I wish my blog could do XYZ.", the odds are that it can. Just google "Jekyll blogs XYZ" and, at least for reasonable XYZs, you'll find that instructions about reconfiguring your blog so it can do XYZ.
-</p>
-<p>
-There are also many discussion groups, forums, and helpful Jekyll users in the blogosphere that can offer suggestions, provide pointers, or even make a small modification to Octopress/Jekyll so that XYZ is easy to do.
-</p>
-</div>
-</div>
-</div>
-
-</div>
-
-
-
-
-<div id="outline-container-5" class="outline-2">
-<h2 id="sec-5">Future Postings About Octopress</h2>
-<div class="outline-text-2" id="text-5">
-
-<p>This is now my second posting about Octopress. My } discussed my initial opinions about Octopress. They were largely positive but so too were my } of Nanoblogger. 
-</p>
-<p>
-At the time of writing this blog posting I'm certain that I'm going to love Octopress. (Though, if I change my mind, I am in possession of my own content so it is easy to switch to another platform.)
-</p>
-<p>
-My next posting about Octopress will explain the minor modifications I have made to Octopress. I made these modifications to accomplish two goals:
-</p><ol>
-<li>Allow me to easily use <a href="http://bit.ly/zhYdcB">Org Mode</a> as my markup language and <a href="http://emacswiki.org">Emacs</a> as my editor. While I simply love this setup, I imagine that it will only be of interest to preexisting Emacs users.
-</li>
-<li>Keep my content totally separate from the Octopress's content. By this I mean that if, you were to burn my computer as I'm typing these very words, I could have Octopress up and running on a new computer with all of my content, including postings, images, etc.., in about 20 minutes. IMO, this an improvement on Octopress's configuration and should probably be changed in Octopress.
-</li>
-</ol>
-
-</div>
-</div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[YANBT: Yet Another New Blogging Technology]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/05/14/new-blog-tech/"/>
-    <updated>2012-05-14T12:36:00-04:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/05/14/new-blog-tech</id>
-    <content type="html"><![CDATA[<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">NanoBlogger Was Killing Me</h2>
-<div class="outline-text-2" id="text-1">
-
-<p><a href="http://bit.ly/wq2Ien">NanoBlogger</a> really looked cool to me 
-(<a href="/blog/categories/blogging-tech">my postings about why I liked it</a>):
-</p><ul>
-<li>Small
-</li>
-<li>Most functionality provided via plugins
-</li>
-<li><a href="http://bit.ly/xOIkfJ">CLI</a> only
-</li>
-<li>It is <a href="http://bit.ly/Mlkg9X">FOSS</a>.
-</li>
-<li>Produced a static site (ie: only serves static pages)
-</li>
-<li>It was built on <a href="http://bit.ly/JbQmzE">Bash</a> &ndash; I thought this was the coolest
-</li>
-</ul>
-
-
-<p>
-I liked it so much that I wrote a CLI for it that was better suited to my personal workflow. I also spent some time integrating it with Emacs. But it had endless problems.
-</p>
-<p>
-It was slow, it did not do anything automatically, frequently required rebuilding of the entire blog, was hard to view on my local machine, isn't really being maintained, doesn't have a real templating system, breaks the RSS feed on special characters such as etc&hellip;
-</p>
-</div>
-
-</div>
-
-
-
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">Where Next</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>Over the past few weeks I've been looking around for a new blogging system. The only real contender seemed to be <a href="http://bit.ly/Jm1bmc">Jekyll</a>. It is written in <a href="http://bit.ly/KAfYv0">Ruby</a> and used by Github to power Github Pages. It has so many contributors to it that its <a href="http://bit.ly/JetyoE">Github repository</a> has, at the moment, 50+ pull requests.
-</p>
-<p>
-I had nearly chosen Jekyll when I moved to NanoBlogger. I found that the discussion about moving to Jekyll on the <a href="http://bit.ly/JH7cIy">0xdecafbad.com</a> blog really aligned with my thoughts.
-</p>
-<p>
-But, after playing with it a bit, I found that Jekyll was difficult to configure. And I just so liked the Bash thing that NanoBlogger had that I decided to go with NanoBlogger. But now I'm wasting too much of my time fighting with Nanoblogger and I should reconsider Jekyll.
-<!-- more -->
-
-This time, when I was researching Jekyll, I found <a href="http://bit.ly/KT1aFT">Octopress</a>. Octopress is Jekyll on steroids. It provides an automated configuration and maintenance system that takes the pain out of using Jekyll.
-</p>
-<p>
-So now I'm giving Octopress/Jekyll a try. I'll see how it goes. Configuring a site with a <i>hello world</i> blog entry only took a couple of hours. Most of that was just downloading Octopress and reading the docs to figure out what to do. It turned out that configuration was running three <a href="http://bit.ly/KT2jxn">rake</a> commands. 
-</p>
-</div>
-
-</div>
-
-
-
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3">Converting From Nanoblogger To Jekyll</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>Because NanoBlogger blog entries are plain text with markup, converting my entire old blog to Octopress was fairly easy as Octopress also uses plain text with markup for blog entries. I ran into two snags. The first one was in Emacs' <a href="http://bit.ly/zhYdcB">Org Mode</a>, my authoring tool. It broke when you had a "+" in the path name of your input files (in my case, in the path of my blog). It took me several hours to find the bug. Once I found it, it was easy to patch and I sent my fix to be included in subsequent Org Mode releases.
-</p>
-<p>
-The second problem was a bit trickier. Octopress was breaking on some of my blog's generated HTML files. The error message gave me the line number and the character number in that line that was causing the error but it omitted to give me the file name. I believe the technical term for that is "Oops!".
-</p>
-<p>
-To find the file that was casing the problem I started to remove blog files using a <a href="http://bit.ly/KT3gpo">binary search</a>-ish style to track the problem file down. This proved more difficult than I thought it should. After much frustration, it occurred to me that the problem was in many blog entries so the binary search wasn't so helpful. So I wiped my blog and started adding one posting at a time. 
-</p>
-<p>
-Even after I found the first posting that caused Octopress, actually Jekyll, to crash, I couldn't figure out what was wrong with the file. The error message said something about non-ASCII characters but I only had ASCII, or so I thought. It turned out that I had copied and pasted some text from my browser and it had inserted a hyphen (-) that was not the ASCII hyphen. To me, they looked identical. 
-</p>
-<p>
-Despite knowing what the problem was, I couldn't automate Emacs or grep to find the offensive hyphens. In Emacs, the search treated ASCII and non-ASCII hyphens the same. I forget the problems I had with grep but I couldn't get it to work either. This meant I was going to have to add one entry at a time to my blog to track down the other problems. Thank you &ndash; NOT!
-</p>
-<p>
-But Jekyll is written in Ruby and Ruby is a scripting language so I have the source code for Jekyll. Being that the error message included a full stack trace, I figured I could update the error message. In the end I just ended up making Jekyll a bit more verbose: it announces which file it is about to process with the message:
-:Processing file <i>myfile</i>.
-</p>
-<p>
-Then I added all my blog entries, ran Jekyll, got the same error message with only the line and character position, but now had the name of the file it was processing when it had a problem.
-</p>
-</div>
-
-</div>
-
-
-
-
-<div id="outline-container-4" class="outline-2">
-<h2 id="sec-4">Plain Text Blogs Rock!</h2>
-<div class="outline-text-2" id="text-4">
-
-<p> After correcting a couple of entries I noticed that the problem only occurred on hyphens (-) and single quotes ('). Being that both NanoBlogger and Octopress/Jekyll use plain text files for their input, I had a whole bunch of tools to help me fix the problem. 
-</p>
-<p>
- In the end I ended up turning Emacs failure to distinguish between the ASCII and non-ASCII versions of these characters to my advantage. I did a search-and-replace on all my blog entries replacing hyphens with hyphens and single quotes with single quotes. While Emacs' search found both ASCII and non-ASCII characters, it always replaced them with what I typed as the replacement, ASCII.
-</p>
-<p>
-Then, <i>voila</i>, there was my blog. And my blog looked way better in Octopress than NanoBlogger. Check out a NanoBlogger <a href="http://bit.ly/wq2Ien">sample blog</a> and an Octopress <a href="http://bit.ly/KT1aFT">sample blog</a>. Huge difference. Also, excluding the weak error message from Jekyll (I'll file a bug report on that and I suspect someone will fixed it as Jekyll is so heavily used), I didn't need to do a thing to build and publish the blog. Octopress even pushes the blog to Github automatically. I had written a script to do this automatically for NanoBlogger, but I'd much rather use someone else's perfectly good solution rather than writing my own.
-</p>
-<p>
-I think I'm going to be very happy with Octopress.
-</p>
-</div>
 </div>
 
 ]]></content>

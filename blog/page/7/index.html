@@ -9,7 +9,7 @@
   <meta name="author" content="Neil Smithline">
 
   
-  <meta name="description" content="As I have been developing my blog&#8217;s technology, I have been surprised at the lack of a pre-packaged blogging solution for Emacs&#8217; Org &hellip;">
+  <meta name="description" content="According to The Register (via Slashdot), Microsoft&#8217;s cloud computing platform, Azure, has been down, and I mean kaput, for 8+ hours. Worse &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -106,6 +106,122 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/02/29/azure-sunny-day/">Cloud Computing: How Expensive Is a Rainy Day?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-29T11:42:35-05:00" pubdate data-updated="true">Feb 29<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+According to <a href="http://bit.ly/zc1OOr">The Register</a> (via <a href="http://bit.ly/wzufGC">Slashdot</a>), Microsoft&#8217;s cloud computing platform, Azure, has been down, and I mean <a href="http://dictionary.reference.com/browse/kaput">kaput</a>, for 8+ hours. Worse yet, Azure&#8217;s status page that tells its customers about outages and expected repair times, to which I won&#8217;t provide a link, has now been <a href="http://en.wikipedia.org/wiki/Slashdotted">Slashdotted</a> and is down.
+</p>
+<p>
+Less than a year ago, <a href="http://bit.ly/Ay7loE">AWS</a> suffered a significant, though less serious, <a href="http://bit.ly/yNzqJy">outage</a>.
+</p>
+<p>
+While highly-distributed, cloud-based computing is clearly the future of IT, how can an organization understand the costs and prepare for the unavoidable outages? With the relative newness of 3^rd party cloud services, what statistics are useful.
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/02/29/azure-sunny-day/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/22/smartphones/">Smartphones Everywhere</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-22T13:38:14-05:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+Interpreting this chart from <a href="http://blog.nielsen.com/nielsenwire/online_mobile/survey-new-u-s-smartphone-growth-by-age-and-income/">Nielsen</a> (via <a href="http://www.wired.com/epicenter/2012/02/smartphone-buying-machine/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed:+wired/index+(Wired:+Index+3+(Top+Stories+2))">Wired</a>) does not require any great amount of effort.
+</p>
+<div style="text-align: center">
+<p><img src="http://www.wired.com/images_blogs/epicenter/2012/02/Smartphone-Income-and-Age.jpg"  alt="http://www.wired.com/images_blogs/epicenter/2012/02/Smartphone-Income-and-Age.jpg" />
+</p>
+</div>
+
+<p>
+It can be summarized by any of the following sentences:
+</p><ul>
+<li>The greater your income the more likely you are to have a smartphone.
+</li>
+<li>Young adults are more likely to have smartphones than older adults.
+</li>
+<li>Smartphones are only for the young and get outgrown by the old. (Nah! But it is a valid interpretation of the chart.)
+</li>
+</ul>
+
+
+<p>
+But I think the graph can best be summarized by:
+</p>
+<div style="text-align: center">
+<p><b>Smartphones are where it is at today; and tomorrow, even more so.</b>
+</p>
+</div>
+
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/02/22/smartphones/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/02/15/nogit-blog-in-a-box/">Blog in a Box (Actually, a Repo)</a></h1>
     
     
@@ -145,94 +261,6 @@ Spurred by ideas from <a href="http://decafbad.com">0xDECAFBAD.com</a> and code 
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/14/nbc/">New NanoBlogger Command-Line</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-14T13:13:34-05:00" pubdate data-updated="true">Feb 14<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>
-As I&#8217;ve discussed in previous <a href="http://www.neilsmithline.com/archives/blog">postings about this blog&#8217;s technology</a>, this is a static blog written with NanoBlogger. NanoBlogger is a <a href="http://en.wikipedia.org/wiki/Command-line_interface">CLI</a> driven blogging system. Alas, I have found the <a href="http://nanoblogger.sourceforge.net/docs/nanoblogger.html">NanoBlogger manual</a> to be difficult to follow and the syntax of the CLI to be non-intuitive. (See the footnote <a href="https://github.com/Neil-Smithline/nbc">here</a> regarding the existing CLI.) On the upside, NanoBlogger is a CLI system which makes it easy to modify. 
-</p>
-<p>
-I started out with a few small helper scripts, eventually merging them into a single helper script. As I was using that script and learning more about NanoBlogger, I found myself writing smaller helper scripts for my big helper script. Eventually, I was never calling my original, large helper script directly.
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/02/14/nbc/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/03/github/">This Blog Is Now Hosted for Free (and It&#8217;s Slashdot Proof Too)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-03T21:49:09-05:00" pubdate data-updated="true">Feb 3<span>rd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>
-While there are many free or nearly free blog hosting sites available, most of them come with a long list of restrictions. Either they restrict you to using their blogging software, throw ads on your pages, give you the &#8220;unlimited bandwidth&#8221; plan that they&#8217;ll cut off if your site gets too much traffic, limit you to only the ugly themes, etc.
-</p>
-<p>
-But <a href="http://www.neilsmithline.com">www.neilsmithline.com</a> is now hosted on a site that charges me nothing, doesn&#8217;t put ads on my pages, couldn&#8217;t care less about the theme I use, and, should I ever be lucky enough, survive <a href="http://en.wikipedia.org/wiki/Slashdotting">slashdotting</a>. The only restriction is that my blog has to be static. Being that I already had a static blog (see <a href="#about-this-blogs-tech.org">previous posting</a>), this was no problem for me at all. I&#8217;ve used lots of dynamic blogs (<a href="http://en.wikipedia.org/wiki/Drupal">Drupal</a>, <a href="http://en.wikipedia.org/wiki/Wordpress">WordPress</a>, <a href="http://en.wikipedia.org/wiki/Joomla">Joomla</a>, <a href="http://en.wikipedia.org/wiki/Blogger_(service)">Blogger</a>, <a href="http://en.wikipedia.org/wiki/Movable_Type">Movable Type</a>, etc.) and just found that &#8220;dynamic&#8221; is a short way of saying that the blogging system is going to do what it wants and not what I want.
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/02/03/github/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/8/">&larr; Older</a>
@@ -250,6 +278,14 @@ But <a href="http://www.neilsmithline.com">www.neilsmithline.com</a> is now host
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/09/03/disk-crash-part3/">Disk Crash, Part 3: OS Indepent Configuration</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/21/disk-crash-part2/">Disk Crash, Part 2: My Backup Strategy</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/08/21/disk-crash/">Disk Crash</a>
       </li>
     
@@ -259,14 +295,6 @@ But <a href="http://www.neilsmithline.com">www.neilsmithline.com</a> is now host
     
       <li class="post">
         <a href="/blog/2012/08/04/time-tracking/">Time Tracking</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/07/22/blurring-static-and-dynamic-blogs/">Blurring Static And Dynamic Blogs</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/07/21/desktop-time-tracking/">Desktop Time Tracking</a>
       </li>
     
   </ul>

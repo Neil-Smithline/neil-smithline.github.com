@@ -9,7 +9,7 @@
   <meta name="author" content="Neil Smithline">
 
   
-  <meta name="description" content="Ouch! My Disk Crashed My MacBook Pro became unusable and required a complete repartition and several reformats before I could resuscitate it. &hellip;">
+  <meta name="description" content="NOTE: This was written on September 3rd and published on September 23rd. Managing Configuration My previous postings about my disk crash and my &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -106,6 +106,143 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/09/03/disk-crash-part3/">Disk Crash, Part 3: OS Indepent Configuration</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-03T22:02:00-04:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+<i>NOTE: This was written on September 3<sup>rd</sup> and published on September 23<sup>rd</sup>.</i>
+</p>
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Managing Configuration</h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+My previous postings about my <a href="http://www.neilsmithline.com/blog/2012/08/21/disk-crash/">disk crash</a> and my <a href="http://www.neilsmithline.com/blog/2012/08/21/disk-crash-part2/">backup strategy</a> discuss how I keep files in sync across my computers. While I have a 3-tiered system using CrashPlan, DropBox, and rdist to meet different synchronization requirements for different files, this strategy uses tried-and-true technology.
+</p>
+<p>
+But identical files across machines doesn&#8217;t guarantee identical behavior across the machines. At the moment, my computer collection is:
+</p><ul>
+<li>A laptop running Ubuntu 12.04
+</li>
+<li>A laptop double-booted to run Ubuntu 12.04 and Windows 7. I&#8217;m not a big Windows fan but sometimes I need to use it.
+</li>
+<li>My media/game server running Windows 7 (good for games for my kids), and Ubuntu 12.04 (best for me).
+</li>
+<li>My MacBook Pro running OS X 10.6.
+</li>
+<li>My VPS cloud server. It has been running Ubuntu 10.04 but I&#8217;ve requested an upgrade to the newest version of Debian, I think Lenny. I need the upgrade because Ubuntu 10.04 is 2+ years old. I&#8217;m switching to Debian because Debian tends to be more stable though it has a weaker <a href="http://en.wikipedia.org/wiki/Desktop_environment">desktop environment</a> than Ubuntu. Being that my VPS is a <a href="http://en.wikipedia.org/wiki/Headless_system">headless server</a>, the desktop features don&#8217;t really matter to me.
+</li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/09/03/disk-crash-part3/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/21/disk-crash-part2/">Disk Crash, Part 2: My Backup Strategy</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-21T22:02:00-04:00" pubdate data-updated="true">Aug 21<span>st</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+/NOTE: This was written on August 21<sup>st</sup> and published on September 23<sup>rd</sup>
+</p>
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">My File Distribution And Backup Strategy</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>In my <a href="http://www.neilsmithline.com/blog/2012/08/21/disk-crash/">previous posting</a> I discussed my how I categorize files in terms of importance, timeliness when distributing files, and the platforms I distribute the files to. Here I&#8217;ll cover the technologies I use to meet my file management goals.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">My Backup Strategy</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Making sure your computer is backed up is typically a hassle. Even worse, my experience has taught me that thinking that you are backing up your system is very different from actually backing up your system. Numerous times I&#8217;ve been told by a system admin that, unbeknownst to them, the backups are unusable.
+</p>
+<p>
+Knowing how difficult backing up your computer can be, I outsource it to a company whose only business is backing up data.
+</p>
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">CrashPlan</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/08/21/disk-crash-part2/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/08/21/disk-crash/">Disk Crash</a></h1>
     
     
@@ -152,7 +289,7 @@ While I had some gaps in my backup strategy, within 2 hours of my disk crash I h
 My primary computers are my MacBook Pro and an <a href="http://en.wikipedia.org/wiki/Hewlett-Packard">HP</a> laptop running <a href="http://en.wikipedia.org/wiki/Ubuntu_(operating_system)">Ubuntu Linux</a>. My mobile is a <a href="http://en.wikipedia.org/wiki/Samsung_Infuse_4G">Samsung Infuse</a> running <a href="http://en.wikipedia.org/wiki/CyanogenMod#CyanogenMod_10">CyanogenMod 10</a>, a customized version of <a href="http://en.wikipedia.org/wiki/Android_version_history#Android_4.1.x_Jelly_Bean">Android 4.1 Jelly Bean</a>. I also rent a <a href="http://en.wikipedia.org/wiki/Virtual_private_server">VPS</a> <a href="http://en.wikipedia.org/wiki/Cloud_computing">cloud computer</a> running Ubuntu. Lastly, I have an <a href="http://en.wikipedia.org/wiki/Asus">Asus</a> running <a href="http://en.wikipedia.org/wiki/Windows_7">Windows 7</a>. I primarily use te Windows computer for <a href="http://en.wikipedia.org/wiki/Streaming_media">streaming media</a> (I don&#8217;t dig Windows).
 </p>
 <p>
-I use file distribution to achieve two goals. I like to keep my configuration files consistent across my MacBook and two Ubuntu computers. This includes my <a href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)#Startup_scripts">.bashrc</a> and my <a href="http://en.wikipedia.org/wiki/Emacs_Lisp#Source_code">.emacs</a> site startup files. While I want those files to stay in sync to make the management of them simpler, there&#8217;s generally no rush in synchronizing them. 
+I use file distribution to achieve two goals. I like to keep my configuration files consistent across my MacBook and two Ubuntu computers. This includes my <a href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)#Startup_scripts">.bashrc</a> and my <a href="http://en.wikipedia.org/wiki/Emacs_Lisp#Source_code">.emacs</a> site startup files. While I want those files to stay in sync to make the management of them simpler, there&#8217;s generally no rush in synchronizing them.
 </p>
 <p>
 Another example of my file distribution involves my <a href="http://en.wikipedia.org/wiki/Personal_information_manager">PIM</a>. I use <a href="http://orgmode.org">Org Mode</a> as my <a href="http://en.wikipedia.org/wiki/Personal_information_manager">PIM</a> and want the data files to be synchronized across my MacBook, two Linux boxes, and my Android. I want those files synchronized immediately as I frequently move from computer to computer and always want my PIM data to be up to date.
@@ -187,198 +324,6 @@ Another example of my file distribution involves my <a href="http://en.wikipedia
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/08/05/time-tracking-part-2/">Time Tracking, Part 2: Org Mode File Format</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-05T18:38:00-04:00" pubdate data-updated="true">Aug 5<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">A Brief Introduction To Org Mode File Syntax</h2>
-<div class="outline-text-2" id="text-1">
-
-<p>I&#8217;ve decided that my time tracking solution requires some basic understanding of the file format of <a href="http://orgmode.org">Org Mode</a> as Org Mode syntax pervades the system. I&#8217;ve done my best to cover the smallest amount of Org Mode syntax that is needed to understand the examples I&#8217;ll of my time tracking system.
-</p>
-<p>
-It is frequently said that when you buy a house the three most important things to look for are <a href="http://homebuying.about.com/od/marketfactstrends/qt/013008_location.htm">location, location, and location</a>. When it comes to Org Mode, the three most important things to remember are Org Mode file format is plain text, Org Mode file format is plain text, and Org Mode file format is plain text.
-</p>
-<p>
-By <a href="http://en.wikipedia.org/wiki/Plain_text">plain text</a> I mean:
-</p><ul>
-<li>You don&#8217;t need a <a href="http://en.wikipedia.org/wiki/Graphical_user_interface">GUI</a> or any other program to read an Org Mode file.
-</li>
-<li>Any <a href="http://en.wikipedia.org/wiki/Text_editor">text editor</a> can be used to create Org Mode files.
-</li>
-<li>Org Mode files are highly compatible with standard text file utilities such as <a href="http://linux.die.net/man/1/grep">grep(1)</a>.
-</li>
-</ul>
-
-
-<p>
-While Org Mode&#8217;s use of plain text has many advantages, the files tend to look a bit intimidating to a newcomer.
-</p>
-<p>
-While this posting only discusses Org Mode&#8217;s file format, I use Org Mode for its incredibly rich organizational functionality.
-</p></div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">Hierarchical Outlines</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>Org Mode encourages you to store your data in an outline. A level one headline is simply a line of text that begins with a single asterisk (<code>*</code>). A level two headline begins with two asterisks (<code>**</code>), etc&hellip;
-</p>
-
-
-<pre class="example">* Work
-** Work hard.
-Finish my project ahead of schedule.
-** Ask boss for raise.
-Remember to compliment him lots when asking.
-
-* Personal
-** Clean up after my kids.
-Grumble while cleaning up.
-** Tell my kids that they should clean up after themselves.
-Laugh quietly to myself as I know it won't help.
-</pre>
-
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/08/05/time-tracking-part-2/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/08/04/time-tracking/">Time Tracking</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-04T19:29:00-04:00" pubdate data-updated="true">Aug 4<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">The Quantified Self</h2>
-<div class="outline-text-2" id="text-1">
-
-<p>A couple of months ago I heard about this <del>nerdy</del> cool movement called <a href="http://en.wikipedia.org/wiki/Quantified_Self">Quantified Self</a>. Its goal is improving life by leveraging organized data about yourself. The ideas behind Quantified Self are far from new. Recording your caloric intake with the aim of reaching a goal, ie: counting calories, has been around for&hellip; well for a long time.
-</p>
-<p>
-The Quantified Self movement takes old principles, such as calorie counting, and improves upon them in two key ways:
-</p><ul>
-<li><b>QS is more of an atitude than an activity.</b> Tracking calories, cholesterol levels, blood pressure, etc&hellip; are generally targeted at a very specific goal. For example, a baseball player that records his batting performance against different pitchers is looking to be a better batter. The Quantified Self movement encourages people to look for new means of measurement, as wel as to use existing means of measurement differently, with no single goal. If you will, QS is an umbrella encompassing both old and new tools.
-</li>
-<li><b>Technology is a game changer.</b> Almost overnight it became possible to measure and record huge amounts of data about yourself. This ranges from relatively low-tech activities such as &#8220;checking in&#8221; to a social network during the day or using an online to-do management system to <a href="http://fitbit.com">multipurpose devices</a> that collect fairly complex data.
-</li>
-</ul>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">My Project</h2>
-<div class="outline-text-2" id="text-2">
-
-<p>Beinng the type of person who likes <del>nerdy</del> cool things, I got all excited the moment I heard about QS. After toying around with some ideas I decided to monitor my daily activities with the goal of using my time more wisely.
-</p>
-<p>
-I am not referring to the type of activity data you can get from your <a href="http://en.wikipedia.org/wiki/Filofax">Filofax</a> or the detailed location data that a service such as <a href="http://en.wikipedia.org/wiki/Google_Latitude">Google Latitude</a> provides. I am going to <a href="http://en.wikipedia.org/wiki/Sample_(statistics)">sample</a> my activity several dozen times a day.
-</p>
-<p>
-I have a <a href="https://github.com/Neil-Smithline/time-tracking-experiments/">living document and code repository</a> that discusses my goals in more detail. I also have a <a href="https://github.com/Neil-Smithline/time-tracking-experiments/blob/1254eb4cb744305f66f547fbccfc0189db542198/README.org">snapshot</a> taken at the time of writing this.
-</p>
-<p>
-Besides documenting my goals, I have tried, for the first time, to keep a <a href="http://www.neilsmithline.com/time-tracking-experiments/journal.html">journal</a> of the problem solving process as I was going through it. To reduce the overhead of maintaining a journal I have left it pretty raw so please forgive its informal presentation.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3">Implementing Time Tracking</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>The broad solution I&#8217;ve implemented in my time tracking experiment is documented in the living document and journal referenced above. To save time, I&#8217;ll not duplicate what is documented there. What I will discuss is my first solution, perhaps my first prototype of the time tracking system.
-</p>
-<p>
-The goal is to track my activities via my ever-handy Android phone and record that data in a structured manner on my computer. Due to my personal preferences, I&#8217;m storing the data in <a href="http://www.orgmode.org">Org Mode</a> but the concepts are not limited to Org Mode.
-</p>
-<p>
-Being that I&#8217;m storing my data in Org Mode and using Org Mode as my task manager, the solution has a very Org Mode&#8217;ish feel. I&#8217;ll try to explain enough about Org Mode so that you can follow.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-4" class="outline-2">
-<h2 id="sec-4">In The Next Posting</h2>
-<div class="outline-text-2" id="text-4">
-
-<p>I&#8217;m going to post this blog entry in two parts because my time tracking system just interrupted me, asking for a sampling of my activity. When I responded to the request I saw that I&#8217;ve used up the time I&#8217;ve allotted for blogging today so I&#8217;m putting this aside for now.
-</p>
-<p>
-PS: I don&#8217;t think I&#8217;ve mentioned it before but my time tracking system provides instantaneous feedback. Every time it requests a sample of my activity it tells me how long I&#8217;ve been doing that activity as well as all the other activities I&#8217;ve done during the day. This allows me to immediately alter my behavior without waiting for longer-term analyses. Definitely cool (OK, and nerdy too).
-</p></div>
-</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -394,6 +339,14 @@ PS: I don&#8217;t think I&#8217;ve mentioned it before but my time tracking syst
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/09/03/disk-crash-part3/">Disk Crash, Part 3: OS Indepent Configuration</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/21/disk-crash-part2/">Disk Crash, Part 2: My Backup Strategy</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/08/21/disk-crash/">Disk Crash</a>
       </li>
     
@@ -403,14 +356,6 @@ PS: I don&#8217;t think I&#8217;ve mentioned it before but my time tracking syst
     
       <li class="post">
         <a href="/blog/2012/08/04/time-tracking/">Time Tracking</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/07/22/blurring-static-and-dynamic-blogs/">Blurring Static And Dynamic Blogs</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/07/21/desktop-time-tracking/">Desktop Time Tracking</a>
       </li>
     
   </ul>

@@ -1,0 +1,576 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Disk Crash, Part 2: My Backup Strategy - My Geekdom</title>
+  <meta name="author" content="Neil Smithline">
+
+  
+  <meta name="description" content="More about my backup strategy.">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.neilsmithline.com/blog/2012/08/21/disk-crash-part2/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="http://feeds.feedburner.com/MyGeekdom" rel="alternate" title="My Geekdom" type="application/atom+xml">
+    <!-- ShareThis -->
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+  <!-- /ShareThis -->
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25833963-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Geekdom</a></h1>
+
+  <div  style="float: right; position: relative; top: 75px;" id="header-image-container">
+    <a href="" accesskey="1">
+      <img title="Neil Smithline" src="/assets/images/NS-Keycaps.png"></img>
+    </a>
+  </div>
+
+  
+    <h2>Ramblings about my nerdy pursuits.</h2>
+  
+
+  
+    <a href="https://github.com/neil-smithline">
+      <img
+          style="position: absolute;
+            top: 0;
+            right: 0;
+            border: 0;"
+         src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></img></a>
+
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/MyGeekdom" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.neilsmithline.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <!-- <li><a href="/">Home</a></li> -->
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/contact">Contact</a></li>
+  <li><a href="/about/elsewhere">About</a></li>
+  <li><a href="/neilsmithline">Resume (Seeking employment)</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Disk Crash, Part 2: My Backup Strategy</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-21T22:02:00-04:00" pubdate data-updated="true">Aug 21<span>st</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>
+/NOTE: This was written on August 21<sup>st</sup> and published on September 23<sup>rd</sup>
+</p>
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">My File Distribution And Backup Strategy</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>In my <a href="http://www.neilsmithline.com/blog/2012/08/21/disk-crash/">previous posting</a> I discussed my how I categorize files in terms of importance, timeliness when distributing files, and the platforms I distribute the files to. Here I&#8217;ll cover the technologies I use to meet my file management goals.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">My Backup Strategy</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Making sure your computer is backed up is typically a hassle. Even worse, my experience has taught me that thinking that you are backing up your system is very different from actually backing up your system. Numerous times I&#8217;ve been told by a system admin that, unbeknownst to them, the backups are unusable.
+</p>
+<p>
+Knowing how difficult backing up your computer can be, I outsource it to a company whose only business is backing up data.
+</p>
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">CrashPlan</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+
+
+<!-- more -->
+<p>
+I started using <a href="http://www.crashplan.com">CrashPlan</a> because they have a <a href="http://www.crashplan.com/consumer/compare.html">$25/year backup plan</a>. That is, they are cheap. As their service was simple, reliable, and pretty much configure-and-forget-about-it, I upgraded to their <a href="http://www.crashplan.com/consumer/crashplan-plus.html">premium plan</a>. It costs $120/year. For that $10/month I get unlimited data storage and can backup as many as 10 computers.
+</p>
+<p>
+While my household has more than 10 computers, many of them aren&#8217;t used very often and don&#8217;t need to be backed up so the limit of 10 computers has never been a problem.
+</p>
+<p>
+I consider the $10/month a great deal as CrashPlan has been a life saver for me  more than once. CrashPlan has an application that runs in the background, similar to DropBox&#8217;s application, and continually backs up your computer. The initial backup can take a few days but once backed up, the Crashplan database is never more than a few minutes behind changes on your disk drive.
+</p>
+<p>
+I should mention that the initial backup takes a few days because CrashPlan tries to share the computer with other applications. I can restore all my backed up data from CrashPlan in about an hour.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2">Not Just Backup, Secure Backup</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<p>When configured properly, CrashPlan uses the <a href="http://en.wikipedia.org/wiki/Blowfish_(cipher)">Blowfish</a> encryption algorithm with a <a href="http://support.crashplan.com/doku.php/faq/security#what_type_of_encryption_does_crashplancrashplan_use">448-bit key</a>. My encryption key was generated on my computer and has never left it. This means that even if CrashPlan&#8217;s servers are compromised and all of my backup data is stolen, it is very unlikely that the attacker could decrypt my data.
+</p></div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3">Backup Everything</h3>
+<div class="outline-text-3" id="text-2-3">
+
+<p>I use CrashPlan to backup everything that I want to backup. I don&#8217;t distinguish between more or less important files. I just backup everything I think I may miss if it were to go away. CrashPlan is even kind enough to keep multiple revisions of each file and deleted files available for restoration. What a deal.
+</p>
+<p>
+On my Mac OS X, I back up nearly everything in my home directory. While I try to keep my application preferences out of <code>~/Library/...</code>, some applications just won&#8217;t cooperate. So I also selectively backup directories in <code>~/Library/...</code> I also don&#8217;t bother backing up <code>~/Downloads</code>. I don&#8217;t currently back up <code>~/.cpan</code>, the data directory for the Perl package installer. As mentioned in my previous posting, I don&#8217;t yet have a working strategy for what applications have been installed by package managers such as CPAN.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">My File Distribution Strategy</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>My file distribution strategy is more complex than my backup strategy. To date I&#8217;ve not found any service that meets all of my needs for data distribution. This leaves me using multiple distribution technologies based on the importance and timeliness of the data.
+</p>
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">Dropbox</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<p><a href="http://dropbox.com">Dropbox</a> and similar services have become quite popular the last few years. I use Dropbox far data distribution continually. In fact, this blog entry is being authored inside my Dropbox directory. Dropbox is the primary data distribution technology that I use for managing the distribution of High Importance, Timely Distribution files. Especially my <a href="http://www.orgmode.org">Org Mode</a> PIM files.
+</p>
+<p>
+Because of Dropbox&#8217;s nearly instantaneous file distribution, I can be working on one laptop, save my Org Mode files, pick up my other laptop to find the updated Org Mode files waiting for me. Wonderful!
+</p>
+
+</div>
+
+<div id="outline-container-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1">Dropbox Security Concerns</h4>
+<div class="outline-text-4" id="text-3-1-1">
+
+<p>While Dropbox is awfully convenient, I&#8217;m not terribly comfortable with its security. <a href="https://www.dropbox.com/help/27/en">Dropbox&#8217;s security claims</a> state that they use <a href="http://en.wikipedia.org/wiki/Transport_Layer_Security">TLS</a>, which is frequently referred to as &#8220;SSL&#8221;, for network security. But the rest of their claims are intangible. For example, what is a &#8220;hardened&#8221; website and how is it better than other websites? They flat out state:
+</p><blockquote>
+
+<p>Like most online services, we have a small number of employees who must be able to access user data for the reasons stated in our privacy policy (e.g., when legally required to do so).
+</p>
+</blockquote>
+
+
+<p>
+Without disputing Dropbox&#8217;s claim that most online services have a means to allow their employees to access your private data, I use CrashPlan for my backups and know that they can&#8217;t access my private data.
+</p>
+<p>
+Even if Dropbox&#8217;s employees are 100% trustworthy, if their employees can access your data, so too can a hacker.
+</p>
+<p>
+Because of my security concerns, I avoid using Dropbox for my more sensitive data. For example, I have an Org Mode todo list related to financial matters such as taxes and bill paying. The files that have the details about those tasks are not in my Dropbox directory.
+</p>
+<p>
+If you are interested, here&#8217;s a <a href="http://lifehacker.com/5794486/how-to-add-a-second-layer-of-encryption-to-dropbox">nice article</a> covering some of Dropbox&#8217;s security problems as well as strategies to make them less of a problem.
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">rdist + ssh</h3>
+<div class="outline-text-3" id="text-3-2">
+
+<p><a href="http://linux.about.com/library/cmd/blcmdl1_rdist.htm">rdist</a> and <a href="http://linux.about.com/od/commands/l/blcmdl1_ssh.htm">ssh</a> are two tried and true Unix programs. rdist is used to keep two directories synchronized. The directories can be on one computer but are typically on two different computers (<i>rdist</i> = Remote Distribution).
+</p>
+<p>
+rdist and Dropbox are similar in that they both keep directories across multiple machines synchronized. However, unlike Dropbox, rdist must be manually run. It doesn&#8217;t watch specific directories watching for a file modification and then automatically synchronize the files across all of your computers.
+</p>
+<p>
+I use rdist to sync files to my <a href="http://ubuntu.com">Ubuntu</a> <a href="http://en.wikipedia.org/wiki/Virtual_private_server">VPS</a> server that I rent, quite happily, from <a href="http://rosehosting.com">RoseHosting</a>. The reason for synching to my VPS is that it is my only computer that is always accessible from the internet:
+</p><ul>
+<li>Rosehosting keeps my server running.
+</li>
+<li>It has a <a href="http://en.wikipedia.org/wiki/Domain_Name_System">DNS</a> entry so it can be found from any computer.
+</li>
+<li>Unlike my personal computers, especially my laptops, my VPS is never turned off or not online.
+</li>
+<li>Unlike computers on my home network, the firewall my VPS is behind allows incoming connections. My home network firewall is significantly more restrictive.
+</li>
+</ul>
+
+
+<p>
+In short, my VPS is the only computer I have that is available 24x7 from any internet connection. This means that every computer can sync with it at any time. While it would be faster and use less network bandwidth if I synched the computers in my home to each other rather than a VPS somewhere out in the cloud, I have more than enough bandwidth to use.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Next Up</h2>
+<div class="outline-text-2" id="text-4">
+
+
+<p>
+Keeping files in sync is great but identical files don&#8217;t always behave identically on different systems. For example, there tends to be lots of file paths in my <code>.bashrc</code> and my <code>.emacs</code> files. I utilize a series of tricks to allow many of these files to behave identically on different machines.
+</p></div>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Neil Smithline</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-21T22:02:00-04:00" pubdate data-updated="true">Aug 21<span>st</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/backup/'>backup</a>, <a class='category' href='/blog/categories/blogging-tech/'>blogging-tech</a>, <a class='category' href='/blog/categories/sysadmin/'>sysadmin</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.neilsmithline.com/blog/2012/08/21/disk-crash-part2/" data-via="neil_smithline" data-counturl="http://www.neilsmithline.com/blog/2012/08/21/disk-crash-part2/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/08/21/disk-crash/" title="Previous Post: Disk Crash">&laquo; Disk Crash</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/09/03/disk-crash-part3/" title="Next Post: Disk Crash, Part 3: OS Indepent Configuration">Disk Crash, Part 3: OS Indepent Configuration &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/09/03/disk-crash-part3/">Disk Crash, Part 3: OS Indepent Configuration</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/21/disk-crash-part2/">Disk Crash, Part 2: My Backup Strategy</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/21/disk-crash/">Disk Crash</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/05/time-tracking-part-2/">Time Tracking, Part 2: Org Mode File Format</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/04/time-tracking/">Time Tracking</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/neil-smithline">@neil-smithline</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'neil-smithline',
+            count: 8,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>My Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("neil_smithline", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <p>Follow <a href="http://twitter.com/neil_smithline">@neil_smithline</a></p>
+  
+</section>
+
+
+
+<section class="socialmention">
+  <h1>Elsewhere On The Web</h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="https://twitter.com/#!/neil_smithline"><img src="/assets/service-logos/twitter/twitter-32.png" alt="My Tweets"/>Twitter</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://www.linkedin.com/profile/view?2519386"><img src="/assets/service-logos/linkedin/linkedin-32.png" alt="My LinkedIn Account" />LinkedIn</a>
+  </h1>
+</section>
+
+
+<section class="sociallink googleplus">
+  <h1>
+    <a href="https://plus.google.com/104257546204106753046?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32"></img>
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="https://github.com/neil-smithline"><img src="/assets/service-logos/github/github-32.png" alt="Checkout My Code" />Github</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://coderwall.com/neilsmithline"><img src="/assets/service-logos/coderwall/coderwall-32.png" alt="My Coderwall Badges" />Coderwall</a>
+  </h1>
+</section>
+
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://www.diigo.com/user/neilsmithline"><img src="/assets/service-logos/diigo/diigo-32.png" alt="My Diigo Bookmarks"/>Bookmarks</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://klout.com/#/neil_smithline"><img src="/assets/service-logos/klout/klout-32.png" alt="My Klout Score"/>Klout</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://disqus.com/NeilSmithline"><img src="/assets/service-logos/disqus/disqus-32.png" alt="My Disqus Comments"/>Disqus</a>
+  </h1>
+</section>
+
+
+<section class="socialmention">
+  <h1>Computer Backup Buzz</h1>
+    <script type="text/javascript">
+      // search phrase (replace this)
+      var smSearchPhrase = 'computer backups';
+      // title (optional)
+      var smTitle = 'Computer Backup News Around The Web';
+      // items per page
+      var smItemsPerPage = 3;
+      // show or hide user profile images
+      var smShowUserImages = true;
+      // widget font size in pixels
+      var smFontSize = 11;
+      // height of the widget
+      var smWidgetHeight = 600;
+      // sources (optional, comment out for "all")
+      //var smSources = ['twitter', 'facebook', 'googleblog', 'identica'];
+    </script>
+    <script type="text/javascript" language="javascript" src="http://socialmention.s3.amazonaws.com/buzz_widget/buzz.js"></script>
+</section>
+
+<!-- ShareThis -->
+  <script>
+    var options={ "publisher": "4eafa479-c64d-49ab-9e91-90cb169b33c2", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["twitter", "googleplus", "linkedin", "facebook", "email", "sharethis"]}};
+    var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+  </script>
+<!-- /ShareThis -->
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Neil Smithline -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> -
+  <span class="credit">Authored with <a href="http://www.gnu.org/s/emacs"">Emacs</a> and
+  <a href="http://orgmode.org">Org Mode</a></span> -
+  <span class="credit">Hosted by <a href="http://github.com">Github</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'mygeekdom';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.neilsmithline.com/blog/2012/08/21/disk-crash-part2/';
+        var disqus_url = 'http://www.neilsmithline.com/blog/2012/08/21/disk-crash-part2/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -4,7 +4,7 @@
   <title><![CDATA[My Geekdom]]></title>
   <link href="http://www.neilsmithline.com/atom.xml" rel="self"/>
   <link href="http://www.neilsmithline.com/"/>
-  <updated>2012-08-27T14:36:52-04:00</updated>
+  <updated>2012-09-23T18:28:28-04:00</updated>
   <id>http://www.neilsmithline.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
@@ -12,6 +12,407 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Disk Crash, Part 3: OS Indepent Configuration]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/09/03/disk-crash-part3/"/>
+    <updated>2012-09-03T22:02:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/09/03/disk-crash-part3</id>
+    <content type="html"><![CDATA[<p>
+<i>NOTE: This was written on September 3<sup>rd</sup> and published on September 23<sup>rd</sup>.</i>
+</p>
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Managing Configuration</h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+My previous postings about my <a href="http://www.neilsmithline.com/blog/2012/08/21/disk-crash/">disk crash</a> and my <a href="http://www.neilsmithline.com/blog/2012/08/21/disk-crash-part2/">backup strategy</a> discuss how I keep files in sync across my computers. While I have a 3-tiered system using CrashPlan, DropBox, and rdist to meet different synchronization requirements for different files, this strategy uses tried-and-true technology.
+</p>
+<p>
+But identical files across machines doesn&#8217;t guarantee identical behavior across the machines. At the moment, my computer collection is:
+</p><ul>
+<li>A laptop running Ubuntu 12.04
+</li>
+<li>A laptop double-booted to run Ubuntu 12.04 and Windows 7. I&#8217;m not a big Windows fan but sometimes I need to use it.
+</li>
+<li>My media/game server running Windows 7 (good for games for my kids), and Ubuntu 12.04 (best for me).
+</li>
+<li>My MacBook Pro running OS X 10.6.
+</li>
+<li>My VPS cloud server. It has been running Ubuntu 10.04 but I&#8217;ve requested an upgrade to the newest version of Debian, I think Lenny. I need the upgrade because Ubuntu 10.04 is 2+ years old. I&#8217;m switching to Debian because Debian tends to be more stable though it has a weaker <a href="http://en.wikipedia.org/wiki/Desktop_environment">desktop environment</a> than Ubuntu. Being that my VPS is a <a href="http://en.wikipedia.org/wiki/Headless_system">headless server</a>, the desktop features don&#8217;t really matter to me.
+</li>
+</ul>
+
+
+<!-- more -->
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Home Directories</h2>
+<div class="outline-text-2" id="text-2">
+
+
+<p>
+Being that I run three different OSs (Ubuntu is built on Debian so I don&#8217;t consider it a separate OS), I have different home directories.
+</p><ul>
+<li>Ubuntu/Debian: my home directory is <code>/home/neil</code>.
+</li>
+<li>Mac OS X: My home directory is <code>/Users/neil</code>.
+</li>
+<li>Windows 7: Synchronizing configuration between <a href="http://en.wikipedia.org/wiki/Unix-like">*nix</a> systems and Windows only makes sense if you are running <a href="http://cygwin.com">Cygwin</a>. Unfortunately, Cygwin home directories seem a bit random (info about <a href="http://cygwin.com/faq/faq-nochunks.html#faq.setup.home">Cygwin home directories</a>).
+</li>
+</ul>
+
+
+<p>
+While using the <code>$HOME</code> variable to refer to your home directory works in many situations, it doesn&#8217;t always help. My solution to this is simple: *nix wins. My home directory is <code>/home/neil</code> on all of my computers. If it is not there by default, I use atypical <a href="http://en.wikipedia.org/wiki/Mount_(computing)">file mounts</a> or, when needed, <a href="http://en.wikipedia.org/wiki/Symbolic_link">symbolic links</a> to achieve conformance.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">My $PATH</h2>
+<div class="outline-text-2" id="text-3">
+
+
+<p>
+Maintaining your <a href="http://en.wikipedia.org/wiki/$PATH">$PATH</a> settings is a real hassle. Not only are executables in different locations based on your OS, I frequently find that executables are in different locations on the same OS.
+</p>
+<p>
+<a href="http://en.wikipedia.org/wiki/Ruby_(programming_language)">Ruby</a> is a good example of a program that tends to be in different locations on different computers. I use <a href="http://mxcl.github.com/homebrew/">Homebrew</a> to install Ruby on my Mac OS X computer, <a href="http://en.wikipedia.org/wiki/Apt-get">APT</a> to install Ruby on one of my Ubuntu laptops, and <a href="https://github.com/sstephenson/rbenv">rbenv</a> on my other Ubuntu laptop. I don&#8217;t bother installying Ruby on my Windows computer as I only use Windows when I have to.
+</p>
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">Dynamically Assigned $PATH Variables</h3>
+<div class="outline-text-3" id="text-3-1">
+
+
+<p>
+As I use a single <code>.bashrc</code> file across all my computers and exectuables are scattered everywhere, I dynamically configure my <code>$PATH</code> variable based on the computer&#8217;s file system. I use my a <code>bash</code> function, <code>addpath</code>, to add directories to <code>$PATH</code>:
+</p>
+
+
+
+<pre class="src src--n">addpath() {
+    if [ -d <span style="color: #004400; background-color: #CCCCCC;">"$@"</span> ]; then
+        PATH=<span style="color: #004400; background-color: #CCCCCC;">"$@:$PATH"</span>
+    fi
+}
+</pre>
+
+
+<p>
+With <code>addpath</code>, I don&#8217;t have to worry about adding too many directories to my <code>$PATH</code>. This allows code such as:
+</p>
+
+
+
+<pre class="src src-sh"><span class="linenr">1:  </span>addpath /usr/bin        <span style="color: #550055; background-color: #CCCCCC;"># </span><span style="color: #550055; background-color: #CCCCCC;">typical *nix path component</span>
+<span class="linenr">2:  </span>addpath /sw/bin         <span style="color: #550055; background-color: #CCCCCC;"># </span><span style="color: #550055; background-color: #CCCCCC;">used by some Mac OS X package managers</span>
+<span class="linenr">3:  </span>addpath /c/usr/bin      <span style="color: #550055; background-color: #CCCCCC;"># </span><span style="color: #550055; background-color: #CCCCCC;">used by Cygwin on Windows</span>
+</pre>
+
+
+<p>
+<code>addpath</code> ensures that only existing directories are added to <code>$PATH</code>.
+</p>
+<p>
+This meets <i>nearly</i> all of my needs. The one problem I have with this solution is that I find that my <code>$PATH</code> frequently changes. For example, when I recently started using <code>rbenv</code>, a path change was required. These changes aren&#8217;t major but sometimes I need a few tries to get it right.
+</p>
+<p>
+So I have a strategy for repeatedly updating my <code>.bashrc</code> file, executing the <code>.bashrc</code> file, and testing my new <code>$PATH</code>. The first part of this strategy is that, the first time <code>bash</code> is run, I squirrel away the value of <code>$PATH</code> into another variable:
+</p>
+
+
+<pre class="src src-SH"><span class="linenr">1:  </span>export ORIG_PATH=<span style="color: #004400; background-color: #CCCCCC;">"${ORIG_PATH:-$PATH}"</span>
+<span class="linenr">2:  </span>export PATH=<span style="color: #004400; background-color: #CCCCCC;">"$ORIG_PATH"</span>
+</pre>
+
+
+<p>
+For those of you that aren&#8217;t fluent in shell syntax, <code>ORIG_PATH=${ORIG_PATH:-$PATH}</code> will set the value of <code>$ORIG_PATH</code> to <code>$PATH</code> the first time it is executed. On subsequent executions, <code>$ORIG_PATH</code> will be assigned the value of <code>$ORIG_PATH</code>. This ensures that <code>$ORIG_PATH</code> always equals the value of <code>$PATH</code> the first time the <code>.bashrc</code> file is executed.
+</p>
+<p>
+I then use <code>$ORIG_PATH</code> as the basis for all of my <code>$PATH</code> changes.
+</p>
+<p>
+The final piece of my <code>$PATH</code> management is this function:
+</p>
+
+
+<pre class="src src-SH"><span class="linenr">1:  </span>reinit () {
+<span class="linenr">2:  </span>    . $HOME/.bashrc
+<span class="linenr">3:  </span>}
+</pre>
+
+
+<p>
+It is just a convenience function to execute my <code>.bashrc</code> file in the current shell. Being that my <code>.bashrc</code> file is <a href="http://en.wikipedia.org/wiki/Idempotent">idempotent</a>, I can rerun it as often as I need, confident that my <code>bash</code> environment will be the same no matter how many times I&#8217;ve executed my <code>.bashrc</code>.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">Miscellaneous Path Differences</h3>
+<div class="outline-text-3" id="text-3-2">
+
+
+
+</div>
+
+<div id="outline-container-3-2-1" class="outline-4">
+<h4 id="sec-3-2-1">Managing <code>rbenv</code></h4>
+<div class="outline-text-4" id="text-3-2-1">
+
+<p>While the above solution handles general <code>$PATH</code> configuration, some special cases still arise. Managing my <code>$PATH</code> to work best with Ruby tends to change across my computers and even change over time on the same computer.
+</p>
+<p>
+For Ruby, some of my machines have <code>rbenv</code> installed on them and some don&#8217;t. On one machine I find that sometimes I use <code>rbenv</code> and at other times I don&#8217;t wish to use it. So I have a one-off solution for managing my <code>rbenv</code> environment in my <code>.bashrc</code> file:
+</p>
+
+
+
+<pre class="src src--n">if [ -f <span style="color: #004400; background-color: #CCCCCC;">"$HOME/.rbenv/USE-RBENV"</span> ]; then
+    addpath $HOME/.rbenv/shims
+    ... other stuff ...
+fi
+</pre>
+
+
+<p>
+The file <code>USE-RBENV</code> is an empty file that I create when I want to, not surprisingly, use <code>rbenv</code>. To switch between using and not using <code>rbenv</code> I create or delete the <code>USE-RBENV</code> file and re-execute my <code>.bashrc</code> file using my <code>bash</code>  <code>reinit</code> function. This strategy leverages the dynamic path settings and idempotency of my <code>.bashrc</code> file.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-2-2" class="outline-4">
+<h4 id="sec-3-2-2">Managing My <code>.emacs</code></h4>
+<div class="outline-text-4" id="text-3-2-2">
+
+
+<p>
+Avoiding most of the details, <a href="http://en.wikipedia.org/wiki/Emacs">Emacs</a> needs to find some <a href="http://en.wikipedia.org/wiki/Elisp">elisp</a> files as well as some *nix files that are not in the same place on all of my computers. For loading elisp files, I have written a function that is similar to my <code>addpath</code> function that I use in my <code>.bashrc</code> file.
+</p>
+<p>
+The elisp function, <code>add-load-path</code>, has a bit more smarts than <code>addpath</code>. <code>addpath</code> works by omitting non-relevant directories to <code>$PATH</code>. <code>add-load-path</code> knows how to search through directories that may contain an elisp package and then include that directory. A call to <code>add-load-path</code> is simply:
+</p><pre class="example">
+(add-load-path "jdee/lisp")
+</pre>
+
+
+<p>
+There are also some functions of Emacs that behavior better if they know the full path of some executables. For example, Emacs can make use of the *nix <a href="http://en.wikipedia.org/wiki/Man_page">man(1)</a> command. While <code>add-load-path</code> finds elisp files, <code>find-first-executable</code> searches for executable files. This is the elisp command I use to find the <code>man</code> executable:
+</p>
+
+
+<pre class="src src--n">(setq manual-program
+        (find-first-executable
+         '(<span style="color: #004400; background-color: #CCCCCC;">"/usr/local/bin/man"</span> <span style="color: #004400; background-color: #CCCCCC;">"/usr/bin/man"</span>
+           <span style="color: #004400; background-color: #CCCCCC;">"/bin/man"</span> <span style="color: #004400; background-color: #CCCCCC;">"c:/cygwin/bin/man.exe"</span>)))
+</pre>
+
+
+<p>
+<code>find-first-executable</code> returns the first path that corresponds to an executable. You may have noticed the <code>c:/cygwin/bin/man.exe</code> argument which allows the same <code>.emacs</code> file to run on Windows as well as *nix.
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">In The Next Installment</h2>
+<div class="outline-text-2" id="text-4">
+
+
+<p>
+The next and final part of this series will delve a bit deeper into my general philosophy of portable and maintainable configuration and code. In general, I try to plan for the unplannable. I try not to let the fact that planning for the unplannable is impossible get in my way.
+</p>
+<p>
+I try to produce flexible designs that typically include a separation of data and code. Then, when the unexpected occurs, in theory, I can return to work with only a minimal hit to my productivity. In some sense, I use the <a href="http://en.wikipedia.org/wiki/Model-view-controller">MVC</a> programming model in my data management and system configuration.
+</p></div>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Disk Crash, Part 2: My Backup Strategy]]></title>
+    <link href="http://www.neilsmithline.com/blog/2012/08/21/disk-crash-part2/"/>
+    <updated>2012-08-21T22:02:00-04:00</updated>
+    <id>http://www.neilsmithline.com/blog/2012/08/21/disk-crash-part2</id>
+    <content type="html"><![CDATA[<p>
+/NOTE: This was written on August 21<sup>st</sup> and published on September 23<sup>rd</sup>
+</p>
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">My File Distribution And Backup Strategy</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>In my <a href="http://www.neilsmithline.com/blog/2012/08/21/disk-crash/">previous posting</a> I discussed my how I categorize files in terms of importance, timeliness when distributing files, and the platforms I distribute the files to. Here I&#8217;ll cover the technologies I use to meet my file management goals.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">My Backup Strategy</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Making sure your computer is backed up is typically a hassle. Even worse, my experience has taught me that thinking that you are backing up your system is very different from actually backing up your system. Numerous times I&#8217;ve been told by a system admin that, unbeknownst to them, the backups are unusable.
+</p>
+<p>
+Knowing how difficult backing up your computer can be, I outsource it to a company whose only business is backing up data.
+</p>
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">CrashPlan</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+
+
+<!-- more -->
+<p>
+I started using <a href="http://www.crashplan.com">CrashPlan</a> because they have a <a href="http://www.crashplan.com/consumer/compare.html">$25/year backup plan</a>. That is, they are cheap. As their service was simple, reliable, and pretty much configure-and-forget-about-it, I upgraded to their <a href="http://www.crashplan.com/consumer/crashplan-plus.html">premium plan</a>. It costs $120/year. For that $10/month I get unlimited data storage and can backup as many as 10 computers.
+</p>
+<p>
+While my household has more than 10 computers, many of them aren&#8217;t used very often and don&#8217;t need to be backed up so the limit of 10 computers has never been a problem.
+</p>
+<p>
+I consider the $10/month a great deal as CrashPlan has been a life saver for me  more than once. CrashPlan has an application that runs in the background, similar to DropBox&#8217;s application, and continually backs up your computer. The initial backup can take a few days but once backed up, the Crashplan database is never more than a few minutes behind changes on your disk drive.
+</p>
+<p>
+I should mention that the initial backup takes a few days because CrashPlan tries to share the computer with other applications. I can restore all my backed up data from CrashPlan in about an hour.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2">Not Just Backup, Secure Backup</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<p>When configured properly, CrashPlan uses the <a href="http://en.wikipedia.org/wiki/Blowfish_(cipher)">Blowfish</a> encryption algorithm with a <a href="http://support.crashplan.com/doku.php/faq/security#what_type_of_encryption_does_crashplancrashplan_use">448-bit key</a>. My encryption key was generated on my computer and has never left it. This means that even if CrashPlan&#8217;s servers are compromised and all of my backup data is stolen, it is very unlikely that the attacker could decrypt my data.
+</p></div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3">Backup Everything</h3>
+<div class="outline-text-3" id="text-2-3">
+
+<p>I use CrashPlan to backup everything that I want to backup. I don&#8217;t distinguish between more or less important files. I just backup everything I think I may miss if it were to go away. CrashPlan is even kind enough to keep multiple revisions of each file and deleted files available for restoration. What a deal.
+</p>
+<p>
+On my Mac OS X, I back up nearly everything in my home directory. While I try to keep my application preferences out of <code>~/Library/...</code>, some applications just won&#8217;t cooperate. So I also selectively backup directories in <code>~/Library/...</code> I also don&#8217;t bother backing up <code>~/Downloads</code>. I don&#8217;t currently back up <code>~/.cpan</code>, the data directory for the Perl package installer. As mentioned in my previous posting, I don&#8217;t yet have a working strategy for what applications have been installed by package managers such as CPAN.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">My File Distribution Strategy</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>My file distribution strategy is more complex than my backup strategy. To date I&#8217;ve not found any service that meets all of my needs for data distribution. This leaves me using multiple distribution technologies based on the importance and timeliness of the data.
+</p>
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">Dropbox</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<p><a href="http://dropbox.com">Dropbox</a> and similar services have become quite popular the last few years. I use Dropbox far data distribution continually. In fact, this blog entry is being authored inside my Dropbox directory. Dropbox is the primary data distribution technology that I use for managing the distribution of High Importance, Timely Distribution files. Especially my <a href="http://www.orgmode.org">Org Mode</a> PIM files.
+</p>
+<p>
+Because of Dropbox&#8217;s nearly instantaneous file distribution, I can be working on one laptop, save my Org Mode files, pick up my other laptop to find the updated Org Mode files waiting for me. Wonderful!
+</p>
+
+</div>
+
+<div id="outline-container-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1">Dropbox Security Concerns</h4>
+<div class="outline-text-4" id="text-3-1-1">
+
+<p>While Dropbox is awfully convenient, I&#8217;m not terribly comfortable with its security. <a href="https://www.dropbox.com/help/27/en">Dropbox&#8217;s security claims</a> state that they use <a href="http://en.wikipedia.org/wiki/Transport_Layer_Security">TLS</a>, which is frequently referred to as &#8220;SSL&#8221;, for network security. But the rest of their claims are intangible. For example, what is a &#8220;hardened&#8221; website and how is it better than other websites? They flat out state:
+</p><blockquote>
+
+<p>Like most online services, we have a small number of employees who must be able to access user data for the reasons stated in our privacy policy (e.g., when legally required to do so).
+</p>
+</blockquote>
+
+
+<p>
+Without disputing Dropbox&#8217;s claim that most online services have a means to allow their employees to access your private data, I use CrashPlan for my backups and know that they can&#8217;t access my private data.
+</p>
+<p>
+Even if Dropbox&#8217;s employees are 100% trustworthy, if their employees can access your data, so too can a hacker.
+</p>
+<p>
+Because of my security concerns, I avoid using Dropbox for my more sensitive data. For example, I have an Org Mode todo list related to financial matters such as taxes and bill paying. The files that have the details about those tasks are not in my Dropbox directory.
+</p>
+<p>
+If you are interested, here&#8217;s a <a href="http://lifehacker.com/5794486/how-to-add-a-second-layer-of-encryption-to-dropbox">nice article</a> covering some of Dropbox&#8217;s security problems as well as strategies to make them less of a problem.
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">rdist + ssh</h3>
+<div class="outline-text-3" id="text-3-2">
+
+<p><a href="http://linux.about.com/library/cmd/blcmdl1_rdist.htm">rdist</a> and <a href="http://linux.about.com/od/commands/l/blcmdl1_ssh.htm">ssh</a> are two tried and true Unix programs. rdist is used to keep two directories synchronized. The directories can be on one computer but are typically on two different computers (<i>rdist</i> = Remote Distribution).
+</p>
+<p>
+rdist and Dropbox are similar in that they both keep directories across multiple machines synchronized. However, unlike Dropbox, rdist must be manually run. It doesn&#8217;t watch specific directories watching for a file modification and then automatically synchronize the files across all of your computers.
+</p>
+<p>
+I use rdist to sync files to my <a href="http://ubuntu.com">Ubuntu</a> <a href="http://en.wikipedia.org/wiki/Virtual_private_server">VPS</a> server that I rent, quite happily, from <a href="http://rosehosting.com">RoseHosting</a>. The reason for synching to my VPS is that it is my only computer that is always accessible from the internet:
+</p><ul>
+<li>Rosehosting keeps my server running.
+</li>
+<li>It has a <a href="http://en.wikipedia.org/wiki/Domain_Name_System">DNS</a> entry so it can be found from any computer.
+</li>
+<li>Unlike my personal computers, especially my laptops, my VPS is never turned off or not online.
+</li>
+<li>Unlike computers on my home network, the firewall my VPS is behind allows incoming connections. My home network firewall is significantly more restrictive.
+</li>
+</ul>
+
+
+<p>
+In short, my VPS is the only computer I have that is available 24x7 from any internet connection. This means that every computer can sync with it at any time. While it would be faster and use less network bandwidth if I synched the computers in my home to each other rather than a VPS somewhere out in the cloud, I have more than enough bandwidth to use.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Next Up</h2>
+<div class="outline-text-2" id="text-4">
+
+
+<p>
+Keeping files in sync is great but identical files don&#8217;t always behave identically on different systems. For example, there tends to be lots of file paths in my <code>.bashrc</code> and my <code>.emacs</code> files. I utilize a series of tricks to allow many of these files to behave identically on different machines.
+</p></div>
+</div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Disk Crash]]></title>
@@ -41,7 +442,7 @@ While I had some gaps in my backup strategy, within 2 hours of my disk crash I h
 My primary computers are my MacBook Pro and an <a href="http://en.wikipedia.org/wiki/Hewlett-Packard">HP</a> laptop running <a href="http://en.wikipedia.org/wiki/Ubuntu_(operating_system)">Ubuntu Linux</a>. My mobile is a <a href="http://en.wikipedia.org/wiki/Samsung_Infuse_4G">Samsung Infuse</a> running <a href="http://en.wikipedia.org/wiki/CyanogenMod#CyanogenMod_10">CyanogenMod 10</a>, a customized version of <a href="http://en.wikipedia.org/wiki/Android_version_history#Android_4.1.x_Jelly_Bean">Android 4.1 Jelly Bean</a>. I also rent a <a href="http://en.wikipedia.org/wiki/Virtual_private_server">VPS</a> <a href="http://en.wikipedia.org/wiki/Cloud_computing">cloud computer</a> running Ubuntu. Lastly, I have an <a href="http://en.wikipedia.org/wiki/Asus">Asus</a> running <a href="http://en.wikipedia.org/wiki/Windows_7">Windows 7</a>. I primarily use te Windows computer for <a href="http://en.wikipedia.org/wiki/Streaming_media">streaming media</a> (I don&#8217;t dig Windows).
 </p>
 <p>
-I use file distribution to achieve two goals. I like to keep my configuration files consistent across my MacBook and two Ubuntu computers. This includes my <a href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)#Startup_scripts">.bashrc</a> and my <a href="http://en.wikipedia.org/wiki/Emacs_Lisp#Source_code">.emacs</a> site startup files. While I want those files to stay in sync to make the management of them simpler, there&#8217;s generally no rush in synchronizing them. 
+I use file distribution to achieve two goals. I like to keep my configuration files consistent across my MacBook and two Ubuntu computers. This includes my <a href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)#Startup_scripts">.bashrc</a> and my <a href="http://en.wikipedia.org/wiki/Emacs_Lisp#Source_code">.emacs</a> site startup files. While I want those files to stay in sync to make the management of them simpler, there&#8217;s generally no rush in synchronizing them.
 </p>
 <p>
 Another example of my file distribution involves my <a href="http://en.wikipedia.org/wiki/Personal_information_manager">PIM</a>. I use <a href="http://orgmode.org">Org Mode</a> as my <a href="http://en.wikipedia.org/wiki/Personal_information_manager">PIM</a> and want the data files to be synchronized across my MacBook, two Linux boxes, and my Android. I want those files synchronized immediately as I frequently move from computer to computer and always want my PIM data to be up to date.
@@ -2312,149 +2713,6 @@ As a diehard nerd, I&#8217;m thrilled to have lived through these technical revo
 </p>
 <p>
 I don&#8217;t claim to be the <a href="http://article.wn.com/view/2012/02/02/Did_the_Groundhog_see_his_shadow_2012_Punxsutawney_Phil_twee/">prognosticator of prognosticators</a>. <a href="http://www.wikipedia.com">Wikipedia</a>&#8217;s page on ubiquitous computing was created <a href="http://en.wikipedia.org/w/index.php?title=Ubiquitous_computing&amp;action=history">two years ago</a>. I&#8217;m just happy to be around to be part of it and hope that I get a chance to <a href="http://bit.ly/zN6qBU">surf the wave</a>.
-</p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Blog In A Box (actually, a repo)]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/02/15/nogit-blog-in-a-box/"/>
-    <updated>2012-02-15T22:54:25-05:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/02/15/nogit-blog-in-a-box</id>
-    <content type="html"><![CDATA[<p>
-As I have been developing my blog&#8217;s technology, I have been surprised at the lack of a pre-packaged <a href="http://en.wikipedia.org/wiki/Blog">blogging</a> solution for <a href="http://www.gnu.org/software/emacs/">Emacs</a>&#8217; <a href="http://orgmode.org/">Org Mode</a>. Org Mode is simply a wonderful tool for organizing thoughts, ideas, text, links, etc&hellip; While Org Mode has a rather difficult learning curve, its motto, <i>Your life in plain text.</i>, seems to be accurate.
-</p>
-<p>
-Spurred by ideas from <a href="http://decafbad.com">0xDECAFBAD.com</a> and code from <a href="http://nanoblogger.sourceforge.net/">NanoBlogger</a> (NB), I&#8217;ve gone about creating an Org Mode-based blogging system. And, if you are reading this, it is actually working. While NB and Org Mode do all the heavy lifting, I&#8217;ve simply added some glue to hook them together. What I have is far from a perfect solution, but it seems to work pretty well. 
-<!-- more -->
-
-There is a bit of a UI problem in that the Org Mode editing has a general look-and-feel like that seems like a typical Org Mode editor with a NanoBlogger posting jammed in. That&#8217;s not surprising as, to save development time, I&#8217;ve basically just jammed a NanoBlogger posting into an Org Mode buffer.
-</p>
-<p>
-The other problem that I have with the system is that there is no way to automatically detect the difference between postings that have been published and those that have not published (ie: drafts). Unless you take extra care when publishing your blog, all postings, whether or not they are drafts, will be posted.
-</p>
-<p>
-Once I&#8217;ve fixed these two problems I will have a simple but reasonably functional blog system. By &#8220;simple&#8221; I mean that it is based off of NanoBlogger, a minimal blogging platform. That being said, the <a href="http://nanoblogger.sourceforge.net/">goals</a> of NB are simple goals compared to most blogging systems. If you want a richer blogging system then NB isn&#8217;t for you.
-</p>
-<p>
-The <i>glue</i> that I&#8217;ve written to connect NB with Org Mode is a shell script and some <a href="http://en.wikipedia.org/wiki/Elisp">elisp</a> code. Combined they are only a few hundred lines of extensively-commented code. The entire NanoBlogger installation, living up to its name, is only 844K. 
-</p>
-<p>
-Being that NB is so very compact, my shell scripts and elisp code are small, everything is in plain text files, and that <a href="http://github.com">Github</a> provides simple and free hosting of both the blogging system and the blog, I&#8217;m going to merge my entire blogging system, minus Emacs, with my blog and put it into a single Github repository. 
-</p>
-<p>
-Once that is done, anyone who wants to try my blogging technology should only have to do a few simple steps:
-  # Fork my blog to their own Github repository.
-  # Clone their copy of my blog to their computer.
-  # Delete my blog postings (I&#8217;m assuming people will want to create their own postings and not republish mine).
-  # Run emacs and load the single elisp glue file I&#8217;ve created.
-  # Start blogging.
-</p>
-<p>
-I believe that it will take less than 10 minutes to get a blog up-and-running. That is longer than it takes to get a hosted blog on <a href="http://www.blogger.com">Blogger</a> but much, much faster than most self-hosted mechanisms such as <a href="http://www.movabletype.com/">MovableType</a>. The only prerequisites for this blogging system are
-</p><ul>
-<li>Bash and the other common shell script utilities that are required by NanoBlogger such as sed and awk.
-</li>
-<li>A reasonably modern GNU Emacs. It comes with Org Mode pre-installed.
-</li>
-<li>The <i>git</i> command-line program.
-</li>
-</ul>
-
-
-<p>
-Being that this blogging system is only aimed at Emacs users, it is certain that they&#8217;ll have Emacs already installed on their machine. It is also very likely that they&#8217;ll have bash and the shell script utilities. Maybe they&#8217;ll have git or maybe they&#8217;ll need to install it. It is a simple installation.
-</p>
-<p>
-There is no need to install a local web server for staging. Provided you have versions from this decade, there is no need to ensure you have the right version of any of this software. Managing versions of installed software can be a major pain for many systems (eg: Python based-apps). You also have full access to your blog&#8217;s data without having to export anything (everything is already in plain text files) or provide a credit card (Github is free).
-</p>]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[New NanoBlogger Command-Line]]></title>
-    <link href="http://www.neilsmithline.com/blog/2012/02/14/nbc/"/>
-    <updated>2012-02-14T13:13:34-05:00</updated>
-    <id>http://www.neilsmithline.com/blog/2012/02/14/nbc</id>
-    <content type="html"><![CDATA[<p>
-As I&#8217;ve discussed in previous <a href="http://www.neilsmithline.com/archives/blog">postings about this blog&#8217;s technology</a>, this is a static blog written with NanoBlogger. NanoBlogger is a <a href="http://en.wikipedia.org/wiki/Command-line_interface">CLI</a> driven blogging system. Alas, I have found the <a href="http://nanoblogger.sourceforge.net/docs/nanoblogger.html">NanoBlogger manual</a> to be difficult to follow and the syntax of the CLI to be non-intuitive. (See the footnote <a href="https://github.com/Neil-Smithline/nbc">here</a> regarding the existing CLI.) On the upside, NanoBlogger is a CLI system which makes it easy to modify. 
-</p>
-<p>
-I started out with a few small helper scripts, eventually merging them into a single helper script. As I was using that script and learning more about NanoBlogger, I found myself writing smaller helper scripts for my big helper script. Eventually, I was never calling my original, large helper script directly.
-<!-- more -->
-
-At this point it became clear that some refactoring was needed. So I refactored. I came up with a single shell script call <i>nbc.sh</i> that does all the work and a series of shell scripts that simply call nbc.sh.
-</p>
-<p>
-The key idea behind nbc.sh, or simply <i>nbc</i>, is that the scripts that call it are trivial. By &#8220;trivial&#8221; I mean that each script is only a few lines long, all the side scripts have identical content, and, if not for the semantics of <a href="http://en.wikipedia.org/wiki/Git_(software)">Git</a>, would simply be multiple symbolic links to the same program.
-</p>
-<p>
-As you can see below, the code for the side scripts simply stores the command name, <i>$0</i>, of the side script that was called and then calls the <i>nbc.sh</i> script that is in the same directory as the side script. 
-</p>
-
-
-<pre class="example">#!/bin/sh
-
-# Code to load include file.
-ORIG_ARG_0="$0"
-NBDIR=${0%/*}
-. ${NBDIR}/nbc.sh
-</pre>
-
-<p>
-This means that as I continue to add functionality to nbc, all I need to do is copy one of the side scripts to the filename of the new command I added. 
-</p>
-<p>
-While I won&#8217;t discuss the exact naming scheme used for these side scripts in detail in this posting, I will say that I have tried to systematic in how the scripts are named. Once you learn a few abbreviations (eg: &#8220;e&#8221; for &#8220;Entry&#8221; or &#8220;Entries&#8221;, &#8220;u&#8221; for &#8220;Update&#8221;) and the rules for combining those abbreviations (standard <a href="http://en.wikipedia.org/wiki/Reverse_Polish_Notation">RPN</a>), you will know the names of all the commands, what each command does, and the type and order of arguments each command takes.
-</p>
-<p>
-I still need to write richer documentation for nbc and its side scripts, but I can finish this posting off with some concrete examples.
-</p>
-<p>
-NB supports an &#8220;update&#8221; command that essentially tells NB to rebuild the blog from scratch. The syntax of this command is:
-</p>
-
-
-<pre class="example">nb update
-</pre>
-
-<p>
-My nbc version of this command is:
-</p>
-
-
-<pre class="example">nbu
-</pre>
-
-<p>
-All of the commands for nbc start with the letters &#8220;nb&#8221;. The letter &#8220;U&#8221; is the abbreviation for &#8220;Update&#8221;. So &#8220;nbu&#8221; tells nb to run the update command. As I said, the code for nbu and the other side scripts are trivial and given above. As far as examples go, nbu is not very exciting. But the nbc&#8217;s CLI for creating tags is a bit more exciting.
-</p>
-<p>
-NB&#8217;s syntax for creating tags, as documented in its manual, is:
-</p>
-
-
-<pre class="example">nb --title &lt;tag-name&gt; add tag
-</pre>
-
-<p>
-Gosh! That&#8217;s both tough to remember and tough to type. In nbc, the command for adding a tag is <i>nbga</i>. All commands start with &#8220;nb&#8221;. After that, the &#8220;g&#8221; means that we are talking about &#8220;taGs&#8221;. The &#8220;a&#8221; stands for &#8220;Add&#8221;. The syntax for the command is 
-</p>
-
-
-<pre class="example">nbga &lt;tag list&gt;
-</pre>
-
-
-<p>
-Besides being much easier to type and remember, it allows a tag list as compared to a single tag name. That is, you can create multiple tags in a single command rather than needing to call nb once for each new tag.
-</p>
-<p>
-In NBC, a tag list is a comma-separated list of one or more tag names. So &#8220;tag1&#8221; is a tag list and &#8220;tag1,tag2,tag3&#8221; is also a tag list. If you prefer you can space-separate the tag list but you need to ensure that you pass the entire tag list as the first argument to nbga. 
-</p>
-<p>
-As the operations become more complex, NBC&#8217;s simplifications become greater and more obvious. My next posting about NBC will discuss some of these simplifications.
-</p>
-<p>
-If you wish to use NBC, look at the source code, or tell me why NBC sucks, you can get the scripts at <a href="https://github.com/Neil-Smithline/nbc">https://github.com/Neil-Smithline/nbc</a>.
 </p>]]></content>
   </entry>
   

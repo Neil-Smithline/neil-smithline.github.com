@@ -1,0 +1,637 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Disk Crash, Part 3: OS Indepent Configuration - My Geekdom</title>
+  <meta name="author" content="Neil Smithline">
+
+  
+  <meta name="description" content="NOTE: This was written on September 3rd and published on September 23rd. Managing Configuration My previous postings about my disk crash and my &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.neilsmithline.com/blog/2012/09/03/disk-crash-part3/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="http://feeds.feedburner.com/MyGeekdom" rel="alternate" title="My Geekdom" type="application/atom+xml">
+    <!-- ShareThis -->
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+  <!-- /ShareThis -->
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25833963-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Geekdom</a></h1>
+
+  <div  style="float: right; position: relative; top: 75px;" id="header-image-container">
+    <a href="" accesskey="1">
+      <img title="Neil Smithline" src="/assets/images/NS-Keycaps.png"></img>
+    </a>
+  </div>
+
+  
+    <h2>Ramblings about my nerdy pursuits.</h2>
+  
+
+  
+    <a href="https://github.com/neil-smithline">
+      <img
+          style="position: absolute;
+            top: 0;
+            right: 0;
+            border: 0;"
+         src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></img></a>
+
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/MyGeekdom" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.neilsmithline.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <!-- <li><a href="/">Home</a></li> -->
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/contact">Contact</a></li>
+  <li><a href="/about/elsewhere">About</a></li>
+  <li><a href="/neilsmithline">Resume (Seeking employment)</a></li>
+</ul>
+
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Disk Crash, Part 3: OS Indepent Configuration</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-03T22:02:00-04:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>
+<i>NOTE: This was written on September 3<sup>rd</sup> and published on September 23<sup>rd</sup>.</i>
+</p>
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Managing Configuration</h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+My previous postings about my <a href="http://www.neilsmithline.com/blog/2012/08/21/disk-crash/">disk crash</a> and my <a href="http://www.neilsmithline.com/blog/2012/08/21/disk-crash-part2/">backup strategy</a> discuss how I keep files in sync across my computers. While I have a 3-tiered system using CrashPlan, DropBox, and rdist to meet different synchronization requirements for different files, this strategy uses tried-and-true technology.
+</p>
+<p>
+But identical files across machines doesn&#8217;t guarantee identical behavior across the machines. At the moment, my computer collection is:
+</p><ul>
+<li>A laptop running Ubuntu 12.04
+</li>
+<li>A laptop double-booted to run Ubuntu 12.04 and Windows 7. I&#8217;m not a big Windows fan but sometimes I need to use it.
+</li>
+<li>My media/game server running Windows 7 (good for games for my kids), and Ubuntu 12.04 (best for me).
+</li>
+<li>My MacBook Pro running OS X 10.6.
+</li>
+<li>My VPS cloud server. It has been running Ubuntu 10.04 but I&#8217;ve requested an upgrade to the newest version of Debian, I think Lenny. I need the upgrade because Ubuntu 10.04 is 2+ years old. I&#8217;m switching to Debian because Debian tends to be more stable though it has a weaker <a href="http://en.wikipedia.org/wiki/Desktop_environment">desktop environment</a> than Ubuntu. Being that my VPS is a <a href="http://en.wikipedia.org/wiki/Headless_system">headless server</a>, the desktop features don&#8217;t really matter to me.
+</li>
+</ul>
+
+
+<!-- more -->
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Home Directories</h2>
+<div class="outline-text-2" id="text-2">
+
+
+<p>
+Being that I run three different OSs (Ubuntu is built on Debian so I don&#8217;t consider it a separate OS), I have different home directories.
+</p><ul>
+<li>Ubuntu/Debian: my home directory is <code>/home/neil</code>.
+</li>
+<li>Mac OS X: My home directory is <code>/Users/neil</code>.
+</li>
+<li>Windows 7: Synchronizing configuration between <a href="http://en.wikipedia.org/wiki/Unix-like">*nix</a> systems and Windows only makes sense if you are running <a href="http://cygwin.com">Cygwin</a>. Unfortunately, Cygwin home directories seem a bit random (info about <a href="http://cygwin.com/faq/faq-nochunks.html#faq.setup.home">Cygwin home directories</a>).
+</li>
+</ul>
+
+
+<p>
+While using the <code>$HOME</code> variable to refer to your home directory works in many situations, it doesn&#8217;t always help. My solution to this is simple: *nix wins. My home directory is <code>/home/neil</code> on all of my computers. If it is not there by default, I use atypical <a href="http://en.wikipedia.org/wiki/Mount_(computing)">file mounts</a> or, when needed, <a href="http://en.wikipedia.org/wiki/Symbolic_link">symbolic links</a> to achieve conformance.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">My $PATH</h2>
+<div class="outline-text-2" id="text-3">
+
+
+<p>
+Maintaining your <a href="http://en.wikipedia.org/wiki/$PATH">$PATH</a> settings is a real hassle. Not only are executables in different locations based on your OS, I frequently find that executables are in different locations on the same OS.
+</p>
+<p>
+<a href="http://en.wikipedia.org/wiki/Ruby_(programming_language)">Ruby</a> is a good example of a program that tends to be in different locations on different computers. I use <a href="http://mxcl.github.com/homebrew/">Homebrew</a> to install Ruby on my Mac OS X computer, <a href="http://en.wikipedia.org/wiki/Apt-get">APT</a> to install Ruby on one of my Ubuntu laptops, and <a href="https://github.com/sstephenson/rbenv">rbenv</a> on my other Ubuntu laptop. I don&#8217;t bother installying Ruby on my Windows computer as I only use Windows when I have to.
+</p>
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">Dynamically Assigned $PATH Variables</h3>
+<div class="outline-text-3" id="text-3-1">
+
+
+<p>
+As I use a single <code>.bashrc</code> file across all my computers and exectuables are scattered everywhere, I dynamically configure my <code>$PATH</code> variable based on the computer&#8217;s file system. I use my a <code>bash</code> function, <code>addpath</code>, to add directories to <code>$PATH</code>:
+</p>
+
+
+
+<pre class="src src--n">addpath() {
+    if [ -d <span style="color: #004400; background-color: #CCCCCC;">"$@"</span> ]; then
+        PATH=<span style="color: #004400; background-color: #CCCCCC;">"$@:$PATH"</span>
+    fi
+}
+</pre>
+
+
+<p>
+With <code>addpath</code>, I don&#8217;t have to worry about adding too many directories to my <code>$PATH</code>. This allows code such as:
+</p>
+
+
+
+<pre class="src src-sh"><span class="linenr">1:  </span>addpath /usr/bin        <span style="color: #550055; background-color: #CCCCCC;"># </span><span style="color: #550055; background-color: #CCCCCC;">typical *nix path component</span>
+<span class="linenr">2:  </span>addpath /sw/bin         <span style="color: #550055; background-color: #CCCCCC;"># </span><span style="color: #550055; background-color: #CCCCCC;">used by some Mac OS X package managers</span>
+<span class="linenr">3:  </span>addpath /c/usr/bin      <span style="color: #550055; background-color: #CCCCCC;"># </span><span style="color: #550055; background-color: #CCCCCC;">used by Cygwin on Windows</span>
+</pre>
+
+
+<p>
+<code>addpath</code> ensures that only existing directories are added to <code>$PATH</code>.
+</p>
+<p>
+This meets <i>nearly</i> all of my needs. The one problem I have with this solution is that I find that my <code>$PATH</code> frequently changes. For example, when I recently started using <code>rbenv</code>, a path change was required. These changes aren&#8217;t major but sometimes I need a few tries to get it right.
+</p>
+<p>
+So I have a strategy for repeatedly updating my <code>.bashrc</code> file, executing the <code>.bashrc</code> file, and testing my new <code>$PATH</code>. The first part of this strategy is that, the first time <code>bash</code> is run, I squirrel away the value of <code>$PATH</code> into another variable:
+</p>
+
+
+<pre class="src src-SH"><span class="linenr">1:  </span>export ORIG_PATH=<span style="color: #004400; background-color: #CCCCCC;">"${ORIG_PATH:-$PATH}"</span>
+<span class="linenr">2:  </span>export PATH=<span style="color: #004400; background-color: #CCCCCC;">"$ORIG_PATH"</span>
+</pre>
+
+
+<p>
+For those of you that aren&#8217;t fluent in shell syntax, <code>ORIG_PATH=${ORIG_PATH:-$PATH}</code> will set the value of <code>$ORIG_PATH</code> to <code>$PATH</code> the first time it is executed. On subsequent executions, <code>$ORIG_PATH</code> will be assigned the value of <code>$ORIG_PATH</code>. This ensures that <code>$ORIG_PATH</code> always equals the value of <code>$PATH</code> the first time the <code>.bashrc</code> file is executed.
+</p>
+<p>
+I then use <code>$ORIG_PATH</code> as the basis for all of my <code>$PATH</code> changes.
+</p>
+<p>
+The final piece of my <code>$PATH</code> management is this function:
+</p>
+
+
+<pre class="src src-SH"><span class="linenr">1:  </span>reinit () {
+<span class="linenr">2:  </span>    . $HOME/.bashrc
+<span class="linenr">3:  </span>}
+</pre>
+
+
+<p>
+It is just a convenience function to execute my <code>.bashrc</code> file in the current shell. Being that my <code>.bashrc</code> file is <a href="http://en.wikipedia.org/wiki/Idempotent">idempotent</a>, I can rerun it as often as I need, confident that my <code>bash</code> environment will be the same no matter how many times I&#8217;ve executed my <code>.bashrc</code>.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">Miscellaneous Path Differences</h3>
+<div class="outline-text-3" id="text-3-2">
+
+
+
+</div>
+
+<div id="outline-container-3-2-1" class="outline-4">
+<h4 id="sec-3-2-1">Managing <code>rbenv</code></h4>
+<div class="outline-text-4" id="text-3-2-1">
+
+<p>While the above solution handles general <code>$PATH</code> configuration, some special cases still arise. Managing my <code>$PATH</code> to work best with Ruby tends to change across my computers and even change over time on the same computer.
+</p>
+<p>
+For Ruby, some of my machines have <code>rbenv</code> installed on them and some don&#8217;t. On one machine I find that sometimes I use <code>rbenv</code> and at other times I don&#8217;t wish to use it. So I have a one-off solution for managing my <code>rbenv</code> environment in my <code>.bashrc</code> file:
+</p>
+
+
+
+<pre class="src src--n">if [ -f <span style="color: #004400; background-color: #CCCCCC;">"$HOME/.rbenv/USE-RBENV"</span> ]; then
+    addpath $HOME/.rbenv/shims
+    ... other stuff ...
+fi
+</pre>
+
+
+<p>
+The file <code>USE-RBENV</code> is an empty file that I create when I want to, not surprisingly, use <code>rbenv</code>. To switch between using and not using <code>rbenv</code> I create or delete the <code>USE-RBENV</code> file and re-execute my <code>.bashrc</code> file using my <code>bash</code>  <code>reinit</code> function. This strategy leverages the dynamic path settings and idempotency of my <code>.bashrc</code> file.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-2-2" class="outline-4">
+<h4 id="sec-3-2-2">Managing My <code>.emacs</code></h4>
+<div class="outline-text-4" id="text-3-2-2">
+
+
+<p>
+Avoiding most of the details, <a href="http://en.wikipedia.org/wiki/Emacs">Emacs</a> needs to find some <a href="http://en.wikipedia.org/wiki/Elisp">elisp</a> files as well as some *nix files that are not in the same place on all of my computers. For loading elisp files, I have written a function that is similar to my <code>addpath</code> function that I use in my <code>.bashrc</code> file.
+</p>
+<p>
+The elisp function, <code>add-load-path</code>, has a bit more smarts than <code>addpath</code>. <code>addpath</code> works by omitting non-relevant directories to <code>$PATH</code>. <code>add-load-path</code> knows how to search through directories that may contain an elisp package and then include that directory. A call to <code>add-load-path</code> is simply:
+</p><pre class="example">
+(add-load-path "jdee/lisp")
+</pre>
+
+
+<p>
+There are also some functions of Emacs that behavior better if they know the full path of some executables. For example, Emacs can make use of the *nix <a href="http://en.wikipedia.org/wiki/Man_page">man(1)</a> command. While <code>add-load-path</code> finds elisp files, <code>find-first-executable</code> searches for executable files. This is the elisp command I use to find the <code>man</code> executable:
+</p>
+
+
+<pre class="src src--n">(setq manual-program
+        (find-first-executable
+         '(<span style="color: #004400; background-color: #CCCCCC;">"/usr/local/bin/man"</span> <span style="color: #004400; background-color: #CCCCCC;">"/usr/bin/man"</span>
+           <span style="color: #004400; background-color: #CCCCCC;">"/bin/man"</span> <span style="color: #004400; background-color: #CCCCCC;">"c:/cygwin/bin/man.exe"</span>)))
+</pre>
+
+
+<p>
+<code>find-first-executable</code> returns the first path that corresponds to an executable. You may have noticed the <code>c:/cygwin/bin/man.exe</code> argument which allows the same <code>.emacs</code> file to run on Windows as well as *nix.
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">In The Next Installment</h2>
+<div class="outline-text-2" id="text-4">
+
+
+<p>
+The next and final part of this series will delve a bit deeper into my general philosophy of portable and maintainable configuration and code. In general, I try to plan for the unplannable. I try not to let the fact that planning for the unplannable is impossible get in my way.
+</p>
+<p>
+I try to produce flexible designs that typically include a separation of data and code. Then, when the unexpected occurs, in theory, I can return to work with only a minimal hit to my productivity. In some sense, I use the <a href="http://en.wikipedia.org/wiki/Model-view-controller">MVC</a> programming model in my data management and system configuration.
+</p></div>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Neil Smithline</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-03T22:02:00-04:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/backup/'>backup</a>, <a class='category' href='/blog/categories/blogging-tech/'>blogging-tech</a>, <a class='category' href='/blog/categories/sysadmin/'>sysadmin</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.neilsmithline.com/blog/2012/09/03/disk-crash-part3/" data-via="neil_smithline" data-counturl="http://www.neilsmithline.com/blog/2012/09/03/disk-crash-part3/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/08/21/disk-crash-part2/" title="Previous Post: Disk Crash, Part 2: My Backup Strategy">&laquo; Disk Crash, Part 2: My Backup Strategy</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/09/03/disk-crash-part3/">Disk Crash, Part 3: OS Indepent Configuration</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/21/disk-crash-part2/">Disk Crash, Part 2: My Backup Strategy</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/21/disk-crash/">Disk Crash</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/05/time-tracking-part-2/">Time Tracking, Part 2: Org Mode File Format</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/04/time-tracking/">Time Tracking</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/neil-smithline">@neil-smithline</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'neil-smithline',
+            count: 8,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>My Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("neil_smithline", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <p>Follow <a href="http://twitter.com/neil_smithline">@neil_smithline</a></p>
+  
+</section>
+
+
+
+<section class="socialmention">
+  <h1>Elsewhere On The Web</h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="https://twitter.com/#!/neil_smithline"><img src="/assets/service-logos/twitter/twitter-32.png" alt="My Tweets"/>Twitter</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://www.linkedin.com/profile/view?2519386"><img src="/assets/service-logos/linkedin/linkedin-32.png" alt="My LinkedIn Account" />LinkedIn</a>
+  </h1>
+</section>
+
+
+<section class="sociallink googleplus">
+  <h1>
+    <a href="https://plus.google.com/104257546204106753046?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32"></img>
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="https://github.com/neil-smithline"><img src="/assets/service-logos/github/github-32.png" alt="Checkout My Code" />Github</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://coderwall.com/neilsmithline"><img src="/assets/service-logos/coderwall/coderwall-32.png" alt="My Coderwall Badges" />Coderwall</a>
+  </h1>
+</section>
+
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://www.diigo.com/user/neilsmithline"><img src="/assets/service-logos/diigo/diigo-32.png" alt="My Diigo Bookmarks"/>Bookmarks</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://klout.com/#/neil_smithline"><img src="/assets/service-logos/klout/klout-32.png" alt="My Klout Score"/>Klout</a>
+  </h1>
+</section>
+
+
+<section class="sociallink">
+  <h1>
+    <a href="http://disqus.com/NeilSmithline"><img src="/assets/service-logos/disqus/disqus-32.png" alt="My Disqus Comments"/>Disqus</a>
+  </h1>
+</section>
+
+
+<section class="socialmention">
+  <h1>Computer Backup Buzz</h1>
+    <script type="text/javascript">
+      // search phrase (replace this)
+      var smSearchPhrase = 'computer backups';
+      // title (optional)
+      var smTitle = 'Computer Backup News Around The Web';
+      // items per page
+      var smItemsPerPage = 3;
+      // show or hide user profile images
+      var smShowUserImages = true;
+      // widget font size in pixels
+      var smFontSize = 11;
+      // height of the widget
+      var smWidgetHeight = 600;
+      // sources (optional, comment out for "all")
+      //var smSources = ['twitter', 'facebook', 'googleblog', 'identica'];
+    </script>
+    <script type="text/javascript" language="javascript" src="http://socialmention.s3.amazonaws.com/buzz_widget/buzz.js"></script>
+</section>
+
+<!-- ShareThis -->
+  <script>
+    var options={ "publisher": "4eafa479-c64d-49ab-9e91-90cb169b33c2", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["twitter", "googleplus", "linkedin", "facebook", "email", "sharethis"]}};
+    var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+  </script>
+<!-- /ShareThis -->
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Neil Smithline -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> -
+  <span class="credit">Authored with <a href="http://www.gnu.org/s/emacs"">Emacs</a> and
+  <a href="http://orgmode.org">Org Mode</a></span> -
+  <span class="credit">Hosted by <a href="http://github.com">Github</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'mygeekdom';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.neilsmithline.com/blog/2012/09/03/disk-crash-part3/';
+        var disqus_url = 'http://www.neilsmithline.com/blog/2012/09/03/disk-crash-part3/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
