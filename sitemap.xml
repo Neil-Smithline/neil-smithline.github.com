@@ -86,7 +86,7 @@
     </url>
     <url>
         <loc>http://www.neilsmithline.com/blog/2012/05/09/sparkleshare-bomb/</loc>
-        <lastmod>2012-08-21T23:23:42-04:00</lastmod>
+        <lastmod>2012-10-02T11:12:42-04:00</lastmod>
     </url>
     <url>
         <loc>http://www.neilsmithline.com/blog/2012/05/14/new-blog-tech/</loc>
@@ -146,7 +146,7 @@
     </url>
     <url>
         <loc>http://www.neilsmithline.com/blog/2012/08/21/disk-crash-part2/</loc>
-        <lastmod>2012-09-23T18:27:51-04:00</lastmod>
+        <lastmod>2012-09-30T19:50:29-04:00</lastmod>
     </url>
     <url>
         <loc>http://www.neilsmithline.com/blog/2012/09/03/disk-crash-part3/</loc>
@@ -154,27 +154,31 @@
     </url>
     <url>
         <loc>http://www.neilsmithline.com/about/contact/</loc>
-        <lastmod>2012-09-23T18:27:54-04:00</lastmod>
+        <lastmod>2012-10-02T11:12:42-04:00</lastmod>
     </url>
     <url>
         <loc>http://www.neilsmithline.com/about/diigo-tag-cloud/</loc>
-        <lastmod>2012-09-23T18:27:54-04:00</lastmod>
+        <lastmod>2012-10-02T11:12:42-04:00</lastmod>
     </url>
     <url>
         <loc>http://www.neilsmithline.com/about/elsewhere/</loc>
-        <lastmod>2012-09-23T18:27:54-04:00</lastmod>
+        <lastmod>2012-10-02T11:12:42-04:00</lastmod>
     </url>
     <url>
         <loc>http://www.neilsmithline.com/about/privacy/</loc>
-        <lastmod>2012-09-23T18:27:54-04:00</lastmod>
+        <lastmod>2012-10-02T11:12:42-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.neilsmithline.com/about/title-case/</loc>
+        <lastmod>2012-10-02T11:12:42-04:00</lastmod>
     </url>
     <url>
         <loc>http://www.neilsmithline.com/blog/archives/</loc>
-        <lastmod>2012-09-23T18:27:54-04:00</lastmod>
+        <lastmod>2012-10-02T11:12:42-04:00</lastmod>
     </url>
     <url>
         <loc>http://www.neilsmithline.com/chat/</loc>
-        <lastmod>2012-09-23T18:27:54-04:00</lastmod>
+        <lastmod>2012-10-02T11:12:42-04:00</lastmod>
     </url>
     <url>
         <loc>http://www.neilsmithline.com/coding/spg/spg-master-password/hold.html</loc>
@@ -182,15 +186,15 @@
     </url>
     <url>
         <loc>http://www.neilsmithline.com/coding/spg/spg-master-password/</loc>
-        <lastmod>2012-09-23T18:27:54-04:00</lastmod>
+        <lastmod>2012-10-02T11:12:42-04:00</lastmod>
     </url>
     <url>
         <loc>http://www.neilsmithline.com/</loc>
-        <lastmod>2012-09-23T18:27:54-04:00</lastmod>
+        <lastmod>2012-10-02T11:12:42-04:00</lastmod>
     </url>
     <url>
         <loc>http://www.neilsmithline.com/portfolio/firefox-add-on/</loc>
-        <lastmod>2012-09-23T18:27:54-04:00</lastmod>
+        <lastmod>2012-10-02T11:12:42-04:00</lastmod>
     </url>
     <url>
         <loc>http://www.neilsmithline.com/projects/github-organization/index-hold.html</loc>
@@ -198,6 +202,6 @@
     </url>
     <url>
         <loc>http://www.neilsmithline.com/projects/github-organization/</loc>
-        <lastmod>2012-09-23T18:27:54-04:00</lastmod>
+        <lastmod>2012-10-02T11:12:42-04:00</lastmod>
     </url>
 </urlset>

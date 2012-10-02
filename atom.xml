@@ -4,7 +4,7 @@
   <title><![CDATA[My Geekdom]]></title>
   <link href="http://www.neilsmithline.com/atom.xml" rel="self"/>
   <link href="http://www.neilsmithline.com/"/>
-  <updated>2012-09-23T18:28:28-04:00</updated>
+  <updated>2012-10-02T11:40:09-04:00</updated>
   <id>http://www.neilsmithline.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
@@ -251,7 +251,7 @@ I try to produce flexible designs that typically include a separation of data an
     <updated>2012-08-21T22:02:00-04:00</updated>
     <id>http://www.neilsmithline.com/blog/2012/08/21/disk-crash-part2</id>
     <content type="html"><![CDATA[<p>
-/NOTE: This was written on August 21<sup>st</sup> and published on September 23<sup>rd</sup>
+<i>NOTE: This was written on August 21<sup>st</sup> and published on September 23<sup>rd</sup></i>
 </p>
 <div id="outline-container-1" class="outline-2">
 <h2 id="sec-1">My File Distribution And Backup Strategy</h2>
@@ -2490,7 +2490,7 @@ I think I&#8217;m going to be very happy with Octopress.
 Based on a LifeHacker posting, I previously blogged about giving SparkleShare a try.. It was cool. A free Dropbox with private hosting. So I installed, configured, and started using SparkleShare. While I was quite excited when I embarked upon my journey using SparkleShare, things didn&#8217;t work out as well as I had hoped.
 </p>
 <p>
-I quickly found out that SparkleShare doesn&#8217;t handle symbolic links. Not at all. There&#8217;s no workaround. The problem is that SparkleShare relies on Git for synchronization and Git doesn&#8217;t support symbolic links. At least for me, this rendered SparkleShare useless. 
+I quickly found out that SparkleShare doesn&#8217;t handle symbolic links. Not at all. There&#8217;s no workaround. The problem is that SparkleShare relies on Git for synchronization and Git doesn&#8217;t support symbolic links. At least for me, this rendered SparkleShare useless.
 </p>
 <p>
 When I moved to Dropbox directory, what I had been using for synchronization before SparkleShare, had no files in it, just a bunch of symbolic links. But with SparkleShare, you have to move all your directories into your SparkleShare directory and then scatter symbolic links around your system where the you want the directories to be. This caused a variety of minor but really annoying problems.
@@ -2505,7 +2505,7 @@ I am currently using the following scheme for file distribution/backups:
 </li>
 <li>For actual backups, I&#8217;ve been using Crashplan for years and couldn&#8217;t be happier.
 </li>
-<li>And, in the past week or two, I&#8217;ve put Dropbox synchronization back into the mix to manage synchronization between Org Mode files on my computers and MobileOrg files on my Android. Despite the strong cult following that Dropbox has, synching with my mobile seems to be the only effective use I can find for it. 
+<li>And, in the past week or two, I&#8217;ve put Dropbox synchronization back into the mix to manage synchronization between Org Mode files on my computers and MobileOrg files on my Android. Despite the strong cult following that Dropbox has, synching with my mobile seems to be the only effective use I can find for it.
 </li>
 </ul>
 

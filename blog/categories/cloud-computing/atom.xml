@@ -4,7 +4,7 @@
   <title><![CDATA[Category: cloud-computing | My Geekdom]]></title>
   <link href="http://www.neilsmithline.com/blog/categories/cloud-computing/atom.xml" rel="self"/>
   <link href="http://www.neilsmithline.com/"/>
-  <updated>2012-09-23T18:28:28-04:00</updated>
+  <updated>2012-10-02T11:40:09-04:00</updated>
   <id>http://www.neilsmithline.com/</id>
   <author>
     <name><![CDATA[Neil Smithline]]></name>
@@ -186,7 +186,7 @@ Based on a LifeHacker posting, I previously blogged about giving SparkleShare a 
 
 
 <p>
-I quickly found out that SparkleShare doesn't handle symbolic links. Not at all. There's no workaround. The problem is that SparkleShare relies on Git for synchronization and Git doesn't support symbolic links. At least for me, this rendered SparkleShare useless. 
+I quickly found out that SparkleShare doesn't handle symbolic links. Not at all. There's no workaround. The problem is that SparkleShare relies on Git for synchronization and Git doesn't support symbolic links. At least for me, this rendered SparkleShare useless.
 </p>
 
 
@@ -210,7 +210,7 @@ I am currently using the following scheme for file distribution/backups:
 </li>
 <li>For actual backups, I've been using Crashplan for years and couldn't be happier.
 </li>
-<li>And, in the past week or two, I've put Dropbox synchronization back into the mix to manage synchronization between Org Mode files on my computers and MobileOrg files on my Android. Despite the strong cult following that Dropbox has, synching with my mobile seems to be the only effective use I can find for it. 
+<li>And, in the past week or two, I've put Dropbox synchronization back into the mix to manage synchronization between Org Mode files on my computers and MobileOrg files on my Android. Despite the strong cult following that Dropbox has, synching with my mobile seems to be the only effective use I can find for it.
 </li>
 </ul>
 
